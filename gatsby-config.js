@@ -1,17 +1,17 @@
 const config = require('./src/utils/siteConfig')
-let contentfulConfig
+let bloggerConfig
 
 try {
-  contentfulConfig = require('./.contentful')
+  bloggerConfig = require('./.blogger')
 } catch (e) {
-  contentfulConfig = {
+  bloggerConfig = {
     production: {
-      spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN,
+      apiKey: process.env.API_KEY,
+      blogId: process.env.BLOG_ID,
     },
   }
 } finally {
-  const { spaceId, accessToken } = contentfulConfig.production
+  const { spaceId, accessToken } = bloggerConfig.production
   if (!spaceId || !accessToken) {
     throw new Error('Contentful space ID and access token need to be provided.')
   }
@@ -60,11 +60,11 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-source-blogger',
       options:
         process.env.NODE_ENV === 'development'
-          ? contentfulConfig.development
-          : contentfulConfig.production,
+          ? bloggerConfig.development
+          : bloggerConfig.production,
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
