@@ -7,20 +7,20 @@ exports.createPages = ({ graphql, actions }) => {
   const loadPosts = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulPost(
-          sort: { fields: [publishDate], order: DESC }
+        allBloggerPost(
+          sort: { fields: [published], order: DESC }
           limit: 10000
         ) {
           edges {
             node {
               slug
-              publishDate
+              published
             }
           }
         }
       }
     `).then(result => {
-      const posts = result.data.allContentfulPost.edges
+      const posts = result.data.allBloggerPost.edges
       const postsPerFirstPage = config.postsPerHomePage
       const postsPerPage = config.postsPerPage
       const numPages = Math.ceil(
@@ -71,7 +71,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  const loadTags = new Promise((resolve, reject) => {
+  /* const loadTags = new Promise((resolve, reject) => {
     graphql(`
       {
         allContentfulTag {
@@ -110,12 +110,12 @@ exports.createPages = ({ graphql, actions }) => {
       })
       resolve()
     })
-  })
+  }) */
 
   const loadPages = new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulPage {
+        allBloggerPage {
           edges {
             node {
               slug
@@ -124,7 +124,7 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     `).then(result => {
-      const pages = result.data.allContentfulPage.edges
+      const pages = result.data.allBloggerPage.edges
       pages.map(({ node }) => {
         createPage({
           path: `${node.slug}/`,
@@ -138,5 +138,5 @@ exports.createPages = ({ graphql, actions }) => {
     })
   })
 
-  return Promise.all([loadPosts, loadTags, loadPages])
+  return Promise.all([loadPosts, loadPages])
 }

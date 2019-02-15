@@ -11,9 +11,9 @@ try {
     },
   }
 } finally {
-  const { spaceId, accessToken } = bloggerConfig.production
-  if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
+  const { apiKey, blogId } = bloggerConfig.production
+  if (!apiKey || !blogId) {
+    throw new Error('Blogger api key and blog id need to be provided.')
   }
 }
 
@@ -48,7 +48,7 @@ module.exports = {
           },
           `gatsby-remark-autolink-headers`,
           {
-            resolve: `gatsby-remark-images-contentful`,
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 650,
               backgroundColor: 'white',
@@ -134,12 +134,12 @@ module.exports = {
             },
             query: `
               {
-            allContentfulPost(limit: 1000, sort: {fields: [publishDate], order: DESC}) {
+            allBloggerPost(limit: 1000, sort: {fields: [published], order: DESC}) {
                edges {
                  node {
                    title
                    slug
-                   publishDate(formatString: "MMMM DD, YYYY")
+                   published(formatString: "MMMM DD, YYYY")
                    body {
                      childMarkdownRemark {
                        html

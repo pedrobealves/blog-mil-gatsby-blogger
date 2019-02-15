@@ -5373,6 +5373,20 @@ gatsby-remark-images-contentful@^2.0.5:
     sharp "^0.21.3"
     unist-util-select "^1.5.0"
 
+gatsby-remark-images@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/gatsby-remark-images/-/gatsby-remark-images-3.0.3.tgz#d31790555a7b50f9b4f0860a294c845316846669"
+  integrity sha512-KvwLwxFoMjlxxeLlnUA2uqf5MztVzxlQ+t5rUdWn2prf5xxy5u9YMJpL9od4u5s1o5ksQhQXt/5B28zneKiAvg==
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    cheerio "^1.0.0-rc.2"
+    is-relative-url "^2.0.0"
+    lodash "^4.17.10"
+    mdast-util-definitions "^1.2.0"
+    slash "^1.0.0"
+    unist-util-select "^1.5.0"
+    unist-util-visit-parents "^2.0.1"
+
 gatsby-remark-prismjs@^3.1.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/gatsby-remark-prismjs/-/gatsby-remark-prismjs-3.2.4.tgz#712843d06591810a9db068934ad5c908684e7baa"
@@ -5382,10 +5396,8 @@ gatsby-remark-prismjs@^3.1.4:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-blogger@^1.0.0:
+"gatsby-source-blogger@file:./gatsby-source-blogger":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-blogger/-/gatsby-source-blogger-1.0.0.tgz#a4ee973101bab6c52b8d61ab10e97a5d8ceac77e"
-  integrity sha512-KjtSSVDdcjnZie9QbCvXPttiavuvbmzs0d40BttA+8ubBvLe7nNshe5MrKP8wSFqVoR7IJTG2YPWglzHuJ4bUw==
   dependencies:
     googleapis "^37.1.0"
     rehype-parse "^6.0.0"
@@ -12738,7 +12750,7 @@ unist-util-visit-children@^1.0.0:
   resolved "https://registry.yarnpkg.com/unist-util-visit-children/-/unist-util-visit-children-1.1.2.tgz#bd78b53db9644b9c339ac502854f15471f964f5b"
   integrity sha512-q4t6aprUcSQ2/+xlswuh2wUKwUUuMmDjSkfwkMjeVwCXc8NqX8g0FSmNf68CznCmbkrsOPDUR0wj14bCFXXqbA==
 
-unist-util-visit-parents@^2.0.0:
+unist-util-visit-parents@^2.0.0, unist-util-visit-parents@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unist-util-visit-parents/-/unist-util-visit-parents-2.0.1.tgz#63fffc8929027bee04bfef7d2cce474f71cb6217"
   integrity sha512-6B0UTiMfdWql4cQ03gDTCSns+64Zkfo2OCbK31Ov0uMizEz+CJeAp0cgZVb5Fhmcd7Bct2iRNywejT0orpbqUA==
