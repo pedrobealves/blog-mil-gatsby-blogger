@@ -1,19 +1,19 @@
 const config = require('./src/utils/siteConfig')
-let contentfulConfig
+let bloggerConfig
 
 try {
-  contentfulConfig = require('./.contentful')
+  bloggerConfig = require('./.blogger')
 } catch (e) {
-  contentfulConfig = {
+  bloggerConfig = {
     production: {
-      spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN,
+      apiKey: process.env.API_KEY,
+      blogId: process.env.BLOG_ID,
     },
   }
 } finally {
-  const { spaceId, accessToken } = contentfulConfig.production
-  if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
+  const { apiKey, blogId } = bloggerConfig.production
+  if (!apiKey || !blogId) {
+    throw new Error('Blogger api key and blog id need to be provided.')
   }
 }
 
@@ -48,7 +48,7 @@ module.exports = {
           },
           `gatsby-remark-autolink-headers`,
           {
-            resolve: `gatsby-remark-images-contentful`,
+            resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 650,
               backgroundColor: 'white',
@@ -60,11 +60,11 @@ module.exports = {
     },
     `gatsby-plugin-catch-links`,
     {
-      resolve: 'gatsby-source-contentful',
+      resolve: 'gatsby-source-blogger',
       options:
         process.env.NODE_ENV === 'development'
-          ? contentfulConfig.development
-          : contentfulConfig.production,
+          ? bloggerConfig.development
+          : bloggerConfig.production,
     },
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -118,33 +118,32 @@ module.exports = {
           {
             serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
-              return ctx.query.allContentfulPost.edges.map(edge => ({
+              return ctx.query.allBloggerPost.edges.map(edge => ({
                 date: edge.node.publishDate,
                 title: edge.node.title,
-                description: edge.node.body.childMarkdownRemark.excerpt,
+                description: edge.node.childMarkdownRemark.excerpt,
 
                 url: rssMetadata.site_url + '/' + edge.node.slug,
                 guid: rssMetadata.site_url + '/' + edge.node.slug,
                 custom_elements: [
                   {
-                    'content:encoded': edge.node.body.childMarkdownRemark.html,
+                    'content:encoded': edge.node.childMarkdownRemark.html,
                   },
                 ],
               }))
             },
             query: `
               {
-            allContentfulPost(limit: 1000, sort: {fields: [publishDate], order: DESC}) {
+            allBloggerPost(limit: 1000, sort: {fields: [published], order: DESC}) {
                edges {
                  node {
                    title
                    slug
-                   publishDate(formatString: "MMMM DD, YYYY")
-                   body {
+                   published(formatString: "MMMM DD, YYYY")
                      childMarkdownRemark {
                        html
                        excerpt(pruneLength: 80)
-                     }
+                     
                    }
                  }
                }

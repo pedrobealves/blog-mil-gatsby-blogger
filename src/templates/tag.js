@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { graphql } from 'gatsby'
 import orderBy from 'lodash/orderBy'
 import Helmet from 'react-helmet'
@@ -99,4 +99,4 @@ export const query = graphql`
   }
 `
 
-export default TagTemplate
+export default TagTemplate */

@@ -1,4 +1,4 @@
-import React from 'react'
+/* import React from 'react'
 import { graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
@@ -29,22 +29,15 @@ const PageTemplate = ({ data }) => {
 
 export const query = graphql`
   query($slug: String!) {
-    contentfulPage(slug: { eq: $slug }) {
+    bloggerPage(slug: { eq: $slug }) {
       title
       slug
-      metaDescription {
-        internal {
-          content
-        }
-      }
-      body {
-        childMarkdownRemark {
-          html
-          excerpt(pruneLength: 320)
-        }
+      childMarkdownRemark {
+        html
+        excerpt(pruneLength: 320)
       }
     }
   }
 `
 
-export default PageTemplate
+export default PageTemplate */

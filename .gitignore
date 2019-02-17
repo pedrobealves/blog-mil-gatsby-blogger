@@ -3,6 +3,6 @@ node_modules
 public/
 .DS_Store
 *.log
-contentful-import-error-log*
+blogger-import-error-log*
 .env*
-.contentful.json
+.blogger.json
