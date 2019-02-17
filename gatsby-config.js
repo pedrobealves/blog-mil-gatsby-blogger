@@ -118,16 +118,16 @@ module.exports = {
           {
             serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
-              return ctx.query.allContentfulPost.edges.map(edge => ({
+              return ctx.query.allBloggerPost.edges.map(edge => ({
                 date: edge.node.publishDate,
                 title: edge.node.title,
-                description: edge.node.body.childMarkdownRemark.excerpt,
+                description: edge.node.childMarkdownRemark.excerpt,
 
                 url: rssMetadata.site_url + '/' + edge.node.slug,
                 guid: rssMetadata.site_url + '/' + edge.node.slug,
                 custom_elements: [
                   {
-                    'content:encoded': edge.node.body.childMarkdownRemark.html,
+                    'content:encoded': edge.node.childMarkdownRemark.html,
                   },
                 ],
               }))
@@ -140,11 +140,10 @@ module.exports = {
                    title
                    slug
                    published(formatString: "MMMM DD, YYYY")
-                   body {
                      childMarkdownRemark {
                        html
                        excerpt(pruneLength: 80)
-                     }
+                     
                    }
                  }
                }
