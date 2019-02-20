@@ -62,6 +62,7 @@ export const query = graphql`
               title
               date
               slug
+              cover
             }
             html
             excerpt
