@@ -54,10 +54,18 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
+const cover = str => {
+  const ele = document.createElement('div')
+  ele.innerHTML = str
+  const image = ele.querySelector('img')
+  return image.src
+}
+
 const Card = ({ slug, title, published, childMarkdownRemark, ...props }) => {
   return (
     <Post featured={props.featured}>
       <Link to={`/${slug}/`}>
+        <img src={cover(childMarkdownRemark.html)} />
         <Title>{title}</Title>
         <Date>{published}</Date>
         <Excerpt
