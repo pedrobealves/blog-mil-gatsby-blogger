@@ -58,7 +58,6 @@ const Card = ({ slug, title, published, childMarkdownRemark, ...props }) => {
   return (
     <Post featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <img src={childMarkdownRemark.frontmatter.cover} />
         <Title>{title}</Title>
         <Date>{published}</Date>
         <Excerpt

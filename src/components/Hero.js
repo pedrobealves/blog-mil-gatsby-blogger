@@ -6,7 +6,7 @@ const Wrapper = styled.section`
   position: relative;
   min-height: 300px;
 `
-const BgImg = styled.img`
+const BgImg = styled(Img)`
   position: absolute;
   top: 0;
   left: 0;
@@ -16,6 +16,10 @@ const BgImg = styled.img`
   height: auto;
   @media (min-width: ${props => props.theme.responsive.small}) {
     height: ${props => props.height || 'auto'};
+  }
+  & > img {
+    object-fit: ${props => props.fit || 'cover'} !important;
+    object-position: ${props => props.position || '50% 50%'} !important;
   }
   &::before {
     content: '';
@@ -48,20 +52,11 @@ const Title = styled.h1`
 
 const Hero = props => (
   <Wrapper>
-    {/* <BgImg
+    <BgImg
       height={props.height}
       fluid={props.image.fluid}
       backgroundColor={'#eeeeee'}
-    /> 
-    @media (min-width: ${props => props.theme.responsive.small}) {
-    height: ${props => props.height || 'auto'};
-  }
-  & > img {
-    object-fit: ${props => props.fit || 'cover'} !important;
-    object-position: ${props => props.position || '50% 50%'} !important;
-  }
-    */}
-    <BgImg src={props.fluid} />
+    />
     <Title>{props.title}</Title>
   </Wrapper>
 )
