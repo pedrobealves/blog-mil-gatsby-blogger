@@ -61,11 +61,28 @@ const cover = str => {
   return image.src
 }
 
+const handleResponse = response => {
+  var re = /(<img(?!.*?alt=(['"]).*?\2)[^>]*)(>)/
+  var results = re.exec(response)
+  console.log(results)
+  var img = ''
+  if (results) img = results[1]
+  var str = img
+
+  var fe = /\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
+  // match src='a' OR src="a" OR src=a
+
+  var res = str.match(fe)
+
+  var src = res[1] || res[2] || res[3]
+  return src
+}
+
 const Card = ({ slug, title, published, childMarkdownRemark, ...props }) => {
   return (
     <Post featured={props.featured}>
       <Link to={`/${slug}/`}>
-        <img src={cover(childMarkdownRemark.html)} />
+        <img src={handleResponse(childMarkdownRemark.html)} />
         <Title>{title}</Title>
         <Date>{published}</Date>
         <Excerpt
