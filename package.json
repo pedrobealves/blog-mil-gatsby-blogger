@@ -24,7 +24,7 @@
     "gatsby-remark-autolink-headers": "^2.0.12",
     "gatsby-remark-images": "^3.0.3",
     "gatsby-remark-prismjs": "^3.1.4",
-    "gatsby-source-blogger": "^1.0.0",
+    "gatsby-source-blogger": "file:./lib/gatsby-source-blogger",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.1.17",
     "inquirer": "^6.2.1",

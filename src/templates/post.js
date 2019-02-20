@@ -23,6 +23,11 @@ const PostTemplate = ({ data, pageContext }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
+      <Hero
+        title={title}
+        image={childMarkdownRemark.frontmatter.cover}
+        height={'50vh'}
+      />
       <Container>
         <PostDate date={published} />
         <PageBody body={childMarkdownRemark} />
@@ -39,6 +44,9 @@ export const query = graphql`
       slug
       published(formatString: "MMMM DD, YYYY")
       childMarkdownRemark {
+        frontmatter {
+          cover
+        }
         html
         excerpt(pruneLength: 320)
       }

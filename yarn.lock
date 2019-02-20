@@ -5130,10 +5130,8 @@ gatsby-remark-prismjs@^3.1.4:
     parse-numeric-range "^0.0.2"
     unist-util-visit "^1.3.0"
 
-gatsby-source-blogger@^1.0.0:
+"gatsby-source-blogger@file:./lib/gatsby-source-blogger":
   version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-blogger/-/gatsby-source-blogger-1.0.0.tgz#a4ee973101bab6c52b8d61ab10e97a5d8ceac77e"
-  integrity sha512-KjtSSVDdcjnZie9QbCvXPttiavuvbmzs0d40BttA+8ubBvLe7nNshe5MrKP8wSFqVoR7IJTG2YPWglzHuJ4bUw==
   dependencies:
     googleapis "^37.1.0"
     rehype-parse "^6.0.0"
