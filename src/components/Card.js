@@ -54,27 +54,10 @@ const Excerpt = styled.p`
   line-height: 1.6;
 `
 
-const cover = str => {
-  const ele = document.createElement('div')
-  ele.innerHTML = str
-  const image = ele.querySelector('img')
-  return image.src
-}
-
-const handleResponse = response => {
-  var re = /(<img(?!.*?alt=(['"]).*?\2)[^>]*)(>)/
-  var results = re.exec(response)
-  console.log(results)
-  var img = ''
-  if (results) img = results[1]
-  var str = img
-
-  var fe = /\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
-  // match src='a' OR src="a" OR src=a
-
-  var res = str.match(fe)
-
-  var src = res[1] || res[2] || res[3]
+const handleResponse = str => {
+  const re = /<img\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
+  const res = str.match(re)
+  const src = res[1] || res[2] || res[3]
   return src
 }
 
