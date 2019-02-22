@@ -56,6 +56,12 @@ export const query = graphql`
           title
           id
           slug
+          author {
+            displayName
+            image {
+              url
+            }
+          }
           published(formatString: "MMMM DD, YYYY")
           childMarkdownRemark {
             frontmatter {
