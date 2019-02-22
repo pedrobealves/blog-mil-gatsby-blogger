@@ -1,0 +1,417 @@
+/* Post Meta */
+
+// Simple Meta
+.meta {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+	.meta__item {
+		font-family: $font-family-accent;
+		font-size: 10px;
+		text-transform: uppercase;
+		line-height: 1.2em;
+		display: inline-block;
+		vertical-align: middle;
+
+		& + & {
+			margin-left: 8px;
+
+			@media (min-width: 992px) {
+				margin-left: 15px;
+			}
+		}
+
+		&::before {
+			@include icon-simple-line(13px);
+			margin-right: 4px;
+			position: relative;
+			top: -1px;
+
+			@media (min-width: 992px) {
+				margin-right: 8px;
+			}
+		}
+
+		a {
+			color: $body-font-color;
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $headings-color;
+
+				@if $template == football {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	// Date
+	.meta__item--date {
+
+		@if $template == 'esports' {
+			font-weight: bold;
+			font-style: italic;
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+
+	// Views
+	.meta__item--views {
+
+		&::before {
+			content: "\e087";
+		}
+	}
+
+	// Likes
+	.meta__item--likes {
+
+		&::before {
+			display: none;
+		}
+		.meta-like {
+			vertical-align: middle;
+			margin-right: 6px;
+			font-size: 12px;
+		}
+		.meta-like--active {
+			color: #f1365e;
+		}
+	}
+
+	// Comments
+	.meta__item--comments {
+
+		&::before {
+			content: "\e07d";
+			font-size: 12px;
+		}
+	}
+
+	// Author
+	.meta__item--author {
+
+		img {
+			border-radius: 50%;
+			margin-right: 6px;
+		}
+	}
+
+
+/* Side Meta Block */
+.post__meta-block {
+
+}
+	// Side Meta Block
+	.post__meta-block--side {
+		padding: 24px;
+
+		.post-author__name {
+			font-size: 13px;
+		}
+
+		.social-links--btn {
+			margin-left: 74px;
+		}
+
+		.post__meta {
+			display: none;
+		}
+
+		@media (min-width: 992px) {
+			padding: 0;
+			float: left;
+			width: 60px;
+			margin: 43px 0 0 24px;
+
+			& + .card__content {
+				overflow: hidden;
+				padding-left: 24px;
+			}
+
+			// Post Author
+			.post-author {
+				text-align: center;
+				padding-bottom: 34px;
+			}
+				.post-author__avatar {
+					float: none;
+					margin: 0 auto 8px auto;
+					width: 60px;
+					height: 60px;
+					border-radius: 50%;
+				}
+					.post-author__name {
+						font-size: 10px;
+						line-height: 1.2em;
+						margin-bottom: 0.75em;
+					}
+					.post-author__slogan {
+						font-size: 9px;
+					}
+
+			// Meta Info
+			.post__meta {
+				display: block;
+			}
+				.meta__item {
+					display: block;
+					text-align: center;
+					margin: 0 0 21px 0;
+
+					&::before {
+						display: block;
+						margin: 0 auto 6px auto;
+					}
+				}
+
+					.meta__item--likes {
+
+						.meta-like {
+							display: block;
+							margin: 0 auto 6px auto;
+						}
+					}
+
+			// Sharing Links
+			.social-links--btn {
+				text-align: center;
+				padding-bottom: 20px;
+				margin-left: 0;
+
+				.social-links__item {
+					display: block;
+					margin: 0 auto 12px auto;
+				}
+			}
+		}
+	}
+
+
+	// Top Meta Block
+	.post__meta-block--top {
+		padding-bottom: 65px;
+
+		@if $template == 'football' or $template == 'esports' {
+
+			@media (min-width: 992px) {
+				padding: 156px 0 215px 0;
+			}
+		}
+
+		.post__category {
+			margin-bottom: 22px;
+		}
+			.posts__cat-label {
+				display: inline-block;
+				float: none;
+				font-size: 10px;
+			}
+
+		.page-heading__title {
+			font-size: 24px;
+			line-height: 1em;
+			margin-bottom: 0.475em;
+
+			@media (min-width: 992px) {
+				font-size: 42px;
+			}
+
+			> a {
+				color: #fff;
+			}
+
+			@if $template == 'football' or $template == 'esports' {
+				font-style: italic;
+			}
+		}
+
+		.post__meta {
+			color: #fff;
+			margin-bottom: 22px;
+		}
+			.meta__item {
+
+				a {
+					color: #fff;
+				}
+			}
+
+			.posts__date {
+
+				@if $template == 'football' or $template == 'esports' {
+					color: #fff;
+					font-size: 11px;
+					margin-bottom: 30px;
+				}
+			}
+
+		.post-author {
+			text-align: center;
+		}
+			.post-author__avatar {
+				display: block;
+				width: 40px;
+				height: 40px;
+				margin: 0 auto 10px auto;
+
+				@if $template == 'football' or $template == 'esports' {
+					width: 24px;
+					height: 24px;
+					margin: 0 5px 0 0;
+					border-radius: 50%;
+					display: inline-block;
+					vertical-align: middle;
+				}
+			}
+		.post-author__info {
+
+			@if $template == 'football' or $template == 'esports' {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+			.post-author__name {
+				font-size: 13px;
+				color: #fff;
+
+				@if $template == 'football' {
+					font-size: 11px;
+					margin-bottom: 0;
+					font-style: normal;
+				}
+
+				@if $template == 'esports' {
+					font-size: 12px;
+					margin-bottom: 0;
+				}
+			}
+			.meta__item--date {
+				@if $template == 'esports' {
+					font-size: 12px;
+					margin-bottom: 0;
+					font-weight: 700;
+					font-style: italic;
+				}
+			}
+			.post-author__slogan {
+				font-size: 10px;
+				font-weight: 400;
+			}
+	}
+
+	.post__meta-block-wrapper {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (min-width: 992px) {
+			height: 450px;
+		}
+
+		@media (min-width: 1200px) {
+			height: 545px;
+		}
+
+		.post__meta-block--top {
+			padding-bottom: 0;
+
+			@if $template == 'football' or $template == 'esports' {
+
+				@media (min-width: 992px) {
+					padding: 0;
+				}
+			}
+		}
+	}
+
+
+/* Side Meta Block - Wide */
+.post__meta-block--side-wide {
+	padding: 24px;
+
+	.post__title {
+		font-size: 18px;
+		line-height: 1.0833em;
+
+		@media (min-width: 992px) {
+			font-size: 24px;
+		}
+	}
+
+	.post-author__name {
+
+	}
+
+	.social-links--btn {
+
+	}
+
+	.post__meta {
+		margin-bottom: 20px;
+	}
+
+	// Post Author
+	.post-author {
+		margin-bottom: 18px;
+	}
+		.post-author__avatar {
+			width: 24px;
+			height: 24px;
+			display: inline-block;
+			vertical-align: middle;
+			border-radius: 50%;
+			margin-right: 5px;
+		}
+			.post-author__name {
+				font-size: 10px;
+				line-height: 1.2em;
+				color: $body-font-color;
+				font-weight: 400;
+				font-style: normal;
+			}
+			.post-author__slogan {
+
+			}
+
+	@media (min-width: 992px) {
+		padding: 0;
+		float: left;
+		width: 190px;
+		margin: 43px 0 0 24px;
+
+		& + .card__content {
+			overflow: hidden;
+			padding-left: 60px;
+		}
+
+		// Meta Info
+		.post__meta {
+
+		}
+			.meta__item {
+
+
+				&::before {
+
+				}
+			}
+
+				.meta__item--likes {
+
+					.meta-like {
+
+					}
+				}
+
+		// Sharing Links
+		.social-links--btn-block {
+			padding-right: 20px;
+		}
+	}
+}

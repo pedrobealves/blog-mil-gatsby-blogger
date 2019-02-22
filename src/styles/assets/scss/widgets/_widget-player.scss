@@ -1,0 +1,904 @@
+/* Widget: Featured Player */
+.widget-player {
+
+	.widget__content {
+		background-color: #27313b;
+		color: #fff;
+		height: 158px;
+		overflow: hidden;
+		position: relative;
+		padding: 0 20px 0 140px;
+		background-image: radial-gradient(at 0% 0%, rgba(255, 255, 255, .3), transparent);
+		border-radius: $card-border-radius;
+
+		@media (min-width: 375px) {
+			padding-left: 158px;
+		}
+		@media (min-width: 992px) {
+			height: 156px;
+			padding-left: 50%;
+		}
+		@media (min-width: 1200px) {
+			height: 198px;
+		}
+	}
+
+	.widget__title + .widget__content {
+		border-radius: 0;
+		border-top: none;
+	}
+}
+	// Team Logo on background
+	.widget-player__team-logo {
+		display: block;
+		position: absolute;
+		left: -25%;
+		top: -25%;
+		width: 80%;
+		height: auto;
+		opacity: .1;
+		filter: grayscale(1);
+		z-index: 1;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// Player Photo
+	.widget-player__photo {
+		position: absolute;
+		left: 0;
+		top: 0;
+		max-width: 50%;
+		z-index: 2;
+	}
+
+	// Header
+	.widget-player__header {
+		padding-top: 20px;
+		margin-bottom: 8px;
+		position: relative;
+		z-index: 2;
+
+		@media (min-width: 992px) {
+			padding-top: 14px;
+			margin-bottom: 0;
+		}
+		@media (min-width: 1200px) {
+			padding-top: 16px;
+			margin-bottom: 10px;
+		}
+	}
+		// Player Number
+		.widget-player__number {
+			@include font-accent(36px);
+			line-height: 1em;
+			float: left;
+			margin-right: .1em;
+			margin-left: -0.5em;
+
+			@media (min-width: 992px) {
+				font-size: 42px;
+				margin-left: -0.8em;
+			}
+			@media (min-width: 1200px) {
+				font-size: 56px;
+			}
+		}
+		.widget-player__name {
+			font-size: 14px;
+			line-height: 1em;
+			margin-bottom: 0;
+			color: #fff;
+			text-transform: uppercase;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			position: relative;
+			top: 4px;
+			z-index: 1;
+
+			@media (min-width: 992px) {
+				font-size: 18px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 24px;
+				top: 6px;
+			}
+		}
+			.widget-player__first-name {
+				display: block;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.widget-player__last-name {
+				display: block;
+				color: $color-primary;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+
+	.widget-player__content {
+		overflow: hidden;
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		right: 0;
+		padding: 12px 0;
+	}
+		.widget-player__content-inner {
+			width: 100%;
+			padding-left: 140px;
+			padding-right: 24px;
+
+			@media (min-width: 375px) {
+				padding-left: 160px;
+			}
+			@media (min-width: 992px) {
+				padding-left: 50%;
+			}
+		}
+		.widget-player__stat {
+			float: left;
+			width: 33.3%;
+			text-align: center;
+
+			@media (min-width: 376px) and (max-width: 991px) {
+				width: 60px;
+			}
+		}
+			.widget-player__stat-label {
+				font-size: 8px;
+				@include fix_small_chars();
+				margin-bottom: 0.5em;
+				line-height: 1.2em;
+				color: #fff;
+				font-weight: 400;
+
+				@media (min-width: 992px) {
+					font-size: 8px;
+					@include fix_small_chars();
+					margin-bottom: 1em;
+				}
+				@media (min-width: 1200px) {
+					font-weight: 700;
+					font-size: 10px;
+				}
+			}
+			.widget-player__stat-number {
+				font-size: 12px;
+				line-height: 1.2em;
+				@include font-accent(12px);
+
+				@media (min-width: 992px) {
+					font-size: 18px;
+				}
+			}
+			.widget-player__stat-legend {
+				@include font-accent(7px);
+				color: $body-font-color;
+				line-height: 1.2em;
+
+				@media (min-width: 992px) {
+					font-size: 8px;
+					@include fix_small_chars();
+				}
+			}
+
+	.widget-player__footer {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: $color-primary;
+		z-index: 1;
+		text-align: right;
+		line-height: 10px;
+	}
+		.widget-player__footer-txt {
+			display: inline-block;
+			position: relative;
+			background-color: #182027;
+			color: #fff;
+			padding: 0 24px;
+			line-height: 20px;
+			@include font-accent(8px);
+
+			@media (min-width: 992px) {
+				font-size: 9px;
+				padding-left: 26px;
+			}
+			@media (min-width: 1200px) {
+				font-size: 10px;
+				line-height: 30px;
+			}
+
+			.fa {
+				font-size: 12px;
+				margin-right: 0.5em;
+				color: $color-primary;
+			}
+
+			&::before {
+				content:"";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 20px;
+				background-color: $color-primary;
+			}
+			&::before {
+				left: -10px;
+				transform: skew(-30deg);
+			}
+		}
+
+		// Details
+		.widget-player__details {
+			display: flex;
+			flex-wrap: wrap;
+			border-style: solid;
+			border-width: 1px 0 0 1px;
+			border-color: $card-border-color;
+			margin: -1px;
+		}
+			.widget-player__details__item {
+				flex: 0 1 50%;
+				max-width: 50%;
+				border-style: solid;
+				border-width: 0 1px 1px 0;
+				border-color: $card-border-color;
+				padding: 8px 12px;
+
+				@media (min-width: 992px) {
+					padding: 6px 12px;
+				}
+
+				@media (min-width: 1200px) {
+					padding: 12px 24px;
+				}
+
+				&:first-child {
+					border-left: none;
+				}
+				&:last-child {
+					border-right: none;
+				}
+			}
+				.widget-player__details-desc-wrapper {
+					display: table;
+					width: 100%;
+				}
+				.widget-player__details-holder {
+					display: table-cell;
+					vertical-align: middle;
+					width: 70%;
+				}
+					.widget-player__details-label {
+						display: block;
+						font-family: $font-family-accent;
+						color: $headings-color;
+						font-size: 10px;
+						line-height: 1.2em;
+
+						@media (min-width: 992px) {
+							font-size: 12px;
+						}
+					}
+					.widget-player__details-desc {
+						display: block;
+						@include fix_small_chars();
+						line-height: 1.2em;
+
+						@if $template != 'esports' {
+							font-family: $font-family-accent;
+							font-size: 8px;
+						} @else {
+							font-size: 9px;
+						}
+
+						@media (min-width: 992px) {
+							font-size: 9px;
+						}
+					}
+				.widget-player__details-value {
+					display: table-cell;
+					vertical-align: middle;
+					text-align: right;
+					width: 30%;
+
+					font-family: $font-family-accent;
+					color: $headings-color;
+					font-size: 10px;
+					line-height: 1.2em;
+
+					@media (min-width: 992px) {
+						font-size: 11px;
+					}
+				}
+
+
+/* Widget: Featured Player Alternative Styling */
+.widget-player--alt {
+
+	.widget__content {
+		background-color: $color-primary;
+		background-image: linear-gradient(to bottom, $color-primary, #f29400);
+	}
+
+	.widget-player__photo {
+		filter: grayscale(1);
+	}
+
+	.widget-player__last-name {
+		color: $color-2;
+	}
+
+	.widget-player__content {
+		background-color: #27313b;
+	}
+		.widget-player__stat-number {
+			color: $color-primary;
+		}
+		.widget-player__stat-legend {
+			color: #fff;
+		}
+
+	.widget-player__footer-txt {
+		background-color: #27313b;
+	}
+}
+
+
+/* Widget: Featured Player - Small (eSports) */
+.widget-player--sm {
+
+	.widget__content {
+		background-color: transparent;
+		background-image: none;
+		height: 106px;
+		padding: 0 20px 0 120px;
+		display: flex;
+		align-items: center;
+
+		@media (min-width: 375px) {
+			padding-left: 120px;
+		}
+		@media (min-width: 992px) {
+			height: 106px;
+			padding-left: 120px;
+		}
+		@media (min-width: 1200px) {
+			height: 106px;
+		}
+	}
+		.widget-player__overlay {
+			display: block;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 1px;
+
+			@if $template == 'esports' {
+				background-image: url("../images/esports/samples/widget-featured-player-bg.jpg");
+				filter: url("#duotone-filter-base");
+
+				// MS Edge fallback
+				@supports (position:-ms-page) {
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						background-color: $card-bg;
+						opacity: .9;
+					}
+				}
+
+				// IE11 fallback
+				@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						background-color: $card-bg;
+						opacity: .9;
+					}
+				}
+			}
+		}
+
+		.widget-player__header {
+			padding-top: 0;
+			margin-bottom: 0;
+
+			@media (min-width: 992px) {
+				padding-top: 0;
+			}
+
+			@media (min-width: 1200px) {
+				padding-top: 0;
+				margin-bottom: 0;
+			}
+		}
+
+			.widget-player__name {
+				font-size: 14px;
+				line-height: 1em;
+				margin-bottom: .1em;
+				position: static;
+				text-transform: uppercase;
+				flex: 1;
+
+				@media (min-width: 992px) {
+					font-size: 18px;
+				}
+				@media (min-width: 1200px) {
+					font-size: 26px;
+				}
+			}
+				.widget-player__first-name {
+					display: inline-block;
+					overflow: visible;
+				}
+				.widget-player__last-name {
+					display: inline-block;
+					overflow: visible;
+				}
+
+		.widget-player__content {
+			position: static;
+			padding: 0;
+		}
+			.widget-player__content-inner {
+				padding-left: 0;
+				padding-right: 0;
+
+				@media (min-width: 375px) {
+					padding-left: 0;
+				}
+				@media (min-width: 992px) {
+					padding-left: 0
+				}
+			}
+				.widget-player__info {
+					font-family: $font-family-accent;
+					text-transform: uppercase;
+					font-size: 11px;
+					line-height: 1.2em;
+					font-style: italic;
+					font-weight: 700;
+					color: $body-font-color;
+
+					& + .widget-player__rating {
+						margin-left: .3em;
+					}
+				}
+				.widget-player__rating {
+					display: inline-block;
+					font-size: 9px;
+					line-height: 1.2em;
+					vertical-align: middle;
+				}
+}
+
+
+@if $template == 'soccer' {
+
+	/* Widget: Featured Player - Soccer */
+	.widget-player--soccer {
+		position: relative;
+
+		.widget-player__ribbon {
+			content: "\f005";
+			display: block;
+			position: absolute;
+			width: 26px;
+			height: 28px;
+			background-color: #ffcf11;
+			top: 0;
+			right: 20px;
+			font-family: "FontAwesome";
+			font-size: 14px;
+			line-height: 28px;
+			text-align: center;
+			color: #fff;
+			font-weight: 400;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: -6px;
+				left: 0;
+				border-top: 6px solid #ffcf11;
+				border-right: 13px solid transparent;
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: -6px;
+				right: 0;
+				border-top: 6px solid #ffcf11;
+				border-left: 13px solid transparent;
+			}
+		}
+
+		.widget__content {
+			background-color: #fff;
+			background-image: none;
+			color: $body-font-color;
+			height: 168px;
+
+			@media (min-width: 992px) {
+				height: 160px;
+			}
+			@media (min-width: 1200px) {
+				height: 198px;
+			}
+		}
+			.widget-player__header {
+				position: static;
+			}
+			.widget-player__number {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				bottom: 0;
+				margin-left: 0;
+				margin-top: -0.2em;
+				text-indent: -0.15em;
+				width: 144px;
+				background-color: $color-primary;
+				color: rgba(255,255,255,.1);
+				font-size: 150px;
+				line-height: 1em;
+				overflow: hidden;
+
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 0;
+					height: 0;
+					border-bottom: 200px solid #fff;
+					border-left: 30px solid transparent;
+				}
+			}
+			.widget-player__name {
+				color: $color-2;
+
+				@media (min-width: 1200px) {
+					margin-left: -35px;
+				}
+			}
+			.widget-player__first-name {
+				font-size: 14px;
+				line-height: 1em;
+
+				@media (min-width: 1200px) {
+					font-size: 18px;
+				}
+			}
+			.widget-player__last-name {
+				font-size: 24px;
+				line-height: 1em;
+
+				@media (min-width: 1200px) {
+					font-size: 36px;
+				}
+			}
+
+			.widget-player__content-inner {
+				overflow: hidden;
+				margin-bottom: 15px;
+			}
+			.widget-player__stat {
+				width: 25%;
+			}
+				.widget-player__stat-number {
+					font-size: 18px;
+					color: $color-2;
+				}
+				.widget-player__stat-label {
+					color: $body-font-color;
+					font-size: 8px;
+					@include fix_small_chars();
+				}
+
+			.widget-player__content-alt {
+				padding: 0 24px 0 50%;
+
+				@media (min-width: 375px) {
+					padding-left: 160px;
+				}
+				@media (min-width: 992px) {
+					padding-left: 50%;
+				}
+
+				.progress {
+					margin-bottom: 3px;
+				}
+
+				.progress__label {
+					font-size: 8px;
+					@include fix_small_chars();
+					color: $body-font-color;
+				}
+				.progress__number {
+					font-size: 8px;
+					@include fix_small_chars();
+					font-weight: 700;
+					color: $color-2;
+				}
+			}
+	}
+}
+
+
+
+
+@if $template == 'football' {
+
+	/* Widget: Featured Player - Football */
+	.widget-player--football {
+		position: relative;
+
+		.widget-player__photo {
+			left: auto;
+			right: 0;
+		}
+
+		.widget-player__ribbon {
+			display: block;
+			position: absolute;
+			height: 20px;
+			line-height: 20px;
+			background-color: #fcb800;
+			right: 0;
+			bottom: 13px;
+			z-index: 3;
+			color: #fff;
+			padding: 0 8px;
+			border-radius: 4px 0 0 4px;
+			@include font-accent(9px);
+
+			.fa {
+				margin-right: 0.3em;
+				font-size: 11px;
+				line-height: 1.2em;
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		.widget__content {
+			background-color: $card-bg;
+			background-image: none;
+			color: $body-font-color;
+			height: 168px;
+			padding: 0 140px 0 15px;
+
+			@media (min-width: 375px) {
+				padding-right: 158px;
+				padding-left: 20px;
+			}
+			@media (min-width: 992px) {
+				padding-left: 20px;
+				padding-right: 42%;
+			}
+			@media (min-width: 1200px) {
+				height: 198px;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 137px;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				background-color: $color-primary;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				right: 100px;
+				top: 0;
+				width: 0;
+				height: 0;
+				border-top: 240px solid $card-bg;
+				border-right: 40px solid transparent;
+			}
+		}
+			.widget-player__header {
+				position: static;
+
+				@media (min-width: 992px) {
+					margin-bottom: 0;
+				}
+				@media (min-width: 1200px) {
+					margin-bottom: 16px;
+
+				}
+			}
+			.widget-player__number {
+				display: block;
+				position: absolute;
+				left: 0;
+				top: -0.05em;
+				bottom: 0;
+				margin-left: 0;
+				margin-top: -0.2em;
+				text-indent: -0.15em;
+				margin-right: 0;
+				color: $body-font-color;
+				opacity: .06;
+				font-size: 150px;
+				line-height: 1em;
+				overflow: hidden;
+			}
+			.widget-player__name {
+				color: $headings-color;
+			}
+			.widget-player__first-name {
+				font-size: 14px;
+				line-height: 1em;
+
+				@media (min-width: 1200px) {
+					font-size: 18px;
+				}
+			}
+			.widget-player__last-name {
+				font-size: 24px;
+				line-height: 1em;
+				color: $color-4;
+
+				@media (min-width: 1200px) {
+					font-size: 34px;
+				}
+			}
+
+			.widget-player__content-inner {
+				overflow: hidden;
+				margin-bottom: 15px;
+				width: 100%;
+				padding-right: 150px;
+				padding-left: 5px;
+
+				@media (min-width: 375px) {
+					padding-right: 160px;
+					padding-left: 20px;
+				}
+				@media (min-width: 992px) {
+					padding-right: 44%;
+					padding-left: 20px;
+				}
+			}
+			.widget-player__stat {
+				width: 25%;
+			}
+				.widget-player__stat-number {
+					font-size: 18px;
+					color: $headings-color;
+					margin-bottom: .1em;
+				}
+				.widget-player__stat-number--lg {
+
+					@media (min-width: 992px) {
+						font-size: 24px;
+						margin-top: -5px;
+					}
+				}
+				.widget-player__stat-label {
+					color: $body-font-color;
+					font-size: 8px;
+					@include fix_small_chars();
+				}
+
+			.widget-player__content-alt {
+				padding: 0 45% 0 15px;
+
+				@media (min-width: 375px) {
+					padding-left: 20px;
+					padding-right: 160px;
+				}
+				@media (min-width: 992px) {
+					padding-left: 20px;
+					padding-right: 40%;
+				}
+
+				.progress-stats {
+					float: left;
+					width: 45%;
+					padding-right: 5%;
+				}
+
+				.progress {
+					margin-bottom: 3px;
+				}
+
+				.progress__label {
+					font-size: 8px;
+					@include fix_small_chars();
+					line-height: 1.5em;
+					color: $body-font-color;
+
+					.progress__number {
+						display: block;
+						color: $headings-color;
+						font-size: inherit;
+
+					}
+				}
+			}
+	}
+}
+
+
+.widget-player__stats--center {
+	display: flex;
+	justify-content: center;
+}
+
+.widget-player__stat-item {
+	text-align: center;
+}
+	.widget-player__stat--value {
+		@include font-accent($widget-player-stats-value-size);
+		line-height: 1.2em;
+		margin-bottom: $widget-player-stats-value-margin;
+		color: $widget-player-stats-value-color;
+	}
+	.widget-player__stat--value-primary {
+		color: $color-primary;
+	}
+	.widget-player__stat--label {
+		@include font-accent(12px);
+		text-transform: $widget-player-stats-label-text-transform;
+		line-height: 1.2em;
+		color: $headings-color;
+		margin-bottom: .1em;
+	}
+	.widget-player__stat--desc {
+		font-size: 9px;
+		line-height: 1.2em;
+	}
+
+	.widget-player__stat-item--number-side {
+		display: flex;
+		text-align: left;
+		align-items: center;
+
+		.widget-player__stat--value {
+			margin-right: 8px;
+			font-size: 28px;
+			margin-bottom: 0;
+		}
+
+		.widget-player__stat-inner {
+			flex: 1;
+		}
+	}

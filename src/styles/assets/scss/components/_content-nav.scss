@@ -1,0 +1,21 @@
+/* Content Navigation
+/* ------------------------- */
+
+.btn-nav {
+  display: inline-block;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  border-radius: 3px;
+  background-color: $color-gray;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  font-weight: normal;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #fff;
+    background-color: $color-2;
+  }
+}

@@ -1,0 +1,63 @@
+<svg id="Soccer_Ball" data-name="Soccer Ball" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-4, .cls-5 {
+        fill: #44494c;
+      }
+
+      .cls-2 {
+        fill: #d7d7d7;
+      }
+
+      .cls-3 {
+        fill: #f6f6f6;
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill-rule: evenodd;
+      }
+
+      .cls-4 {
+        opacity: 0.6;
+      }
+    </style>
+  </defs>
+  <circle id="Base" class="cls-1" cx="25" cy="25" r="25"/>
+  <circle id="Dark_Color" data-name="Dark Color" class="cls-2" cx="24.953" cy="24.953" r="23.297"/>
+  <path id="Light_Color" data-name="Light Color" class="cls-3" d="M55.943,91.238a23.174,23.174,0,0,1-14.394-5,22.972,22.972,0,0,1,35-29.153A23.284,23.284,0,0,1,55.943,91.238Z" transform="translate(-36 -49)"/>
+  <path id="Stich_Details" data-name="Stich Details" class="cls-4" d="M60.716,56.9h0.568V69.738H60.716V56.9ZM56.167,79.971L56.629,80.3,49.413,90.359l-0.462-.331ZM39.7,74.414l0.549-.147,3.182,11.875-0.549.147ZM78.772,85.39l-0.543-.166,3.3-10.8,0.543,0.166Zm-7.549,1.673-0.446.352-5.909-7.5,0.446-.351Zm-26.56-18.19,0.174-.541,9.716,3.125L54.379,72ZM68.305,71.6l-0.179-.539,9.261-3.068,0.179,0.539ZM68,54.917l0.318-.471,8.921,6.023-0.318.471Zm-14.492-.7,0.324,0.467-9.148,6.364-0.324-.467ZM55.148,94V93.432H68.216V94H55.148Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail" data-name="Black Detail" class="cls-5" d="M60.99,66.005l7.995,5.728L65.931,81H56.049L53,71.733Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail-2" data-name="Black Detail" class="cls-5" d="M61,57.993l7.988-3.054L68.018,50H53.988l-0.973,4.943Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail-3" data-name="Black Detail" class="cls-5" d="M85,74.044L81.677,76l-5.662-7.267,0.1-9.184,3.707-.407a23.97,23.97,0,0,1,3.022,4.963l1.522,4.505A24.008,24.008,0,0,1,85,74C85,74.015,85,74.029,85,74.044Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail-4" data-name="Black Detail" class="cls-5" d="M37.029,73.421a24.106,24.106,0,0,1,.4-3.85L39.49,63.4a23.958,23.958,0,0,1,2.12-3.507l3.613,0.4,0.095,8.38-5.12,6.63Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail-5" data-name="Black Detail" class="cls-5" d="M44.441,91.344a24.093,24.093,0,0,1-2.8-3.2l1.282-3.2,8.1,2.152,5.017,6.709-2.957,2.826c-0.671-.235-1.33-0.494-1.972-0.785Z" transform="translate(-36 -49)"/>
+  <path id="Black_Detail-6" data-name="Black Detail" class="cls-5" d="M80.348,88.159a24.08,24.08,0,0,1-1.532,1.882L70.245,96.15c-0.4.167-.812,0.3-1.222,0.447L65.907,93.78l4.845-6.828L78.8,84.59Z" transform="translate(-36 -49)"/>
+</svg>

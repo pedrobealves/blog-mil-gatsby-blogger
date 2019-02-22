@@ -1,0 +1,210 @@
+//- Basketball - Dark Color Scheme
+
+//- Colors
+//- ----------------------------------------------
+
+$body-bg-color: $color-dark;
+
+//- Tables
+//- ----------------------------------------------
+
+$table-bg-accent:               rgba(255,255,255,.05);
+$table-bg-hover:                rgba(255,255,255,.07);
+$table-bg-active:               $table-bg-hover;
+
+$table-border-color:            rgba(255,255,255,.05);
+$table-thead-color:             #fff;
+$table-thead-bg-color:          rgba(255,255,255,.03);
+$table-highlight:               #fff;
+
+
+//- Progress Bars
+//- ----------------------------------------------
+
+$progress-bg:                 rgba(255,255,255,.1);
+$progress-bar-color:          rgba(255,255,255,.03);
+
+$progress-label-color:        #fff;
+
+
+//- Circular Bar
+//- ----------------------------------------------
+
+$circular-bar-label-color:    #fff;
+
+
+//- Card
+//- ----------------------------------------------
+
+$card-bg:                     $color-dark-lighten;
+$card-header-bg:              transparent;
+$card-subheader-bg:           rgba(255,255,255,.03);
+$card-border-color:           rgba(255,255,255,.05);
+
+
+//- Modals
+//- ----------------------------------------------
+
+$modal-content-bg:                             $card-bg;
+$modal-content-border-color:                   rgba(0,0,0,.2);
+$modal-content-fallback-border-color:          #999;
+
+$modal-header-border-color:   $card-border-color;
+$modal-footer-border-color:   $modal-header-border-color;
+
+
+//- Typography
+//- ----------------------------------------------
+
+$headings-color:         #fff;
+$headings-color-inverse: $color-2;
+
+
+// OL
+$ol-number-color: #fff;
+
+
+//- Buttons
+//- ----------------------------------------------
+
+// Buttons Outline
+$btn-o-primary-color:            $headings-color;
+
+
+//- Forms
+//- ----------------------------------------------
+
+$input-label-color:       $headings-color;
+$input-bg:                rgba(255,255,255,.03);
+$input-border:            rgba(255,255,255,.1);
+
+$input-bg-disabled:       rgba(255,255,255,.05);
+$input-border-disabled:   $input-border;
+
+$input-color-focus:       $headings-color;
+
+$input-bg-focus:          rgba(255,255,255,.03);
+
+$input-color-placeholder: rgba(154,157,162,0.6);
+
+
+// Checkbox
+$checkbox-bg:               $input-bg;
+$checkbox-border:           $input-border;
+$checkbox-bg-disabled:      $input-bg-disabled;
+$checkbox-border-disabled:  $input-border;
+
+// Radio Button
+$radio-bg:               $input-bg;
+$radio-border:           $input-border;
+$radio-bg-disabled:      $input-bg-disabled;
+$radio-border-disabled:  $input-border;
+
+// Select
+$select-caret: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$headings-color}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+//- Form states and alerts
+//- ----------------------------------------------
+
+$state-success-bg:               rgba(255,255,255,.05);
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%);
+
+$state-info-bg:                  rgba(255,255,255,.05);
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%);
+
+$state-warning-bg:               rgba(255,255,255,.05);
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%);
+
+$state-danger-bg:                rgba(255,255,255,.05);
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%);
+
+
+//- Alerts
+//- ----------------------------------------------
+
+$alert-txt-accent-color:      $headings-color;
+
+$alert-success-bg:            $state-success-bg;
+$alert-success-border:        $card-border-color;
+
+$alert-info-bg:               $state-info-bg;
+$alert-info-border:           $card-border-color;
+
+$alert-warning-bg:            $state-warning-bg;
+$alert-warning-border:        $card-border-color;
+
+$alert-danger-bg:             $state-danger-bg;
+$alert-danger-border:         $card-border-color;
+
+
+//- Filter
+//- ----------------------------------------------
+$filter-bg:                   $card-bg;
+$filter-border:               lighten($card-bg, 5%);
+$filter-color:                $headings-color;
+$filter-caret:                str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$headings-color}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+$filter-dropdown-bg:          $card-bg;
+$filter-dropdown-border:      $filter-border;
+$filter-dropdown-color:       rgba($headings-color, 0.4);
+$filter-dropdown-color-hover: $headings-color;
+
+
+//- Content Filter
+//- ----------------------------------------------
+$content-filter-bg:              $filter-bg;
+$content-filter-border:          $filter-border;
+$content-filter-color:           $body-font-color;
+$content-filter-color-hover:     $headings-color;
+
+
+//- Team
+//- ----------------------------------------------
+$team-select-color: $headings-color;
+$team-select-arrow: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$headings-color}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+//- Blog
+//- ----------------------------------------------
+
+$post-title-color:       #fff;
+$post-title-color-hover: darken(#fff, 15%);
+
+
+//- Footer
+//- ----------------------------------------------
+$footer-widgets-bg:        darken($color-dark, 2%);
+$footer-secondary-bg:      darken($color-dark, 2%);
+
+
+//- Pagination
+//- ----------------------------------------------
+$pagination-bg:               $card-bg;
+$pagination-color:            $headings-color;
+$pagination-border:           $card-border-color;
+
+
+//- Icobox
+//- ----------------------------------------------
+$icobox-icon-border-color: $card-border-color;
+
+
+//- noUI Range Slider
+//- ----------------------------------------------
+$range-bg-color: $progress-bg;
+
+
+//- Widget
+//- ----------------------------------------------
+$widget-decor-color-1: rgba(236, 240, 246, .05);
+$widget-decor-color-2: rgba(255,255,255,.05);
+$widget-decor-color-3: rgba(255,255,255,.06);
+
+
+
+//- CSS Variables
+//- ----------------------------------------------
+:root {
+  --headings-color: $headings-color;
+  --circular-track-color: #4c5d6f;
+}

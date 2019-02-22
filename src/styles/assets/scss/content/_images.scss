@@ -1,0 +1,80 @@
+/* Images
+/* ------------------------- */
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.aligncenter {
+	text-align: center;
+	margin-bottom: 20px;
+
+	figcaption {
+		padding: 14px;
+		font-size: 13px;
+	}
+}
+
+// Figure
+figure {
+	margin: 0;
+}
+
+
+@if $template == 'esports' {
+
+	figure.aligncenter,
+	figure.alignleft,
+	figure.alignright,
+	figure.alignnone {
+		position: relative;
+
+		figcaption {
+			background-color: rgba($body-bg-color, .8);
+			border-radius: 20px;
+			padding: 6px 22px 6px 12px;
+			color: $color-white;
+			position: static;
+
+			@media (min-width: 992px) {
+				position: absolute;
+				left: 14px;
+				bottom: 12px;
+			}
+
+			&::before {
+				content:"\f067";
+				display: inline-block;
+				margin-right: 12px;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				font-family: "FontAwesome";
+				font-size: 14px;
+				font-weight: normal;
+				color: $color-primary;
+			}
+		}
+	}
+
+	figure.aligncenter--fullwidth {
+
+		@media (min-width: 992px) {
+			margin: 0 -80px 0 -80px;
+		}
+
+		@media (min-width: 1200px) {
+			margin: 0 -100px 0 -100px;
+		}
+
+		figcaption {
+			text-align: center;
+
+			@media (min-width: 992px) {
+				white-space: nowrap;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+	}
+}

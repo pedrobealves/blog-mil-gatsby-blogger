@@ -1,0 +1,16 @@
+/* Blog Load More Posts */
+.blog-load-more {
+	padding: 30px 0 20px 0;
+
+	@media (min-width: 992px) {
+		padding: 65px 0 40px 0;
+	}
+}
+
+	.blog-load-more__btn {
+		margin: 0 auto;
+
+		@media (min-width: 992px) {
+			width: calc(33.3% + 60px);
+		}
+	}

@@ -1,0 +1,99 @@
+/* Error 404 */
+.error-404 {
+  text-align: center;
+  padding: 10px 15px 20px 15px;
+  overflow: hidden;
+  position: relative;
+
+  @media (min-width: 992px){
+    padding: 20px 0 40px 0;
+  }
+}
+  .error-404__figure {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+    max-width: 75%;
+
+    @media (min-width: 480px) {
+      max-width: 100%;
+    }
+
+    @media (min-width: 1200px){
+      margin-bottom: 55px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 120px;
+      height: 25px;
+      background-color: $color-primary;
+      border-radius: 3px;
+    }
+
+    &::before {
+      transform: translate(50px, -70px) rotate(45deg);
+    }
+    &::after {
+      transform: translate(50px, -70px) rotate(-45deg);
+    }
+
+    @media (max-width: 479px) {
+
+    }
+  }
+  .error__header {
+    margin-bottom: 20px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 40px;
+    }
+  }
+    .error__title {
+      margin-bottom: 0.33em;
+      font-size: 24px;
+
+      @media (min-width: 992px) {
+        font-size: 32px;
+      }
+
+      @media (min-width: 1200px) {
+        font-size: 38px;
+      }
+    }
+    .error__subtitle {
+      font-size: 18px;
+
+      @media (min-width: 1200px) {
+        font-size: 22px;
+      }
+    }
+
+  .error__description {
+    margin-bottom: 30px;
+
+    @media (min-width: 1200px) {
+      margin-bottom: 60px;
+    }
+  }
+  .error__cta {
+
+    .btn {
+
+      @media (min-width: 992px) {
+        margin: 0 10px;
+      }
+
+      @media (max-width: 767px) {
+        width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 5px 0;
+      }
+    }
+  }

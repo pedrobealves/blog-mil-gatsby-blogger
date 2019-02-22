@@ -1,0 +1,435 @@
+/* Match Preview */
+.match-preview {
+
+}
+	.match-preview__body {
+
+	}
+		.match-preview__header {
+			text-align: center;
+			margin-bottom: 15px;
+		}
+		.match-preview__header--decor {
+			background-image: linear-gradient(to right, transparent, transparent 2px, $card-border-color 2px, $card-border-color 4px);
+			background-repeat: repeat-x;
+			background-position: 0 0;
+			background-size: 4px 100%;
+			margin-left: -$card-horizontal-padding;
+			margin-right: -$card-horizontal-padding;
+			margin-bottom: 26px;
+		}
+			.match-preview__header-inner {
+				display: inline-block;
+				background-color: $card-bg;
+				padding: 0 20px 5px 20px;
+				vertical-align: middle;
+
+				.match-preview__title {
+					margin-bottom: 0;
+				}
+			}
+			.match-preview__title {
+				font-size: 14px;
+				line-height: 1.2em;
+				margin-bottom: .25em;
+				text-transform: uppercase;
+				font-style: normal;
+			}
+			.match-preview__title--lg {
+				padding-top: .15em;
+				margin-bottom: 1.25em;
+
+				@media (min-width: 768px) {
+					font-size: 26px;
+				}
+			}
+			.match-preview__date {
+				display: block;
+				text-transform: uppercase;
+				font-size: 10px;
+				line-height: 1.2em;
+				font-family: $font-family-accent;
+				font-weight: bold;
+			}
+			.match-preview__info {
+				@include font-accent(10px);
+				line-height: 1.2em;
+				color: $body-font-color;
+				font-weight: 400;
+
+				& + .match-preview__title {
+					line-height: 1em;
+				}
+			}
+
+		// Match Content
+		.match-preview__content {
+			overflow: hidden;
+			padding: 0 0 30px 0;
+		}
+			.match-preview__team {
+				overflow: hidden;
+				margin-bottom: 16px;
+
+				@media (min-width: 768px) {
+					float: left;
+					width: 37%;
+					text-align: center;
+					margin-bottom: 0;
+				}
+			}
+				.match-preview__team--first {
+
+				}
+
+				.match-preview__team--second {
+
+					@media (min-width: 768px) {
+						float: right;
+					}
+				}
+
+					.match-preview__team-logo {
+						width: 46px;
+						float: left;
+						margin: 0 10px 0 0;
+
+						@media (min-width: 768px) {
+							height: 105px;
+							margin: 0 0 10px 0;
+							width: auto;
+							float: none;
+						}
+
+						img {
+							max-width: 100%;
+							height: auto;
+
+							@media (min-width: 768px) {
+								position: relative;
+								top: 50%;
+								transform: translateY(-50%);
+							}
+						}
+					}
+					.match-preview__team-name {
+						font-size: 13px;
+						line-height: 1.2em;
+						text-transform: uppercase;
+						letter-spacing: -0.02em;
+						padding: 12px 0 0 0;
+						margin: 0;
+
+						@media (min-width: 768px) {
+							padding: 0;
+							font-size: 15px;
+						}
+
+						@media (min-width: 992px) and (max-width: 1199px) {
+							font-size: 13px;
+						}
+					}
+					.match-preview__team-info {
+						font-size: 7px;
+						line-height: 1.3em;
+						font-family: $font-family-accent;
+						text-transform: uppercase;
+						font-weight: 700;
+
+						@media (min-width: 768px) {
+							font-size: 8px;
+							@include fix_small_chars();
+						}
+					}
+
+			.match-preview__vs {
+				margin: 0 0 16px 0;
+
+				@media (min-width: 768px) {
+					float: left;
+					width: 26%;
+					text-align: center;
+					padding: 38px 0 0 0;
+					margin: 0;
+				}
+
+				@media (min-width: 768px) and (max-width: 991px){
+					padding-left: 2px;
+					padding-right: 2px;
+				}
+			}
+				.match-preview__conj {
+					display: block;
+					font-size: 18px;
+					line-height: 1.2em;
+					text-transform: uppercase;
+					font-family: $font-family-accent;
+					color: $headings-color;
+					font-weight: 700;
+					letter-spacing: -0.02em;
+					width: 53px; // Logo Size + right margin - 3px
+					text-align: center;
+					display: inline-block;
+
+					@media (min-width: 768px) {
+						font-size: 30px;
+						width: auto;
+						display: block;
+					}
+
+					@media (min-width: 992px) and (max-width: 1199px){
+						font-size: 24px;
+					}
+				}
+				.match-preview__match-info {
+					font-size: 10px;
+					line-height: 1.2em;
+					font-family: $font-family-accent;
+					text-transform: uppercase;
+					font-weight: 700;
+					display: inline-block;
+
+					@media (min-width: 768px) {
+						display: block;
+					}
+
+					@media (min-width: 768px) and (max-width: 991px){
+						font-size: 8px;
+						@include fix_small_chars();
+					}
+				}
+					.match-preview__match-time {
+
+					}
+					.match-preview__match-place {
+
+					}
+
+				.match-preview__match-info--header {
+					border-bottom: 1px solid $card-border-color;
+					margin-left: -$card-horizontal-padding;
+					margin-right: -$card-horizontal-padding;
+					margin-top: -$card-vertical-padding;
+					padding: 10px $card-horizontal-padding;
+					margin-bottom: 26px;
+					display: flex;
+					font-weight: 400;
+
+					.match-preview__match-place {
+						flex-grow: 1;
+						color: $headings-color;
+					}
+
+					.match-preview__match-time {
+
+					}
+				}
+
+		.match-preview__action {
+
+		}
+
+		.match-preview__action--ticket {
+			padding: 62px $card-horizontal-padding 15px $card-horizontal-padding;
+			position: relative;
+			margin-left: -($card-horizontal-padding + 1px);
+			margin-right: -($card-horizontal-padding + 1px);
+			overflow: hidden;
+
+			@if $template == football {
+				background-image: linear-gradient(to right, transparent 3px, lighten($card-border-color, 10%) 3px);
+			} @else {
+				background-image: linear-gradient(to right, transparent 3px, $card-border-color 3px);
+			}
+
+			background-repeat: repeat-x;
+			background-size: 10px 1px;
+			background-position: 0 22px;
+
+			@media (min-width: 768px) {
+				padding-left: $card-horizontal-padding*2;
+				padding-right: $card-horizontal-padding*2;
+			}
+
+			&::before,
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				height: 45px;
+				width: 45px;
+				background-color: $body-bg-color;
+				border: 1px solid $card-border-color;
+				border-radius: 50%;
+				top: 0;
+			}
+
+			&::before {
+				left: -22px;
+			}
+
+			&::after {
+				right: -22px;
+			}
+		}
+
+	// Countdown
+	.match-preview__countdown {
+
+		.countdown {
+
+		}
+			.countdown__title {
+				background-color: $card-subheader-bg;
+				font-size: 11px;
+				line-height: 1.2em;
+				text-align: center;
+				text-transform: uppercase;
+				padding: 12px;
+				border-top: 1px solid $card-border-color;
+				border-bottom: 1px solid $card-border-color;
+				margin: 0;
+			}
+			.countdown__content {
+
+			}
+	}
+
+	// Alternative
+	.match-preview--alt {
+
+		.match-preview__content {
+			display: table;
+			width: 100%;
+
+			.match-preview__team {
+				display: table-cell;
+				width: 50%;
+				float: none;
+				vertical-align: middle;
+			}
+			.match-preview__team--first {
+				text-align: left;
+			}
+			.match-preview__team--second {
+				text-align: right;
+			}
+				.match-preview__team-logo {
+					width: 32px;
+					float: none;
+					margin: 0 5px 0 0;
+					display: inline-block;
+					vertical-align: middle;
+
+					@media (min-width: 768px) {
+						width: auto;
+					}
+					@media (min-width: 768px) {
+						height: 50px;
+						margin: 0 10px 0 0;
+					}
+					@media (min-width: 768px) and (max-width: 991px) {
+						margin-right: 5px;
+					}
+				}
+
+				.match-preview__team--second .match-preview__team-logo {
+					margin: 0 0 0 5px;
+
+					@media (min-width: 768px) {
+						margin: 0 0 0 10px;
+					}
+
+					@media (min-width: 768px) and (max-width: 991px) {
+						margin-left: 5px;
+					}
+				}
+
+				.match-preview__team-name {
+					font-size: 18px;
+					line-height: 1.2em;
+					padding: 0;
+					margin: 0;
+
+					@media (min-width: 768px) {
+						padding: 0;
+						font-size: 24px;
+					}
+
+					@media (min-width: 768px) and (max-width: 991px) {
+						font-size: 18px;
+					}
+				}
+
+				.match-prevew__team-details {
+					display: inline-block;
+					vertical-align: middle;
+				}
+
+				.match-preview__team-info {
+
+					@media (max-width: 991px) {
+						display: none;
+					}
+				}
+
+			.match-preview__vs {
+				display: table-cell;
+				width: 50px;
+				text-align: center;
+				vertical-align: middle;
+				float: none;
+				padding: 0;
+			}
+				.match-preview__conj {
+					width: auto;
+					font-size: 14px;
+					display: inline-block;
+					vertical-align: middle;
+
+					@media (min-width: 768px) {
+						font-size: 18px;
+					}
+
+					@media (min-width: 768px) and (max-width: 991px){
+						font-size: 12px;
+					}
+				}
+		}
+
+		.match-preview__action {
+			display: table;
+			width: 100%;
+		}
+
+		.match-preview__match-info {
+			display: table-cell;
+			width: 50%;
+			vertical-align: middle;
+
+			@media (min-width: 768px) {
+				display: table-cell;
+			}
+
+			@media (min-width: 768px) and (max-width: 991px){
+
+			}
+		}
+			.match-preview__match-time {
+				color: $headings-color;
+				letter-spacing: -0.02em;
+				line-height: 1.5em;
+
+				@media (min-width: 768px) {
+					font-size: 14px;
+				}
+
+				small {
+					font-size: 0.75em;
+				}
+			}
+		.match-preview__action-btn {
+			display: table-cell;
+			width: 50%;
+		}
+	}

@@ -1,58 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-
-const Post = styled.li`
-  position: relative;
-  border: 1px solid ${props => props.theme.colors.secondary};
-  border-radius: 2px;
-  margin: 0 0 1em 0;
-  width: 100%;
-  transition: background 0.2s;
-  @media screen and (min-width: ${props => props.theme.responsive.small}) {
-    flex: ${props => (props.featured ? '0 0 100%' : '0 0 49%')};
-    margin: 0 0 2vw 0;
-  }
-  @media screen and (min-width: ${props => props.theme.responsive.medium}) {
-    flex: ${props => (props.featured ? '0 0 100%' : '0 0 32%')};
-  }
-  &:hover {
-    background: ${props => props.theme.colors.tertiary};
-  }
-  a {
-    display: flex;
-    flex-flow: column;
-    height: 100%;
-    width: 100%;
-    color: ${props => props.theme.colors.base};
-    text-decoration: none;
-    .gatsby-image-wrapper {
-      height: 0;
-      padding-bottom: 60%;
-      @media screen and (min-width: ${props => props.theme.responsive.small}) {
-        padding-bottom: ${props => (props.featured ? '40%' : '60%')};
-      }
-    }
-  }
-`
-
-const Title = styled.h2`
-  font-size: 1.5em;
-  font-weight: 600;
-  text-transform: capitalize;
-  margin: 1rem 1rem 0.5rem 1rem;
-`
-
-const Date = styled.h3`
-  margin: 0 1rem 1.5rem 1rem;
-  color: gray;
-`
-
-const Excerpt = styled.p`
-  margin: 0 1rem 1rem 1rem;
-  line-height: 1.6;
-`
 
 const handleResponse = str => {
   const re = /<img\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
@@ -61,20 +9,61 @@ const handleResponse = str => {
   return src
 }
 
-const Card = ({ slug, title, published, childMarkdownRemark, ...props }) => {
+const Card = ({
+  slug,
+  title,
+  published,
+  childMarkdownRemark,
+  author,
+  ...props
+}) => {
   return (
-    <Post featured={props.featured}>
-      <Link to={`/${slug}/`}>
-        <img src={handleResponse(childMarkdownRemark.html)} />
-        <Title>{title}</Title>
-        <Date>{published}</Date>
-        <Excerpt
-          dangerouslySetInnerHTML={{
-            __html: childMarkdownRemark.excerpt,
-          }}
-        />
-      </Link>
-    </Post>
+    <div className="post-list__item">
+      <div className="posts__item posts__item--card posts__item--category-1 card card--block">
+        <figure className="posts__thumb">
+          <Link to={`/${slug}/`}>
+            <img src={handleResponse(childMarkdownRemark.html)} alt="" />
+          </Link>
+          <a href="#" className="posts__cta" />
+        </figure>
+        <div className="posts__inner">
+          <div className="card__content">
+            <div className="posts__cat">
+              <span className="label posts__cat-label">The Team</span>
+            </div>
+            <h6 className="posts__title">
+              <a href="#">{title}</a>
+            </h6>
+            <time dateTime="2016-08-17" className="posts__date">
+              {published}
+            </time>
+            <div className="posts__excerpt">{childMarkdownRemark.excerpt}</div>
+          </div>
+          <footer className="posts__footer card__footer">
+            <div className="post-author">
+              <figure className="post-author__avatar">
+                <img src={author.image.url} alt="Post Author Avatar" />
+              </figure>
+              <div className="post-author__info">
+                <h4 className="post-author__name">{author.displayName}</h4>
+              </div>
+            </div>
+            <ul className="post__meta meta">
+              <li className="meta__item meta__item--views">2369</li>
+              <li className="meta__item meta__item--likes">
+                <a href="#">
+                  <i className="meta-like icon-heart" />
+                  530
+                </a>
+              </li>
+              <li className="meta__item meta__item--comments">
+                <a href="#">18</a>
+              </li>
+            </ul>
+          </footer>
+        </div>
+      </div>
+    </div>
   )
 }
 

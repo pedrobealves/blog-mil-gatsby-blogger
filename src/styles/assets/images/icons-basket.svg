@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="basketball" width="28" height="28" viewBox="0 0 28 28">
+    <title>Basketball Icon</title>
+    <path id="Forma_1" data-name="Forma 1" d="M480.889,6333.48s6.465,4.75,4.333,14.45S478,6358.52,478,6358.52" transform="translate(-463.95 -6332.2)"/>
+    <path id="Forma_2" data-name="Forma 2" d="M470.3,6335.89a21.072,21.072,0,0,1,7.222,4.33c2.889,2.89,5.434,4.47,7.7,4.34s3.508-3.31,4.333-3.38" transform="translate(-463.95 -6332.2)"/>
+    <path id="Forma_3" data-name="Forma 3" d="M468.852,6354.67s5.09,0.55,7.7-.97a14.778,14.778,0,0,1,7.223-1.92,4.127,4.127,0,0,1,3.852,1.92" transform="translate(-463.95 -6332.2)"/>
+    <path id="Forma_4" data-name="Forma 4" d="M465.481,6344.07s8.186,4.2,11.556,4.34a55.858,55.858,0,0,0,13.481-.48" transform="translate(-463.95 -6332.2)"/>
+    <circle id="Elipse_1" data-name="Elipse 1" class="cls-2" cx="14.05" cy="13.8" r="13"/>
+  </symbol>
+
+  <symbol id="jersey" width="22" height="24" viewBox="0 0 22 24">
+    <title>Jersey Icon</title>
+    <path id="Jersey" d="M486,6403.8a31.244,31.244,0,0,0-.184,15.2H468.184a31.244,31.244,0,0,0-.184-15.2,5.023,5.023,0,0,0,.367-6.24l3.857-.56a19.782,19.782,0,0,1,2.113,2.7c1.469,2.61,2.663,2.71,2.663,2.71s1.194-.1,2.663-2.71a19.754,19.754,0,0,1,2.112-2.7l3.858,0.56A5.023,5.023,0,0,0,486,6403.8Z" transform="translate(-466.088 -6395.99)"/>
+  </symbol>
+
+  <symbol id="bag" width="22" height="24" viewBox="0 0 22 24">
+    <title>Bag Icon</title>
+    <path id="bag-path" d="M1195.25,961.988h13.5a2.238,2.238,0,0,1,2.25,2.223l1,17.565a2.239,2.239,0,0,1-2.25,2.223h-15.5a2.239,2.239,0,0,1-2.25-2.223l1-17.565A2.238,2.238,0,0,1,1195.25,961.988Z" transform="translate(-1191.2 -961.2)"/>
+  </symbol>
+
+  <symbol id="bag-handle" width="12" height="11" viewBox="0 0 12 11">
+    <title>Bag Handle Icon</title>
+    <path id="bag-handle-path" d="M1197.01,966v-4.7c0-2.377,2.24-4.3,4.99-4.3s4.99,1.927,4.99,4.3V966" transform="translate(-1196.2 -956.2)"/>
+  </symbol>
+
+  <symbol id="points-per-game" width="37" height="32" viewBox="0 0 37 32">
+    <title>Point Per Game</title>
+    <g id="Basketball_Icon" data-name="Basketball Icon">
+      <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M656.889,1848.48s6.465,4.75,4.333,14.44-7.222,10.6-7.222,10.6" transform="translate(-639.95 -1843)"/>
+      <path id="Forma_2" data-name="Forma 2" class="cls-1" d="M646.3,1850.89a21.072,21.072,0,0,1,7.222,4.33c2.889,2.89,5.434,4.47,7.7,4.33s3.508-3.3,4.333-3.37" transform="translate(-639.95 -1843)"/>
+      <path id="Forma_3" data-name="Forma 3" class="cls-1" d="M644.852,1869.66s5.09,0.56,7.7-.96a14.775,14.775,0,0,1,7.223-1.92,4.124,4.124,0,0,1,3.851,1.92" transform="translate(-639.95 -1843)"/>
+      <path id="Forma_4" data-name="Forma 4" class="cls-1" d="M641.481,1859.07s8.186,4.2,11.556,4.34a55.445,55.445,0,0,0,13.481-.49" transform="translate(-639.95 -1843)"/>
+      <circle id="Elipse_1" data-name="Elipse 1" class="cls-2" cx="14.05" cy="18" r="13"/>
+    </g>
+    <path id="Star" fill="var(--headings-color)" stroke="none" style="opacity:0.6;" class="cls-3" d="M675.05,1853a0.625,0.625,0,0,1-.354-0.12l-2.673-1.83h-0.057l-2.666,1.83a0.533,0.533,0,0,1-.738-0.07,0.572,0.572,0,0,1-.072-0.52l0.806-2.85a0.191,0.191,0,0,0-.032-0.12l-2.077-2.11a0.571,0.571,0,0,1-.158-0.6,0.559,0.559,0,0,1,.51-0.36l2.75-.26a0.21,0.21,0,0,0,.1-0.07l1.1-2.55a0.532,0.532,0,0,1,1.016.01l1.105,2.54a0.2,0.2,0,0,0,.1.07l2.747,0.26a0.556,0.556,0,0,1,.51.36,0.573,0.573,0,0,1-.159.6l-2.077,2.11a0.2,0.2,0,0,0-.032.12l0.807,2.85a0.572,0.572,0,0,1-.072.52A0.478,0.478,0,0,1,675.05,1853ZM672,1850.22a0.92,0.92,0,0,1,.5.14l1.983,1.36-0.58-2.05a1,1,0,0,1,.24-0.93l1.684-1.72-2.191-.2a1,1,0,0,1-.784-0.57L672,1844.3l-0.848,1.95a1,1,0,0,1-.783.57l-2.191.2,1.685,1.72a1,1,0,0,1,.238.93l-0.579,2.05,1.983-1.36A0.91,0.91,0,0,1,672,1850.22Z" transform="translate(-639.95 -1843)"/>
+  </symbol>
+
+  <symbol id="assists-per-game" width="50" height="28" viewBox="0 0 50 28">
+    <title>Assists Per Game</title>
+    <g id="Basketball_Icon" data-name="Basketball Icon">
+      <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M846.889,1848.48s6.465,4.75,4.333,14.44-7.222,10.6-7.222,10.6" transform="translate(-808 -1847.2)"/>
+      <path id="Forma_2" data-name="Forma 2" class="cls-1" d="M836.3,1850.89a21.072,21.072,0,0,1,7.222,4.33c2.889,2.89,5.434,4.47,7.7,4.33s3.508-3.3,4.333-3.37" transform="translate(-808 -1847.2)"/>
+      <path id="Forma_3" data-name="Forma 3" class="cls-1" d="M834.852,1869.66s5.09,0.56,7.7-.96a14.775,14.775,0,0,1,7.223-1.92,4.124,4.124,0,0,1,3.851,1.92" transform="translate(-808 -1847.2)"/>
+      <path id="Forma_4" data-name="Forma 4" class="cls-1" d="M831.481,1859.07s8.186,4.2,11.556,4.34a55.445,55.445,0,0,0,13.481-.49" transform="translate(-808 -1847.2)"/>
+      <circle id="Elipse_1" data-name="Elipse 1" class="cls-2" cx="36" cy="13.8" r="13"/>
+    </g>
+    <path id="assists-line" fill="var(--headings-color)" stroke="none" style="opacity:0.4;" class="cls-3" d="M814,1854h12a1,1,0,0,1,0,2H814A1,1,0,0,1,814,1854Zm-5,6h16a1,1,0,0,1,0,2H809A1,1,0,0,1,809,1860Zm5,6h12a1,1,0,0,1,0,2H814A1,1,0,0,1,814,1866Z" transform="translate(-808 -1847.2)"/>
+  </symbol>
+
+  <symbol id="rebounds-per-game" width="41" height="33" viewBox="0 0 41 33">
+    <title>Rebounds Per Game</title>
+    <g id="Basketball_Icon" data-name="Basketball Icon">
+      <path id="Forma_1" data-name="Forma 1" class="cls-1" d="M656.889,2076.48s6.465,4.75,4.333,14.44-7.222,10.6-7.222,10.6" transform="translate(-639.95 -2069.56)"/>
+      <path id="Forma_2" data-name="Forma 2" class="cls-1" d="M646.3,2078.89a21.072,21.072,0,0,1,7.222,4.33c2.889,2.89,5.434,4.47,7.7,4.33s3.508-3.3,4.333-3.37" transform="translate(-639.95 -2069.56)"/>
+      <path id="Forma_3" data-name="Forma 3" class="cls-1" d="M644.852,2097.66s5.09,0.56,7.7-.96a14.775,14.775,0,0,1,7.223-1.92,4.124,4.124,0,0,1,3.851,1.92" transform="translate(-639.95 -2069.56)"/>
+      <path id="Forma_4" data-name="Forma 4" class="cls-1" d="M641.481,2087.07s8.186,4.2,11.556,4.34a55.445,55.445,0,0,0,13.481-.49" transform="translate(-639.95 -2069.56)"/>
+      <circle id="Elipse_1" data-name="Elipse 1" class="cls-2" cx="14.05" cy="19.44" r="13"/>
+    </g>
+    <path id="rebounds-lines" fill="var(--headings-color)" stroke="none" style="opacity:0.4;" class="cls-3" d="M666.237,2073.69l6.928-4a1,1,0,1,1,1,1.73l-6.928,4A1,1,0,0,1,666.237,2073.69Zm3.866,4.69,8.66-5a1,1,0,0,1,1,1.74l-8.66,5A1,1,0,0,1,670.1,2078.38Zm2.134,5.7,6.928-4a1,1,0,0,1,1,1.73l-6.928,4A1,1,0,1,1,672.237,2084.08Z" transform="translate(-639.95 -2069.56)"/>
+  </symbol>
+
+</svg>

@@ -1,0 +1,87 @@
+/* Account Navigation */
+.df-account-navigation {
+	border-radius: $card-border-radius;
+	overflow: hidden;
+
+	.card & {
+		margin-top: -$card-vertical-padding;
+		margin-right: -$card-horizontal-padding;
+		margin-bottom: -$card-vertical-padding;
+		margin-left: -$card-horizontal-padding;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: block;
+	}
+
+	.card__header + .card__content & {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+}
+
+	.df-account-navigation__link {
+
+		> a {
+			display: block;
+			padding: $card-vertical-padding $card-horizontal-padding;
+			@include font-accent(11px);
+			color: $headings-color;
+			line-height: 1.2em;
+			transition: background-color 0.3s ease;
+
+			&:hover {
+
+				@if $template == 'football' {
+					background-color: $color-dark-lighten;
+				} @else {
+					background-color: rgba(0,0,0,.03);
+				}
+
+			}
+
+			> small {
+				font-size: 8px;
+				@include fix_small_chars();
+				line-height: 1.5em;
+				display: block;
+				color: $body-font-color;
+			}
+
+			> span {
+
+				@if $template == football {
+					color: $color-4;
+				} @else {
+					color: $color-primary;
+				}
+			}
+		}
+
+		& + li {
+			border-top: 1px solid $card-border-color;
+		}
+
+		&:last-child {
+
+			> a {
+				border-radius: 0 0 $card-border-radius $card-border-radius;
+			}
+		}
+	}
+
+	.df-account-navigation__link--active a,
+	.df-account-navigation .active {
+
+		border-left: 6px solid $color-primary;
+		padding-left: $card-horizontal-padding - 6px;
+
+		@if $template == 'football' {
+			background-color: $color-dark-lighten;
+		} @else {
+			background-color: #fafafb;
+		}
+	}

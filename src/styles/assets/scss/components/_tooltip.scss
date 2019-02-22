@@ -1,0 +1,116 @@
+/* Tooltips
+/* ------------------------- */
+
+
+// Base class
+.tooltip {
+	font-size: 9px;
+	text-transform: uppercase;
+	font-family: $font-family-accent;
+	font-weight: 700;
+
+	&.show {
+		opacity: $tooltip-opacity;
+	}
+}
+
+// Wrapper for the tooltip content
+.tooltip-inner {
+	padding: 5px 10px;
+	color: $tooltip-color;
+	text-align: center;
+	background-color: $tooltip-bg;
+	border-radius: 2px;
+
+	@if $template == 'football' {
+		box-shadow: 0 0 12px rgba(0,0,0,.3);
+	}
+}
+
+
+.bs-tooltip-top {
+
+	.arrow {
+
+		&::before {
+			border-top-color: $tooltip-arrow-color;
+		}
+	}
+}
+
+.bs-tooltip-right {
+
+	.arrow {
+
+		&::before {
+			border-right-color: $tooltip-arrow-color;
+		}
+	}
+}
+
+.bs-tooltip-bottom {
+
+	.arrow {
+
+		&::before {
+			border-bottom-color: $tooltip-arrow-color;
+		}
+	}
+}
+
+.bs-tooltip-left {
+
+	.arrow {
+
+		&::before {
+			border-left-color: $tooltip-arrow-color;
+		}
+	}
+}
+
+
+// Tooltip Card
+.tooltip--card {
+
+	.tooltip-inner {
+		background-color: $card-bg;
+		border: 1px solid $card-border-color;
+		border-radius: $card-border-radius;
+		padding: 18px $card-horizontal-padding;
+		max-width: 240px;
+		box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+	}
+}
+.tooltip--card-sm {
+
+	.tooltip-inner {
+		padding: 16px 18px;
+	}
+}
+
+// Tooltip Stats (for Circular bars)
+.alc-circular-tooltip-stats {
+	font-size: 10px;
+	line-height: 1.2em;
+	font-style: italic;
+	text-align: left;
+
+	& + & {
+		margin-top: 6px;
+	}
+}
+	.alc-circular-tooltip-stat__circle {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		display: inline-block;
+		margin-right: 6px;
+	}
+	.alc-circular-tooltip-stat__value {
+		display: inline-block;
+		margin-right: 0.15em;
+	}
+	.alc-circular-tooltip-stat__label {
+		color: $body-font-color;
+		display: inline-block;
+	}

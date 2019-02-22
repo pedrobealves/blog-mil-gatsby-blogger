@@ -1,0 +1,83 @@
+<svg id="Medal" xmlns="http://www.w3.org/2000/svg" width="64" height="152" viewBox="0 0 64 152">
+  <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
+<x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c138 79.159824, 2016/09/14-01:09:01        ">
+   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+      <rdf:Description rdf:about=""/>
+   </rdf:RDF>
+</x:xmpmeta>
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                           
+<?xpacket end="w"?></metadata>
+<defs>
+    <style>
+      .cls-1, .cls-3 {
+        fill: #fcb614;
+      }
+
+      .cls-1, .cls-4, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #ffd71b;
+      }
+
+      .cls-4 {
+        fill: #ffec32;
+      }
+
+      .cls-5 {
+        fill: #552d93;
+      }
+
+      .cls-6 {
+        fill: #6d3db6;
+      }
+
+      .cls-7 {
+        fill: #b9a7d3;
+      }
+
+      .cls-8 {
+        fill: #8d5dd7;
+      }
+
+      .cls-9 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Main">
+    <path id="Top_Detail" data-name="Top Detail" class="cls-1" d="M112.69,126.988h-3.868L109,127s-3.6,1,3,8l-19,4-19-4c6.6-7,3-8,3-8l0.177-.012H73.329a2.357,2.357,0,0,1-2.315-2.4V117.4a2.357,2.357,0,0,1,2.315-2.4H112.69a2.357,2.357,0,0,1,2.315,2.4v7.194A2.357,2.357,0,0,1,112.69,126.988Zm-4.082-7.978h-31.2a2.03,2.03,0,1,0,0,3.991h31.2A2.03,2.03,0,1,0,108.608,119.01Z" transform="translate(-61 -39)"/>
+    <circle id="Base" class="cls-2" cx="32" cy="120" r="32"/>
+    <circle id="Center_Detail" data-name="Center Detail" class="cls-3" cx="32" cy="120" r="26"/>
+    <circle id="Center" class="cls-2" cx="32" cy="120" r="22"/>
+    <path id="Light" class="cls-4" d="M90,180.772a21.863,21.863,0,0,1-7.571-2.479l29.863-29.867a21.859,21.859,0,0,1,2.479,7.57Zm6-43.544a21.951,21.951,0,0,1,13.985,7.788l-30.965,30.97A21.96,21.96,0,0,1,71.228,162Z" transform="translate(-61 -39)"/>
+  </g>
+  <g id="Ribbon">
+    <rect id="Fold" class="cls-5" x="6" width="52" height="18"/>
+    <path id="Right_Base" data-name="Right Base" class="cls-6" d="M125,39H105L89,123h20Z" transform="translate(-61 -39)"/>
+    <path id="Right_Detail" data-name="Right Detail" class="cls-7" d="M118,39h-6L96,123h6Z" transform="translate(-61 -39)"/>
+    <path id="Left_Base" data-name="Left Base" class="cls-8" d="M61,39H81l16,84H77Z" transform="translate(-61 -39)"/>
+    <path id="Left_Detail" data-name="Left Detail" class="cls-9" d="M68,39h6l16,84H84Z" transform="translate(-61 -39)"/>
+  </g>
+</svg>

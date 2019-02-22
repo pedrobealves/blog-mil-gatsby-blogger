@@ -1,0 +1,187 @@
+/* Shop Banner */
+.shop-banner {
+  border: 1px solid $card-border-color;
+  background-image: linear-gradient(to left top, #140078, #4dcbff);
+  border-radius: $card-border-radius;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 15px;
+
+  @media (min-width: 992px) {
+    min-height: 260px;
+  }
+  @media (min-width: 1200px) {
+    min-height: 320px;
+  }
+}
+  .shop-banner__content {
+    position: relative;
+    z-index: 2;
+    padding: 30px 40px;
+    color: #fff;
+    text-align: center;
+
+    @media (min-width: 992px) {
+      width: 320px;
+      padding: 32px 0 30px 40px;
+    }
+    @media (min-width: 1200px) {
+      width: 395px;
+      padding: 40px 0 40px 55px;
+    }
+  }
+    .shop-banner__txt1 {
+      @include font-accent(11px);
+      color: #fff;
+      line-height: 1.2em;
+      margin-bottom: .75em;
+
+      @media (min-width: 992px) {
+        font-size: 12px;
+      }
+      @media (min-width: 1200px) {
+        font-size: 14px;
+      }
+    }
+    .shop-banner__title {
+      font-size: 32px;
+      line-height: 1.13em;
+      color: #fff;
+      border: 3px solid #fff;
+      margin-bottom: .175em;
+      padding: 0 .1em;
+      display: inline-block;
+
+      @media (min-width: 992px) {
+        font-size: 48px;
+        border-width: 4px;
+      }
+      @media (min-width: 1200px) {
+        font-size: 64px;
+        border-width: 6px;
+      }
+    }
+    .shop-banner__subtitle {
+      display: block;
+      @include font-accent(11px);
+      color: #fff;
+      letter-spacing: .5em;
+      line-height: 1.2em;
+      margin-bottom: .75em;
+      white-space: nowrap;
+
+      @media (min-width: 992px) {
+        font-size: 14px;
+        letter-spacing: .5em;
+      }
+      @media (min-width: 1200px) {
+        font-size: 16px;
+        letter-spacing: .85em;
+      }
+
+      &::before,
+      &::after {
+        content: "\f005";
+        font-family: "FontAwesome";
+        font-size: 14px;
+        color: $color-primary;
+        font-weight: 400;
+        letter-spacing: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      &::before {
+        margin-right: 1.25em;
+      }
+
+      &::after {
+        margin-left: 0.75em;
+      }
+    }
+    .shop-banner__btn {
+      margin-top: 1.85em;
+
+      @media (max-width: 991px){
+        font-size: 12px;
+        padding: 10px 30px;
+        margin-top: 1em;
+      }
+
+      @media (min-width: 1200px) {
+        margin-top: 1.85em;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px){
+        font-size: 12px;
+        padding: 12px 40px;
+        margin-top: 1em;
+      }
+    }
+  .shop-banner__img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    @media (min-width: 992px) and (max-width: 1199px){
+      max-width: 55%;
+    }
+  }
+  .shop-banner__bg-txt {
+    display: block;
+    position: absolute;
+    left: -30%;
+    top: -17%;
+    font-size: 230px;
+    line-height: 1em;
+    font-family: $font-family-accent;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    color: #fff;
+    opacity: 0.06;
+    pointer-events: none;
+  }
+  .shop-banner__discount {
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top: 0;
+    padding: 13px 11px 0 0;
+    color: #fff;
+    font-family: $font-family-accent;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+
+    @media (max-width: 991px) {
+      display: none;
+    }
+
+    &::before {
+      content:"";
+      display: block;
+      width: 0;
+      height: 0;
+      border-top: 166px solid #4dcbff;
+      border-left: 208px solid transparent;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+    .shop-banner__discount-txt {
+      display: block;
+      position: relative;
+      z-index: 1;
+      font-size: 14px;
+      line-height: 1.2em;
+    }
+    .shop-banner__discount-price {
+      display: block;
+      position: relative;
+      z-index: 1;
+      font-size: 48px;
+      line-height: 1em;
+    }

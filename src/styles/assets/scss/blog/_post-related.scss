@@ -1,0 +1,154 @@
+/* Related Posts */
+.post-related {
+
+	> .card {
+		margin-bottom: 0;
+	}
+}
+	.post-related__prev {
+		position: relative;
+
+		.card__content {
+			position: relative;
+			text-align: center;
+
+			@media (min-width: 992px) {
+				text-align: left;
+				padding-left: 93px;
+			}
+		}
+
+		.posts {
+			display: none;
+
+			@media (min-width: 992px) {
+				display: block;
+			}
+		}
+
+		.btn-nav {
+
+			@media (min-width: 992px) {
+				position: absolute;
+				left: 23px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.post-related__next {
+		text-align: right;
+		position: relative;
+
+		.card__content {
+			position: relative;
+			text-align: center;
+
+			@media (min-width: 992px) {
+				padding-right: 93px;
+				padding-left: 30px;
+				text-align: right;
+
+				.posts__cat-label {
+					float: right;
+				}
+			}
+
+			.posts {
+				display: none;
+
+				@media (min-width: 992px) {
+					display: block;
+				}
+			}
+		}
+
+		.btn-nav {
+
+			@media (min-width: 992px) {
+				position: absolute;
+				right: 23px;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+
+// Football Version
+
+@if $template == football {
+
+	.post-related--condensed {
+
+		.btn-nav--condensed {
+			width: 100%;
+			height: auto;
+			border-radius: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			transform: none;
+			background-color: $color-dark-lighten;
+			line-height: 18px;
+
+			@media (min-width: 992px) {
+				width: 23px;
+			}
+
+			.fa {
+				line-height: 18px;
+				height: 18px;
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			&:hover {
+				background-color: $color-primary;
+			}
+		}
+
+		.post-related__prev {
+
+			.card__content {
+
+				@media (min-width: 992px) {
+					padding-left: 43px;
+				}
+			}
+
+			.btn-nav--condensed {
+				left: 0;
+				border-radius: ($card-border-radius - 1);
+
+				@media (min-width: 992px) {
+					border-radius: ($card-border-radius - 1) 0 0 ($card-border-radius - 1);
+				}
+			}
+		}
+
+		.post-related__next {
+
+			.card__content {
+
+				@media (min-width: 992px) {
+					padding-right: 43px;
+				}
+			}
+
+			.btn-nav--condensed {
+				right: 0;
+				border-radius: ($card-border-radius - 1);
+
+				@media (min-width: 992px) {
+					border-radius: 0 ($card-border-radius - 1) ($card-border-radius - 1) 0;
+				}
+			}
+		}
+	}
+
+}

@@ -1,0 +1,63 @@
+/* Player Game Log */
+.game-player-result {
+
+	thead > tr > th,
+	tbody > tr > td {
+		vertical-align: middle;
+		text-align: center;
+
+		&.game-player-result__vs {
+			text-align: left;
+		}
+	}
+
+
+	.game-player-result__date {
+		text-align: left;
+		white-space: nowrap;
+
+		@media (min-width: 1200px) {
+			padding-left: 23px;
+		}
+	}
+
+	thead > tr > th:last-child,
+	tbody > tr > td:last-child {
+
+		@media (min-width: 1200px) {
+			padding-right: 23px;
+		}
+	}
+
+	.game-player-result__game {
+		color: $headings-color;
+	}
+	.game-player-result__game--win {
+		color: $color-success;
+	}
+	.game-player-result__game--lose {
+		color: $color-danger;
+	}
+
+	.game-player-result__score {
+
+		@if $template == 'football' {
+			color: $headings-color;
+		}
+	}
+
+	@if $template == 'football' {
+		.game-player-result__th {
+			text-align: center;
+		}
+		.game-player-result__th--game {
+			background-color: rgba($color-dark-lighten, 0.6);
+		}
+		.game-player-result__th--passing {
+			background-color: rgba($color-danger, 0.2);
+		}
+		.game-player-result__th--rushing {
+			background-color: rgba($color-4-darken, 0.2);
+		}
+	}
+}

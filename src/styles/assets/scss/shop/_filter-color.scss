@@ -1,0 +1,282 @@
+/* Filter Color */
+.filter-color {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 -12px 0;
+	overflow: hidden;
+}
+	.filter-color__item {
+		display: inline-block;
+		width: 28px;
+		height: 28px;
+		overflow: hidden;
+		margin: 0 3px 12px 3px;
+
+		label {
+			display: block;
+		}
+
+		[class*="indicator"] {
+			width: 20px;
+			height: 20px;
+			background-color: transparent;
+			border-color: $card-border-color;
+			border-radius: 50%;
+			display: block;
+			position: absolute;
+			left: 4px;
+			top: 4px;
+			margin-top: 0;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			&::before {
+				content:"";
+				display: block;
+				position: absolute;
+				left: -5px;
+				top: -5px;
+				right: -5px;
+				bottom: -5px;
+				border: 2px solid transparent;
+				border-radius: 50%;
+				transition: all 0.2s ease;
+				transform: scale(0.8);
+			}
+		}
+
+		input[type="checkbox"],
+		input[type="radio"] {
+
+			&:checked + [class*="indicator"] {
+				background-color: $card-border-color;
+				border-color: $card-border-color;
+				background-image: none !important;
+
+				&::before {
+					border-color: $card-border-color;
+					transform: scale(1);
+				}
+			}
+
+			// Color White
+			&.color-white {
+
+				+ [class*="indicator"] {
+					background-color: #fff;
+					border-color: $card-border-color;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #fff;
+					border-color: #fff;
+
+					&::before {
+						border-color: #fff;
+					}
+				}
+			}
+
+			// Color Violet
+			&.color-violet {
+
+				+ [class*="indicator"] {
+					background-color: #6e53bc;
+					border-color: #6e53bc;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #6e53bc;
+					border-color: #6e53bc;
+
+					&::before {
+						border-color: #6e53bc;
+					}
+				}
+			}
+
+			// Color Blue
+			&.color-blue {
+
+				+ [class*="indicator"] {
+					background-color: #1e81f1;
+					border-color: #1e81f1;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #1e81f1;
+					border-color: #1e81f1;
+
+					&::before {
+						border-color: #1e81f1;
+					}
+				}
+			}
+
+			// Color Light Blue
+			&.color-light-blue {
+
+				+ [class*="indicator"] {
+					background-color: #00cbf6;
+					border-color: #00cbf6;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #00cbf6;
+					border-color: #00cbf6;
+
+					&::before {
+						border-color: #00cbf6;
+					}
+				}
+			}
+
+			// Color Cyan
+			&.color-cyan {
+
+				+ [class*="indicator"] {
+					background-color: #1af1e4;
+					border-color: #1af1e4;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #1af1e4;
+					border-color: #1af1e4;
+
+					&::before {
+						border-color: #1af1e4;
+					}
+				}
+			}
+
+			// Color Aqua
+			&.color-aqua {
+
+				+ [class*="indicator"] {
+					background-color: #14ee85;
+					border-color: #14ee85;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #14ee85;
+					border-color: #14ee85;
+
+					&::before {
+						border-color: #14ee85;
+					}
+				}
+			}
+
+			// Color Green
+			&.color-green {
+
+				+ [class*="indicator"] {
+					background-color: #aff526;
+					border-color: #aff526;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #aff526;
+					border-color: #aff526;
+
+					&::before {
+						border-color: #aff526;
+					}
+				}
+			}
+
+			// Color Yellow
+			&.color-yellow {
+
+				+ [class*="indicator"] {
+					background-color: #ffde00;
+					border-color: #ffde00;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #ffde00;
+					border-color: #ffde00;
+
+					&::before {
+						border-color: #ffde00;
+					}
+				}
+			}
+
+			// Color Orange
+			&.color-orange {
+
+				+ [class*="indicator"] {
+					background-color: #ff860f;
+					border-color: #ff860f;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #ff860f;
+					border-color: #ff860f;
+
+					&::before {
+						border-color: #ff860f;
+					}
+				}
+			}
+
+			// Color Red
+			&.color-red {
+
+				+ [class*="indicator"] {
+					background-color: #ed2546;
+					border-color: #ed2546;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: #ed2546;
+					border-color: #ed2546;
+
+					&::before {
+						border-color: #ed2546;
+					}
+				}
+			}
+
+			// Color Black
+			&.color-black {
+				$color-filter-black: #383838;
+
+				@if $template == 'football' {
+					$color-filter-black: #1e202f;
+				}
+
+				@if $template == 'esports' {
+					$color-filter-black: #1e1826;
+				}
+
+				+ [class*="indicator"] {
+					background-color: $color-filter-black;
+					border-color: $color-filter-black;
+				}
+
+				&:checked + [class*="indicator"] {
+					background-color: $color-filter-black;
+					border-color: $color-filter-black;
+
+					&::before {
+						border-color: $color-filter-black;
+					}
+				}
+			}
+
+		}
+
+		&.checkbox-inline {
+			padding-left: 24px;
+		}
+
+		// Disabled
+		input:disabled + [class*="indicator"] {
+			background-color: $input-bg-disabled;
+			border-color: #d8dce5;
+		}
+	}

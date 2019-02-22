@@ -1,0 +1,177 @@
+/* Circular Bars
+/* ------------------------- */
+
+.circular {
+	margin: 10px 0;
+
+	@media (min-width: 992px) {
+		margin: 0;
+	}
+}
+	.circular__bar {
+		position: relative;
+		margin: 0 auto;
+		width: 70px;
+		height: 70px;
+
+		& + .circular__label {
+			margin-top: 1.2em;
+		}
+
+		@media (min-width: 992px) {
+			width: 90px;
+			height: 90px;
+		}
+
+		@media (min-width: 992px) and (max-width: 1199px){
+			width: 80px;
+			height: 80px;
+		}
+
+		canvas {
+			width: 100% !important;
+			height: 100% !important;
+			vertical-align: top;
+		}
+	}
+		.circular__percents {
+			@include font-accent(12px);
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			text-align: center;
+			color: $circular-bar-label-color;
+			line-height: 1.2em;
+
+			@media (min-width: 992px) {
+				font-size: 18px;
+			}
+
+			@media (min-width: 992px) and (max-width: 1199px){
+				font-size: 14px;
+			}
+
+			small {
+				font-size: 10px;
+
+				@media (min-width: 992px) {
+					font-size: 12px;
+				}
+			}
+
+			// If label is inside circular bar
+			.circular__label {
+				display: block;
+				font-size: 9px;
+				line-height: 1.2em;
+				color: $body-font-color;
+			}
+
+			.circular__label-in {
+
+			}
+
+		}
+
+		.circular__percents--lg {
+
+			@media (min-width: 992px) {
+				font-size: 24px;
+			}
+		}
+
+		.circular__label {
+			display: block;
+			@include font-accent(8px);
+			line-height: 1.2em;
+			text-align: center;
+
+			@media (min-width: 992px) {
+				font-size: 10px;
+			}
+		}
+
+
+.circular--size-70 {
+
+	.circular__bar {
+		width: 50px;
+		height: 50px;
+
+		@media (min-width: 992px) {
+			width: 70px;
+			height: 70px;
+		}
+
+		@media (min-width: 992px) and (max-width: 1199px){
+			width: 60px;
+			height: 60px;
+		}
+
+		.circular__percents {
+
+			@media (min-width: 992px) {
+				font-size: 14px;
+			}
+
+			@media (min-width: 992px) and (max-width: 1199px){
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.circular--size-80 {
+
+	.circular__bar {
+		width: 55px;
+		height: 55px;
+
+		@media (min-width: 992px) {
+			width: 80px;
+			height: 80px;
+		}
+
+		@media (min-width: 992px) and (max-width: 1199px){
+			width: 65px;
+			height: 65px;
+		}
+
+		.circular__percents {
+
+			.circular__label {
+
+				font-family: $font-family-base;
+				text-transform: none;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.circular--size-40 {
+
+	.circular__bar {
+		width: 32px;
+		height: 32px;
+
+		@media (min-width: 768px) {
+			width: 40px;
+			height: 40px;
+		}
+
+		@media (min-width: 992px) and (max-width: 1199px){
+			width: 32px;
+			height: 32px;
+		}
+
+		.df-icon {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+}

@@ -1,0 +1,47 @@
+// Text Transform
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+// Text Color
+.text-primary,
+.text-color-primary {
+  color: $color-primary !important;
+}
+
+// Text Transform
+.text-transform-normal {
+  text-transform: none !important;
+}
+
+// Paddings
+.pt-0 {
+  padding-top: 0 !important;
+}
+.pb-0 {
+  padding-bottom: 0 !important;
+}
+
+// Margins
+.mb-0 {
+  margin-bottom: 0 !important;
+}
+.mb-20 {
+  margin-bottom: 20px !important;
+}
+.mb-30 {
+  margin-bottom: 30px !important;
+}
+
+// Icon SVG
+.icon-svg {
+	vertical-align: middle;
+}

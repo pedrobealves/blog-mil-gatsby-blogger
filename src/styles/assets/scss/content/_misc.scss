@@ -1,0 +1,235 @@
+/* Spacers */
+.spacer {
+	height: 30px;
+	overflow: hidden;
+}
+.spacer-sm {
+	height: 15px;
+	overflow: hidden;
+}
+.spacer-xs {
+	height: 10px;
+	overflow: hidden;
+}
+.spacer-lg {
+	height: 45px;
+	overflow: hidden;
+}
+.spacer-xlg {
+	height: 60px;
+	overflow: hidden;
+}
+.spacer-xxlg {
+	height: 90px;
+	overflow: hidden;
+}
+
+// SVG duotone filters
+.svg-filters {
+	height: 0;
+	left: -9999em;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	width: 0;
+}
+
+
+/* Color Pallete */
+.df-color-pallete {
+	list-style-type: none;
+	display: flex;
+	padding: 0;
+	margin: 0;
+
+	@media (max-width: 767px) {
+		flex-wrap: wrap;
+	}
+}
+	.df-color-pallete__item {
+		height: 120px;
+		flex-grow: 1;
+		@include font-accent(10px);
+		color: #fff;
+		line-height: 1.2em;
+		text-align: center;
+		line-height: 120px;
+
+		@media (max-width: 767px) {
+			flex-basis: 25%;
+		}
+
+		@media (max-width: 479px) {
+			flex-basis: 50%;
+		}
+
+		&.color-dark {
+			background-color: $color-dark;
+		}
+		&.color-dark-lighten {
+			background-color: $color-dark-lighten;
+		}
+		&.color-2 {
+			background-color: $color-2;
+		}
+		&.color-3 {
+			background-color: $color-3;
+		}
+		&.color-4 {
+			background-color: $color-4;
+		}
+		@if $template == 'football' {
+			&.color-4-darken {
+				background-color: $color-4-darken;
+			}
+		}
+		&.color-gray {
+			background-color: $color-gray;
+		}
+
+		@if $template == 'football' {
+			&.color-gray-2 {
+				background-color: $color-gray-2;
+			}
+			&.color-gray-3 {
+				background-color: $color-gray-3;
+			}
+		}
+
+		&.color-primary {
+			background-color: $color-primary;
+		}
+		&.color-primary-darken {
+			background-color: $color-primary-darken;
+		}
+	}
+
+// Google Fonts (for demo purposes)
+.gfont-list {
+
+}
+	.gfont-item {
+		margin-bottom: 1rem;
+	}
+		.gfont-item__body {
+			font-size: 110px;
+			line-height: 1em;
+			color: $headings-color;
+		}
+		.gfont-item__name {
+			color: $headings-color;
+			font-size: 12px;
+			line-height: 1.5em;
+			font-weight: 400 !important;
+
+			&::before {
+				display: block;
+			}
+		}
+		.gfont-item__type {
+			font-size: 12px;
+			line-height: 1.5em;
+			font-weight: 400 !important;
+
+			&::before {
+				display: block;
+			}
+		}
+
+	.gfont-item--style1 {
+		font-family: $font-family-accent;
+		font-weight: bold;
+		font-style: italic;
+
+		.gfont-item__name {
+			text-transform: uppercase;
+
+			&::before {
+				content: "#{$font-family-accent}";
+			}
+		}
+
+		.gfont-item__type {
+			text-transform: uppercase;
+
+			&::before {
+				content: "Bold Italic";
+			}
+		}
+	}
+	.gfont-item--style2 {
+		font-family: $font-family-accent;
+		font-weight: bold;
+
+		.gfont-item__name {
+			text-transform: uppercase;
+
+			&::before {
+				content: "#{$font-family-accent}";
+			}
+		}
+
+		.gfont-item__type {
+			text-transform: uppercase;
+
+			&::before {
+				content: "Bold";
+			}
+		}
+	}
+	.gfont-item--style3 {
+		font-family: $font-family-accent;
+
+		.gfont-item__name {
+			&::before {
+				content: "#{$font-family-accent}";
+			}
+		}
+
+		.gfont-item__type {
+
+			&::before {
+				content: "Regular";
+			}
+		}
+	}
+	.gfont-item--style4 {
+		font-family: $font-family-base;
+
+		.gfont-item__name {
+			&::before {
+				content: "#{$font-family-accent}";
+			}
+		}
+
+		.gfont-item__type {
+
+			&::before {
+				content: "Regular";
+			}
+		}
+	}
+
+
+// Team Colors
+.team-color--1 {
+	color: #00ff5b;
+}
+.team-color--2 {
+	color: #ffe71b;
+}
+.team-color--3 {
+	color: #ff3f5a;
+}
+.team-color--4 {
+	color: #00fff6;
+}
+.team-color--5 {
+	color: #fff7ca;
+}
+.team-color--6 {
+	color: #9979ff;
+}
+.team-color--7 {
+	color: #00deff;
+}

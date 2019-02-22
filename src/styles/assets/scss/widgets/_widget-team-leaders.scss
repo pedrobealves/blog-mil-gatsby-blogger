@@ -1,0 +1,200 @@
+/* Widget: Team Leaders */
+.widget-leaders {
+
+
+}
+	.team-leader {
+		border-top: 1px solid $card-border-color;
+
+		.table-responsive:first-child & {
+			border-top: none;
+		}
+
+		.team-leader__type,
+		.team-leader__player {
+			padding-left: 15px;
+			vertical-align: middle;
+
+			@media (min-width: 1200px) {
+				padding-left: $card-horizontal-padding;
+			}
+		}
+
+		@if $template == football {
+			.team-leader__type {
+				border-left: 6px solid $color-primary;
+				padding-left: 9px;
+
+				@media (min-width: 1200px) {
+					padding-left: $card-horizontal-padding - 6;
+				}
+			}
+		}
+
+		.team-leader__avg {
+			@media (min-width: 1200px) {
+				padding-right: $card-horizontal-padding;
+			}
+		}
+
+		tbody > tr > td {
+			vertical-align: middle;
+		}
+	}
+
+		th {
+			text-transform: uppercase;
+		}
+
+		th.team-leader__total,
+		th.team-leader__gp,
+		th.team-leader__avg,
+		td.team-leader__total,
+		td.team-leader__gp,
+		td.team-leader__avg {
+			text-align: center;
+		}
+
+		@if $template == soccer {
+			th.team-leader__goals,
+			td.team-leader__goals {
+				text-align: center;
+			}
+		}
+
+		@if $template == football {
+			th.team-leader__td,
+			td.team-leader__td,
+			th.team-leader__qbr,
+			td.team-leader__qbr {
+				text-align: center;
+			}
+
+			.team-leader__total {
+				color: $headings-color;
+			}
+		}
+
+		.team-leader__type,
+		.team-leader__total,
+		.team-leader__gp,
+		.team-leader__avg,
+		.team-leader__points {
+
+		}
+
+		.team-leader__avg {
+
+			.circular {
+				margin: 0;
+
+				.circular__bar {
+					width: 40px;
+					height: 40px;
+				}
+				.circular__percents {
+					font-size: 11px;
+				}
+			}
+		}
+			.team-leader__player-info {
+
+				@if $template == football {
+					padding-top: 5px;
+					padding-bottom: 5px;
+				}
+			}
+				.team-leader__player-img {
+					display: inline-block;
+					vertical-align: middle;
+					overflow: hidden;
+					margin-right: 10px;
+
+					@if $template == football {
+						width: 30px;
+						height: 30px;
+						border-radius: 4px;
+					} @else {
+						width: 40px;
+						height: 40px;
+						border-radius: 50%;
+					}
+				}
+				.team-leader__player-img--sm {
+					width: 30px;
+					height: 30px;
+				}
+				.team-leader__player-inner {
+					display: inline-block;
+					vertical-align: middle;
+				}
+					.team-leader__player-name {
+						text-transform: none;
+						font-size: 12px;
+						line-height: 1.2em;
+						font-weight: 400;
+						margin-bottom: 0;
+						font-style: normal;
+					}
+					.team-leader__player-position {
+						display: block;
+						font-family: $font-family-accent;
+						font-size: 9px;
+						line-height: 1.2em;
+					}
+
+
+	// Clean Tabs
+	.nav-tabs--clean {
+		width: auto;
+		border-bottom: none !important;
+
+		.nav-link {
+			border: none;
+			border-radius: 0;
+			font-size: 11px;
+			line-height: 1.5em;
+			font-family: $font-family-accent;
+			text-transform: uppercase;
+			padding: 12px 16px;
+			color: rgba($color-2, .4);
+			font-weight: bold;
+			letter-spacing: -0.02em;
+			transition: color 0.2s ease-in-out;
+
+			@if $template == 'football' {
+				color: $color-gray-3;
+			}
+
+			&:hover {
+				color: $color-2;
+				background-color: transparent;
+				border: none;
+
+				@if $template == 'football' {
+					color: #fff;
+				}
+			}
+
+			&.active {
+				color: $color-2;
+				border: none;
+				padding: 12px 16px;
+
+				@if $template == 'football' {
+					background-color: transparent;
+					color: #fff;
+				}
+
+				&:hover,
+				&:focus {
+
+					@if $template == 'football' {
+						border: none;
+						background-color: transparent;
+						color: #fff;
+					}
+				}
+			}
+		}
+	}

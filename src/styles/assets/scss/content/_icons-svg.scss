@@ -1,0 +1,309 @@
+//- Icons SVG
+//- ----------------------------------------------
+
+// Base style
+.df-icon {
+	width: 28px;
+	height: 28px;
+	fill: none;
+	stroke: $svg-stroke;
+}
+// Stack
+.df-icon-stack {
+	position: relative;
+	width: 28px;
+	height: 28px;
+
+	.df-icon {
+		position: absolute;
+	}
+}
+	// BasketBall Icon
+	.df-icon--basketball {
+		width: 28px;
+		height: 28px;
+		stroke-width: 1.6px;
+	}
+
+	// Jersey Icon
+	.df-icon--jersey {
+		width: 22px;
+		height: 24px;
+		stroke-width: 1.8px;
+		fill-rule: evenodd;
+	}
+
+	// Points Icon
+	.df-icon--points {
+		width: 37px;
+		height: 32px;
+		stroke-width: 1.6px;
+	}
+
+	// Bag Icon
+	.df-icon--bag {
+		width: 22px;
+		height: 24px;
+		stroke-width: 1.6px;
+	}
+	.df-icon--bag-handle {
+		width: 12px;
+		height: 11px;
+		stroke-width: 1.6px;
+	}
+		.df-icon-stack--bag {
+
+			.df-icon--bag {
+				left: 50% !important;
+				top: 5px;
+				transform: translate(-50%, 0);
+			}
+			.df-icon--bag-handle {
+				left: 50% !important;
+				transform: translate(-50%, 0);
+			}
+		}
+
+	// Pointer per Game Icon
+	.df-icon--ppg {
+		width: 37px;
+		height: 32px;
+		stroke-width: 1.6px;
+
+		// fallback for IE11-Edge
+		> path {
+			fill: $headings-color;
+		}
+	}
+
+	// Assists per Game Icon
+	.df-icon--apg {
+		width: 50px;
+		height: 28px;
+		stroke-width: 1.6px;
+
+		// fallback for IE11-Edge
+		> path {
+			fill: $headings-color;
+		}
+	}
+
+	// Rebounds per Game Icon
+	.df-icon--rpg {
+		width: 41px;
+		height: 33px;
+		stroke-width: 1.6px;
+
+		// fallback for IE11-Edge
+		> path {
+			fill: $headings-color;
+		}
+	}
+
+	// Three Points per Game Icon
+	.df-icon-stack--3pts {
+		margin: 0 auto;
+		width: 33px;
+		height: 32px;
+		text-align: center;
+
+		.df-icon--basketball {
+			left: 0;
+			top: 4px;
+		}
+		.df-icon--txt {
+			display: block;
+			position: absolute;
+			right: 0;
+			top: 0;
+			@include font-accent(10px);
+			line-height: 1em;
+		}
+	}
+
+
+
+@if $template == 'soccer' {
+	/* Soccer Icons */
+
+	// Whistle Icon
+	.df-icon--whistle {
+		width: 30px;
+		height: 32px;
+		stroke-width: 1.8px;
+	}
+
+	// Soccer Ball
+	.df-icon--soccer-ball {
+		width: 28px;
+		height: 28px;
+		stroke-width: 1.8px;
+	}
+}
+
+@if $template == 'football' {
+	/* Football Icons */
+
+	// Helmet
+	.df-icon--football-helmet {
+		width: 36px;
+		height: 31px;
+		stroke-width: 1.6px;
+	}
+
+	// Ball
+	.df-icon--football-ball {
+		width: 31px;
+		height: 31px;
+		stroke-width: 1.6px;
+	}
+}
+
+
+@if $template == 'esports' {
+	/* eSports Icons */
+
+	// Shopping Cart
+	.df-icon-stack--cart {
+
+	}
+
+	.df-icon--shopping-cart {
+		width: 18px;
+		height: 24px;
+	}
+
+	// Crosshair
+	.df-icon--coin {
+		width: 18px;
+		height: 18px;
+		stroke: none;
+	}
+
+	// Crosshair
+	.df-icon--crosshair {
+		width: 18px;
+		height: 18px;
+		stroke: none;
+	}
+
+	// Dead Face
+	.df-icon--dead-face {
+		width: 16px;
+		height: 12px;
+		stroke: none;
+	}
+
+	// Dead Face
+	.df-icon--thumbs-up {
+		width: 19px;
+		height: 19px;
+	}
+
+	// Dead Face
+	.df-icon--trophy {
+		width: 22px;
+		height: 18px;
+		stroke: none;
+	}
+
+	.df-icon--fire {
+		width: 19px;
+		height: 23px;
+	}
+
+	.df-icon--medic {
+		width: 14px;
+		height: 14px;
+		stroke-width: 0;
+	}
+
+	.df-icon--gamepad {
+		width: 21px;
+		height: 22px;
+		stroke-width: 0;
+	}
+
+	.df-icon--starmd {
+		width: 23px;
+		height: 20px;
+	}
+
+	.df-icon--drop {
+		width: 15px;
+		height: 20px;
+		stroke: none;
+	}
+
+	.df-icon--stopwatch {
+		width: 19px;
+		height: 21px;
+		stroke: none;
+	}
+
+	.df-icon--skull {
+		stroke: none;
+		width: 18px;
+		height: 24px;
+		fill: $color-primary;
+	}
+
+	.df-icon--pliers {
+		stroke: none;
+		width: 23px;
+		height: 22px;
+		fill: $color-primary;
+	}
+
+	.df-icon--explosion {
+		stroke: none;
+		width: 34px;
+		height: 29px;
+	}
+
+	.df-icon--stopwatch2 {
+		stroke: none;
+		width: 18px;
+		height: 21px;
+		fill: $color-primary;
+	}
+
+	// Icons Fill Colors
+	.df-icon--fill-info {
+		fill: #0fb8ff;
+	}
+	.df-icon--fill-warning {
+		fill: #ffdc73;
+	}
+}
+
+
+// Custom CSS Icons
+.df-icon-plus {
+	position: relative;
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 5px;
+		top: 0;
+		bottom: 0;
+		width: 2px;
+		background-color: #fff;
+	}
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 5px;
+		height: 2px;
+		background-color: #fff;
+	}
+}

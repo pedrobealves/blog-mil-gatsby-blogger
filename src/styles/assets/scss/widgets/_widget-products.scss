@@ -1,0 +1,99 @@
+/* Widget: Products */
+.widget-products {
+
+}
+
+  .products-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .card & {
+      margin-top: -$card-vertical-padding;
+      margin-bottom: -$card-vertical-padding;
+      margin-left: -$card-horizontal-padding;
+      margin-right: -$card-horizontal-padding;
+    }
+  }
+    .products-list__item {
+      position: relative;
+      overflow: hidden;
+      padding: 24px $card-horizontal-padding 19px $card-horizontal-padding;
+
+      & + & {
+        border-top: 1px solid $card-border-color;
+      }
+    }
+      .products-list__inner {
+        overflow: hidden;
+        padding: 5px 0 0 0;
+      }
+        .products-list__product-thumb {
+          float: left;
+          margin: 0 12px 0 0;
+          overflow: hidden;
+          border-radius: $thumb-border-radius;
+
+          img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+        .products-list__product-cat {
+          display: block;
+					font-size: 8px;
+					@include fix_small_chars();
+          line-height: 1.2em;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-family: $font-family-accent;
+          margin-bottom: .2em;
+        }
+        .products-list__product-name {
+          font-size: 12px;
+          line-height: 1.2em;
+          margin-bottom: .5em;
+          font-family: $font-family-accent;
+          text-transform: uppercase;
+          font-style: normal;
+
+          > a {
+            color: $headings-color;
+            transition: color 0.3s ease;
+
+            &:hover {
+              color: $color-primary-darken;
+            }
+          }
+        }
+        .products-list__product-ratings {
+          font-size: 10px;
+          line-height: 10px;
+          margin: 2px 0;
+
+          .fa {
+            margin-right: 2px;
+            color: $product-rating-color;
+
+            &.empty {
+              color: $product-rating-color-disabled;
+            }
+          }
+        }
+        .products-list__product-sum {
+          font-size: 12px;
+          font-weight: 700;
+          font-family: $font-family-accent;
+          color: $headings-color;
+        }
+          .products-list__product-price {
+
+          }
+          .products-list__product-count {
+
+          }

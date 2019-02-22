@@ -1,0 +1,48 @@
+body {
+	display: none;
+}
+
+#jpreOverlay {
+	background-color: $preloader-bg;
+}
+
+#jpreSlide{
+
+}
+
+#jpreLoader{
+	text-align: center;
+	width: 260px;
+	margin: 0 auto;
+}
+
+#jpreBar {
+
+}
+
+#jprePercentage {
+	font-family: $font-family-accent;
+	font-size: 16px;
+	line-height: 1.2em;
+	text-transform: uppercase;
+	font-weight: 700;
+	letter-spacing: -0.03em;
+	color: $preloader-percent-accent-color;
+	text-align: center;
+	width: 260px;
+	margin: 0 auto;
+
+	&::before {
+		content: $preloader-loading-txt;
+		color: $preloader-percent-color;
+	}
+	&::after {
+		content: $preloader-title;
+		display: block;
+		font-size: 8px;
+		@include fix_small_chars();
+		line-height: 1.5em;
+		color: $preloader-percent-color;
+		letter-spacing: 0;
+	}
+}

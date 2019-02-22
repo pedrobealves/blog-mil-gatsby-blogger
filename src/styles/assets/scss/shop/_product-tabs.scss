@@ -1,0 +1,171 @@
+/* Product Tabs */
+
+.product-tabs {
+
+	.nav-product-tabs {
+		border-bottom: 0;
+
+		.nav-item {
+			border-radius: 0;
+		}
+
+		.nav-link {
+			position: relative;
+			margin-right: 0;
+			border-radius: 0;
+			@include font-accent(11px);
+			color: $body-font-color;
+			line-height: 1.2em;
+			padding: 28px 20px;
+			transition: color .3s ease;
+			border-top: none;
+			margin-bottom: 0;
+			border-bottom: 1px solid $card-border-color;
+
+			@media (min-width: 992px) {
+				font-size: 13px;
+			}
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				height: 0;
+				background-color: $color-primary;
+				transition: height 0.3s ease;
+			}
+
+			> small {
+				display: block;
+				font-size: 8px;
+				@include fix_small_chars();
+				line-height: 1.2em;
+				color: $body-font-color;
+			}
+
+			&:hover {
+				background-color: transparent;
+				border-left: none;
+				border-right: none;
+				color: $headings-color;
+
+				> small {
+					color: $body-font-color;
+				}
+			}
+
+			&.active,
+			&.active:hover,
+			&.active:focus {
+				border: 1px solid $card-border-color;
+				border-left: none;
+				border-right: none;
+				background-color: transparent;
+				color: $headings-color;
+
+				&::before {
+					height: 4px;
+				}
+			}
+		}
+
+
+
+		@media (min-width: 768px) {
+
+			.nav-link {
+				border-radius: 0;
+				border-right: none;
+				border-top: none;
+			}
+
+			.nav-item:first-child .nav-link {
+				border-left: none !important;
+			}
+
+			.nav-link.active,
+			.nav-link.active:hover,
+			.nav-link.active:focus {
+				border-bottom-color: transparent;
+				border-right: none;
+				border-top: none;
+			}
+
+			.nav-item + .nav-item .nav-link {
+				border-left: 1px solid $card-border-color !important;
+			}
+		}
+	}
+}
+
+
+	// Tab Content Section
+	.product-tabs__section {
+
+		& + & {
+			margin-top: 30px;
+		}
+	}
+
+	// Tab Header
+	.product-tabs__header {
+		padding-bottom: 2.5em;
+
+		h2 {
+			margin-bottom: 0;
+
+			@if $template == 'football' {
+				font-style: italic;
+			}
+		}
+
+		.ratings {
+			font-size: 11px;
+			padding: 13px 0 0 0;
+
+			.fa {
+				margin-right: 3px;
+			}
+		}
+		.ratings-result {
+			display: inline-block;
+			@include font-accent(11px);
+			padding-left: 9px;
+		}
+
+		h2 + .ratings {
+
+		}
+	}
+
+	.product-tabs__header--sm {
+
+		h2 {
+			font-size: 28px;
+			display: flex;
+			flex-wrap: wrap;
+		}
+			.product-tabs__ratings {
+				flex-grow: 1;
+
+				.highlight {
+
+					@if $template == football {
+						color: $color-4;
+					} @else {
+						color: $color-primary;
+					}
+				}
+			}
+
+			.product-tabs__reviews {
+				flex-shrink: 1;
+			}
+	}
+
+	#textarea-review {
+		height: 162px;
+	}

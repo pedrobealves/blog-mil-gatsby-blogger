@@ -1,0 +1,84 @@
+/* Staff */
+.alc-staff-inner {
+
+	@media (min-width: 992px) {
+		padding: 0 0 0 18px;
+	}
+}
+
+// Staff Photo
+.alc-staff__photo {
+	text-align: center;
+
+	@media (min-width: 768px) {
+		text-align: left;
+	}
+}
+
+// Staff Heading
+.alc-staff__header {
+	margin-bottom: 24px;
+	padding: 25px 0 0 0;
+}
+
+// Staff Name
+.alc-staff__header-name {
+	font-size: 26px;
+	line-height: 1em;
+	margin-bottom: 0;
+
+	@media (max-width: 479px) {
+		font-size: 14px;
+	}
+}
+	.alc-staff__header-last-name {
+		display: block;
+		font-size: 46px;
+		line-height: 1em;
+		color: $color-primary;
+
+		@media (max-width: 479px) {
+			font-size: 1.5em;
+		}
+	}
+.alc-staff__header-role {
+	font-size: 11px;
+	@include font-accent(11px);
+	font-weight: 400;
+}
+
+// Staff Excerpt
+.alc-staff-excerpt {
+	margin-bottom: 46px;
+}
+
+// Staff Details
+.alc-staff-details {
+	display: flex;
+	flex-wrap: wrap;
+	@include font-accent(10px);
+	line-height: 1.5em;
+}
+	.alc-staff-details__label {
+		min-width: 40%;
+		flex-basis: 40%;
+		text-align: left;
+		font-weight: 400;
+		margin-bottom: 20px;
+		font-size: 10px;
+		font-weight: bold;
+	}
+	.alc-staff-details__value {
+		min-width: 60%;
+		flex-basis: 60%;
+		text-align: right;
+		font-size: 11px;
+		color: $headings-color;
+		text-transform: none;
+		margin-bottom: 20px;
+
+		// Country Flag
+		img {
+			margin-right: 0.5em;
+		}
+	}

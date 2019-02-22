@@ -1,0 +1,44 @@
+/* Breadcrumbs
+/* ------------------------- */
+
+.breadcrumb {
+	padding: 3px 0;
+	margin-bottom: 0;
+	background-color: transparent;
+	border-radius: 0;
+}
+	.breadcrumb-item {
+
+		+ .breadcrumb-item {
+			padding-left: 5px;
+
+			&::before {
+				padding-right: 5px;
+				color: $breadcrumb-divider-color !important;
+			}
+		}
+
+		> a {
+			transition: color 0.2s ease;
+
+			&:hover {
+				color: $breadcrumb-link-hover-color !important;
+			}
+		}
+
+		&.active {
+			color: $breadcrumb-link-active-color;
+		}
+	}
+
+// Breadcrumb in the Page Heading
+.page-heading__breadcrumb {
+	justify-content: center;
+
+	.align-self-end & {
+
+		@media (min-width: 768px) {
+			justify-content: flex-end;
+		}
+	}
+}

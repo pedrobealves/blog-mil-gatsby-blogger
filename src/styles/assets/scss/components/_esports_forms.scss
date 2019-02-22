@@ -1,0 +1,118 @@
+/* Forms
+/* ------------------------- */
+
+label {
+	font-size: 12px;
+	margin-bottom: 9px;
+	font-style: italic;
+
+	.required {
+		color: $color-primary;
+
+		@if $template == football {
+			color: $color-4;
+		}
+	}
+}
+
+// Feedback states
+.has-success {
+
+	.form-control {
+		border-color: $input-border;
+
+		&:focus {
+			border-color: $input-border;
+		}
+	}
+	.input-group-addon {
+		border-color: $input-border;
+	}
+
+	.form-control {
+		background-size: 20px 15px, 36px 36px;
+		background-position: center right 12px, center right 4px;
+		background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 15'%3E%3Cpath fill='#{$color-dark}' d='M19.192,2.878 L10.707,11.364 L10.707,11.364 L7.879,14.192 L5.050,11.364 L5.050,11.364 L0.807,7.121 L3.636,4.293 L7.879,8.535 L16.364,0.050 L19.192,2.878 Z'/%3E%3C/svg%3E"), "#", "%23"), str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='#{$color-success}' d='M18.000,-0.000 C27.941,-0.000 36.000,8.059 36.000,18.000 C36.000,27.941 27.941,35.999 18.000,35.999 C8.059,35.999 -0.000,27.941 -0.000,18.000 C-0.000,8.059 8.059,-0.000 18.000,-0.000 Z'/%3E%3C/svg%3E"), "#", "%23");
+	}
+}
+
+.has-warning {
+
+	.form-control {
+		border-color: $input-border;
+
+		&:focus {
+			border-color: $input-border;
+		}
+	}
+	.input-group-addon {
+		border-color: $input-border;
+	}
+
+	.form-control {
+		background-size: 6px 20px, 36px 36px;
+		background-position: center right 19px, center right 4px;
+		background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 20'%3E%3Cpath fill='#{$color-dark}' d='M5.000,14.000 L1.000,14.000 L-0.000,-0.000 L6.000,-0.000 L5.000,14.000 ZM5.000,20.000 L1.000,20.000 L1.000,16.000 L5.000,16.000 L5.000,20.000 Z'/%3E%3C/svg%3E"), "#", "%23"), str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='#{$color-warning}' d='M18.000,-0.000 C27.941,-0.000 36.000,8.059 36.000,18.000 C36.000,27.941 27.941,35.999 18.000,35.999 C8.059,35.999 -0.000,27.941 -0.000,18.000 C-0.000,8.059 8.059,-0.000 18.000,-0.000 Z'/%3E%3C/svg%3E"), "#", "%23");
+	}
+}
+
+.has-error {
+
+	.form-control {
+		border-color: $input-border;
+
+		&:focus {
+			border-color: $input-border;
+		}
+	}
+	.input-group-addon {
+		border-color: $input-border;
+	}
+
+	.form-control {
+		background-size: 16px 16px, 36px 36px;
+		background-position: center right 14px, center right 4px;
+		background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 16'%3E%3Cpath fill='#{$color-dark}' d='M15.071,12.242 L12.243,15.071 L8.000,10.828 L3.757,15.071 L0.929,12.242 L5.172,8.000 L0.929,3.757 L3.757,0.928 L8.000,5.171 L12.243,0.928 L15.071,3.757 L10.828,8.000 L15.071,12.242 Z'/%3E%3C/svg%3E"), "#", "%23"), str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36'%3E%3Cpath fill='#{$color-danger}' d='M18.000,-0.000 C27.941,-0.000 36.000,8.059 36.000,18.000 C36.000,27.941 27.941,35.999 18.000,35.999 C8.059,35.999 -0.000,27.941 -0.000,18.000 C-0.000,8.059 8.059,-0.000 18.000,-0.000 Z'/%3E%3C/svg%3E"), "#", "%23");
+	}
+}
+
+
+.form-group {
+	margin-bottom: $form-group-margin-bottom;
+}
+
+
+// Select
+select.form-control {
+	padding-right: $padding-base-horizontal * 2;
+	background-position: center right 20px;
+}
+
+
+// Checkbox
+.checkbox {
+
+	input[type="checkbox"] {
+
+		&:checked + .checkbox-indicator {
+			background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath fill='#{$color-success}' d='M9.243,1.585 L5.000,5.828 L5.000,5.828 L3.586,7.242 L2.172,5.828 L2.172,5.828 L0.757,4.414 L2.172,3.000 L3.586,4.414 L7.828,0.171 L9.243,1.585 Z'/%3E%3C/svg%3E"), "#", "%23");
+		}
+	}
+}
+
+
+// Radio
+.radio {
+
+	input[type="radio"] {
+
+		&:checked + .radio-indicator {
+			background-image: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='4' fill='#{$color-success}'/%3E%3C/svg%3E"), "#", "%23");
+		}
+	}
+
+	// Disabled
+	input[type="radio"]:disabled + .radio-indicator {
+		background-image: none;
+	}
+}

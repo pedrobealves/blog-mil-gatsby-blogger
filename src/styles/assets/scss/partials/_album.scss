@@ -1,0 +1,231 @@
+/*
+// #Album
+// --------------------------------------------------
+*/
+.album-wrapper {
+	overflow: hidden;
+	display: block;
+}
+.album.container-fluid {
+	padding-left: 0;
+	padding-right: 0;
+}
+.album--condensed {
+	padding-left: 0;
+	padding-right: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	.album__item {
+		padding: 0;
+	}
+}
+	.album__item {
+		margin-bottom: 15px;
+
+		.album--condensed & {
+			padding: 6px;
+			margin-bottom: 0;
+		}
+	}
+		.album__item-holder {
+			display: block;
+			overflow: hidden;
+			position: relative;
+
+			@if $template == 'football' {
+				background-color: $color-dark-2;
+				border-radius: $card-border-radius;
+				transform: translate3d(0,0,0);
+			} @else if $template == 'esports' {
+				background-color: $color-dark-2;
+			} @else {
+				background-color: $color-dark;
+			}
+
+			&:hover {
+
+				.album__thumb {
+					opacity: 0.2;
+				}
+				.album__item-desc {
+					opacity: 1;
+					visibility: visible;
+					transform: scale(1);
+				}
+				.album__item-desc:not(.album__item-desc--bottom-left) {
+					transform: scale(1) translateY(-50%);
+				}
+				.album__item-meta {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		// Overlay with Primary Color
+		.album__item-holder--color--primary {
+			background-color: $color-primary;
+
+			.album__item-date {
+				color: #fff;
+			}
+		}
+
+			.album__item-link  {
+				display: block;
+			}
+			.album__thumb {
+				opacity: 1;
+				position: relative;
+				transition: opacity 0.3s ease;
+
+				img {
+					width: 100%;
+					height: auto;
+				}
+			}
+
+	.album__item-desc {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		right: 0;
+		text-align: center;
+		padding: 0 14%;
+		transform: scale(0.95) translateY(-50%);
+		visibility: hidden;
+		opacity: 0;
+		transition: all 0.3s ease;
+	}
+	.album__item-desc--bottom-left {
+		transform: scale(0.95);
+		top: auto;
+		bottom: 20px;
+		text-align: left;
+		padding: 0 10%;
+
+		@media (min-width: 992px) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+	}
+	.album__item-icon {
+		float: left;
+		margin-right: 15px;
+		font-size: 30px;
+		line-height: 1em;
+		color: $color-primary;
+		transition: color 0.3s ease;
+
+		@media (max-width: 479px) {
+			font-size: 20px;
+			margin-right: 8px;
+		}
+	}
+	.album__item-desc-inner {
+		overflow: hidden;
+	}
+		.album__item-title {
+			color: #fff;
+			line-height: 1em;
+			font-size: 14px;
+			text-transform: uppercase;
+			margin-bottom: .35em;
+
+			@media (min-width: 992px) {
+
+				@if $template == football {
+					font-size: 14px;
+				} @else {
+					font-size: 18px;
+				}
+			}
+
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		.album__item-date {
+			display: block;
+			@include font-accent(8px);
+			line-height: 1.2em;
+			color: $body-font-color;
+			margin-bottom: .9em;
+
+			@media (min-width: 992px) {
+				font-size: 10px;
+			}
+
+			@media (max-width: 767px) {
+				display: none;
+			}
+		}
+		.album__item-btn-fab {
+			position: relative;
+			left: auto;
+			top: auto;
+			margin: 0 auto;
+		}
+		.album__item-meta {
+			display: block;
+			opacity: 0;
+			visibility: hidden;
+			position: absolute;
+			right: 20px;
+			top: 15px;
+			transition: opacity 0.3s ease;
+
+			@media (min-width: 992px) {
+				right: 30px;
+				top: 25px;
+			}
+
+			.meta__item {
+				color: #fff;
+
+				> a {
+					color: #fff;
+				}
+			}
+		}
+
+
+/* Album - Load More Photos */
+.album-load-more {
+	padding: 30px 0 20px 0;
+
+	@media (min-width: 992px) {
+		padding: 80px 0 40px 0;
+	}
+
+	.btn {
+		margin: 0 auto;
+
+		@media (min-width: 992px) {
+			width: calc(33.3% + 60px);
+		}
+	}
+}
+
+/* Album Title */
+.album-heading {
+	text-align: center;
+	padding-bottom: 36px;
+}
+	.album-heading__icon {
+		margin: 0 auto 16px auto;
+	}
+	.album-heading__title {
+		font-size: 16px;
+		line-height: 1.2em;
+		font-style: normal;
+		margin-bottom: .2em;
+	}
+	.album-heading__subtitle {
+		font-size: 10px;
+		line-height: 1.2em;
+		color: $body-font-color;
+		text-transform: uppercase;
+	}

@@ -1,0 +1,112 @@
+/* Pagination
+/* ------------------------- */
+.pagination {
+	flex-wrap: wrap;
+
+	@if $template == 'esports' {
+		margin: 30px 0 20px 0;
+	} @else {
+		margin: 20px 0;
+	}
+}
+	.page-item {
+
+		&.active .page-link {
+
+			&,
+			&:hover,
+			&:focus {
+				background-color: $pagination-bg-active;
+				border-color: $pagination-border-active;
+				color: $pagination-color-active;
+			}
+		}
+	}
+		.page-link {
+			margin: 0 4px;
+			padding: 0;
+			line-height: 36px;
+			width: 36px;
+			height: 36px;
+			text-align: center;
+			background-color: $pagination-bg;
+			border-radius: 3px;
+			border-color: $pagination-border;
+			color: $pagination-color;
+			font-size: $pagination-font-size;
+			text-transform: uppercase;
+			font-family: $font-family-accent;
+			font-weight: bold;
+			transition: all 0.2s ease;
+			position: static;
+		}
+
+		.page-link {
+
+			&:hover {
+				background-color: $pagination-bg-hover;
+				border-color: $pagination-border-hover;
+				color: $pagination-color-hover;
+			}
+		}
+
+
+// Condensed
+.pagination--condensed {
+
+	.page-item {
+
+		&:first-child,
+		&:last-child {
+
+			.page-link {
+				border-radius: 0;
+			}
+		}
+	}
+		.page-link {
+			border-radius: 0;
+			margin: 0;
+			margin-left: -1px;
+		}
+}
+
+// Large
+.pagination--lg {
+
+	.page-link {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+	}
+}
+
+// Circle
+.pagination--circle {
+
+	.page-item {
+
+		&:first-child,
+		&:last-child {
+
+			.page-link {
+				border-radius: 50%;
+			}
+		}
+	}
+
+	.page-link {
+		width: 32px;
+		height: 32px;
+		line-height: 30px;
+		border-radius: 50%;
+		margin: 0 2px;
+
+		@media (min-width: 992px) {
+			width: 46px;
+			height: 46px;
+			line-height: 44px;
+			margin: 0 5px;
+		}
+	}
+}

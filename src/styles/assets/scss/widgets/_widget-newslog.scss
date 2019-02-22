@@ -1,0 +1,271 @@
+/* Widget: Newslog */
+.widget-newslog {
+
+}
+	.newslog {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		.card & {
+			margin-top: -$card-vertical-padding;
+			margin-bottom: -$card-vertical-padding;
+		}
+	}
+		.newslog__item {
+			border-bottom: 1px solid $card-border-color;
+			padding: $card-vertical-padding $card-horizontal-padding;
+			font-size: 11px;
+			line-height: 17px;
+			font-family: $font-family-accent;
+
+			.card & {
+				margin-left: -$card-horizontal-padding;
+				margin-right: -$card-horizontal-padding;
+			}
+
+			&:last-child {
+				border-bottom: none;
+			}
+
+			strong {
+				font-weight: 400;
+				color: $headings-color;
+			}
+		}
+
+		@if $template == 'football' {
+
+			// Categories
+			.newslog__item--injury {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: $color-info;
+					width: 16px;
+					background-image: none;
+					content: "\f067";
+				}
+			}
+			.newslog__item--join {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: $color-4;
+					width: 16px;
+					background-image: none;
+					content: "\f054";
+				}
+			}
+			.newslog__item--exit {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: $color-danger;
+					width: 16px;
+					background-image: none;
+					content: "\f053";
+				}
+			}
+
+			.newslog__item--award {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: #ffd71b;
+					width: 16px;
+					background-image: none;
+					content: "\f006";
+				}
+			}
+
+		} @else if $template == 'soccer' {
+
+			// Categories
+			.newslog__item--injury {
+
+				.newslog__item-inner::before {
+					width: 16px;
+					height: 16px;
+					border-radius: 50%;
+					background-color: #ff5353;
+					border: 1px solid #e54444;
+					background-image: linear-gradient(to left, #fff, #fff), linear-gradient(to left, #fff, #fff);
+					background-size: 8px 2px, 2px 8px;
+					background-position: 3px 6px, 6px 3px;
+				}
+			}
+			.newslog__item--join {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath transform='translate(-983.875 -2316.34)' fill='%2314d6c6' stroke='none' d='M986,2327.66l-2.122-2.13,3.536-3.53-3.536-3.54,2.122-2.12,5.657,5.66Z'/%3E%3C/svg%3E");
+					background-size: 8px 12px;
+					width: 8px;
+					height: 12px;
+				}
+			}
+			.newslog__item--exit {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 12'%3E%3Cpath transform='translate(-983.875 -2316.34)' fill='%23ee5353' stroke='none' d='M986,2327.66l-2.122-2.13,3.536-3.53-3.536-3.54,2.122-2.12,5.657,5.66Z'/%3E%3C/svg%3E");
+					background-size: 8px 12px;
+					width: 8px;
+					height: 12px;
+					transform: rotate(-180deg);
+				}
+			}
+
+			.newslog__item--award {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='18px' height='19px'%3e%3cpath fill-rule='evenodd' fill='rgb(255, 211, 7)' d='M5.027,18.997 C5.021,18.938 5.017,18.878 5.017,18.817 C5.017,17.822 5.881,17.016 6.946,17.016 L11.100,17.016 C12.165,17.016 13.028,17.822 13.028,18.817 C13.028,18.878 13.025,18.938 13.018,18.997 L5.027,18.997 Z'/%3e%3cpath fill-rule='evenodd' fill='rgb(255, 181, 5)' d='M7.023,12.001 L11.018,12.001 L11.018,17.002 L7.023,17.002 L7.023,12.001 Z'/%3e%3cpath fill-rule='evenodd' fill='rgb(255, 211, 7)' d='M1.289,3.000 C1.289,3.000 1.515,8.859 4.740,8.885 L5.013,10.000 C0.006,10.000 0.333,1.993 0.333,1.993 L3.050,1.993 L3.297,3.000 L1.289,3.000 Z'/%3e%3cpath fill-rule='evenodd' fill='rgb(255, 211, 7)' d='M12.991,10.000 L13.283,8.885 C16.731,8.859 16.973,3.000 16.973,3.000 L14.825,3.000 L15.089,1.993 L17.995,1.993 C17.995,1.993 18.345,10.000 12.991,10.000 Z'/%3e%3cpath fill-rule='evenodd' fill='rgb(255, 211, 7)' d='M13.819,7.870 C12.819,10.809 11.183,12.834 9.002,13.007 C6.821,12.834 5.185,10.809 4.185,7.870 C3.185,4.931 3.004,1.003 3.004,1.003 L8.457,1.003 L9.547,1.003 L15.000,1.003 C15.000,1.003 14.819,4.931 13.819,7.870 Z'/%3e%3cpath fill-rule='evenodd' fill='rgb(255, 229, 106)' d='M2.203,0.008 L15.797,0.008 C15.911,0.008 16.002,0.108 16.002,0.232 L16.002,0.790 C16.002,0.913 15.911,1.013 15.797,1.013 L2.203,1.013 C2.089,1.013 1.998,0.913 1.998,0.790 L1.998,0.232 C1.998,0.108 2.089,0.008 2.203,0.008 Z'/%3e%3c/svg%3e");
+					background-size: 18px 19px;
+					width: 18px;
+					height: 19px;
+				}
+			}
+
+		} @else if $template == 'esports' {
+
+			.newslog__item {
+				font-size: 12px;
+				line-height: 20px;
+				font-family: $font-family-base;
+			}
+
+			// Categories
+			.newslog__item--news {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='12px' height='14px'%3e%3cpath fill-rule='evenodd' fill='#00ff5b' d='M10.000,8.000 L7.000,8.000 L7.000,10.000 L4.000,10.000 L4.000,8.000 L6.000,6.000 L9.000,6.000 L9.000,3.000 L8.000,2.000 L4.000,2.000 L3.000,3.000 L3.000,5.000 L-0.000,5.000 L-0.000,1.866 L1.538,-0.000 L10.000,-0.000 L12.000,2.000 L12.000,6.000 L10.000,8.000 ZM7.000,14.000 L4.000,14.000 L4.000,12.000 L7.000,12.000 L7.000,14.000 Z'/%3e%3c/svg%3e");
+					background-size: 12px 14px;
+					width: 12px;
+					height: 14px;
+				}
+			}
+			.newslog__item--join {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: $color-success;
+					width: 16px;
+					background-image: none;
+					content: "\f061";
+				}
+			}
+			.newslog__item--exit {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: $color-info;
+					width: 16px;
+					background-image: none;
+					content: "\f060";
+				}
+			}
+
+			.newslog__item--award {
+
+				.newslog__item-inner::before {
+					font-family: "FontAwesome";
+					-webkit-font-smoothing: antialiased;
+					-moz-osx-font-smoothing: grayscale;
+					font-size: 14px;
+					color: #ffd71b;
+					width: 16px;
+					background-image: none;
+					content: "\f006";
+				}
+			}
+
+				.newslog__date {
+					font-size: 11px;
+				}
+
+		} @else {
+
+			// Categories
+			.newslog__item--injury {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath transform='translate(-978.5 -2710.5)' fill='none' stroke='%231bdfb8' d='M991,2719h-4v4h-4v-4h-4v-4h4v-4h4v4h4v4Z'/%3E%3C/svg%3E");
+					background-size: 13px 13px;
+					width: 13px;
+					height: 13px;
+				}
+			}
+			.newslog__item--join {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 13'%3E%3Cpath transform='translate(-978.5 -2807.5)' fill='none' stroke='%23fc0' d='M994,2813.99l-8,6.01v-4h-7v-4h7v-4.01Z'/%3E%3C/svg%3E");
+					background-size: 16px 13px;
+					width: 16px;
+					height: 13px;
+				}
+			}
+			.newslog__item--exit {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 13'%3E%3Cpath transform='translate(-978.5 -3094.5)' fill='none' stroke='%23eb1b5a' d='M979,3100.99l8,6.01v-4h7v-4h-7v-4.01Z'/%3E%3C/svg%3E");
+					background-size: 16px 13px;
+					width: 16px;
+					height: 13px;
+				}
+			}
+
+			.newslog__item--award {
+
+				.newslog__item-inner::before {
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 15'%3E%3Cpath transform='translate(-978.5 -1322.5)' fill='none' stroke='%23ffa200' d='M991,1323v6a4.531,4.531,0,0,1-9,0v-6h9Zm-1,1h4s0.625,6-4,6v-6Zm-7,0h-3.969s-0.62,6,3.969,6v-6Zm3,9h1v3h-1v-3Zm3,3v1h-5v-1h5Z'/%3E%3C/svg%3E");
+					background-size: 16px 15px;
+					width: 16px;
+					height: 15px;
+				}
+			}
+
+		}
+
+
+			.newslog__item-inner {
+				position: relative;
+				padding-left: 36px;
+
+				&:before {
+					content:"";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 6px;
+					background-repeat: no-repeat;
+					background-size: 13px 13px;
+					width: 13px;
+					height: 13px;
+					background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 13'%3E%3Cpath transform='translate(-978.5 -2710.5)' fill='none' stroke='%231bdfb8' d='M991,2719h-4v4h-4v-4h-4v-4h4v-4h4v4h4v4Z'/%3E%3C/svg%3E");
+				}
+			}
+			.newslog__content {
+
+			}
+			.newslog__date {
+				margin-top: 0.5em;
+				display: block;
+				color: rgba($body-font-color, 0.4);
+			}

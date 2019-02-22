@@ -1,0 +1,36 @@
+/* Widget: Featured */
+.widget-featured {
+
+  .card__header {
+
+    &::before {
+      background-color: #ef2e5b;
+    }
+  }
+
+  .widget__content.card__content {
+    padding-bottom: 0;
+  }
+
+  .posts__thumb {
+    position: relative;
+    overflow: hidden;
+
+    &::before {
+      content: "!";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: rgba(#ef2e5b, 0.8);
+      font-size: 54px;
+      line-height: 80px;
+      text-align: center;
+      color: #fff;
+      font-family: $font-family-accent;
+      font-weight: 700;
+    }
+  }
+}

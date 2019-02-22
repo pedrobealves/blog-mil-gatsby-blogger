@@ -1,0 +1,347 @@
+/* Shop Filter */
+.shop-filter {
+	padding-left: $card-horizontal-padding;
+	display: flex;
+	align-items: center;
+	min-height: 72px;
+
+	@media (max-width: 991px) {
+		flex-wrap: wrap;
+		padding-left: 0;
+	}
+}
+
+	// Title
+	.shop-filter__result {
+		font-size: 11px;
+		font-style: normal;
+		text-transform: uppercase;
+		margin-bottom: 0;
+		flex-grow: 1;
+
+		@media (max-width: 991px) {
+			padding: $card-vertical-padding $card-horizontal-padding $card-vertical-padding/2 $card-horizontal-padding;
+		}
+	}
+
+	// Params
+	.shop-filter__params {
+		list-style: none;
+		padding: 0;
+		margin: 0 20px 0 0;
+
+		@media (max-width: 991px) {
+			display: block;
+			width: 100%;
+			padding: 0 0 10px 14px;
+			margin: 0;
+			text-align: left;
+		}
+	}
+		.shop-filter__control {
+			padding-left: 14px;
+			float: left;
+
+			@media (min-width: 992px) and (max-width: 1199px) {
+				padding-left: 0;
+			}
+
+			&:first-child {
+				padding-left: 0;
+			}
+
+			@media (max-width: 479px) {
+				padding: 5px 0 5px 0;
+			}
+
+			select.form-control {
+				border: none;
+				@include font-accent(9px);
+				height: 24px;
+				padding: 4px 24px 4px 10px;
+				display: inline-block;
+				vertical-align: top;
+				background-color: $card-bg;
+				background-image: $select-caret;
+				background-size: 6px 4px;
+				background-position: right 50%;
+				color: $headings-color;
+				white-space: nowrap;
+			}
+		}
+
+
+	// Layout Switcher
+	.shop-filter__layout {
+		height: 72px;
+		overflow: hidden;
+
+		@media (max-width: 991px) {
+			display: block;
+			flex-basis: 100%;
+		}
+	}
+		.shop-filter__grid-layout,
+		.shop-filter__list-layout {
+			float: left;
+			width: 72px;
+			height: 72px;
+			border-left: 1px solid $card-border-color;
+
+			@media (max-width: 992px) {
+				border-top: 1px solid $card-border-color;
+				width: 50%;
+			}
+		}
+
+		/* Icon Grid Layout */
+		.icon-grid-layout {
+			position: relative;
+			display: block;
+		}
+			.icon-grid-layout__inner {
+				display: block;
+				width: 18px;
+				height: 18px;
+				display: block;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+			}
+				.icon-grid-layout__item {
+					display: block;
+					position: relative;
+					width: 4px;
+					height: 4px;
+					font-size: 0;
+					line-height: 0;
+					background-color: $shop-layout-filter-color;
+					margin: 0 auto 3px auto;
+					transition: all 0.5s ease;
+
+					&::before,
+					&::after {
+						content:"";
+						display: block;
+						position: absolute;
+						width: 4px;
+						height: 4px;
+						background-color: $shop-layout-filter-color;
+						transition: all 0.5s ease;
+					}
+
+					&::before {
+						left: -7px;
+					}
+
+					&::after {
+						left: 7px;
+					}
+
+					// Active state
+					.icon-grid-layout--active & {
+						background-color: $shop-layout-filter-color-active;
+
+						&::before,
+						&::after {
+							background-color: $shop-layout-filter-color-active;
+						}
+					}
+
+					// Hover state
+					.icon-grid-layout:hover &{
+						background-color: $shop-layout-filter-color-active;
+
+						&::before,
+						&::after {
+							background-color: $shop-layout-filter-color-active;
+						}
+
+						// 1st row
+						&:first-child {
+							animation: icon-grid-layout-1 .5s;
+
+							&::before {
+								animation: icon-grid-layout-1-before .5s;
+							}
+							&::after {
+								animation: icon-grid-layout-1-after .5s;
+							}
+						}
+
+						// 2nd row
+						&:nth-child(2) {
+
+							&::before {
+								animation: icon-grid-layout-2-before .5s;
+							}
+							&::after {
+								animation: icon-grid-layout-2-after .5s;
+							}
+						}
+
+						// 3rd row
+						&:nth-child(3) {
+							animation: icon-grid-layout-3 .5s;
+
+							&::before {
+								animation: icon-grid-layout-3-before .5s;
+							}
+							&::after {
+								animation: icon-grid-layout-3-after .5s;
+							}
+						}
+					}
+				}
+
+				// 1st row
+				@keyframes icon-grid-layout-1 {
+
+					50% {
+						transform: translateY(-2px);
+					}
+				}
+
+				@keyframes icon-grid-layout-1-before {
+
+					50% {
+						transform: translateX(-2px);
+					}
+				}
+
+				@keyframes icon-grid-layout-1-after {
+
+					50% {
+						transform: translateX(2px);
+					}
+				}
+
+				// 2nd row
+				@keyframes icon-grid-layout-2-before {
+
+					50% {
+						transform: translateX(-2px);
+					}
+				}
+
+				@keyframes icon-grid-layout-2-after {
+
+					50% {
+						transform: translateX(2px);
+					}
+				}
+
+				// 3rd row
+				@keyframes icon-grid-layout-3 {
+
+					50% {
+						transform: translateY(2px);
+					}
+				}
+
+				@keyframes icon-grid-layout-3-before {
+
+					50% {
+						transform: translateX(-2px);
+					}
+				}
+
+				@keyframes icon-grid-layout-3-after {
+
+					50% {
+						transform: translateX(2px);
+					}
+				}
+
+
+		/* Icon List Layout */
+		.icon-list-layout {
+			position: relative;
+		}
+			.icon-list-layout__inner {
+				display: block;
+				width: 18px;
+				height: 18px;
+				display: block;
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				transform: translate(-50%, -50%);
+				text-align: center;
+			}
+				.icon-list-layout__item {
+					display: block;
+					position: relative;
+					width: 4px;
+					height: 4px;
+					font-size: 0;
+					line-height: 0;
+					background-color: $shop-layout-filter-color;
+					margin: 0 0 3px 0;
+					transition: all 0.5s ease;
+
+					&::before {
+						content:"";
+						display: block;
+						position: absolute;
+						width: 11px;
+						height: 4px;
+						background-color: $shop-layout-filter-color;
+						left: 7px;
+						transition: all 0.5s ease-in-out;
+
+					}
+
+					// Active state
+					.icon-list-layout--active & {
+						background-color: $shop-layout-filter-color-active;
+
+						&::before {
+							background-color: $shop-layout-filter-color-active;
+						}
+					}
+
+					// Hover state
+					.icon-list-layout:hover & {
+						animation: icon-list-layout 0.5s;
+						background-color: $shop-layout-filter-color-active;
+
+						&::before {
+							background-color: $shop-layout-filter-color-active;
+							animation: icon-list-layout-before 0.5s;
+						}
+
+						&:nth-child(2) {
+							animation-delay: 0.1s;
+
+							&::before {
+								animation-delay: 0.1s;
+							}
+						}
+
+						&:nth-child(3) {
+							animation-delay: 0.2s;
+
+							&::before {
+								animation-delay: 0.2s;
+							}
+						}
+					}
+				}
+
+
+		@keyframes icon-list-layout {
+
+			50% {
+				transform: translateX(-3px);
+			}
+		}
+
+		@keyframes icon-list-layout-before {
+
+			50% {
+				transform: translateX(6px);
+			}
+		}

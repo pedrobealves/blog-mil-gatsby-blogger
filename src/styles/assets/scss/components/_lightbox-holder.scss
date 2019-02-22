@@ -1,0 +1,219 @@
+/* Lightbox Holder
+/* ------------------------- */
+
+.lightbox-holder {
+  position: relative;
+  margin-bottom: 20px;
+  overflow: hidden;
+  border-radius: $card-border-radius;
+}
+  .lightbox-holder__link {
+    display: block;
+    position: relative;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background-color: #171d21;
+      opacity: .7;
+      z-index: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover {
+
+      &::before {
+        opacity: .5;
+      }
+    }
+  }
+
+  // Centered Icon
+  .lightbox-holder__link--play {
+
+    &::before {
+      content:"\f04b";
+      display: block;
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      line-height: 26px;
+      left: 50%;
+      top: 50%;
+      right: auto;
+      bottom: auto;
+      transform: translate(-50%, -50%);
+      border: 2px solid $color-primary;
+      background-color: rgba($body-bg-color, 0.6);
+      border-radius: 50%;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "FontAwesome";
+      font-size: 10px;
+      text-align: center;
+      text-indent: 3px;
+      opacity: 1;
+
+      @media (min-width: 992px) {
+        width: 80px;
+        height: 80px;
+        line-height: 68px;
+        border-width: 6px;
+        font-size: 28px;
+        text-indent: 5px;
+      }
+    }
+
+    .lightbox-holder__overlay {
+
+      h3 {
+
+        @media (min-width: 1199px) {
+          width: 70%;
+        }
+      }
+    }
+  }
+  .lightbox-holder__overlay {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px 10px 10px;
+    z-index: 2;
+
+    @media (min-width: 992px) {
+      padding: 0 30px 35px 30px;
+    }
+
+    h3 {
+      font-size: 12px;
+      line-height: 1em;
+      color: #fff;
+      margin-bottom: .5em;
+
+      @media (min-width: 992px) {
+        font-size: 24px;
+        margin-bottom: .4em;
+      }
+    }
+    time {
+      display: block;
+      @include font-accent(8px);
+      line-height: 1.2em;
+      color: $body-font-color;
+
+      @media (min-width: 992px) {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .lightbox-holder__overlay--video {
+    padding-left: 40px;
+
+    @media (min-width: 992px) {
+      padding-left: 90px;
+    }
+
+    &::before {
+      content:"\f04b";
+      display: block;
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      line-height: 16px;
+      left: 10px;
+      top: 0;
+      border: 2px solid $color-primary;
+      border-radius: 50%;
+      color: #fff;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-family: "FontAwesome";
+      font-size: 10px;
+      text-align: center;
+      text-indent: 3px;
+
+      @media (min-width: 992px) {
+        left: 30px;
+        width: 40px;
+        height: 40px;
+        line-height: 32px;
+        border-width: 4px;
+        font-size: 14px;
+        text-indent: 5px;
+      }
+    }
+  }
+
+
+// Post Category Styling
+.lightbox-holder {
+
+  &.posts__item--category-1 {
+
+    .lightbox-holder__link--play::before,
+    .lightbox-holder__overlay--video::before {
+      border-color: $post-category-1;
+    }
+    .lightbox-holder__link--play::before {
+
+    }
+  }
+
+  &.posts__item--category-2 {
+
+    .lightbox-holder__link--play::before,
+    .lightbox-holder__overlay--video::before {
+      border-color: $post-category-2;
+    }
+  }
+
+  &.posts__item--category-3 {
+
+    .lightbox-holder__link--play::before,
+    .lightbox-holder__overlay--video::before {
+      border-color: $post-category-3;
+    }
+  }
+}
+
+
+
+// Custom Styles for MagnificPopup
+
+/* overlay at start */
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+/* overlay animate in */
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+/* overlay animate out */
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+/* content at start */
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  transition: all 0.15s ease-out;
+}
+/* content animate it */
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+/* content animate out */
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}

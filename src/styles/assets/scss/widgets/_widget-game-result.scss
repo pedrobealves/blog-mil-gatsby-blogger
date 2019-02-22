@@ -1,0 +1,827 @@
+/* Widget: Game Result */
+.widget-game-result {
+
+	.widget__content {
+		padding: 0;
+	}
+}
+	.widget-game-result__section {
+
+	}
+		.widget-game-result__section-inner {
+			padding: $card-vertical-padding $card-horizontal-padding;
+		}
+		.widget-game-result__section-inner-alt {
+			padding: 0;
+
+			.table-responsive {
+				margin-bottom: 0;
+			}
+		}
+		.widget-game-result__extra-stats {
+			max-height: 0;
+			overflow: hidden;
+			transition: all 0.3s ease;
+
+			&.active {
+				max-height: 400px;
+			}
+		}
+
+	.widget-game-result__header {
+		text-align: center;
+		margin-bottom: 15px;
+	}
+		.widget-game-result__title {
+			font-size: 12px;
+			line-height: 1.2em;
+			margin-bottom: .25em;
+			text-transform: uppercase;
+
+			@media (min-width: 992px) {
+				font-size: 14px;
+			}
+		}
+		.widget-game-result__date {
+			display: block;
+			@include font-accent(9px);
+			line-height: 1.2em;
+
+			@media (min-width: 992px) {
+				font-size: 10px;
+			}
+		}
+
+
+	.widget-game-result__header--alt {
+		display: flex;
+		text-align: left;
+		margin-left: -$card-horizontal-padding;
+		margin-right: -$card-horizontal-padding;
+		margin-top: -$card-vertical-padding;
+		margin-bottom: 0;
+		border-bottom: 1px solid $card-border-color;
+		padding: 10px $card-horizontal-padding;
+
+		.widget-game-result__title {
+			font-size: 9px;
+			font-style: normal;
+			margin-bottom: 0;
+			font-weight: 400;
+
+			@media (min-width: 992px) {
+				font-size: 9px;
+			}
+		}
+
+		.widget-game-result__date {
+			font-size: 9px;
+			flex-grow: 1;
+			text-align: right;
+			font-weight: 400;
+
+			@media (min-width: 992px) {
+				font-size: 9px;
+			}
+		}
+	}
+
+	// Game Result Score
+	.widget-game-result__main {
+		margin-bottom: 6px;
+		display: table;
+		width: 100%;
+	}
+		.widget-game-result__team {
+			display: table-cell;
+			text-align: center;
+			width: 26%;
+		}
+			.widget-game-result__team-logo {
+				height: 70px;
+				display: block;
+				position: relative;
+
+				img {
+					display: block;
+					margin: 0 auto;
+					max-height: 100%;
+				}
+			}
+			.widget-game-result__team-info {
+				padding: 6px 0 0 0;
+			}
+				.widget-game-result__team-name {
+					display: block;
+					font-size: 11px;
+					line-height: 1.2em;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					max-width: 80px;
+					margin: 0 auto 0.1em auto;
+
+					@media (min-width: 480px) {
+						max-width: none;
+					}
+
+					@media (min-width: 992px) {
+						font-size: 13px;
+						max-width: 85px;
+					}
+				}
+				.widget-game-result__team-desc {
+					display: block;
+					@include font-accent(7px);
+					line-height: 1.2em;
+				}
+
+		// Score Result
+		.widget-game-result__score-wrap {
+			display: table-cell;
+			text-align: center;
+			vertical-align: middle;
+			width: 46%;
+		}
+			.widget-game-result__score {
+				@include font-accent(18px);
+				color: $headings-color;
+				letter-spacing: -0.04em;
+
+				@media (min-width: 768px) {
+					font-size: 20px;
+				}
+
+				@media (min-width: 992px) {
+					font-size: 22px;
+					line-height: 1.2em;
+					margin-bottom: 10px;
+				}
+				@media (min-width: 1199px) {
+					font-size: 26px;
+				}
+			}
+				.widget-game-result__score-result {
+					position: relative;
+				}
+				.widget-game-result__score-result--winner {
+
+					&::before {
+						content:"";
+						display: block;
+						position: absolute;
+						left: -15px;
+						top: 50%;
+						width: 0;
+						height: 0;
+						border-left: 8px solid $color-primary;
+						border-top: 8px solid transparent;
+						border-bottom: 8px solid transparent;
+						transform: translateY(-50%);
+
+						@media (min-width: 992px) {
+							left: -10px;
+						}
+
+						@media (min-width: 1199px) {
+							left: -20px;
+						}
+					}
+
+					// Right team win
+					.widget-game-result__score-dash + & {
+
+						&::before {
+							transform: translateY(-50%) rotate(180deg);
+
+							@media (min-width: 992px) {
+								left: auto;
+								right: -10px;
+							}
+
+							@media (min-width: 1199px) {
+								left: auto;
+								right: -20px;
+							}
+						}
+					}
+				}
+				.widget-game-result__score-result--loser {
+					color: $body-font-color;
+				}
+
+				.widget-game-result__score-dash {
+
+				}
+
+				.widget-game-result__score-label {
+					@include font-accent(9px);
+					color: $headings-color;
+					line-height: 1.2em;
+				}
+
+				.widget-game-result__score-video-icon {
+					display: inline-block;
+					width: 24px;
+					height: 24px;
+					border-radius: 50%;
+					color: $color-white;
+					font-size: 10px;
+					text-align: center;
+					line-height: 24px;
+
+					@if $template == 'esports' {
+						background-color: $color-gray-2;
+					} @else {
+						background-color: $color-gray;
+					}
+
+					&:hover {
+						background-color: $color-primary-darken;
+						color: $color-white;
+					}
+
+					.fa {
+						margin-left: 2px;
+					}
+				}
+
+	// Game Result -- Vertical
+	.widget-game-result__main--vertical {
+
+		.widget-game-result__team {
+			display: flex;
+			width: auto;
+			text-align: left;
+			align-items: center;
+			padding: 20px ( $card-horizontal-padding / 2 );
+			margin-left: -$card-horizontal-padding;
+			margin-right: -$card-horizontal-padding;
+
+			& + .widget-game-result__team {
+				border-top: 1px solid $card-border-color;
+			}
+
+			&:last-child {
+				padding-bottom: 0;
+			}
+
+			.widget-game-result__team-score {
+				@include font-accent($font-size-h3);
+				font-style: $font-style-h1;
+				line-height: 1em;
+
+				@media (min-width: 1200px) {
+					font-size: $font-size-h1;
+				}
+			}
+
+			.widget-game-result__team-score--winner {
+				color: $headings-color;
+
+				&::before {
+					content:"";
+					display: inline-block;
+					position: relative;
+					top: -0.15em;
+					margin-right: 0.5em;
+					width: 0;
+					height: 0;
+					border-top: 8px solid transparent;
+					border-bottom: 8px solid transparent;
+
+					@if $template == football {
+						border-left: 8px solid $color-4;
+					} @else {
+						border-left: 8px solid $color-primary;
+					}
+
+					@media (min-width: 992px) {
+						margin-right: 0.2em;
+					}
+
+					@media (min-width: 1200px) {
+						margin-right: 0.5em;
+					}
+				}
+			}
+
+			@media (min-width: 480px) {
+				padding: 20px $card-horizontal-padding;
+			}
+		}
+
+			.widget-game-result__team-logo {
+				width: 80px;
+				margin-right: 10px;
+			}
+
+			.widget-game-result__team-info {
+				flex-grow: 1;
+			}
+
+				.widget-game-result__team-name {
+					font-size: 12px;
+					text-transform: uppercase;
+					margin-left: 0;
+					margin-right: 0;
+					max-width: none;
+
+					@media (min-width: 992px) {
+						font-size: 14px;
+						max-width: none;
+					}
+				}
+				.widget-game-result__team-desc {
+					font-size: 10px;
+					font-style: $font-style-h5;
+				}
+	}
+
+	.widget-game-result__table-stats {
+
+		.table {
+			margin-bottom: 0;
+			border-top: 1px solid $table-border-color;
+
+			.widget-game-result__section-inner & {
+				border-left: none;
+				border-right: none;
+			}
+
+			> tbody > tr > td:first-child,
+			> tbody > tr > th:first-child {
+
+				@media (min-width: 992px) {
+					font-size: 12px;
+
+					@if $template == football {
+						text-transform: none;
+					}
+				}
+			}
+
+			> tbody > tr > th {
+				text-transform: none;
+			}
+
+			> thead > tr > th:first-child,
+			> tbody > tr > td:first-child,
+			> tbody > tr > th:first-child {
+				padding-left: 12px;
+
+				@media (min-width: 992px) {
+					padding-left: 24px;
+				}
+				@media (min-width: 1199px) {
+					padding-left: 45px;
+				}
+			}
+
+			.widget-game-result__section-inner-alt & {
+
+				> thead > tr > th:first-child,
+				> tbody > tr > td:first-child,
+				> tbody > tr > th:first-child {
+					padding-left: 5px;
+
+					@media (min-width: 992px) {
+						padding-left: 18px;
+					}
+					@media (min-width: 1199px) {
+						padding-left: 24px;
+					}
+				}
+
+				> thead > tr > th,
+				> tbody > tr > td,
+				> tbody > tr > th {
+
+					@media (min-width: 992px) and (max-width: 1199px) {
+						padding-left: 5px;
+						padding-right: 5px;
+					}
+				}
+			}
+
+			> thead > tr > th:last-child,
+			> tbody > tr > td:last-child,
+			> tbody > tr > th:last-child {
+				padding-right: 12px;
+				color: $headings-color;
+
+				@media (min-width: 992px) {
+					padding-right: 24px;
+				}
+				@media (min-width: 1199px) {
+					padding-right: 45px;
+				}
+			}
+
+			.widget-game-result__section-inner-alt & {
+				> thead > tr > th:last-child,
+				> tbody > tr > td:last-child,
+				> tbody > tr > th:last-child {
+					padding-right: 5px;
+					color: $headings-color;
+
+					@media (min-width: 992px) {
+						padding-right: 18px;
+					}
+					@media (min-width: 1199px) {
+						padding-right: 24px;
+					}
+				}
+			}
+		}
+	}
+
+	.player-details {
+		display: table;
+		width: 100%;
+		height: 100%;
+	}
+		.player-details__info {
+			display: table-cell;
+			width: 50%;
+			vertical-align: middle;
+		}
+			.player-details__photo {
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+				margin-right: 9px;
+				overflow: hidden;
+				border-radius: 50%;
+				vertical-align: middle;
+
+				@media (min-width: 375px) {
+					width: 40px;
+					height: 40px;
+				}
+			}
+			.player-details__info-holder {
+				display: inline-block;
+				vertical-align: middle;
+			}
+				.player-details__name {
+					font-size: 10px;
+					line-height: 1.2em;
+					text-transform: none;
+					margin-bottom: 0;
+					font-weight: 400;
+
+					@media (min-width: 992px) {
+						font-size: 12px;
+					}
+
+					> a {
+						color: $headings-color;
+						transition: color 0.2s ease;
+
+						&:hover {
+							color: $color-primary-darken;
+						}
+					}
+				}
+				.player-details__position {
+					font-family: $font-family-accent;
+					font-size: 8px;
+					@include fix_small_chars();
+					display: block;
+					line-height: 1em;
+
+					@media (min-width: 992px) {
+						font-size: 9px;
+					}
+				}
+		.player-details__stats {
+			display: table-cell;
+			width: 50%;
+		}
+			.player-details__circular {
+				float: left;
+				width: 33.3%;
+				padding: 0 2px;
+				vertical-align: top;
+				margin: 0;
+
+				@media (min-width: 768px) {
+					padding: 0 6px;
+				}
+
+				@media (min-width: 992px) and (max-width: 1199px) {
+					padding: 0 1px;
+				}
+
+				.circular__bar {
+					width: 100%;
+					height: 100%;
+				}
+				.circular__percents {
+					line-height: 1em;
+					font-size: 12px;
+					font-weight: 400;
+
+					small {
+						display: block;
+						text-transform: none;
+						font-size: 8px;
+						@include fix_small_chars();
+						line-height: 1em;
+						color: $body-font-color;
+					}
+				}
+			}
+
+
+@if $template == soccer {
+
+	/* Vertical Timeline - Soccer */
+	.df-timeline-wrapper {
+		overflow: hidden;
+		margin-bottom: 1px;
+	}
+		.df-timeline {
+			position: relative;
+			padding-bottom: 15px;
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				left: 50%;
+				top: 3px;
+				bottom: 0;
+				width: 2px;
+				margin-left: -1px;
+				background-color: $card-border-color;
+			}
+		}
+			.df-timeline__event {
+				position: relative;
+				min-height: 26px;
+				overflow: hidden;
+				margin-bottom: 16px;
+			}
+			.df-timeline__event--start {
+				position: relative;
+				text-align: center;
+
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					right: 0;
+					top: 50%;
+					height: 1px;
+					overflow: hidden;
+					background-color: $card-border-color;
+				}
+
+				.df-timeline__team-1 {
+					text-align: center;
+				}
+
+				.df-timeline__time {
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
+			}
+				.df-timeline__team-shirt {
+					position: relative;
+					z-index: 1;
+				}
+			.df-timeline__event--empty {
+				height: 8px;
+				min-height: auto;
+				overflow: hidden;
+
+				&::before {
+					content:"";
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+					position: relative;
+					z-index: 1;
+					width: 8px;
+					height: 8px;
+					overflow: hidden;
+					border-radius: 50%;
+					background-color: $card-bg;
+					border: 1px solid $card-border-color;
+				}
+
+			}
+				.df-timeline__team-1,
+				.df-timeline__team-2 {
+					width: 50%;
+				}
+				.df-timeline__team-1 {
+					float: left;
+					text-align: right;
+					padding-right: 28px;
+
+					.df-timeline__event-icon {
+						margin-left: 10px;
+					}
+				}
+				.df-timeline__team-2 {
+					float: right;
+					padding-left: 28px;
+
+					.df-timeline__event-icon {
+						margin-right: 10px;
+					}
+				}
+				.df-timeline__time {
+					width: 26px;
+					height: 26px;
+					line-height: 24px;
+					border: 1px solid $card-border-color;
+					border-radius: 50%;
+					text-align: center;
+					font-family: $font-family-accent;
+					font-size: 9px;
+					color: $headings-color;
+					background-color: $card-bg;
+					font-weight: 700;
+					position: absolute;
+					z-index: 1;
+					left: 50%;
+					transform: translateX(-50%);
+				}
+				.df-timeline__event-info {
+					display: inline-block;
+					vertical-align: middle;
+				}
+					.df-timeline__event-name {
+						font-size: 10px;
+						color: $headings-color;
+						font-family: $font-family-accent;
+						line-height: 1.2em;
+					}
+					.df-timeline__event-desc {
+						@include font-accent(7px);
+						line-height: 1.2em;
+					}
+				.df-timeline__event-icon {
+					display: inline-block;
+					vertical-align: middle;
+				}
+}
+
+
+// Progress Bars
+.widget-game-result .progress-double-wrapper + .progress-double-wrapper {
+	margin-top: 24px;
+}
+
+.widget-game-result__extra-stats {
+
+	.progress-double-wrapper {
+		margin-top: 24px;
+	}
+}
+
+// Widget Score - Simple Rows
+.widget-game-result__stack {
+
+}
+	.widget-game-result__stack-item {
+		display: flex;
+		font-family: $font-family-accent;
+		font-size: 12px;
+		line-height: 1.2em;
+		font-weight: 700;
+		padding: 15px $card-horizontal-padding;
+		justify-content: space-between;
+
+		& + & {
+			border-top: 1px solid $card-border-color;
+		}
+			.widget-game-result__stack-value {
+				color: $headings-color;
+			}
+	}
+
+	.widget-game-result__stack-item--teams {
+		justify-content: flex-start;
+		align-items: center;
+	}
+		.widget-game-result__stack-team {
+			display: flex;
+			align-items: center;
+			flex: 1;
+		}
+		.widget-game-result__stack-team--first {
+
+		}
+		.widget-game-result__stack-team--second {
+			text-align: right;
+			justify-content: flex-end;
+
+			.widget-game-result__stack-team-logo {
+				order: 2;
+				margin-right: 0;
+				margin-left: 14px;
+			}
+		}
+			.widget-game-result__stack-team-logo {
+				margin-right: 14px;
+			}
+			.widget-game-result__stack-team-meta {
+
+			}
+				.widget-game-result__stack-team-name {
+					font-size: 12px;
+					line-height: 1.2em;
+					margin-bottom: 0;
+				}
+				.widget-game-result__stack-team-place {
+					display: block;
+					font-size: 9px;
+					line-height: 1.2em;
+					font-weight: 400;
+					font-family: $font-family-base;
+				}
+
+		.widget-game-result__stack-result {
+			font-size: 11px;
+			text-align: center;
+			flex: 1;
+
+			@media (min-width: 1200px) {
+
+			}
+		}
+			.widget-game-result__stack-result-team {
+				display: inline-block;
+				position: relative;
+
+				& + & {
+
+					&::before {
+						content: "-";
+						display: inline-block;
+						margin: 0 .3em 0 .05em;
+						color: $headings-color;
+					}
+
+					&::after {
+						display: none;
+						left: auto;
+						right: -8px;
+						border-left: none;
+						border-right: 3px solid $color-primary;
+
+						@media (min-width: 1200px) {
+							right: -14px;
+						}
+					}
+				}
+
+				&.win {
+					color: $headings-color;
+
+					&::after {
+						display: block;
+					}
+				}
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: -8px;
+					top: 3px;
+					width: 0;
+					height: 0;
+					border-top: 3px solid transparent;
+					border-bottom: 3px solid transparent;
+					border-left: 3px solid $color-primary;
+
+					@media (min-width: 1200px) {
+						left: -14px;
+					}
+				}
+			}
+
+
+
+.widget-game-result__stack-result--divider-slash {
+
+	.widget-game-result__stack-result-team {
+		color: $headings-color;
+	}
+
+	.widget-game-result__stack-result-team + .widget-game-result__stack-result-team {
+
+		&::before {
+			content: "/";
+		}
+	}
+}
+

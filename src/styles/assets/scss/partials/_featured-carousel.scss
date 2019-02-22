@@ -1,0 +1,61 @@
+/* Featured Carousel
+/* ------------------------- */
+
+.featured-carousel {
+
+  .slick-slide {
+
+    &::before {
+      content:"";
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      top: 0;
+      background: #0e0f10;
+      opacity: 0.9;
+      z-index: 2;
+      pointer-events: none;
+      transition: all 0.3s ease;
+    }
+
+    &::after {
+      content:"";
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0;
+      background-color: $color-primary-darken;
+      z-index: 1;
+      transition: height 0.6s ease;
+    }
+
+    &.slick-current {
+
+      &::before {
+        opacity: 0.6;
+        z-index: 1;
+      }
+
+      &::after {
+
+        @media (min-width: 992px) {
+          height: 4px;
+        }
+
+        @media (min-width: 1199px) {
+          height: 6px;
+        }
+      }
+
+      .posts__inner {
+        z-index: 2;
+      }
+    }
+  }
+
+
+}

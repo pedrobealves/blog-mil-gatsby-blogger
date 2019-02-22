@@ -1,0 +1,250 @@
+/* Team Standings */
+.table-standings {
+	border: none;
+	margin-bottom: 0;
+
+
+	.widget-standings & {
+
+		> thead > tr > th {
+			vertical-align: middle;
+			text-align: center;
+
+			&:first-child {
+				text-align: left;
+				padding-left: 24px;
+			}
+			&:last-child {
+				padding-right: 24px;
+			}
+		}
+
+		> tbody > tr > td {
+			vertical-align: middle;
+			color: $table-highlight;
+			text-align: center;
+
+			&:first-child {
+				padding-left: 24px;
+			}
+			&:last-child {
+				padding-right: 24px;
+			}
+		}
+
+		> tbody {
+			counter-reset: counter;
+
+			> tr > td:first-child > .team-meta{
+
+				&::before {
+					display: inline-block;
+					vertical-align: middle;
+					content: counter(counter, decimal-leading-zero);
+					counter-increment: counter;
+					font-size: 11px;
+					margin-right: 5px;
+					font-family: $font-family-accent;
+					color: $body-font-color;
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+	.team-meta {
+		text-align: left;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+		.team-meta__logo {
+			width: 35px;
+			height: 30px;
+			text-align: center;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: 2px;
+
+			img {
+				position: relative;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+		.team-meta__info {
+			display: inline-block;
+			vertical-align: middle;
+		}
+			.team-meta__name {
+				font-size: 12px;
+				line-height: 1.2em;
+				margin-bottom: 0;
+				text-transform: none;
+
+				@if $template == 'esports' {
+					font-weight: 700;
+				} @else {
+					font-weight: 400;
+				}
+			}
+			.team-meta__place {
+				display: block;
+				font-size: 9px;
+				line-height: 1.2em;
+				color: $body-font-color;
+
+				@if $template == 'esports' {
+					font-family: $font-family-base;
+				}
+			}
+		.team-meta__vs {
+			display: inline-block;
+			color: $headings-color;
+			padding: 0 20px;
+		}
+
+
+
+/* Table Standings: Full */
+.table-standings--full {
+
+	> thead > tr > th {
+		vertical-align: middle;
+		text-align: center;
+
+		&:first-child {
+
+			@media (min-width: 992px) {
+				padding-left: 24px;
+			}
+		}
+
+		&:last-child {
+
+			@media (min-width: 992px) {
+				padding-right: 24px;
+			}
+		}
+	}
+
+	> tbody > tr > td {
+		vertical-align: middle;
+		text-align: center;
+
+		&:first-child {
+
+			@media (min-width: 992px) {
+				padding-left: 24px;
+			}
+		}
+
+		&:last-child {
+
+			@media (min-width: 992px) {
+				padding-right: 24px;
+			}
+		}
+	}
+
+	.team-standings__pos {
+		vertical-align: middle;
+
+		@media (min-width: 992px) {
+			padding-left: 24px;
+			width: 60px;
+		}
+	}
+	.team-standings__team {
+		text-align: left;
+
+		@media (min-width: 1200px) {
+			width: 170px;
+		}
+	}
+
+	.team-standings__win,
+	.team-standings__lose,
+	.team-standings__gb {
+		color: $table-highlight;
+	}
+
+	.team-standings__win,
+	.team-standings__lose,
+	.team-standings__pct,
+	.team-standings__gb,
+	.team-standings__home,
+	.team-standings__road,
+	.team-standings__div,
+	.team-standings__ppg,
+	.team-standings__op-ppg,
+	.team-standings__diff,
+	.team-standings__strk,
+	.team-standings__lead {
+		text-align: center;
+		vertical-align: middle;
+	}
+
+	.team-standings__home,
+	.team-standings__road,
+	.team-standings__div {
+
+		@media (min-width: 1200px) {
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+
+	.team-standings__lead {
+
+		@media (min-width: 1200px) {
+			padding-right: 30px;
+		}
+	}
+}
+
+
+@if $template == soccer {
+	/* Table Standings: Soccer */
+	.table-standings--full-soccer {
+
+		.team-standings__played,
+		.team-standings__drawn,
+		.team-standings__goals-for,
+		.team-standings__goals-against,
+		.team-standings__goals-diff,
+		.team-standings__total-points,
+		.team-standings__points-diff {
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		.team-standings__drawn,
+		.team-standings__total-points {
+			color: $table-highlight;
+		}
+
+		.team-standings__points-diff {
+
+			@media (min-width: 1200px) {
+				padding-right: 30px;
+			}
+		}
+	}
+}
+
+
+@if $template == football {
+	/* Table Standings: Football */
+	.table-standings--full-football {
+
+		.team-standings__ties,
+		.team-standings__lgr,
+		.team-standings__pf,
+		.team-standings__pa {
+			text-align: center;
+			vertical-align: middle;
+		}
+
+	}
+}
