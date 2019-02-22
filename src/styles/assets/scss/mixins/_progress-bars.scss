@@ -1,0 +1,34 @@
+// Progress bars
+
+@mixin progress-bar-variant($color) {
+  background-color: $color;
+}
+
+@mixin progress-bar-variant-gradient($color-1, $color-2) {
+  background-color: transparent;
+  background-image: linear-gradient(to right, $color-1, $color-2 100%);
+}
+
+@mixin progress-bar-battery-holder($bar-color) {
+  background-color: transparent;
+  background-image: radial-gradient(circle, $bar-color, $bar-color 2px, transparent 2px, transparent), radial-gradient(circle, $bar-color, $bar-color 2px, transparent 2px, transparent), linear-gradient(to right, $bar-color, $bar-color 4px, transparent 4px, transparent 8px);
+  background-size: 8px 8px, 8px 8px, 8px 16px;
+  background-position: -2px -2px, -2px 14px, 0 2px;
+  background-repeat: repeat-x, repeat-x, repeat-x, repeat-x;
+}
+
+@mixin progress-bar-battery-bar($bar-color) {
+  background-color: transparent;
+  background-image: radial-gradient(circle, $bar-color, $bar-color 2px, transparent 2px, transparent), radial-gradient(circle, $bar-color, $bar-color 2px, transparent 2px, transparent), linear-gradient(to right, $bar-color, $bar-color 4px, transparent 4px, transparent 8px);
+  background-size: 8px 8px, 8px 8px, 8px 16px;
+  background-position: -2px -2px, -2px 14px, 0 2px;
+  background-repeat: repeat-x, repeat-x, repeat-x;
+}
+
+@mixin progress-bar-lines-holder($bar-color) {
+  background-color: transparent;
+  background-image: linear-gradient(to right, $bar-color, $bar-color 3px, transparent 3px, transparent 6px);
+  background-size: 6px 20px;
+  background-position: 0 0;
+  background-repeat: repeat-x;
+}

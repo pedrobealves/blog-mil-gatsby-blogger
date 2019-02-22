@@ -1,0 +1,191 @@
+/* Checkout Review Order */
+.df-checkout-review-order {
+
+}
+	.df-checkout-review-order-table {
+
+		.product-name {
+			padding-left: 15px;
+
+			@media (min-width: 1200px) {
+				padding-left: 23px;
+			}
+		}
+		.product-total {
+			width: 22%;
+			text-align: right;
+
+			@media (min-width: 1200px) {
+				padding-right: 23px;
+			}
+		}
+		.product-header {
+			text-align: center;
+			color: $body-font-color;
+			font-style: normal;
+			border-bottom: 1px solid $table-border-color;
+			border-top: 1px solid $table-border-color;
+			padding: 11px !important;
+			font-weight: 400;
+			font-size: 10px;
+		}
+
+		tbody {
+
+			.product-name {
+				text-transform: uppercase;
+				color: $headings-color;
+				font-weight: 700;
+			}
+		}
+
+		// Table Body
+		.cart_item {
+
+			&:first-child {
+
+				.product-name,
+				.product-total {
+					padding-top: 30px;
+				}
+			}
+
+			&:last-child {
+
+				.product-name,
+				.product-total {
+					padding-bottom: 30px;
+				}
+			}
+
+			.product-name,
+			.product-total {
+				border-top: none;
+				border-bottom: none;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			.product-total {
+
+			}
+		}
+
+
+		// Table Footer
+		tfoot {
+
+			tr {
+
+				th {
+					text-transform: uppercase;
+					color: $headings-color;
+					font-weight: 700;
+					padding-left: 15px;
+
+					@media (min-width: 1200px) {
+						padding-left: 23px;
+					}
+				}
+
+				th,
+				td {
+					border-top: none;
+					padding-top: 10px;
+					padding-bottom: 10px;
+
+					@if $template == 'football' or $template == 'esports' {
+						border-bottom: 1px solid $card-border-color;
+						padding-top: 17px;
+						padding-bottom: 17px;
+					} @else {
+						border-bottom: none;
+					}
+				}
+
+				td:last-child {
+					width: 22%;
+					text-align: right;
+
+					@media (min-width: 1200px) {
+						padding-right: 23px;
+					}
+				}
+
+				&:first-child {
+
+					th,
+					td {
+
+						@if $template != 'football' and $template != 'esports' {
+							border-top: 1px solid $card-border-color;
+							padding-top: 30px;
+						}
+					}
+				}
+
+				&:nth-last-child(2) {
+
+					th,
+					td {
+
+						@if $template != 'football' and $template != 'esports' {
+							padding-bottom: 30px;
+						}
+					}
+				}
+
+				&.order-total {
+
+					th,
+					td {
+						padding-top: 20px;
+						padding-bottom: 20px;
+						border-top: 1px solid $card-border-color;
+						border-bottom: 1px solid $card-border-color;
+						margin-top: 20px;
+					}
+
+					.amount {
+
+						@if $template == 'football' {
+							color: $color-4;
+						} @else if $template == 'esports' {
+							color: $color-primary;
+							font-weight: 700;
+						} @else {
+							color: $headings-color;
+						}
+					}
+				}
+			}
+
+			&.bordered {
+
+				> tr {
+
+					th,
+					td {
+						border-bottom: 1px solid $table-border-color;
+						padding-top: 20px;
+						padding-bottom: 20px;
+					}
+				}
+			}
+		}
+
+		.cart-subtotal {
+
+			@if $template == 'football' {
+				color: $headings-color;
+			}
+		}
+		.shipping {
+
+		}
+		.coupon {
+
+		}
+		.order-total {
+
+		}
+	}

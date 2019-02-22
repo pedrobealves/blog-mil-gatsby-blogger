@@ -1,0 +1,75 @@
+/* Checkout Payment */
+.df-checkout-payment {
+
+	.place-order {
+		padding: $card-vertical-padding $card-horizontal-padding;
+		border-top: 1px solid $card-border-color;
+	}
+}
+	.df_payment_methods-header {
+		text-align: center;
+		padding: 12px 0;
+		border-bottom: 1px solid $card-border-color;
+	}
+		.df_payment_methods-title {
+			font-size: 10px;
+			line-height: 1.2em;
+			font-weight: 400;
+			font-style: normal;
+			color: $body-font-color;
+			margin: 0;
+			padding: 0;
+		}
+	.df_payment_methods {
+		list-style: none;
+		padding: $card-vertical-padding $card-horizontal-padding;
+		margin: 0;
+	}
+		.df_payment_method {
+			padding: 0;
+			margin: 0 0 20px 0;
+			box-shadow: none;
+			background-color: transparent;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			label {
+				font-weight: bold;
+
+				@if $template == 'esports' {
+					font-style: normal;
+				}
+			}
+
+			.payment_box {
+				font-size: 14px;
+				line-height: 22px;
+				padding: 13px 0 0 24px;
+
+				@if $template == 'esports' {
+					font-size: 12px;
+					line-height: 22px;
+				}
+
+				p:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+
+	// Bordered
+	.df_payment_methods--bordered {
+		padding: 0;
+
+		.df_payment_method {
+			border-bottom: 1px solid $card-border-color;
+			padding: 18px $card-horizontal-padding;
+			margin: 0;
+
+			.payment_box {
+				padding-left: 0;
+			}
+		}
+	}

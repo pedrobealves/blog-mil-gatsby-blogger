@@ -1,0 +1,133 @@
+/* Widget: Calendar */
+.widget-calendar {
+
+}
+	.calendar_wrap {
+		padding: 10px;
+
+		> table {
+			width: 100%;
+			background: none;
+
+			thead {
+
+				th {
+					@include font-accent(12px);
+					color: $headings-color;
+					text-align: center;
+					padding: 10px;
+				}
+			}
+
+			tbody {
+
+				td {
+					@include font-accent(11px);
+					color: $headings-color;
+					text-align: center;
+					padding: 8px 10px;
+
+					a {
+						display: inline-block;
+						width: 30px;
+						height: 30px;
+						background-color: $color-primary;
+						border-radius: 50%;
+						text-align: center;
+						line-height: 30px;
+						color: #fff;
+						margin: 0 -4px;
+					}
+				}
+			}
+
+			.prev,
+			.next {
+				padding-bottom: $card-vertical-padding - 10px;
+
+				a {
+					display: inline-block;
+					position: relative;
+					width: 20px;
+					height: 20px;
+					line-height: 20px;
+					border-radius: 2px;
+					font-size: 0;
+					line-height: 0;
+					transition: background-color 0.3s ease;
+					vertical-align: middle;
+					font-weight: 400;
+
+					@if $template == football {
+						background-color: $color-gray-2;
+					} @else {
+						background-color: $color-gray;
+					}
+
+					&::before {
+						content: "";
+						font-size: 14px;
+						line-height: 20px;
+						display: block;
+						position: absolute;
+						text-align: center;
+						color: #fff;
+						left: 0;
+						top: 0;
+						width: 20px;
+						height: 20px;
+						font-family: 'FontAwesome';
+						text-rendering: auto;
+						-webkit-font-smoothing: antialiased;
+						-moz-osx-font-smoothing: grayscale;
+					}
+
+					&:hover {
+						background-color: $color-primary;
+					}
+				}
+			}
+
+			.prev {
+				text-align: left;
+				padding-left: $card-horizontal-padding - 10px;
+
+				a::before {
+					content: "\f104";
+				}
+			}
+
+			.next {
+				text-align: right;
+				padding-right: $card-horizontal-padding - 10px;
+
+				a::before {
+					content: "\f105";
+				}
+			}
+		}
+
+		caption {
+			text-align: center;
+			overflow: hidden;
+			@include font-accent(12px);
+			color: $headings-color;
+			line-height: 1.2em;
+			background-color: rgba($card-header-bg, 0.6);
+			border-bottom: 1px solid $card-border-color;
+			margin: -10px -10px 10px -10px;
+			padding-left: $card-horizontal-padding - 10px;
+			padding-right: $card-horizontal-padding - 10px;
+			vertical-align: middle;
+			caption-side: top;
+
+			.prev {
+				float: left;
+				padding-bottom: 0;
+			}
+			.next {
+				float: right;
+				padding-bottom: 0;
+			}
+		}
+	}

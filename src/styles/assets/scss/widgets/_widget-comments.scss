@@ -1,0 +1,183 @@
+/* Widget: Comments */
+.widget-comments {
+
+}
+  .comments-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+    .comments-list__item {
+      overflow: hidden;
+      margin-bottom: 18px;
+
+      .card & {
+        border-bottom: 1px solid $card-border-color;
+        margin-left: -$card-horizontal-padding;
+        margin-right: -$card-horizontal-padding;
+        padding-left: $card-horizontal-padding;
+        padding-right: $card-horizontal-padding;
+        padding-bottom: $card-vertical-padding;
+        margin-bottom: $card-vertical-padding;
+      }
+
+      &:last-child,
+      .card &:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+        margin-bottom: 0;
+      }
+    }
+      .comments-list__header {
+        margin-bottom: 12px;
+        overflow: hidden;
+        position: relative;
+        padding-right: 40px;
+      }
+        .comments-list__avatar {
+          width: 40px;
+          height: 40px;
+          overflow: hidden;
+          border-radius: 50%;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 7px;
+        }
+        .comments-list__info {
+          display: inline-block;
+          vertical-align: middle;
+        }
+          .comments-list__author-name {
+            text-transform: none;
+            font-size: 13px;
+            line-height: 1.2em;
+            margin-bottom: 0.1em;
+
+            @media (min-width: 992px) {
+              font-size: 15px;
+            }
+          }
+          .comments-list__date {
+            display: block;
+            font-size: 11px;
+            line-height: 1.2em;
+            font-family: $font-family-accent;
+          }
+        .comments-list__link {
+          display: block;
+          position: absolute;
+          top: 5px;
+          right: 0;
+          color: #c2c4c7;
+          font-size: 14px;
+          transition: color 0.2s ease;
+
+          // Make sure it has enough space
+          width: 30px;
+          height: 20px;
+          line-height: 20px;
+          text-align: center;
+
+          &:hover {
+            color: $color-2;
+          }
+        }
+      .comments-list__body {
+
+      }
+
+
+// Alternative styling
+.comments-list--alt {
+
+  .comments-list__item--category-1 {
+
+    .comments-list__post::before {
+      background-color: $color-primary;
+    }
+  }
+
+  .comments-list__item--category-2 {
+
+    .comments-list__post::before {
+      background-color: $color-4;
+    }
+  }
+
+  .comments-list__item--category-3 {
+
+    .comments-list__post::before {
+      background-color: $color-3;
+    }
+  }
+
+  .comments-list__header {
+
+  }
+
+  .comments-list__avatar {
+    float: left;
+    margin-right: 10px;
+    border-radius: 4px;
+  }
+
+  .comments-list__info {
+    display: block;
+  }
+    .comments-list__author-name {
+      text-transform: uppercase;
+      padding-top: .3em;
+
+      @if $template == football {
+        @media (min-width: 992px) {
+          font-size: 14px;
+        }
+      }
+    }
+    .comments-list__post {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 11px;
+      line-height: 1.2em;
+      font-style: italic;
+      margin-bottom: 0;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        vertical-align: baseline;
+        background-color: rgba(255,255,255,.1);
+        border-radius: 2px;
+        margin-right: 5px;
+      }
+
+      @if $template == football {
+        color: $color-gray-3;
+
+        > a {
+          color: $color-gray-3;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: #fff;
+          }
+        }
+      }
+    }
+    .comments-list__link {
+      top: 0;
+
+      @if $template == football {
+        color: #fff;
+      }
+    }
+
+    .comments-list__body {
+      font-size: 13px;
+      margin-bottom: 17px;
+    }
+}

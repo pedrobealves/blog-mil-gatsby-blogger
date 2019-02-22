@@ -1,0 +1,428 @@
+/* Buttons */
+.btn {
+	font-weight: $btn-font-weight;
+	font-style: $btn-font-style;
+	font-family: $btn-font-family;
+	text-transform: $btn-text-transform;
+	transition: all 0.3s ease;
+	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-border-font-size, $btn-line-height, $btn-border-radius);
+
+	&:hover,
+	&:focus,
+	&.focus {
+		color: $btn-default-color;
+	}
+
+	&:active,
+	&.active {
+		box-shadow: none;
+	}
+}
+
+// Alternate buttons
+// --------------------------------------------------
+
+.btn-default {
+	@include button-variant($btn-default-color, $btn-default-bg, $btn-default-hover, $btn-default-border);
+}
+
+@if $template == 'football' {
+	.btn-default-alt {
+		@include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
+	}
+} @else if $template == 'esports' {
+	.btn-default-alt {
+		@include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
+
+		&.disabled {
+			background-color: #2b2236;
+			color: $color-gray-3;
+		}
+	}
+}
+
+.btn-primary {
+	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-hover, $btn-primary-border);
+}
+.btn-primary-inverse {
+	@include button-variant($btn-primary-inverse-color, $btn-primary-inverse-bg, $btn-primary-inverse-hover, $btn-primary-inverse-border);
+}
+.btn-success {
+	@include button-variant($btn-success-color, $btn-success-bg, $btn-success-hover, $btn-success-border);
+}
+.btn-info {
+	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-hover, $btn-info-border);
+}
+.btn-warning {
+	@include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-hover, $btn-warning-border);
+}
+.btn-danger {
+	@include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-hover, $btn-danger-border);
+}
+.btn-instagram {
+	background-color: #1e78dd;
+	color: #fff;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: lighten(#1e78dd, 5%);
+	}
+
+	i {
+		font-size: 6px;
+		position: relative;
+		top: -1px;
+	}
+
+	&.btn-sm {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+}
+.btn-facebook {
+	@include button-variant(#fff, $social-facebook, lighten($social-facebook, 5%), $btn-default-border);
+}
+.btn-twitter {
+	@include button-variant(#fff, $social-twitter, lighten($social-twitter, 5%), $btn-default-border);
+}
+.btn-gplus {
+	@include button-variant(#fff, $social-gplus, lighten($social-gplus, 5%), $btn-default-border);
+}
+.btn-linkedin {
+	@include button-variant(#fff, $social-linkedin, lighten($social-linkedin, 5%), $btn-default-border);
+}
+.btn-vk {
+	@include button-variant(#fff, $social-vk, lighten($social-vk, 5%), $btn-default-border);
+}
+.btn-odnoklassniki {
+	@include button-variant(#fff, $social-odnoklassniki, lighten($social-odnoklassniki, 5%), $btn-default-border);
+}
+.btn-link {
+	color: rgba($headings-color, 0.4);
+
+	&:hover {
+		text-decoration: none;
+		color: $headings-color;
+	}
+
+	@if $template == football {
+		color: $color-gray-3;
+
+		&:hover {
+			color: #fff;
+		}
+	}
+}
+
+
+// Button Sizes
+// --------------------------------------------------
+.btn-lg {
+	@include button-size($btn-padding-vertical-lg, $btn-padding-horizontal-lg, $btn-border-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+}
+.btn-sm {
+	@include button-size($btn-padding-vertical-sm, $btn-padding-horizontal-sm, $btn-border-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+}
+.btn-xs {
+	@include button-size($btn-padding-vertical-xs, $btn-padding-horizontal-xs, $btn-border-font-size-xs, $btn-line-height-xs, $btn-border-radius-xs);
+}
+
+
+// Outline buttons
+// --------------------------------------------------
+.btn-outline {
+	background-color: transparent;
+
+	// Default
+	&.btn-default {
+		border-color: $btn-o-default-border;
+		color: $btn-o-default-color;
+
+		&:hover {
+			background-color: $btn-o-default-bg-hover;
+			border-color: $btn-o-default-border-hover;
+			color: $btn-o-default-color-hover;
+
+			&.btn-circle {
+				background-color: $btn-o-default-border-hover;
+			}
+		}
+	}
+
+	// Primary
+	&.btn-primary {
+		border-color: $btn-o-primary-border;
+		color: $btn-o-primary-color;
+
+		&:hover {
+			background-color: $btn-o-primary-bg-hover;
+			border-color: $btn-o-primary-border-hover;
+			color: $btn-o-primary-color-hover;
+
+			&.btn-circle {
+				background-color: $btn-o-primary-border-hover;
+			}
+		}
+	}
+
+	// Inverse
+	&.btn-inverse {
+		border-color: $btn-o-inverse-border;
+		color: $btn-o-inverse-color;
+		border-width: 2px;
+
+		&:hover {
+			background-color: $btn-o-inverse-bg-hover;
+			border-color: $btn-o-inverse-border-hover;
+			color: $btn-o-inverse-color-hover;
+
+			i {
+				color: $btn-o-inverse-color-hover;
+			}
+
+			&.btn-circle {
+				background-color: $btn-o-inverse-border-hover;
+			}
+		}
+	}
+
+	// Success
+	&.btn-success {
+		border-color: $btn-o-success-border;
+		color: $btn-o-success-color;
+		border-width: 2px;
+
+		&:hover {
+			background-color: $btn-o-success-bg-hover;
+			border-color: $btn-o-success-border-hover;
+			color: $btn-o-success-color-hover;
+
+			i {
+				color: $btn-o-success-color-hover;
+			}
+
+			&.btn-circle {
+				background-color: $btn-o-success-border-hover;
+			}
+		}
+	}
+
+	// Info
+	&.btn-info {
+		border-color: $btn-o-info-border;
+		color: $btn-o-info-color;
+		border-width: 2px;
+
+		&:hover {
+			background-color: $btn-o-info-bg-hover;
+			border-color: $btn-o-info-border-hover;
+			color: $btn-o-info-color-hover;
+
+			i {
+				color: $btn-o-info-color-hover;
+			}
+
+			&.btn-circle {
+				background-color: $btn-o-info-border-hover;
+			}
+		}
+	}
+
+	// Warning
+	&.btn-warning {
+		border-color: $btn-o-warning-border;
+		color: $btn-o-warning-color;
+		border-width: 2px;
+
+		&:hover {
+			background-color: $btn-o-warning-bg-hover;
+			border-color: $btn-o-warning-border-hover;
+			color: $btn-o-warning-color-hover;
+
+			i {
+				color: $btn-o-warning-color-hover;
+			}
+
+			&.btn-circle {
+				background-color: $btn-o-warning-border-hover;
+			}
+		}
+	}
+
+	// Danger
+	&.btn-danger {
+		border-color: $btn-o-danger-border;
+		color: $btn-o-danger-color;
+		border-width: 2px;
+
+		&:hover {
+			background-color: $btn-o-danger-bg-hover;
+			border-color: $btn-o-danger-border-hover;
+			color: $btn-o-danger-color-hover;
+
+			i {
+				color: $btn-o-danger-color-hover;
+			}
+
+			&.btn-circle {
+				background-color: $btn-o-danger-border-hover;
+			}
+		}
+	}
+}
+
+
+// Button Icons
+// --------------------------------------------------
+
+.btn-icon {
+
+	i {
+		font-size: 1em;
+		margin-right: .5em;
+	}
+}
+
+.btn-icon-right {
+
+	i {
+		margin-right: 0;
+		margin-left: 10px;
+	}
+}
+
+.btn-single-icon {
+	padding-left: 0;
+	padding-right: 0;
+	width: 47px;
+	text-align: center;
+
+	i {
+		margin: 0;
+		font-size: 13px;
+		line-height: 1.2em;
+	}
+}
+
+
+// Circle Buttons
+.btn-circle {
+	border-radius: 50%;
+	width: 38px;
+	height: 38px;
+	line-height: 38px;
+	padding: 0;
+	text-align: center;
+
+	i {
+		font-size: 15px;
+	}
+
+	&.btn-outline {
+		border-width: 2px;
+	}
+
+	&.btn-xs {
+		width: 24px;
+		height: 24px;
+		line-height: 22px;
+
+		i {
+			font-size: 9px;
+		}
+	}
+}
+
+
+// Button Type
+// --------------------------------------------------
+
+.btn-block {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.btn-condensed {
+
+	&.btn-sm {
+		padding: 13px 28px;
+
+		&.btn-icon-right {
+			padding-right: 22px;
+		}
+	}
+}
+
+
+
+// FAB (Floating Action Button)
+// --------------------------------------------------
+.btn-fab {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 50px;
+	height: 50px;
+	overflow: hidden;
+	background-color: $color-primary-darken;
+	border-radius: 50%;
+
+	&::before,
+	&::after {
+		content:"";
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #fff;
+		transition: transform 0.25s ease;
+	}
+
+	&::before {
+		width: 17px;
+		height: 3px;
+	}
+
+	&::after {
+		width: 3px;
+		height: 17px;
+	}
+
+	&:hover {
+
+		&::before,
+		&::after {
+			transform: translate(-50%, -50%) rotate(90deg);
+		}
+	}
+}
+.btn-fab--clean {
+	background-color: transparent;
+
+	&::before,
+	&::after {
+
+		@if $template == football {
+			background-color: $color-4;
+		} @else {
+			background-color: $color-primary;
+		}
+	}
+}
+.btn-fab--sm {
+	width: 30px;
+	height: 30px;
+
+	&::before {
+		width: 10px;
+		height: 2px;
+	}
+
+	&::after {
+		width: 2px;
+		height: 10px;
+	}
+}

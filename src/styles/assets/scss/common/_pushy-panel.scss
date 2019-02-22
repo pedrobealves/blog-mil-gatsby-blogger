@@ -1,0 +1,229 @@
+/* Pushy Panel */
+
+// Pushy Toggle Button
+.pushy-panel__toggle {
+	display: none; // hide for mobile devices
+	width: 62px;
+	height: 62px;
+	line-height: 62px;
+	background-color: $color-primary;
+	vertical-align: top;
+	margin-left: 27px;
+	position: relative;
+
+	@media (min-width: 992px) {
+		display: inline-block;
+	}
+
+	@media (min-width: 992px) and (max-width: 1199px) {
+		margin-left: 18px;
+	}
+
+	&:hover {
+
+		.pushy-panel__line {
+			transform: rotate(180deg);
+
+			&::before,
+			&::after {
+				width: 50%;
+			}
+
+			&::before {
+				top: 0;
+				transform: translateX(-3px) translateY(1px) rotate(-45deg);
+			}
+
+			&::after {
+				bottom: 0;
+				transform: translateX(-3px) translateY(-1px) rotate(45deg);
+			}
+		}
+	}
+}
+	.pushy-panel__line {
+		top: 50%;
+		left: 23px;
+		right: 24px;
+		width: 16px;
+		transition: transform 0.3s;
+
+		&,
+		&::before,
+		&::after {
+			display: block;
+			position: absolute;
+			height: 2px;
+			background-color: $pushy-toggle-icon-color;
+		}
+
+		&::before,
+		&::after {
+			content:"";
+			width: 100%;
+		}
+
+		&::before {
+			top: -5px;
+			transform-origin: top left;
+			transition: transform 0.3s, width 0.3s, top 0.3s;
+		}
+
+		&::after {
+			bottom: -5px;
+			transform-origin: bottom left;
+			transition: transform 0.3s, width 0.3s, bottom 0.3s;
+		}
+	}
+
+// Pushy Panel (Light by default)
+.pushy-panel {
+	position: fixed;
+	z-index: 1000;
+	right: -$pushy-panel-width;
+	top: 0;
+	bottom: 0;
+	width: $pushy-panel-width;
+	text-align: left;
+	transition: all 0.4s ease-in-out;
+
+	.site-wrapper--has-overlay-pushy & {
+		right: 0;
+	}
+
+	@media (max-width: 991px) {
+		display: none;
+	}
+
+	.widget--side-panel {
+
+		.widget__title {
+
+			> h4 {
+				color: $color-2;
+			}
+		}
+	}
+
+	.btn-outline {
+		color: #3f4653;
+	}
+
+	.posts--simple-list {
+
+		.posts__title + .posts__date {
+			margin-top: .4em;
+		}
+
+		.posts__item {
+			margin-bottom: 44px;
+		}
+
+		.posts__title {
+
+			a {
+				color: $color-2;
+			}
+		}
+
+		.posts__excerpt {
+			overflow: hidden;
+			clear: both;
+		}
+	}
+}
+	.pushy-panel--active {
+		right: 0;
+	}
+	.pushy-panel__inner {
+		width: 100%;
+		height: 100%;
+		background-color: $pushy-panel-bg;
+		position: relative;
+		overflow-y: scroll;
+		-ms-overflow-style: none;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	// Pushy Back Button
+	.pushy-panel__back-btn {
+		display: block;
+		width: 49px;
+		height: 44px;
+		position: absolute;
+		right: 32px;
+		top: 22px;
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Cpath transform='translate(-238.75 -17.75)' fill='%2331404b' d='M240,21h12v2H240V21Zm0.171-.415,4.243,4.243L243,26.242,238.757,22Zm4.243-1.414-4.243,4.242L238.757,22,243,17.757Z'/%3E%3C/svg%3E");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: 13px 8px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
+
+	// Pushy Header
+	.pushy-panel__header {
+		padding: 28px 30px 60px 30px;
+		text-align: center;
+	}
+
+	// Pushy Content
+	.pushy-panel__content {
+		padding: 0 20px;
+
+		@media (min-width: 992px) {
+			padding: 0 40px;
+		}
+	}
+
+		.pushy-panel__logo {
+
+			img {
+				width: 94px;
+				height: auto;
+			}
+		}
+
+// Pushy Panel Dark
+.pushy-panel--dark {
+
+	.pushy-panel__inner {
+		background-color: $pushy-panel-bg-dark;
+	}
+
+	.widget--side-panel {
+
+		.widget__title {
+
+			> h4 {
+				color: #fff;
+			}
+		}
+	}
+
+	.posts--simple-list {
+
+		.posts__title {
+
+			a {
+				color: #fff;
+
+				&:hover {
+					color: #fff;
+				}
+			}
+		}
+	}
+
+	.btn-outline {
+		border-color: #3f4653;
+		color: #fff;
+	}
+
+	// Pushy Back Button
+	.pushy-panel__back-btn {
+		background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13 8'%3E%3Cpath transform='translate(-238.75 -17.75)' fill='%23ffffff' d='M240,21h12v2H240V21Zm0.171-.415,4.243,4.243L243,26.242,238.757,22Zm4.243-1.414-4.243,4.242L238.757,22,243,17.757Z'/%3E%3C/svg%3E");
+	}
+}

@@ -1,0 +1,348 @@
+/* Shop Table */
+.shop-table {
+
+	tbody > tr > td {
+		vertical-align: middle;
+
+		&:first-child {
+
+			@media (min-width: 992px) {
+				padding-left: 23px;
+			}
+		}
+
+		@if $template == 'football' {
+			border-bottom: 1px solid $card-border-color;
+		}
+	}
+
+	thead > tr > th {
+
+		&:first-child {
+
+			@media (min-width: 992px) {
+				padding-left: 23px;
+			}
+		}
+	}
+
+	td.product__photo,
+	td.product__info,
+	td.product__desc,
+	td.product__price,
+	td.product__availability,
+	td.product__remove,
+	td.product__size,
+	td.product__color,
+	td.product__quantity,
+	td.product__total {
+
+		@if $template == 'football' {
+			font-size: 12px;
+		} @else {
+			font-size: 13px;
+		}
+
+		@media (min-width: 992px) {
+			padding-top: 24px;
+			padding-bottom: 24px;
+		}
+	}
+
+	.product__price,
+	.product__availability,
+	.product__remove,
+	.product__size,
+	.product__color,
+	.product__quantity,
+	.product__total {
+		text-align: center;
+	}
+
+	.product__price,
+	.product__availability,
+	.product__size {
+		color: $headings-color;
+	}
+
+	.product__info {
+
+		.product__cat {
+			font-size: 8px;
+			@include fix_small_chars();
+			text-transform: uppercase;
+			line-height: 1.2em;
+			font-weight: 400;
+
+			& + .product__name {
+				padding: 0.2em 0 0.5em 0;
+			}
+		}
+		.product__name {
+			font-size: 12px;
+			line-height: 1.2em;
+			margin-bottom: 0;
+			text-transform: uppercase;
+			font-style: normal;
+
+			@if $template == 'football' {
+				font-size: 11px;
+			} @else {
+				font-size: 12px;
+			}
+
+			@media (min-width: 992px) {
+				font-size: 13px;
+
+				@if $template == 'football' {
+					font-size: 12px;
+				} @else {
+					font-size: 13px;
+				}
+			}
+
+			> a {
+				color: $headings-color;
+				transition: color 0.3s ease;
+
+				&:hover {
+					color: $color-primary-darken;
+				}
+			}
+		}
+
+		.product__ratings {
+
+			.fa-star {
+				font-size: 10px;
+				color: $product-rating-color;
+
+				&.empty {
+					color: $product-rating-color-disabled;
+				}
+			}
+		}
+	}
+
+	td.product__price {
+		font-weight: 700;
+
+		@if $template == 'football' {
+			color: $color-gray-3;
+		}
+	}
+
+	td.product__availability {
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+		.product__no-available {
+			opacity: .6;
+		}
+
+	td.product__size {
+		font-weight: 700;
+	}
+
+	td.product__total {
+		font-weight: 700;
+		color: $headings-color;
+	}
+
+	.product__remove {
+
+		@media (min-width: 992px) {
+			padding-right: 23px;
+		}
+	}
+		.product__remove-icon {
+
+			@if $template == 'football' {
+				color: $color-gray-3;
+			} @else {
+				color: $headings-color;
+			}
+			opacity: .6;
+			transition: opacity 0.3s ease;
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+	td.product__desc {
+		font-family: $font-family-base;
+		font-weight: 400;
+
+		@media (min-width: 768px) {
+			font-size: 14px;
+			line-height: 22px;
+
+			@if $template == 'football' {
+				font-size: 12px;
+				line-height: 1.5em;
+				color: $color-gray-3;
+			}
+		}
+	}
+
+	td.product__photo,
+	td.product__info,
+	td.product__desc,
+	td.product__price,
+	td.product__availability,
+	td.product__remove {
+
+	}
+
+	td.product__photo {
+
+		@if $template == 'football' {
+			padding-right: 0;
+
+			.product__thumb {
+				width: 50px;
+				margin-right: 0;
+			}
+		} @else {
+			@media (min-width: 992px) {
+				width: 10%;
+			}
+		}
+	}
+	td.product__info {
+
+		@media (min-width: 992px) {
+			width: 21%;
+		}
+	}
+	td.product__desc {
+
+		@media (min-width: 992px) {
+			width: 33%;
+		}
+	}
+	td.product__availability {
+
+		@media (min-width: 992px) {
+			width: 12%;
+		}
+	}
+
+	// Product image
+	.product__thumb {
+		overflow: hidden;
+		border-radius: $thumb-border-radius;
+	}
+
+	// Product Color
+	.product__color-item {
+		width: 20px;
+		height: 20px;
+		display: inline-block;
+		background-color: $color-2;
+		border-radius: 50%;
+		position: relative;
+
+		&::before {
+			content:"";
+			display: block;
+			position: absolute;
+			left: -4px;
+			top: -4px;
+			right: -4px;
+			bottom: -4px;
+			border-radius: 50%;
+		}
+	}
+		.product__color-item--selected {
+
+			&::before {
+				border: 2px solid $color-2;
+			}
+		}
+		.product__color-item--color-orange {
+			background-color: #ff860f;
+
+			&::before {
+				border-color: #ff860f;
+			}
+		}
+		.product__color-item--color-blue {
+			background-color: #1e81f1;
+
+			&::before {
+				border-color: #1e81f1;
+			}
+		}
+		.product__color-item--color-aqua {
+			background-color: #1af1e4;
+
+			&::before {
+				border-color: #1af1e4;
+			}
+		}
+		.product__color-item--color-black {
+
+			@if $template == 'football' {
+				background-color: #1e202f;
+
+				&::before {
+					border-color: #1e202f;
+				}
+			} @else {
+				background-color: #383838;
+
+				&::before {
+					border-color: #383838;
+				}
+			}
+		}
+}
+
+
+// Shipping Details Block
+.shipping-details-row {
+
+	.card {
+
+		@media (min-width: 1200px) {
+			min-height: 380px;
+
+			.coupon-code-form {
+
+				.form-group--submit {
+					padding-top: 70px;
+				}
+			}
+		}
+	}
+
+	.df-checkout-payment .place-order {
+		border-top: none;
+	}
+	.df-checkout-review-order-table tfoot tr:first-child th,
+	.df-checkout-review-order-table tfoot tr:first-child td {
+		border-top: none;
+	}
+}
+
+.df-checkout-payment .place-order {
+	border-top: none;
+}
+
+
+// Coupon Code Inline
+.coupon-code-form--inline {
+
+}
+	.coupon-code-form-inner {
+		display: flex;
+		align-items: center;
+
+		label {
+			white-space: nowrap;
+			padding-right: 15px;
+			margin-bottom: 0;
+		}
+	}

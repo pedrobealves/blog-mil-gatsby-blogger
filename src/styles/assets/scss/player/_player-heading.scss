@@ -1,0 +1,466 @@
+/* Player Heading */
+.player-heading {
+  background-color: $player-page-heading-bg-color;
+  background-image: $player-page-heading-bg-image-url;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 24px;
+
+    @if $template == football {
+      @include heading-decor(rgba(236, 240, 246, .05), rgba(0,0,0,.1), rgba(0,0,0,.11));
+    } @else {
+      @include heading-decor(rgba(236, 240, 246, .15), rgba(0,0,0,.1), rgba(0,0,0,.11));
+    }
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-image: $player-page-heading-bg-pattern-url;
+    background-size: $player-page-heading-bg-pattern-size;
+    background-position: 100% 0;
+    background-repeat: $player-page-heading-bg-pattern-repeat;
+    opacity: $page-heading-bg-pattern-opacity;
+  }
+
+  @media (min-width: 992px) {
+
+  }
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+  .player-info__team-logo {
+    position: absolute;
+    left: -45%;
+    top: -5%;
+    opacity: .05;
+    z-index: -1;
+
+    @media (min-width: 992px) {
+      left: -10%;
+      opacity: .1;
+    }
+  }
+
+  .player-info {
+    color: #fff;
+    position: relative;
+    width: 100%;
+
+    @media (min-width: 992px) {
+      display: flex;
+    }
+  }
+    .player-info__item {
+
+      @media (min-width: 992px) {
+
+      }
+    }
+
+    .player-info__item--photo {
+
+      @media (max-width: 991px) {
+
+        img {
+          margin: 0 auto;
+        }
+      }
+
+      @media (min-width: 992px) {
+        flex-basis: 33%;
+        width: 312px;
+        margin: 0;
+      }
+
+      @media (min-width: 1200px) {
+        width: 400px;
+
+        @if $template == football {
+          width: 370px;
+        }
+      }
+    }
+
+    // Details
+    .player-info__item--details {
+      width: 400px;
+
+      @media (min-width: 992px) {
+        flex-basis: 38%;
+        padding: 48px 0;
+        width: 352px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        flex-basis: 45%;
+        padding: 25px 0;
+      }
+
+      @media (min-width: 1200px) {
+        width: 460px;
+      }
+    }
+      .player-info__title {
+        margin-bottom: 17px;
+      }
+      .player-info__title--mobile {
+        padding: 35px 0 0 0;
+        text-align: center;
+        display: none;
+
+        @media (max-width: 991px) {
+          display: block;
+        }
+
+        .player-info__first-name {
+          text-align: left;
+        }
+      }
+      .player-info__title--desktop {
+        display: none;
+
+        @media (min-width: 992px) {
+          display: block;
+        }
+      }
+        .player-info__number {
+          @include font-accent(54px);
+          color: #fff;
+          line-height: 1em;
+          display: inline-block;
+          vertical-align: middle;
+
+          @if $template == football {
+            color: $body-font-color;
+            opacity: .1;
+          }
+
+          @media (min-width: 992px) {
+            font-size: 64px;
+            margin-left: -80px;
+          }
+          @media (min-width: 1200px) {
+            font-size: 92px;
+            margin-left: -123px;
+            margin-right: 5px;
+
+            @if $template == football {
+              font-size: 116px;
+              margin-left: -1.25em;
+              margin-right: -0.25em;
+              margin-top: -0.3em;
+            }
+          }
+        }
+
+        .player-info__name {
+          display: inline-block;
+          vertical-align: middle;
+          font-size: 32px;
+          line-height: 1em;
+          color: #fff;
+          margin: 0;
+
+          @media (min-width: 992px) {
+            font-size: 32px;
+          }
+          @media (min-width: 1200px) {
+            font-size: 54px;
+            line-height: 46px;
+
+            @if $template == football {
+              font-size: 46px;
+              line-height: 1em;
+            }
+          }
+        }
+          .player-info__first-name {
+            display: block;
+            font-size: 16px;
+            line-height: 1em;
+
+            @media (min-width: 992px) {
+              font-size: 18px;
+            }
+            @media (min-width: 1200px) {
+              font-size: 26px;
+            }
+          }
+          .player-info__last-name {
+            color: $player-page-heading-second-name;
+          }
+
+      .player-info-details {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media (max-width: 991px) {
+          padding: 0 17px;
+        }
+      }
+        .player-info-details__item {
+          padding: 10px 0;
+        }
+        .player-info-details__item--height {
+          flex-basis: 33%;
+
+          @media (min-width: 992px) {
+            flex-basis: 19%;
+          }
+        }
+        .player-info-details__item--weight {
+          flex-basis: 33%;
+
+          @media (min-width: 992px) {
+            flex-basis: 24%;
+          }
+        }
+        .player-info-details__item--age {
+          flex-basis: 33%;
+
+          @media (min-width: 992px) {
+            flex-basis: 15%;
+          }
+        }
+        .player-info-details__item--college {
+          flex-basis: 100%;
+
+          @media (min-width: 992px) {
+            flex-basis: 42%;
+          }
+        }
+        .player-info-details__item--born {
+          flex-basis: 100%;
+
+          @media (min-width: 992px) {
+            flex-basis: 58%;
+          }
+        }
+        .player-info-details__item--position {
+          flex-basis: 100%;
+
+          @media (min-width: 992px) {
+            flex-basis: 42%;
+          }
+        }
+
+        // Soccer Version
+        @if $template == soccer {
+
+          .player-info-details__item--position {
+            flex-basis: 33%;
+
+            @media (min-width: 992px) {
+              flex-basis: 22%;
+            }
+          }
+
+          .player-info-details__item--foot {
+            flex-basis: 50%;
+
+            @media (min-width: 992px) {
+              flex-basis: 20%;
+            }
+          }
+
+          .player-info-details__item--goals {
+            flex-basis: 50%;
+
+            @media (min-width: 992px) {
+              flex-basis: 50%;
+            }
+          }
+
+          .player-info-details__item--assists {
+            flex-basis: 50%;
+
+            @media (min-width: 992px) {
+              flex-basis: 50%;
+            }
+          }
+
+          .player-info-details__item--games {
+            flex-basis: 100%;
+
+            @media (min-width: 992px) {
+              flex-basis: 100%;
+            }
+          }
+
+        }
+          .player-info-details__title {
+            font-size: 10px;
+            color: $player-page-heading-title;
+            line-height: 1.2em;
+            margin-bottom: 0.1em;
+            font-weight: 400;
+          }
+          .player-info-details__value {
+            font-family: $font-family-accent;
+            font-size: 15px;
+            line-height: 1.2em;
+            font-weight: 700;
+
+            @media (min-width: 992px) and (max-width: 1199px) {
+              font-size: 12px;
+            }
+          }
+
+      .player-info-stats {
+        overflow: hidden;
+
+        @media (min-width: 992px) {
+          padding: 25px 0 0 0;
+        }
+      }
+        .player-info-stats__item {
+          float: left;
+          width: 33.3%;
+
+          .circular {
+
+            .circular__bar {
+              width: 62px;
+              height: 62px;
+
+              @media (min-width: 992px) {
+                display: inline-block;
+                vertical-align: middle;
+                margin: 0 6px 0 0;
+              }
+
+              @media (min-width: 992px) and (max-width: 1199px) {
+                width: 44px;
+                height: 44px;
+              }
+
+              .circular__percents {
+                color: #fff;
+                font-size: 15px;
+
+                small {
+                  display: block;
+									font-size: 8px;
+									@include fix_small_chars();
+                  line-height: 1.2em;
+                  color: $player-page-heading-title;
+                }
+
+                @media (min-width: 992px) and (max-width: 1199px) {
+                  font-size: 12px;
+                }
+              }
+            }
+            .circular__label {
+              color: $player-page-heading-title;
+
+              @media (min-width: 992px) {
+                display: inline-block;
+                vertical-align: middle;
+                text-align: left;
+                margin: 0;
+              }
+
+              strong {
+                color: #fff;
+                display: block;
+              }
+
+              @media (min-width: 992px) and (max-width: 1199px) {
+                font-size: 9px;
+              }
+            }
+          }
+        }
+        .player-info-stats__item--top-padding {
+
+          @media (min-width: 992px) {
+            padding: 25px 0 0 0;
+          }
+        }
+
+
+    .player-info__item--stats {
+
+      @media (min-width: 992px) {
+        flex-basis: 29%;
+        width: 297px;
+      }
+
+      @media (min-width: 992px) and (max-width: 1199px) {
+        flex-basis: 36%;
+      }
+
+      @media (min-width: 1200px) {
+        width: 310px;
+      }
+
+      @media (max-width: 991px) {
+        height: 200px !important;
+
+        .player-info-chart {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      .progress-stats {
+        margin-bottom: 20px;
+      }
+
+      .progress__label {
+        color: #fff;
+      }
+      .progress:not(.progress--battery) {
+        background-color: rgba(255,255,255,.2);
+      }
+    }
+      .player-info__item--stats-inner {
+        padding-top: 30px;
+
+        @media (min-width: 992px) {
+          padding-top: 40px;
+          max-width: 90%;
+        }
+
+        @media (min-width: 1200px) {
+          padding-top: 70px;
+          max-width: 100%;
+        }
+      }
+
+
+  // Player Info (Radar Chart)
+  .player-info-chart {
+    margin: 35px 0 0 0;
+
+
+    @media (min-width: 992px) {
+      margin: 30px 0 0 0;
+    }
+
+    @media (min-width: 1200px) {
+      margin: 60px 0 0 0;
+    }
+  }

@@ -1,0 +1,907 @@
+//- Template Variable
+//- ----------------------------------------------
+
+$template: basketball !default;
+
+
+//- Base
+//- ----------------------------------------------
+
+$font-family-base:   'Source Sans Pro', sans-serif !default;
+$font-family-accent: 'Montserrat', sans-serif !default;
+$base-font-size:     15px !default;
+$base-line-height:   26px !default;
+$font-size-mobile:   13px !default;
+$line-height-mobile: 22px !default;
+$body-font-weight:   400 !default;
+
+$font-size-sm:         ($base-font-size * .857) !default;
+
+
+//- Colors
+//- ----------------------------------------------
+
+$color-primary:        #ffdc11 !default;
+$color-primary-darken: #ffcc00 !default;
+$color-dark:           #1e2024 !default;
+$color-dark-lighten:   #292c31 !default;
+$color-gray:           #9a9da2 !default;
+$color-2:              #31404b !default;
+$color-3:              #ff7e1f !default;
+$color-4:              #9a66ca !default;
+
+$color-success:        #24d9b0 !default;
+$color-info:           #0cb2e2 !default;
+$color-warning:        #ff7e1f !default;
+$color-danger:         #f34141 !default;
+
+$color-white:          #fff !default;
+
+$body-bg-color:        #edeff4 !default;
+$body-font-color:      $color-gray !default;
+$body-font-color-inverse: $color-gray !default;
+
+$link-color:            $color-primary-darken !default;
+$link-decoration:       none !default;
+$link-color-hover:      $color-primary !default;
+$link-decoration-hover: none !default;
+
+// Social
+$social-facebook:      #3B5998 !default;
+$social-twitter:       #1DA1F2 !default;
+$social-gplus:         #DC4E41 !default;
+$social-instagram:     #E4405F !default;
+$social-twitch:        #6441A4 !default;
+$social-youtube:       #FF0000 !default;
+$social-linkedin:      #0077B5 !default;
+$social-vk:            #6383A8 !default;
+$social-odnoklassniki: #F4731C !default;
+
+
+//- Components
+//- ----------------------------------------------
+
+$padding-base-vertical:     12px !default;
+$padding-base-horizontal:   16px !default;
+
+
+
+//- Card
+//- ----------------------------------------------
+
+$card-bg:                     #fff !default;
+$card-header-bg:              transparent !default;
+$card-subheader-bg:           #f5f7f9 !default;
+$card-border-color:           #e4e7ed !default;
+$card-border-radius:          4px !default;
+$card-horizontal-padding:     24px !default;
+$card-vertical-padding:       24px !default;
+$card-horizontal-padding-lg:  43px !default;
+$card-vertical-padding-lg:    43px !default;
+$card-horizontal-padding-xlg: 70px !default;
+$card-vertical-padding-xlg:   70px !default;
+
+
+//- Jumbotron
+//- ----------------------------------------------
+
+$jumbotron-padding:                 2rem !default;
+$jumbotron-bg:                      $card-bg !default;
+$jumbotron-border-color:            $card-border-color !default;
+
+
+
+//- Tables
+//- ----------------------------------------------
+
+$table-cell-padding:            13px !default;
+$table-cell-padding-lg:         17px !default;
+$table-condensed-cell-padding:  5px !default;
+$table-bg:                      transparent !default;
+$table-bg-accent:               #f9f9f9 !default;
+$table-bg-hover:                #f5f7f9 !default;
+$table-bg-active:               $table-bg-hover !default;
+
+$table-border-color:            #e4e7ed !default;
+$table-thead-color:             $color-2 !default;
+$table-thead-bg-color:          #f5f7f9 !default;
+$table-thead-font-style:        normal !default;
+$table-highlight:               $color-2 !default;
+
+
+//- Buttons
+//- ----------------------------------------------
+
+$btn-font-weight:                700 !default;
+$btn-font-style:                 normal !default;
+$btn-font-family:                $font-family-accent !default;
+$btn-text-transform:             uppercase !default;
+
+// Line-Height
+$btn-line-height:                1.5em !default;
+$btn-line-height-lg:             1.45em !default;
+$btn-line-height-sm:             1.5em !default;
+$btn-line-height-xs:             1.5em !default;
+
+// Paddings
+$btn-padding-vertical:           13px !default;
+$btn-padding-horizontal:         42px !default;
+$btn-padding-vertical-lg:        16px !default;
+$btn-padding-horizontal-lg:      80px !default;
+$btn-padding-vertical-sm:        10px !default;
+$btn-padding-horizontal-sm:      38px !default;
+$btn-padding-vertical-xs:        5px !default;
+$btn-padding-horizontal-xs:      13px !default;
+
+// Border Radius
+$btn-border-radius:              2px !default;
+$btn-border-radius-lg:           2px !default;
+$btn-border-radius-sm:           2px !default;
+$btn-border-radius-xs:           2px !default;
+
+// Font Size
+$btn-border-font-size:           11px !default;
+$btn-border-font-size-lg:        13px !default;
+$btn-border-font-size-sm:        11px !default;
+$btn-border-font-size-xs:        9px !default;
+
+// Button Default
+$btn-default-color:              #fff !default;
+$btn-default-bg:                 $color-gray !default;
+$btn-default-hover:              #868a91 !default;
+$btn-default-border:             transparent !default;
+
+// Button Primary
+$btn-primary-color:              #fff !default;
+$btn-primary-bg:                 $color-2 !default;
+$btn-primary-hover:              $color-primary-darken !default;
+$btn-primary-border:             transparent !default;
+
+// Button Primary Inverse
+$btn-primary-inverse-color:      #fff !default;
+$btn-primary-inverse-bg:         $color-primary-darken !default;
+$btn-primary-inverse-hover:      $color-3 !default;
+$btn-primary-inverse-border:     transparent !default;
+
+// Button Success
+$btn-success-color:              #fff !default;
+$btn-success-bg:                 $color-success !default;
+$btn-success-hover:              darken($color-success, 3%) !default;
+$btn-success-border:             transparent !default;
+
+// Button Info
+$btn-info-color:                 #fff !default;
+$btn-info-bg:                    $color-info !default;
+$btn-info-hover:                 darken($color-info, 3%) !default;
+$btn-info-border:                transparent !default;
+
+// Button Warning
+$btn-warning-color:              #fff !default;
+$btn-warning-bg:                 $color-warning !default;
+$btn-warning-hover:              darken($color-warning, 3%) !default;
+$btn-warning-border:             transparent !default;
+
+// Button Danger
+$btn-danger-color:               #fff !default;
+$btn-danger-bg:                  $color-danger !default;
+$btn-danger-hover:               darken($color-danger, 3%) !default;
+$btn-danger-border:              transparent !default;
+
+// Buttons Default Outline
+$btn-o-default-color:            #9a9da2 !default;
+$btn-o-default-color-hover:      #fff !default;
+$btn-o-default-border:           #dbdfe6 !default;
+$btn-o-default-border-hover:     $color-gray !default;
+$btn-o-default-bg-hover:         $color-gray !default;
+
+// Button Primary - Outline
+$btn-o-primary-color:            $color-2 !default;
+$btn-o-primary-color-hover:      #fff !default;
+$btn-o-primary-border:           #e4e7ed !default;
+$btn-o-primary-border-hover:     $btn-primary-hover !default;
+$btn-o-primary-bg-hover:         $btn-primary-hover !default;
+
+// Button Primary Inverse - Outline
+$btn-o-inverse-color:            #fff !default;
+$btn-o-inverse-color-hover:      #fff !default;
+$btn-o-inverse-border:           #fff !default;
+$btn-o-inverse-border-hover:     $btn-primary-hover !default;
+$btn-o-inverse-bg-hover:         $btn-primary-hover !default;
+
+// Button Success - Outline
+$btn-o-success-color:            #9a9da2 !default;
+$btn-o-success-color-hover:      #fff !default;
+$btn-o-success-border:           $btn-success-bg !default;
+$btn-o-success-border-hover:     $btn-success-hover !default;
+$btn-o-success-bg-hover:         $btn-success-hover !default;
+
+// Button Info - Outline
+$btn-o-info-color:               #9a9da2 !default;
+$btn-o-info-color-hover:         #fff !default;
+$btn-o-info-border:              $btn-info-bg !default;
+$btn-o-info-border-hover:        $btn-info-hover !default;
+$btn-o-info-bg-hover:            $btn-info-hover !default;
+
+// Button Warning - Outline
+$btn-o-warning-color:            #9a9da2 !default;
+$btn-o-warning-color-hover:      #fff !default;
+$btn-o-warning-border:           $btn-warning-bg !default;
+$btn-o-warning-border-hover:     $btn-warning-hover !default;
+$btn-o-warning-bg-hover:         $btn-warning-hover !default;
+
+// Button Danger - Outline
+$btn-o-danger-color:             #9a9da2 !default;
+$btn-o-danger-color-hover:       #fff !default;
+$btn-o-danger-border:            $btn-danger-bg !default;
+$btn-o-danger-border-hover:      $btn-danger-hover !default;
+$btn-o-danger-bg-hover:          $btn-danger-hover !default;
+
+
+//- Typography
+//- ----------------------------------------------
+
+$font-size-h1: 48px !default;
+$font-size-h2: 32px !default;
+$font-size-h3: 24px !default;
+$font-size-h4: 22px !default;
+$font-size-h5: 16px !default;
+$font-size-h6: 14px !default;
+
+$headings-font-family:   $font-family-accent !default;
+$headings-color:         $color-2 !default;
+$headings-color-inverse: #fff !default;
+$headings-line-height:   1.2 !default;
+
+$font-style-h1: normal !default;
+$font-style-h2: normal !default;
+$font-style-h3: normal !default;
+$font-style-h4: normal !default;
+$font-style-h5: normal !default;
+$font-style-h6: normal !default;
+
+$text-transform-h1: uppercase !default;
+$text-transform-h2: uppercase !default;
+$text-transform-h3: uppercase !default;
+$text-transform-h4: none !default;
+$text-transform-h5: uppercase !default;
+$text-transform-h6: uppercase !default;
+
+$display1-size:               6rem !default;
+$display2-size:               5.5rem !default;
+$display3-size:               4.5rem !default;
+$display4-size:               3.5rem !default;
+
+$display1-weight:             300 !default;
+$display2-weight:             300 !default;
+$display3-weight:             300 !default;
+$display4-weight:             300 !default;
+$display-line-height:         $headings-line-height !default;
+
+$line-height-base:        1.733333 !default; // 26/15
+
+$lead-font-size:   16px !default;
+$lead-font-weight: 400 !default;
+
+// OL
+$ol-number-color: $color-2 !default;
+
+// Thumb
+$thumb-border-radius: 0 !default;
+
+
+//- Forms
+//- ----------------------------------------------
+
+$input-label-color:   $headings-color !default;
+$input-bg:            #fff !default;
+$input-color:         $headings-color !default;
+$input-height-base:   52px !default;
+$input-border:        #e4e7ed !default;
+$input-border-radius: 2px !default;
+$input-font-size:     $base-font-size !default;
+
+$input-bg-disabled:   #e4e7ed !default;
+$input-border-disabled: $input-border !default;
+
+$input-color-focus:   $headings-color !default;
+$input-bg-focus: #fff !default;
+$input-border-focus:  $color-primary !default;
+$input-box-shadow-focus: none !default;
+
+$input-color-placeholder: rgba(154,157,162,0.6) !default;
+
+$form-group-margin-bottom: 22px !default;
+
+$input-height-base-sm:   45px !default;
+$input-font-size-sm:     13px !default;
+
+// Checkbox
+$checkbox-bg:               $input-bg !default;
+$checkbox-border:           #d8dce5 !default;
+$checkbox-border-radius:    $input-border-radius !default;
+$checkbox-bg-active:        $color-primary-darken !default;
+$checkbox-border-active:    $color-primary-darken !default;
+$checkbox-bg-disabled:      $input-bg-disabled !default;
+$checkbox-border-disabled:  #d8dce5 !default;
+
+// Radio Button
+$radio-bg:               $input-bg !default;
+$radio-border:           #d8dce5 !default;
+$radio-bg-disabled:      $input-bg-disabled !default;
+$radio-border-disabled:  #d8dce5 !default;
+
+// Select
+$select-caret: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-2}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+//- Tooltips
+//- ----------------------------------------------
+
+//** Tooltip text color
+$tooltip-color:               $color-dark-lighten !default;
+$tooltip-bg:                  $color-primary !default;
+$tooltip-opacity:             1 !default;
+
+$tooltip-arrow-width:         5px !default;
+$tooltip-arrow-color:         $tooltip-bg !default;
+
+
+//- Form states and alerts
+//- ----------------------------------------------
+
+$state-success-text:             $color-success !default;
+$state-success-bg:               #fff !default;
+$state-success-border:           darken(adjust-hue($state-success-bg, -10), 5%) !default;
+
+$state-info-text:                $color-info !default;
+$state-info-bg:                  #fff !default;
+$state-info-border:              darken(adjust-hue($state-info-bg, -10), 7%) !default;
+
+$state-warning-text:             $color-primary-darken !default;
+$state-warning-bg:               #fff !default;
+$state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
+
+$state-danger-text:              $color-danger !default;
+$state-danger-bg:                #fff !default;
+$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+
+
+//- Labels
+//- ----------------------------------------------
+
+$label-default-bg:            $color-gray !default;
+$label-primary-bg:            $color-primary !default;
+$label-success-bg:            $color-success !default;
+$label-info-bg:               $color-info !default;
+$label-warning-bg:            $color-warning !default;
+$label-danger-bg:             $color-danger !default;
+
+$label-color:                 #fff !default;
+$label-link-hover-color:      #fff !default;
+
+
+//- Modals
+//- ----------------------------------------------
+
+$modal-inner-padding:         15px !default;
+$modal-title-padding:         15px !default;
+$modal-title-line-height:     1.2em !default;
+$modal-content-bg:                             $card-bg !default;
+$modal-content-border-color:                   rgba(0,0,0,.2) !default;
+$modal-content-fallback-border-color:          #999 !default;
+
+$modal-backdrop-bg:           #000 !default;
+$modal-backdrop-opacity:      .9 !default;
+$modal-header-border-color:   #e5e5e5 !default;
+$modal-footer-border-color:   $modal-header-border-color !default;
+
+$modal-lg:                    830px !default;
+$modal-md:                    770px !default;
+$modal-sm:                    420px !default;
+
+
+//- Alerts
+//- ----------------------------------------------
+
+$alert-icon-width:            60px;
+
+$alert-padding:               17px !default;
+$alert-border-radius:         4px !default;
+$alert-link-font-weight:      bold !default;
+$alert-txt-accent-color:      $headings-color !default;
+
+$alert-success-bg:            $state-success-bg !default;
+$alert-success-icon-bg:       $state-success-text !default;
+$alert-success-border:        #e4e7ed !default;
+
+$alert-info-bg:               $state-info-bg !default;
+$alert-info-icon-bg:          $state-info-text !default;
+$alert-info-border:           #e4e7ed !default;
+
+$alert-warning-bg:            $state-warning-bg !default;
+$alert-warning-icon-bg:       $state-warning-text !default;
+$alert-warning-border:        #e4e7ed !default;
+
+$alert-danger-bg:             $state-danger-bg !default;
+$alert-danger-icon-bg:        $state-danger-text !default;
+$alert-danger-border:         #e4e7ed !default;
+
+
+//- Progress Bars
+//- ----------------------------------------------
+
+$progress-bg:                 #ecf0f6 !default;
+$progress-bar-color:          #fff !default;
+$progress-border-radius:      3px !default;
+$progress-height:             6px !default;
+
+$progress-bar-bg:             $color-primary !default;
+$progress-bar-secondary-bg:   $color-4 !default;
+$progress-bar-success-bg:     $color-success !default;
+$progress-bar-warning-bg:     $color-warning !default;
+$progress-bar-danger-bg:      $color-danger !default;
+$progress-bar-info-bg:        $color-info !default;
+
+$progress-label-color:        $color-2 !default;
+$progress-label-style:        normal !default;
+
+
+//- Circular Bar
+//- ----------------------------------------------
+
+$circular-bar-label-color:    $headings-color !default;
+
+
+
+//- Header
+//- ----------------------------------------------
+
+$header-bg: $color-dark !default;
+$header-top-bg: $color-dark-lighten !default;
+$header-secondary-bg: $color-dark !default;
+$header-primary-bg: $color-dark-lighten !default;
+$header-primary-alt-bg: $header-primary-bg !default; // used for Header Layout 4
+
+// Top Bar
+$top-bar-highlight:                 $color-primary !default;
+$top-bar-text-color:                #6b6d70 !default;
+$top-bar-divider-color:             $top-bar-text-color !default;
+$top-bar-dropdown-bg:               #fff !default;
+$top-bar-dropdown-border:           #e4e7ed !default;
+$top-bar-dropdown-shadow:           none !default;
+$top-bar-dropdown-link-color:       rgba($color-2, 0.4) !default;
+$top-bar-dropdown-link-color-hover: $color-2 !default;
+
+$top-bar-social-icon-color:         $color-gray;
+$top-bar-social-icon-color-hover:   $color-primary;
+
+// Info Block
+$header-info-block-color:             $color-primary !default;
+$header-info-block-cart-sum-color:    $color-primary !default;
+$header-info-block-link-color-mobile: #6b6d70 !default;
+
+$header-info-block-color-mobile:             $color-primary !default;
+$header-info-block-cart-sum-color-mobile:    $color-primary !default;
+
+// Search Form
+$header-search-width-desktop:       200px !default;
+$header-search-width-desktop-lg:    360px !default;
+$header-search-icon:                $color-primary !default;
+$header-search-input-bg:            $color-dark-lighten !default;
+$header-search-input-border:        $header-search-input-bg !default;
+$header-search-input-bg-focus:      $color-dark-lighten !default;
+$header-search-input-border-focus:  $header-search-input-bg-focus !default;
+
+$header-search-input-bg-mobile:            $color-dark-lighten !default;
+$header-search-input-border-mobile:        $header-search-input-bg-mobile !default;
+$header-search-input-bg-focus-mobile:      $color-dark-lighten !default;
+$header-search-input-border-focus-mobile:  $header-search-input-bg-focus-mobile !default;
+
+// Mobile Header
+$header-mobile-bg: $color-dark !default;
+$header-mobile-height: 100px !default;
+$header-mobile-logo-width: 97px !default;
+
+// Nav
+$nav-align:                right !default;
+$nav-height:               62px !default;
+$nav-font-family:          $font-family-accent!default;
+$nav-text-transform:       uppercase !default;
+$nav-font-weight:          700 !default;
+$nav-font-style:           normal !default;
+$nav-font-size:            12px !default;
+$nav-font-color:           #fff !default;
+$nav-font-color-hover:     $color-primary !default;
+$nav-active-border-height: 2px !default;
+$nav-active-border-color:  $color-primary !default;
+$nav-active-border-pos:    bottom !default;
+$nav-active-bg:            transparent !default;
+$nav-item-divider:         none !default;
+$nav-item-padding:         0 34px !default;
+
+// Submenu
+$nav-sub-bg:               #fff !default;
+$nav-sub-font-family:      $font-family-accent !default;
+$nav-sub-text-transform:   uppercase !default;
+$nav-sub-font-weight:      700 !default;
+$nav-sub-font-style:       normal !default;
+$nav-sub-font-size:        11px !default;
+$nav-sub-arrow:            str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-2}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+$nav-sub-border-color:     #e4e7ed !default;
+$nav-sub-hover-bg-color:   rgba(228, 231, 237, 0.2) !default;
+$nav-sub-link-color:       $color-2 !default;
+$nav-sub-hover-link-color: $color-2 !default;
+
+// Megamenu
+$nav-sub-megamenu-padding-vertical:   43px !default;
+$nav-sub-megamenu-padding-horizontal: 55px !default;
+$nav-sub-megamenu-link-color:       rgba(red($color-2), green($color-2), blue($color-2), 0.4) !default;
+$nav-sub-megamenu-link-color-hover: $color-2 !default;
+$nav-sub-megamenu-link-font-size:   11px !default;
+$nav-sub-megamenu-link-font-weight: 700 !default;
+$nav-sub-megamenu-link-font-style:  normal !default;
+$nav-sub-megamenu-link-text-transform: uppercase !default;
+$nav-sub-megamenu-title-color:      $color-2 !default;
+$nav-sub-megamenu-post-title-color: $color-2 !default;
+
+// Mobile Nav
+$nav-mobile-width: 270px !default;
+$nav-mobile-bg: $color-dark !default;
+$nav-mobile-color: #fff !default;
+$nav-mobile-border: $color-dark-lighten !default;
+$nav-mobile-font-size: 11px !default;
+$nav-mobile-sub-bg: $color-dark-lighten !default;
+$nav-mobile-sub-color: $color-gray !default;
+
+// Header Cart
+$header-cart-width:                    360px !default;
+$header-cart-bg:                       $color-dark !default;
+$header-cart-border:                   #30333a !default;
+$header-cart-product-name-color:       #fff !default;
+$header-cart-product-name-color-hover: $color-primary !default;
+$header-cart-product-name-font-style:  normal !default;
+$header-cart-product-sum-color:        #fff !default;
+$header-cart-product-rating:           #ffdc11 !default;
+$header-cart-product-rating-empty:     #4a4c51 !default;
+$header-cart-subtotal-label:           #fff !default;
+$header-cart-subtotal-sum:             $header-cart-subtotal-label !default;
+$header-cart-product-close:            #fff !default;
+$header-cart-thumb-border-radius:      0 !default;
+$header-cart-thumb-bg-color:           $color-dark !default;
+
+// Pushy Panel
+$pushy-toggle-icon-color: $color-dark-lighten !default;
+$pushy-panel-width: 380px !default;
+$pushy-panel-bg: #fff !default;
+$pushy-panel-bg-dark: $color-dark-lighten !default;
+
+
+//- Page Heading
+//- ----------------------------------------------
+$page-heading-padding-lg: 110px 0 106px 0 !default;
+$page-heading-bg-color: $color-dark !default;
+$page-heading-bg-image-url: url("../images/page-heading.jpg") !default;
+$page-heading-bg-pattern-url: url("../images/page-heading-pattern.png") !default;
+$page-heading-bg-pattern-size: auto !default;
+$page-heading-bg-pattern-repeat: no-repeat !default;
+$page-heading-bg-pattern-opacity: 0.4 !default;
+$page-heading-font-size: 48px !default;
+$page-heading-font-highlight: $color-primary !default;
+$page-heading-font-style: normal !default;
+
+
+//- Player Page Heading
+//- ----------------------------------------------
+$player-page-heading-bg-color: $color-dark !default;
+$player-page-heading-bg-image-url: url("../images/page-heading.jpg") !default;
+$player-page-heading-bg-pattern-url: url("../images/page-heading-pattern.png") !default;
+$player-page-heading-bg-pattern-opacity: 0.4 !default;
+$player-page-heading-bg-pattern-size: auto !default;
+$player-page-heading-bg-pattern-repeat: no-repeat !default;
+
+$player-page-heading-second-name: $color-primary !default;
+$player-page-heading-title: $body-font-color !default;
+
+
+// Breadcrumbs
+$breadcrumb-divider-color: $body-font-color !default;
+$breadcrumb-link-hover-color: $color-primary !default;
+$breadcrumb-link-active-color: $body-font-color !default;
+
+
+//- Filter
+//- ----------------------------------------------
+$filter-bg:                     #fff !default;
+$filter-border:                 #e4e7ed !default;
+$filter-active:                 $filter-bg !default;
+$filter-label-color:            $body-font-color !default;
+$filter-label-font-size:        8px !default;
+$filter-color:                  $color-2 !default;
+$filter-placeholder-font-style: normal !default;
+$filter-padding-top:            32px !default;
+$filter-padding-bottom:         24px !default;
+$filter-padding-top-sm:         26px !default;
+$filter-padding-bottom-sm:      12px !default;
+$filter-caret:                  str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-2}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+$filter-dropdown-bg:            #fff !default;
+$filter-dropdown-border:        $filter-border !default;
+$filter-dropdown-color:         rgba($color-2, 0.4);
+$filter-dropdown-color-hover:   $color-2;
+$filter-dropdown-font-size:     11px !default;
+$filter-dropdown-font-style:    normal !default;
+
+
+//- Content
+//- ----------------------------------------------
+$content-padding-vertical:    60px;
+$content-padding-vertical-sm: 30px;
+
+
+//- Blog
+//- ----------------------------------------------
+$post-category-1: $color-primary-darken !default;
+$post-category-2: $color-4 !default;
+$post-category-3: $color-3 !default;
+$post-category-4: $color-2 !default;
+
+$post-category-font-style: normal !default;
+
+$post-title-color: $color-2 !default;
+$post-title-color-hover: lighten($color-2, 15%) !default;
+$post-title-font-style: normal;
+
+$post-quote-bg:         #194676 !default;
+$post-quote-highlight:  $color-primary !default;
+$post-quote-font-style: normal !default;
+$post-quote-footer-font-style: normal !default;
+
+
+//- Sidebar
+//- ----------------------------------------------
+$sidebar-content-font-size:   14px !default;
+$sidebar-content-line-height: 22px !default;
+
+// Widget Tabbed
+$widget-tabbed-nav-font-size:         11px !default;
+$widget-tabbed-nav-font-style:        normal !default;
+$widget-tabbed-nav-font-color:        rgba($headings-color, .4) !default;
+$widget-tabbed-nav-font-color-hover:  $headings-color !default;
+$widget-tabbed-nav-font-color-active: $headings-color !default;
+
+// Widget Twitter
+$widget-twitter-icon-color:              #c2c4c7 !default;
+$widget-twitter-thumb-size:              40px !default;
+$widget-twitter-thumb-border-radius:     2px !default;
+$widget-twitter-name-font-size:          15px !default;
+$widget-twitter-name-font-size-sm:       12px !default;
+$widget-twitter-name-font-weight:        400 !default;
+$widget-twitter-name-font-style:         normal !default;
+$widget-twitter-name-text-transform:     none !default;
+$widget-twitter-username-font-size:      11px !default;
+$widget-twitter-username-font-weight:    400 !default;
+$widget-twitter-username-font-style:     normal !default;
+$widget-twitter-username-text-transform: none !default;
+$widget-twitter-username-color:          $body-font-color !default;
+$widget-twitter-username-color-hover:    $color-2 !default;
+$widget-twitter-txt-font-size:           14px !default;
+$widget-twitter-txt-line-height:         22px !default;
+$widget-twitter-txt-color:               #2bd0ff !default;
+$widget-twitter-txt-color-hover:         darken(#2bd0ff, 15%) !default;
+$widget-twitter-timestamp-font-size:     11px !default;
+$widget-twitter-timestamp-color:         $body-font-color !default;
+$widget-twitter-timestamp-color-hover:   $color-2 !default;
+
+// Widget Results
+$widget-results-title-font-size:         9px !default;
+$widget-results-title-text-transform:    uppercase !default;
+$widget-results-title-vertical-padding:  10px !default;
+
+// Widget Featured Player
+$widget-player-stats-value-size:           28px !default;
+$widget-player-stats-value-color:          $headings-color !default;
+$widget-player-stats-value-margin:        .25em !default;
+$widget-player-stats-label-text-transform: uppercase !default;
+
+
+//- Single Post
+//- ----------------------------------------------
+$single-post-author-avatar-size:          60px !default;
+$single-post-author-avatar-border-radius: 50% !default;
+
+$single-post-3-image:                     url("../images/samples/single-post-img5.jpg") !default;
+
+
+//- Pagination
+//- ----------------------------------------------
+$pagination-bg:               #fff !default;
+$pagination-color:            $color-2 !default;
+$pagination-font-size:        11px !default;
+$pagination-border:           $card-border-color !default;
+$pagination-bg-hover:         $color-primary-darken !default;
+$pagination-color-hover:      #fff !default;
+$pagination-border-hover:     $color-primary-darken !default;
+$pagination-bg-active:        $color-primary-darken !default;
+$pagination-color-active:     #fff !default;
+$pagination-border-active:    $color-primary-darken !default;
+
+
+//- Content Filter
+//- ----------------------------------------------
+$content-filter-bg:               $filter-bg !default;
+$content-filter-border:           $filter-border !default;
+$content-filter-padding-top:            28px !default;
+$content-filter-padding-bottom:         28px !default;
+$content-filter-padding-left:           20px !default;
+$content-filter-padding-right:          20px !default;
+$content-filter-padding-top-sm:         18px !default;
+$content-filter-padding-bottom-sm:      18px !default;
+$content-filter-color:            $body-font-color !default;
+$content-filter-color-hover:      $color-2 !default;
+$content-filter-bg-active:         transparent !default;
+$content-filter-active-highlight: $color-primary !default;
+$content-filter-label-font-size: 13px !default;
+$content-filter-label-font-style: normal !default;
+$content-filter-label-font-weight: 700 !default;
+$content-filter-sublabel-font-size: 8px !default;
+$content-filter-sublabel-font-style: normal !default;
+$content-filter-sublabel-font-weight: 400 !default;
+
+
+//- Team
+//- ----------------------------------------------
+$team-select-color: $color-2 !default;
+$team-select-arrow: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-2}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
+
+
+//- Tournament
+//- ----------------------------------------------
+$tournament-team-bg-winner: $card-bg;
+$tournament-divider: $card-bg;
+
+
+//- Shop
+//- ----------------------------------------------
+$shop-price-filter-bar-color: $color-primary !default;
+$shop-price-filter-handle-color: $color-2 !default;
+
+$product-color-1: linear-gradient(to left top, #fe2b00, #f7d500) !default;
+$product-color-2: linear-gradient(to left top, #003e78, #33fff3) !default;
+$product-color-3: linear-gradient(to left top, #00adbd, #7cffd0) !default;
+$product-color-4: linear-gradient(to left top, #3f1464, #dd2f8d) !default;
+$product-color-5: linear-gradient(to left top, #140078, #4dcbff) !default;
+$product-color-6: linear-gradient(to left top, #006f3f, #bdff3d) !default;
+
+// Rating
+$product-rating-color:          #ffdc11 !default;
+$product-rating-color-disabled: #dbdfe6 !default;
+
+// Filter
+$shop-layout-filter-color:        #d7d8da !default;
+$shop-layout-filter-color-active: $color-primary !default;
+
+// Sale
+$product-sale-bg: $color-2 !default;
+$product-sale-color: #fff !default;
+
+
+
+//- Footer
+//- ----------------------------------------------
+$footer-widgets-bg:        $color-dark !default;
+$footer-secondary-bg:      $color-dark !default;
+$footer-secondary-side-bg: $color-primary !default;
+$footer-font-size:         14px !default;
+$footer-line-height:       22px !default;
+$footer-font-color:        $body-font-color !default;
+
+// Footer Widgets
+$footer-widget-title:            #fff !default;
+$footer-widget-title-font-size:  14px !default;
+$footer-widget-title-font-style: normal !default;
+$footer-widget-title-margin:     3.5em !default;
+
+$footer-widget-post-title-font-style:  normal !default;
+$footer-widget-post-title-line-height: 1em !default;
+$footer-widget-post-thumb-border-radius: 0 !default;
+
+// Footer Info Section
+$footer-info-bg:        $color-dark !default;
+
+// Contact Form
+$footer-widget-contact-form-input-bg:     #2b2e33 !default;
+$footer-widget-contact-form-input-border: #2b2e33 !default;
+
+// Footer Copyright
+$footer-copyright-font-size:    9px !default;
+$footer-copyright-border-size:  0 !default;
+$footer-copyright-border-style: solid !default;
+$footer-copyright-border-color: transparent !default;
+
+$footer-copyright-padding:           24px !default;
+$footer-copyright-padding-lg:        24px !default;
+$footer-copyright-link-color:        #fff !default;
+$footer-copyright-link-color-active: $color-primary !default;
+
+// Footer Nav
+$footer-nav-font-size:    11px !default;
+$footer-nav-font-size-sm: 9px !default;
+$footer-nav-color:        #fff !default;
+$footer-nav-color-active: $color-primary !default;
+
+
+//- SVG Icon
+//- ----------------------------------------------
+$svg-stroke: $color-primary !default;
+$footer-contact-info-icon-color: $color-primary !default;
+
+
+//- Info Block
+//- ----------------------------------------------
+$info-block-icon-color: $svg-stroke !default;
+$info-block-link-color: #6b6d70 !default;
+
+
+//- Icobox
+//- ----------------------------------------------
+$icobox-icon-border-color: #eaeced !default;
+$icobox-icon-color-primary: $color-primary !default;
+$icobox-icon-color-secondary: $color-4 !default;
+$icobox-title-font-size: 24px !default;
+$icobox-title-font-style: normal !default;
+$icobox-title-text-transform: uppercase !default;
+
+
+//- Timeline
+//- ----------------------------------------------
+$timeline-marker-color: $color-primary !default;
+$timeline-marker-line-color: $card-border-color !default;
+
+
+//- noUI Range Slider
+//- ----------------------------------------------
+$range-bg-color: #dbdfe6 !default;
+
+
+//- Widget
+//- ----------------------------------------------
+$widget-decor-color-1: rgba(236, 240, 246, .6);
+$widget-decor-color-2: rgba(0,0,0,.1);
+$widget-decor-color-3: rgba(0,0,0,.11);
+
+
+//- Slick Carousel
+//- ----------------------------------------------
+$slick-font-family: "FontAwesome" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-bg-color: #999ea6;
+$slick-arrow-color: white !default;
+$slick-arrow-bg-color-hover: $color-primary-darken;
+$slick-dot-color: #d7d8da !default;
+$slick-dot-color-on-hover: $color-2 !default;
+$slick-dot-color-active: $color-primary !default;
+$slick-prev-character: "\f104" !default;
+$slick-next-character: "\f105" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
+
+//- Preloader
+//- ----------------------------------------------
+$preloader-bg: $color-dark !default;
+$preloader-percent-color: #fff !default;
+$preloader-percent-accent-color: $color-primary !default;
+$preloader-loading-txt: "Loading..." !default;
+$preloader-title: "Alchemists Template" !default;
+
+// For generating grid via class
+$grid-gutter-width: 16px !default;
+
+
+//- CSS Variables
+//- ----------------------------------------------
+:root {
+  --headings-color: $headings-color;
+  --circular-track-color: #ecf0f6;
+}

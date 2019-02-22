@@ -1,0 +1,11 @@
+/* Ratings */
+.ratings {
+
+  .fa {
+    color: $product-rating-color;
+  }
+
+  .empty {
+    color: $product-rating-color-disabled;
+  }
+}

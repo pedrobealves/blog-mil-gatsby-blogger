@@ -1,0 +1,53 @@
+@mixin font-accent($font-size: 13px) {
+	font-size: $font-size;
+	text-transform: uppercase;
+	font-family: $font-family-accent;
+	font-weight: 700;
+	letter-spacing: -0.02em;
+}
+
+@mixin icon-simple-line($font-size: 14px) {
+	font-size: $font-size;
+	line-height: 1em;
+	vertical-align: middle;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	font-family: 'simple-line-icons';
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+@mixin heading-decor($color-1, $color-2, $color-3) {
+	background-image: linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-1 4px, transparent 4px), linear-gradient(to right, $color-2 4px, transparent 4px), linear-gradient(to right, $color-3 4px, transparent 4px);
+	background-repeat: repeat-x;
+	background-size: 36px 12px, 36px 15px, 36px 17px, 36px 20px, 36px 18px, 36px 15px, 72px 15px, 108px 18px;
+	background-position: 0 100%, 6px 100%, 12px 100%, 18px 100%, 24px 100%, 30px 100%, 6px 100%, 24px 100%;
+}
+
+// Replace `$search` with `$replace` in `$string`
+// Used on our SVG icon backgrounds for custom forms.
+//
+// @author Hugo Giraudel
+// @param {String} $string - Initial string
+// @param {String} $search - Substring to replace
+// @param {String} $replace ('') - New value
+// @return {String} - Updated string
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+
+@mixin fix_small_chars() {
+	// IE11 & Edge issue small character issue
+	@if $template == 'football' {
+		font-weight: 800;
+	}
+}

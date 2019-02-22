@@ -1,0 +1,82 @@
+/**
+ *
+ * Sponsors
+ *
+ */
+
+/* Sponsors Grid */
+.sponsors-grid {
+
+}
+	.sponsor-card {
+		height: calc(100% - 16px);
+	}
+		.sponsor-card__header {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 172px;
+
+			&::before {
+				display: none;
+			}
+		}
+			.sponsor-card__logo {
+
+			}
+
+		.sponsor-card__content {
+			flex-grow: 1;
+		}
+			.sponsor-card__excerpt {
+				font-size: .86em;
+				line-height: 1.83em;
+				text-align: center;
+			}
+
+			.sponsor-card__social {
+				text-align: center;
+				padding-top: 32px;
+				padding-bottom: 4px;
+
+				.social-links__item {
+					margin: 0 14px;
+
+					&:last-child {
+						margin-right: 14px;
+					}
+
+					.fa {
+						color: $body-font-color;
+						font-size: 16px;
+						margin-right: 0;
+						opacity: .6;
+					}
+				}
+					.social-links__link {
+
+						&:hover {
+
+							.fa {
+								color: $link-color-hover;
+								opacity: 1;
+							}
+						}
+					}
+			}
+
+		.sponsor-card__footer {
+			border-top: 1px solid $card-border-color;
+			background-color: $card-header-bg;
+			padding: 18px 10px;
+			text-align: center;
+		}
+			.sponsor-card__link {
+				font-size: 10px;
+				line-height: 1.2em;
+				text-transform: uppercase;
+				font-family: $font-family-accent;
+				color: $headings-color;
+				font-weight: 700;
+				text-transform: uppercase;
+			}

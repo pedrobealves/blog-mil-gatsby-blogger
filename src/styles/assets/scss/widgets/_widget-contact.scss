@@ -1,0 +1,15 @@
+/* Widget: Quick Contact */
+.widget-contact {
+
+	.footer-widgets & {
+
+		.form-control {
+			background-color: $footer-widget-contact-form-input-bg;
+			color: #fff;
+
+			&:not(:focus) {
+				border-color: $footer-widget-contact-form-input-border;
+			}
+		}
+	}
+}

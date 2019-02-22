@@ -1,0 +1,416 @@
+/* Widget: Event Calendar */
+.widget-event-calendar {
+
+}
+	// Calendar
+	.alc-event-calendar {
+		overflow: hidden;
+
+		.card & {
+			margin: 0 -1px -1px -1px;
+		}
+
+		caption {
+			caption-side: top;
+			font-family: $font-family-accent;
+			font-size: 14px;
+			text-transform: uppercase;
+			font-weight: 700;
+			color: $headings-color;
+			text-align: center;
+			padding: 12px $card-horizontal-padding;
+			border-bottom: 1px solid $card-border-color;
+		}
+			.alc-event-calendar__caption-inner {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+				.alc-event-calendar__caption-title {
+
+				}
+				.alc-event-calendar__caption-nav {
+					width: 20px;
+					height: 20px;
+				}
+					.alc-event-calendar__caption-nav-link {
+						display: inline-block;
+						vertical-align: middle;
+						width: 20px;
+						height: 20px;
+						border-radius: 10px;
+						color: $color-white;
+						font-weight: 400;
+						font-size: 12px;
+						line-height: 20px;
+						text-align: center;
+
+						@if $template == 'esports' {
+							background-color: $color-gray-2;
+						} @else {
+							background-color: $color-gray;
+						}
+
+						&::before {
+							content: "";
+							font-family: 'FontAwesome';
+							-webkit-font-smoothing: antialiased;
+							-moz-osx-font-smoothing: grayscale;
+						}
+
+						&:hover {
+							background-color: $color-primary;
+						}
+					}
+
+				.alc-event-calendar__caption-nav--prev {
+
+					.alc-event-calendar__caption-nav-link::before {
+						content: "\f104";
+					}
+				}
+				.alc-event-calendar__caption-nav--next {
+
+					.alc-event-calendar__caption-nav-link::before {
+						content: "\f105";
+					}
+				}
+
+		.table {
+			margin-bottom: 0;
+			border: none;
+		}
+
+			thead {
+
+				> tr {
+
+					> th {
+						border-left: none;
+						border-right: none;
+						font-size: 10px;
+						font-style: normal;
+						text-align: center;
+
+						@media (max-width: 991px) {
+
+							&::before {
+								display: inline;
+								content: attr(data-weekday-abbr);
+							}
+						}
+					}
+				}
+			}
+
+			tbody {
+
+				> tr {
+
+					> td {
+						text-align: right;
+						color: $headings-color;
+						width: 14.25%;
+
+						@media (min-width: 1200px) {
+							height: 110px;
+							padding: 8px 8px 8px 16px;
+							font-size: 12px;
+							font-weight: 700;
+						}
+					}
+				}
+			}
+
+			.weekday {
+
+				@media (max-width: 991px) {
+					display: none;
+				}
+
+			}
+
+			.day {
+				display: inline-block;
+				width: 26px;
+				height: 26px;
+				text-align: center;
+				line-height: 26px;
+				border-radius: 50%;
+			}
+			.day--muted {
+				color: $body-font-color;
+			}
+			.day--active {
+
+			}
+			.day--type-1 {
+				background-color: $post-category-1;
+			}
+			.day--type-2 {
+				background-color: $post-category-2;
+			}
+			.day--type-3 {
+				background-color: $post-category-3;
+			}
+			.day--type-4 {
+				background-color: $post-category-4;
+			}
+
+			.alc-event-calendar__event {
+				display: block;
+				position: relative;
+				font-size: 8px;
+				text-transform: uppercase;
+				line-height: 1.25em;
+				text-align: left;
+				padding: 0 0 0 8px;
+				margin: 13px 0 0 0;
+
+				@media (max-width: 991px) {
+					display: none;
+				}
+
+				&::before {
+					content: "";
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 2px;
+					width: 4px;
+					height: 4px;
+					border-radius: 2px;
+					background-color: $post-category-1;
+				}
+
+				a {
+					color: $headings-color;
+					display: inline-block;
+
+					&:hover {
+						color: $link-color-hover;
+					}
+				}
+			}
+
+			.alc-event-calendar__event--type-1 {
+
+				&::before {
+					background-color: $post-category-1;
+				}
+			}
+
+			.alc-event-calendar__event--type-2 {
+
+				&::before {
+					background-color: $post-category-2;
+				}
+			}
+
+			.alc-event-calendar__event--type-3 {
+
+				&::before {
+					background-color: $post-category-3;
+				}
+			}
+
+			.alc-event-calendar__event--type-4 {
+
+				&::before {
+					background-color: $post-category-4;
+				}
+			}
+	}
+
+	// Sidebar specifics
+	.widget--sidebar {
+
+		.alc-event-calendar {
+
+			caption {
+				font-size: 13px;
+			}
+
+			thead {
+
+				> tr {
+
+					> th {
+						border-bottom: none;
+
+						@media (min-width: 1200px) {
+
+							&:first-child {
+								padding-left: $card-horizontal-padding * 1.25;
+							}
+
+							&:last-child {
+								padding-right: $card-horizontal-padding * 1.25;
+							}
+						}
+					}
+				}
+			}
+
+			tbody {
+
+				> tr {
+
+					> td {
+						text-align: center;
+						width: 14.25%;
+						border-top: none;
+
+						@media (min-width: 1200px) {
+							height: auto;
+							padding: 6px 8px;
+							font-size: 11px;
+
+							&:first-child {
+								padding-left: $card-horizontal-padding * 1.25;
+							}
+
+							&:last-child {
+								padding-right: $card-horizontal-padding * 1.25;
+							}
+						}
+					}
+
+					&:last-child {
+
+						> td {
+							padding-bottom: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	// List
+	.alc-event-list {
+		margin: 0;
+
+		.alc-event-calendar + & {
+			margin-top: -1px;
+		}
+	}
+		.alc-event-list-item {
+
+		}
+			.alc-event-list-item__header {
+				font-size: 10px;
+				line-height: 1.2em;
+				text-transform: uppercase;
+				font-weight: 700;
+				font-family: $font-family-accent;
+				padding: 12px $card-horizontal-padding;
+				border-top: 1px solid $card-border-color;
+				border-bottom: 1px solid $card-border-color;
+
+				@if $template == 'esports' {
+					color: $color-gray-3;
+				}
+			}
+				.alc-event-list-item__date {
+
+				}
+			.alc-event-list-item__body {
+				display: flex;
+				padding: $card-vertical-padding $card-horizontal-padding;
+
+				@media (max-width: 575px) {
+					flex-wrap: wrap;
+
+					.alc-event-list-item__time,
+					.alc-event-list-item__info,
+					.alc-event-list-item__cta {
+						flex-basis: 100%;
+					}
+
+					.alc-event-list-item__info {
+						padding: 10px 0 16px 0;
+					}
+
+					.alc-event-list-item__cta {
+
+						.btn {
+							display: block;
+						}
+					}
+				}
+			}
+				.alc-event-list-item__time {
+					font-size: 12px;
+					line-height: 1.2em;
+					font-weight: 700;
+					font-family: $font-family-accent;
+					text-transform: uppercase;
+					padding-left: 12px;
+					position: relative;
+					color: $headings-color;
+
+					&::before {
+						content: "";
+						display: block;
+						position: absolute;
+						left: 0;
+						top: 3px;
+						width: 6px;
+						height: 6px;
+						border-radius: 50%;
+						background-color: $post-category-1;
+					}
+				}
+				.alc-event-list-item__info {
+					flex-grow: 1;
+					padding: 0 0 0 20px;
+				}
+					.alc-event-list-item__title {
+						font-size: 12px;
+						line-height: 1.2em;
+						text-transform: uppercase;
+						margin-bottom: .5em;
+
+						> a {
+							color: $headings-color;
+
+							&:hover {
+								color: $link-color-hover;
+							}
+						}
+					}
+					.alc-event-list-item__desc {
+						font-size: 11px;
+						line-height: 1.2em;
+						margin: 0;
+						padding: 0;
+					}
+				.alc-event-list-item__cta {
+					align-self: center;
+				}
+
+		.alc-event-list-item--type-1 {
+
+			.alc-event-list-item__time::before {
+				background-color: $post-category-1;
+			}
+		}
+		.alc-event-list-item--type-2 {
+
+			.alc-event-list-item__time::before {
+				background-color: $post-category-2;
+			}
+		}
+		.alc-event-list-item--type-3 {
+
+			.alc-event-list-item__time::before {
+				background-color: $post-category-3;
+			}
+		}
+		.alc-event-list-item--type-4 {
+
+			.alc-event-list-item__time::before {
+				background-color: $post-category-4;
+			}
+		}

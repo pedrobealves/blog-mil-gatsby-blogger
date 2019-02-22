@@ -1,0 +1,28 @@
+/* Team Glossary */
+.glossary {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+	.glossary__item {
+		flex-basis: 25%;
+		font-family: $font-family-accent;
+		line-height: 1.2em;
+		padding: 8px 0;
+
+		@if $template == 'esports' {
+			font-size: 12px;
+		} @else {
+			font-size: 11px;
+		}
+	}
+		.glossary__abbr {
+			font-weight: 700;
+			color: $headings-color;
+
+			@if $template == 'esports' {
+				text-transform: none;
+			} @else {
+				text-transform: uppercase;
+			}
+		}

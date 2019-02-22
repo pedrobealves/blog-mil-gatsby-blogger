@@ -1,0 +1,107 @@
+/* Icobox */
+.icobox {
+	margin-bottom: 40px;
+
+	@media (min-width: 992px) {
+		margin-bottom: 0;
+	}
+}
+	// Icon
+	.icobox__icon {
+		display: inline-block;
+		width: 50px;
+		height: 50px;
+		overflow: hidden;
+		position: relative;
+		color: $icobox-icon-color-primary;
+
+		i {
+			display: block;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	// Icon Size
+	.icobox__icon--lg {
+		width: 90px;
+		height: 90px;
+		font-size: 32px;
+	}
+
+	// Icon Border
+	.icobox__icon--border {
+		border: 2px solid $icobox-icon-border-color;
+
+		@if $template == football {
+			background-color: transparent;
+		} @else {
+			background-color: $card-bg;
+		}
+	}
+
+	// Icon Filled
+	.icobox__icon--filled {
+		background-color: $icobox-icon-color-primary;
+		color: #fff;
+	}
+
+	// Icon Shape
+	.icobox__icon--circle { // make sense if icon has border or background
+		border-radius: 50%;
+	}
+
+	// Content
+	.icobox__content {
+
+	}
+		// Title
+		.icobox__title {
+			font-size: $icobox-title-font-size;
+			font-style: $icobox-title-font-style;
+			text-transform: $icobox-title-text-transform;
+			margin-bottom: 1.25em;
+		}
+		.icobox__title--lg {
+			margin-bottom: 1.75em;
+		}
+
+		// Description
+		.icobox__description {
+
+		}
+
+	// Color
+	.icobox__icon--color--primary {
+		color: $icobox-icon-color-primary;
+
+		&.icobox__icon--filled {
+			background-color: $icobox-icon-color-primary;
+			color: #fff;
+		}
+	}
+
+	.icobox__icon--color--secondary {
+		color: $icobox-icon-color-secondary;
+
+		&.icobox__icon--filled {
+			background-color: $icobox-icon-color-secondary;
+			color: #fff;
+		}
+	}
+
+
+// Text Alignment
+.icobox--center {
+	text-align: center;
+
+	.icobox__icon {
+		margin-bottom: 15px;
+
+		&.icobox__icon--lg {
+			margin-bottom: 26px;
+		}
+	}
+}

@@ -1,0 +1,183 @@
+/* Custom Select
+/* ------------------------- */
+
+/* Default custom select styles */
+div.cs-select {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	text-align: left;
+	background: #fff;
+	z-index: 100;
+	width: 100%;
+	user-select: none;
+
+	&:focus {
+		outline: none; /* For better accessibility add a style for this in your skin */
+	}
+}
+
+.cs-select {
+
+	select {
+		display: none;
+	}
+
+	span {
+		display: block;
+		position: relative;
+		cursor: pointer;
+		padding: $filter-padding-top-sm 24px $filter-padding-bottom-sm 24px;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+
+		@media (min-width: 992px) {
+			padding-top: $filter-padding-top;
+			padding-bottom: $filter-padding-bottom;
+		}
+	}
+
+	/* Placeholder and selected option */
+	> span {
+		padding-right: 3em;
+	}
+
+	> span::after {
+		speak: none;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		content: "";
+		right: 23px;
+		display: block;
+		width: 6px;
+		height: 4px;
+		background-image: $filter-caret;
+		background-size: 6px 4px;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: transform 0.2s ease;
+	}
+
+	&.cs-active {
+
+		> span::after {
+			transform: translateY(-50%) rotate(180deg);
+		}
+	}
+
+	/* Options */
+	.cs-options {
+		position: absolute;
+		overflow: hidden;
+		width: 100%;
+		background: $filter-dropdown-bg;
+		visibility: hidden;
+	}
+
+	&.cs-active .cs-options {
+		visibility: visible;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 10px 0;
+		width: 100%;
+	}
+
+	ul span {
+		padding: 1em;
+	}
+
+	ul li.cs-focus span {
+		background-color: #ddd;
+	}
+
+	/* Optgroup and optgroup label */
+	li.cs-optgroup ul {
+		padding-left: 1em;
+	}
+
+	li.cs-optgroup > span {
+		cursor: default;
+	}
+}
+
+div.cs-active {
+	z-index: 1;
+}
+
+/* Skin */
+div.cs-skin-border {
+	background: transparent;
+
+	@if $template == 'esports' {
+		@include font-accent(12px);
+	} @else {
+		@include font-accent(13px);
+	}
+
+	> span {
+		border-bottom: 1px solid $filter-border;
+		color: $filter-color;
+		transition: background 0.2s, border-color 0.2s;
+
+		@media (min-width: 992px) {
+			border-bottom: 0;
+			border-left: 1px solid $filter-border;
+			border-right: 1px solid $filter-border;
+		}
+	}
+
+	ul span::after {
+		content: '';
+		opacity: 0;
+	}
+
+	.cs-placeholder {
+		font-style: $filter-placeholder-font-style;
+	}
+
+	.cs-selected span::after {
+		content: '\e00e';
+		color: #ddd9c9;
+		font-size: 1.5em;
+		opacity: 1;
+		-webkit-transition: opacity 0.2s;
+		transition: opacity 0.2s;
+	}
+
+	&.cs-active > span {
+		color: $filter-color;
+		background-color: $filter-active;
+	}
+
+	.cs-options {
+		border: 1px solid $filter-dropdown-border;
+		border-top: none;
+		color: $filter-dropdown-color;
+		font-size: $filter-dropdown-font-size;
+		font-style: $filter-dropdown-font-style;
+		opacity: 0;
+		transition: opacity 0.2s, visibility 0s 0.2s;
+	}
+
+	&.cs-active .cs-options {
+		opacity: 1;
+		-webkit-transition: opacity 0.2s;
+		transition: opacity 0.2s;
+	}
+
+	ul span {
+		padding: 5px 24px;
+		backface-visibility: hidden;
+		transition: color 0.2s ease;
+	}
+
+	.cs-options li span:hover,
+	li.cs-focus span {
+		color: $filter-dropdown-color-hover;
+	}
+}

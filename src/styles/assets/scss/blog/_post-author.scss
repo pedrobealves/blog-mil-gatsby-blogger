@@ -1,0 +1,75 @@
+/* Post Author
+/* ------------------------- */
+
+.post-author {
+
+}
+  .post-author__header {
+    overflow: hidden;
+    margin-bottom: 26px;
+  }
+    .post-author__avatar {
+      width: $single-post-author-avatar-size;
+      height: $single-post-author-avatar-size;
+      overflow: hidden;
+      border-radius: $single-post-author-avatar-border-radius;
+      margin: 0 14px 0 0;
+      display: inline-block;
+      vertical-align: middle;
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+    .post-author__info {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .post-author__name {
+      margin-bottom: .2em;
+
+      @if $template == football {
+        font-size: 14px;
+      }
+    }
+    .post-author__slogan {
+      display: block;
+      font-size: 11px;
+      line-height: 1.2em;
+      font-family: $font-family-accent;
+      color: $body-font-color;
+      font-weight: 400;
+
+      @if $template == football {
+        font-size: 10px;
+        text-transform: uppercase;
+        font-style: italic;
+        color: $color-gray-3;
+      }
+    }
+    .post-author__social-links.social-links {
+      padding: 10px 0 0 0;
+
+      @media (min-width: 992px) {
+        padding: 0;
+        float: right;
+        margin-right: -2px;
+      }
+    }
+
+
+// Avatar float left
+.post-author--avatar-left {
+
+  .post-author__header {
+    margin-bottom: 12px;
+    padding-top: 5px;
+  }
+
+  .post-author__avatar {
+    float: left;
+    margin-right: 24px;
+  }
+}

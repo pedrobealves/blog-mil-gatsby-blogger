@@ -1,0 +1,29 @@
+/* Player Season Average */
+.player-season-avg {
+
+  thead > tr > th,
+  tbody > tr > td {
+    text-align: center;
+    vertical-align: middle;
+
+    &.player-season-avg__season {
+      text-align: left;
+    }
+  }
+
+  thead > tr > th:first-child,
+  tbody > tr > td:first-child {
+
+    @media (min-width: 1200px) {
+      padding-left: 23px;
+    }
+  }
+
+  thead > tr > th:last-child,
+  tbody > tr > td:last-child {
+
+    @media (min-width: 1200px) {
+      padding-right: 23px;
+    }
+  }
+}

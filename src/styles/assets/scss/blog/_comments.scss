@@ -1,0 +1,546 @@
+/* Comments
+/* ------------------------- */
+
+.post-comments {
+	overflow: hidden;
+}
+.comments {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+	.comments__item {
+		position: relative;
+		padding: 0;
+		margin: 0;
+	}
+		.comments__inner {
+			position: relative;
+			border-bottom: 1px solid $card-border-color;
+			padding-top: 36px;
+			padding-bottom: 36px;
+
+			.card & {
+				margin-left: -$card-horizontal-padding;
+				margin-right: -$card-horizontal-padding;
+				padding-left: $card-horizontal-padding;
+				padding-right: $card-horizontal-padding;
+			}
+
+			.card--lg & {
+				margin-left: -$card-horizontal-padding-lg;
+				margin-right: -$card-horizontal-padding-lg;
+				padding-left: $card-horizontal-padding-lg;
+				padding-right: $card-horizontal-padding-lg;
+			}
+
+			.comments > .comments__item:first-child > & {
+				padding-top: 0;
+			}
+
+			.comments > .comments__item:last-child & {
+				// border-bottom: none;
+			}
+		}
+			.comment__header {
+				overflow: hidden;
+				position: relative;
+				margin-bottom: 25px;
+			}
+
+				.comment__author {
+
+				}
+					.comment__author-avatar {
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						overflow: hidden;
+						display: inline-block;
+						vertical-align: middle;
+						margin-right: 14px;
+					}
+					.comment__author-avatar--sm {
+						width: 40px;
+						height: 40px;
+						margin-right: 10px;
+					}
+					.comment__author-avatar--md {
+						width: 46px;
+						height: 46px;
+						margin-right: 12px;
+					}
+					.comment__author-avatar--rounded {
+						border-radius: 4px;
+					}
+					.comment__author-info {
+						display: inline-block;
+						vertical-align: middle;
+					}
+						.comment__author-name {
+							text-transform: none;
+							font-size: 16px;
+							margin-bottom: .25em;
+
+							@if $template == 'football' {
+								font-size: 14px;
+								text-transform: uppercase;
+							}
+						}
+						.comment__post-date {
+							font-size: 11px;
+							line-height: 1.2em;
+							display: block;
+							font-family: $font-family-accent;
+
+							@if $template == 'football' {
+								font-weight: 400;
+							}
+						}
+
+				.comment__reply {
+					margin-top: 5px;
+
+					@media (min-width: 992px) {
+						display: block;
+						position: absolute;
+						right: 0;
+						top: 0;
+						margin-top: 0;
+					}
+				}
+					.comment__reply-link {
+
+					}
+
+			.comment__body {
+
+			}
+
+
+
+/* Nested Comments */
+.comments--children {
+	padding-left: 0;
+	list-style: none;
+
+	@media ( min-width: 992px) {
+
+		// Default Paddings
+		.card &,
+		& {
+
+			// 2nd Level
+			.comments__item {
+
+				.comments__inner {
+					padding-left: $card-horizontal-padding * 2;
+
+					&::before {
+						content:"";
+						display: block;
+						position: absolute;
+						left: ( $card-horizontal-padding * 2 ) - 33px;
+						top: 43px;
+						width: 14px;
+						height: 20px;
+						border-left: 1px solid $card-border-color;
+						border-bottom: 1px solid $card-border-color;
+					}
+				}
+			}
+
+			// 3rd Level
+			.comments--children {
+
+				.comments__item {
+
+					.comments__inner {
+						padding-left: $card-horizontal-padding * 3;
+
+						&::before {
+							left: ( $card-horizontal-padding * 3 ) - 33px;
+						}
+					}
+				}
+
+				// 4th Level
+				.comments--children {
+
+					.comments__item {
+
+						.comments__inner {
+							padding-left: $card-horizontal-padding * 4;
+
+							&::before {
+								left: ( $card-horizontal-padding * 4 ) - 33px;
+							}
+						}
+					}
+				}
+			}
+
+			// Football Template
+			@if $template == football {
+
+				.comments__item {
+
+					.comments__inner {
+						background-color: $color-dark-lighten-2;
+
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+
+		// Large Paddings
+		.card--lg & {
+
+			// 2nd Level
+			.comments__item {
+
+				.comments__inner {
+					padding-left: $card-horizontal-padding-lg * 2;
+
+					&::before {
+						content:"";
+						display: block;
+						position: absolute;
+						left: ( $card-horizontal-padding-lg * 2 ) - 33px;
+						top: 43px;
+						width: 14px;
+						height: 20px;
+						border-left: 1px solid $card-border-color;
+						border-bottom: 1px solid $card-border-color;
+					}
+				}
+			}
+
+			// 3rd Level
+			.comments--children {
+
+				.comments__item {
+
+					.comments__inner {
+						padding-left: $card-horizontal-padding-lg * 3;
+
+						&::before {
+							left: ( $card-horizontal-padding-lg * 3 ) - 33px;
+						}
+					}
+				}
+
+				// 4th Level
+				.comments--children {
+
+					.comments__item {
+
+						.comments__inner {
+							padding-left: $card-horizontal-padding-lg * 4;
+
+							&::before {
+								left: ( $card-horizontal-padding-lg * 4 ) - 33px;
+							}
+						}
+					}
+				}
+			}
+
+			// Football Template
+			@if $template == football {
+
+				.comments__item {
+					background-color: $color-dark-lighten-2;
+
+					.comments__inner {
+
+						&::before {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+// Thumb Left (Reviews)
+.comments--left-thumb {
+
+	.comments__item {
+
+	}
+		.comments__inner {
+			border-bottom: none;
+			display: flex;
+			padding-top: 16px;
+			flex-wrap: wrap;
+
+			@media (min-width: 768px) {
+				flex-wrap: nowrap;
+			}
+		}
+
+		.comment__header {
+			text-align: center;
+			flex: 0 0 100%;
+			padding: 0 10px;
+
+			@media (min-width: 768px) {
+				flex: 0 0 160px;
+			}
+
+			@media (min-width: 992px) {
+				flex: 0 0 180px;
+				padding: 0 20px;
+			}
+			@media (min-width: 1200px) {
+				flex: 0 0 200px;
+			}
+		}
+			.comment__author-avatar {
+				display: block;
+				margin: 0 auto 10px auto;
+			}
+			.comment__author-name {
+				font-size: 11px;
+
+				@media (min-width: 992px) {
+					font-size: 13px;
+				}
+			}
+			.comment__ratings {
+
+				.fa {
+					font-size: 10px;
+					margin: 0 1px;
+				}
+			}
+
+			.comment__title {
+				font-size: 12px;
+				margin-bottom: 1.5em;
+				padding-top: .33em;
+
+				@media (min-width: 768px) {
+					font-size: 18px;
+				}
+			}
+}
+
+// Comments Pagination
+.post__comments-pagination {
+	text-align: center;
+	margin-left: -$card-horizontal-padding;
+	margin-right: -$card-horizontal-padding;
+	padding: 20px $card-horizontal-padding 0 $card-horizontal-padding;
+
+	.pagination {
+		margin: 0;
+	}
+
+	.card--lg & {
+		margin-left: -$card-horizontal-padding-lg;
+		margin-right: -$card-horizontal-padding-lg;
+		padding: 36px $card-horizontal-padding-lg 0 $card-horizontal-padding-lg;
+	}
+}
+
+// Comments Load More
+.post__comments-load-more {
+	text-align: center;
+	padding: $card-vertical-padding $card-horizontal-padding;
+
+	.card & {
+		background-color: $card-header-bg;
+	}
+
+	.post-comments__content + & {
+
+		.card & {
+			margin-top: -$card-vertical-padding;
+		}
+	}
+}
+
+
+// Thumb Top (Reviews)
+.comments--thumb-top {
+
+
+	.comments__item {
+
+	}
+
+		.comments__inner {
+
+		}
+
+		.comment__header {
+
+
+			@media (min-width: 768px) {
+
+			}
+
+			@media (min-width: 992px) {
+
+			}
+			@media (min-width: 1200px) {
+
+			}
+		}
+			.comment__author-avatar {
+				border-radius: $thumb-border-radius;
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+			}
+			.comment__author-name {
+				font-size: 13px;
+				display: inline-block;
+				margin-right: 0.5em;
+				margin-bottom: 0;
+
+				@if $template == football {
+					text-transform: none;
+				}
+
+				@media (min-width: 992px) {
+					font-size: 16px;
+				}
+			}
+			.comment__ratings {
+				line-height: 1em;
+
+				.fa {
+					font-size: 10px;
+				}
+			}
+
+			.comment__post-date {
+				display: inline-block;
+			}
+
+			.comment__title {
+				font-size: 12px;
+				margin-bottom: 1em;
+				padding-top: .33em;
+
+				@if $template == football {
+					text-transform: none;
+				}
+
+				@media (min-width: 768px) {
+					font-size: 18px;
+				}
+			}
+
+}
+
+
+// Comments
+.comments--alt {
+
+	.comments__inner {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-start;
+	}
+		.comment__inner-wrap {
+			flex: 1;
+		}
+
+	.comment__author-info {
+		margin-bottom: 4px;
+	}
+
+	.comment__author-name {
+		display: inline-block;
+		margin-right: .3em;
+		font-size: 14px;
+		margin-bottom: 0;
+		font-style: normal;
+	}
+
+	.comment__post-date {
+		display: inline-block;
+	}
+
+	.comment__body {
+		font-size: $font-size-sm;
+		line-height: 1.8333em;
+	}
+
+	.comment__reply {
+		font-family: $font-family-accent;
+		font-size: 10px;
+		line-height: 1.2em;
+		padding-top: 11px;
+
+		@media (min-width: 992px) {
+			position: static;
+			float: none;
+		}
+	}
+		.comment__reply-link {
+			color: $headings-color;
+
+			&:hover {
+				color: $link-color-hover;
+			}
+		}
+
+
+	// Nested Comments
+	.comments--children {
+
+		@media ( min-width: 992px) {
+
+			.card &,
+			& {
+
+				// 2nd Level
+				.comments__item {
+
+					.comments__inner {
+						padding-left: $card-horizontal-padding * 3;
+
+						&::before {
+							display: none;
+						}
+					}
+				}
+
+				// 3rd Level
+				.comments--children {
+
+					.comments__item {
+
+						.comments__inner {
+							padding-left: $card-horizontal-padding * 4;
+						}
+					}
+
+					// 4th Level
+					.comments--children {
+
+						.comments__item {
+
+							.comments__inner {
+								padding-left: $card-horizontal-padding * 5;
+							}
+						}
+					}
+				}
+
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+/* Widget: Poll */
+.poll-form {
+
+}
+
+	.poll-form__question {
+		margin-bottom: 1.5em;
+	}
+
+	.poll-form__options {
+		line-height: $base-line-height;
+
+		.radio-inline {
+			margin-bottom: 9px;
+			font-weight: 700;
+			font-style: $progress-label-style;
+		}
+
+		.radio-wrapper {
+			overflow: hidden;
+		}
+		.radio-progress-value {
+			float: right;
+			@include font-accent(11px);
+			color: $headings-color;
+		}
+	}

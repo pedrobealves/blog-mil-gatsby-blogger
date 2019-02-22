@@ -1,0 +1,39 @@
+/* Widget: Team Info */
+.team-info-list {
+	margin: 0;
+}
+	.team-info__item {
+		padding: $card-vertical-padding / 2 $card-horizontal-padding;
+		display: flex;
+
+		& + & {
+			border-top: 1px solid $card-border-color;
+		}
+	}
+		.team-info__label,
+		.team-info__value {
+			font-family: $font-family-accent;
+			font-size: 12px;
+			color: $headings-color;
+			font-weight: 700;
+		}
+		.team-info__label {
+
+		}
+		.team-info__value {
+			margin-left: auto;
+		}
+		.team-info__value--active {
+			color: $color-primary;
+		}
+
+	.team-info__item--desc {
+		display: block;
+		padding-top: $card-vertical-padding;
+		padding-bottom: $card-vertical-padding;
+
+		.team-info__label {
+			display: inline-block;
+			margin: 0;
+		}
+	}

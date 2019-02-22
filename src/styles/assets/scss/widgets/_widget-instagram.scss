@@ -1,0 +1,169 @@
+/*
+// #Widget - Instagram
+// --------------------------------------------------
+*/
+
+.widget-instagram {
+	position: relative;
+}
+	// Instagram list
+	.widget-instagram__list {
+		list-style-type: none;
+		padding: 0;
+		margin: 0 -2px -14px -2px;
+		overflow: hidden;
+
+		& + .btn-instagram {
+			margin-top: 23px;
+		}
+
+		@media (min-width: 768px) {
+			margin-left: -7px;
+			margin-right: -8px;
+		}
+	}
+		// Instagram item
+		.widget-instagram__item {
+			float: left;
+			width: 16.66%;
+			padding-left: 2px;
+			padding-right: 2px;
+			margin-bottom: 14px;
+
+			@media (min-width: 768px) {
+				width: 33.3%;
+				padding-left: 7px;
+				padding-right: 8px;
+
+				.widget-instagram__list--4cols & {
+					width: 25%;
+				}
+			}
+		}
+			// Image
+			.widget-instagram__img {
+				vertical-align: top;
+				margin: 0;
+				width: 100%;
+				height: auto;
+			}
+
+			// Link wraps image
+			.widget-instagram__link-wrapper {
+				display: block;
+				position: relative;
+				overflow: hidden;
+				border-radius: $thumb-border-radius;
+
+				&::before {
+					content:"";
+					display: block;
+					position: absolute;
+					z-index: 1;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					top: 0;
+					background-color: $color-primary-darken;
+					border-radius: $thumb-border-radius;
+					color: #fff;
+					opacity: 0;
+					transition: opacity 0.3s ease;
+					transform: translate3d(0,0,0);
+				}
+
+				&:hover {
+
+					&::before {
+						opacity: 0.8;
+					}
+
+					.widget-instagram__plus-sign {
+
+						&::before,
+						&::after {
+							transform: translate(-50%, -50%) scale(1);
+						}
+					}
+
+				}
+			}
+
+				// Plus sign appears on hover
+				.widget-instagram__plus-sign {
+					position: relative;
+					display: block;
+
+					&::before,
+					&::after {
+						content:"";
+						display: block;
+						position: absolute;
+						background-color: #fff;
+						overflow: hidden;
+						left: 50%;
+						top: 50%;
+						transform: translate(-50%, -50%) scale(0);
+						z-index: 2;
+						transition: all 0.3s ease;
+					}
+
+					&::before {
+						height: 4px;
+						width: 18px;
+					}
+
+					&::after {
+						height: 18px;
+						width: 4px;
+					}
+				}
+
+
+	// 4 cols
+	.widget-instagram__list--4cols {
+
+	}
+
+	// Row
+	.widget-instagram__list-section {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0;
+
+		@media (min-width: 768px) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.widget-instagram__item {
+			width: 20%;
+			padding-left: 0;
+			padding-right: 0;
+			margin-bottom: 0;
+
+			@media (min-width: 768px) {
+				width: 10%;
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+			// Link wraps image
+			.widget-instagram__link-wrapper {
+				border-radius: 0;
+
+				&::before {
+					background-color: $color-2;
+					border-radius: 0;
+				}
+			}
+
+
+		& + .btn {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 2;
+		}
+	}

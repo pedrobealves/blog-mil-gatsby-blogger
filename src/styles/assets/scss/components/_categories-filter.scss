@@ -1,0 +1,41 @@
+/* Post Categories Filter
+/* ------------------------- */
+
+/* Post Filter */
+.category-filter {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+  .category-filter__item {
+    display: inline;
+  }
+    .category-filter__link {
+      display: inline-block;
+      @include font-accent(9px);
+      color: rgba($headings-color, 0.4);
+      transition: color 0.3s ease;
+      padding: 0 6px;
+      background: none;
+      border: none;
+
+      &:hover {
+        color: $headings-color;
+      }
+
+      @media (min-width: 992px) {
+        font-size: 11px;
+        padding: 0 12px;
+      }
+    }
+
+    .category-filter__link--active {
+      color: $headings-color;
+    }
+
+.category-filter--extra-space {
+
+  @media (min-width: 992px) {
+    margin-right: 66px;
+  }
+}

@@ -1,0 +1,33 @@
+.icon-svg {
+    font-size: 10px;
+    &:before {
+      content:' ';
+      vertical-align:middle;
+      display: inline-block;
+      background-image: url("../images/sprite.svg");
+      background-repeat: no-repeat;
+      background-size: 2.1em 2.1em;
+
+      .no-svg & {
+        background-image: url("../images/sprite.svg");
+      }
+    }
+}
+
+
+
+
+.icon-svg.icon-crosshair {
+  &:before {
+      background-position: 0em 0em;
+      width: 2.1em;
+      height: 2.1em;
+    }
+  }
+
+  @mixin icon-svg-icon-crosshair(){
+    @extend .icon-crosshair;
+  }
+
+
+

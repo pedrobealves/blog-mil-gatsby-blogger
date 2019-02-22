@@ -1,0 +1,242 @@
+/* Tables
+/* ------------------------- */
+
+table {
+	background-color: $table-bg;
+}
+caption {
+	padding-top: $table-cell-padding;
+	padding-bottom: $table-cell-padding;
+	text-align: left;
+}
+th {
+	text-align: left;
+}
+
+
+// Baseline styles
+
+.table {
+	width: 100%;
+	max-width: 100%;
+
+	// Cells
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				padding: $table-cell-padding/2;
+				vertical-align: top;
+				border-top: 1px solid $table-border-color;
+				font-family: $font-family-accent;
+				font-size: 10px;
+				line-height: 1.42857143em;
+
+				@media (min-width: 992px) {
+					padding: $table-cell-padding 10px;
+					font-size: 11px;
+				}
+			}
+		}
+	}
+	// Bottom align for column headings
+	> thead > tr > th {
+		vertical-align: bottom;
+		border-bottom: 1px solid $table-border-color;
+		font-weight: 700;
+		color: $table-thead-color;
+		font-style: $table-thead-font-style;
+		text-transform: uppercase;
+	}
+	> tbody > tr > th {
+		color: $table-thead-color;
+		font-weight: normal;
+	}
+	// Remove top border from thead by default
+	> caption + thead,
+	> colgroup + thead,
+	> thead:first-child {
+		> tr:first-child {
+			> th,
+			> td {
+				border-top: 0;
+			}
+		}
+	}
+	// Account for multiple tbody instances
+	> tbody + tbody {
+		border-top: 2px solid $table-border-color;
+	}
+}
+
+.table--lg {
+	// Cells
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				padding: $table-cell-padding-lg/2;
+
+				@media (min-width: 992px) {
+					padding: $table-cell-padding-lg 12px;
+				}
+			}
+		}
+	}
+}
+
+.table-thead-color {
+	> thead > tr > th {
+		background-color: $table-thead-bg-color;
+	}
+}
+
+.table-top-border {
+	> thead:first-child > tr:first-child > th {
+		border-top: 1px solid $table-border-color;
+	}
+}
+
+.table {
+	> tbody > tr.highlighted {
+		background-color: $table-bg-active;
+	}
+}
+
+td.highlight {
+	color: $headings-color;
+}
+
+// Hover effect
+.table-hover {
+	> tbody > tr {
+		transition: background-color 0.2s ease;
+
+		&:hover {
+			background-color: $table-bg-hover;
+		}
+	}
+}
+
+// Table Bordered
+.table-bordered {
+	border: 1px solid $table-border-color;
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				border: 1px solid $table-border-color;
+			}
+		}
+	}
+	> thead > tr {
+		> th,
+		> td {
+			border-bottom-width: 1px;
+		}
+	}
+}
+
+.table-wrap-bordered {
+	border: 1px solid $table-border-color;
+}
+
+.table-responsive {
+
+	@media (max-width: 767px) {
+		border: none;
+		margin-bottom: 0;
+	}
+}
+
+.table--no-border {
+
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				border: none;
+			}
+		}
+	}
+}
+
+// Centered
+.table__cell-center {
+	text-align: center;
+
+	> thead > tr > th {
+		text-align: center;
+
+		&:first-child {
+			text-align: left;
+		}
+	}
+}
+
+
+// Table Stats
+.table-stats {
+	> thead,
+	> tbody,
+	> tfoot {
+		> tr {
+			> th,
+			> td {
+				text-align: center;
+				vertical-align: middle;
+
+				&.text-left {
+					text-align: left;
+				}
+
+				&.text-right {
+					text-align: right;
+				}
+			}
+		}
+	}
+
+
+	> thead > tr > th,
+	> tbody > tr > td {
+
+		&:first-child {
+
+			@media (min-width: 992px) {
+				padding-left: $card-horizontal-padding;
+			}
+		}
+
+		&:last-child {
+
+			@media (min-width: 992px) {
+				padding-right: $card-horizontal-padding;
+			}
+		}
+
+	}
+
+	th.table-stats__subheading {
+		text-align: left;
+		font-weight: bold;
+		font-style: $table-thead-font-style;
+		padding-left: $card-horizontal-padding;
+	}
+
+	th.table-stats__subheading--highlight {
+		box-shadow: inset 6px 0 0 $color-primary;
+	}
+	th.table-stats__subheading--highlight-info {
+		box-shadow: inset 6px 0 0 $color-info;
+	}
+
+}

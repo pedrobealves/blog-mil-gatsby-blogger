@@ -1,0 +1,25 @@
+/*
+// #Content
+// --------------------------------------------------
+*/
+
+.site-content,
+.section {
+	padding: $content-padding-vertical-sm 0;
+
+	@media (min-width: 992px) {
+		padding: $content-padding-vertical 0;
+	}
+}
+
+.section--bg1 {
+	background-color: $color-dark-lighten;
+}
+
+.section--no-paddings {
+	padding: 0;
+
+	@media (min-width: 992px) {
+		padding: 0;
+	}
+}

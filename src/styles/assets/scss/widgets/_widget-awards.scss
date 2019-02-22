@@ -1,0 +1,106 @@
+/* Widget: Awards */
+.widget-awards {
+
+}
+  .awards {
+
+  }
+  .awards--slider {
+    position: relative;
+  }
+    .awards__item {
+      text-align: center;
+    }
+      .awards__figure {
+        display: block;
+        text-align: center;
+
+        img {
+          margin: 0 auto;
+        }
+      }
+      .awards__figure--space {
+        padding: 37px 0;
+      }
+      .awards__desc {
+
+        @if $template == football {
+          padding: 2px 0;
+
+          @media (min-width: 992px) {
+            padding: 6px 0;
+          }
+
+        } @else {
+          padding: 18px 0;
+
+          @media (min-width: 992px) {
+            padding: 27px 0;
+          }
+        }
+      }
+        .awards__name {
+          line-height: 1.2em;
+          margin-bottom: .25em;
+          font-size: 12px;
+          text-transform: uppercase;
+
+          @media (min-width: 992px) {
+            font-size: 14px;
+          }
+
+          @if $template == football {
+            font-style: italic;
+          }
+        }
+        .awards__date {
+          @include font-accent(9px);
+          line-height: 1.2em;
+
+          @media (min-width: 992px) {
+            font-size: 10px;
+          }
+
+          @if $template == football {
+            font-style: italic;
+          }
+        }
+
+        .awards__stars {
+          font-size: 10px;
+          padding: 5px 0 0 0;
+
+          .fa {
+            margin: 0 2px;
+            color: #ffdc11;
+          }
+        }
+
+
+    // Filter
+    .awards-filter {
+      list-style: none;
+      padding: 0 0 0 7px;
+      margin-top: 0;
+      margin-left: -$card-horizontal-padding;
+      margin-right: -$card-horizontal-padding;
+      margin-bottom: 3px;
+      border-bottom: 1px solid $card-border-color;
+    }
+      .awards-filter__item {
+        display: inline;
+      }
+        .awards-filter__link {
+          display: inline-block;
+          padding: 9px 16px;
+          @include font-accent(11px);
+          color: $body-font-color;
+          transition: color 0.3s ease;
+
+          &:hover {
+            color: $headings-color;
+          }
+        }
+        .awards-filter__link--active {
+          color: $headings-color;
+        }

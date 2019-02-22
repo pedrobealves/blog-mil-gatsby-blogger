@@ -1,0 +1,179 @@
+/* Marquee
+/* ------------------------- */
+
+.marquee-wrapper {
+	width: 100%;
+	background-color: $card-bg;
+	height: 38px;
+	position: relative;
+	overflow: hidden;
+
+	.container {
+		position: relative;
+	}
+
+	&::before {
+		content: "";
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		background-color: $color-primary;
+	}
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		width: 50%;
+		background-color: $color-4;
+	}
+}
+.marquee {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+	line-height: 38px;
+	background-color: $card-bg;
+
+	@media (min-width: 768px) {
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: -20px;
+			width: 135px;
+			transform: skew(-25deg);
+			background-color: $color-4;
+			z-index: 1;
+		}
+
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			width: 4px;
+			right: 107px;
+			top: 0;
+			bottom: 0;
+			background-color: $card-bg;
+			transform: skew(-25deg);
+			z-index: 1;
+		}
+	}
+}
+	.marquee-label {
+		display: none;
+
+		@media (min-width: 768px) {
+			display: block;
+			white-space: nowrap;
+			position: absolute;
+			left: 8px;
+			padding: 0 10px 0 0;
+			top: 0;
+			line-height: 38px;
+			z-index: 2;
+			@include font-accent(10px);
+			color: $headings-color;
+			background-color: $color-primary;
+
+			&::before {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				background-color: $color-primary;
+				transform: skew(-25deg);
+				width: 35px;
+				right: -26px;
+			}
+
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				right: -22px;
+				top: 0;
+				bottom: 0;
+				background-color: $card-bg;
+				width: 4px;
+				transform: skew(-25deg);
+			}
+		}
+	}
+	.marquee-content {
+
+	}
+
+// Boxed
+.marquee-wrapper--boxed {
+	border-radius: $card-border-radius;
+	border: 1px solid $card-border-color;
+	height: 46px;
+	overflow: hidden;
+	margin-bottom: 20px;
+
+	&::before,
+	&::after {
+		background-color: transparent;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 40px;
+	}
+
+	.container {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.marquee {
+		line-height: 43px;
+		border-radius: $card-border-radius;
+
+		@media (min-width: 768px) {
+
+			&::before {
+				background-color: $card-header-bg;
+			}
+		}
+	}
+		.marquee-label {
+			left: 0;
+			font-style: italic;
+
+			.fa {
+				color: $color-primary;
+				margin-right: .3em;
+				font-style: normal;
+				font-weight: 400;
+			}
+
+			@media (min-width: 768px) {
+				line-height: 44px;
+				font-size: 14px;
+				padding-left: $card-horizontal-padding;
+				padding-right: 13px;
+				background-color: $card-header-bg;
+
+				&::before {
+					width: 50px;
+					right: -38px;
+					background-color: $card-header-bg;
+				}
+
+				&::after {
+					right: -34px;
+				}
+			}
+		}
+}

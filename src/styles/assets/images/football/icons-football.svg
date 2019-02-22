@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="football-helmet" width="36" height="31" viewBox="0 0 36 31">
+    <title>Football Helmet</title>
+    <path id="Forma_13" data-name="Forma 13" class="cls-1" d="M550,3733s-15-1.09-15,15c0,0-.75,10.41,8,14h16s2-.75,0-5-4.083-6.75-2-8,8-4,8-4,2.25-1.92,0-5S560.25,3732.75,550,3733Z" transform="translate(-534.2 -3732.17)"/>
+    <path id="Forma_14" data-name="Forma 14" class="cls-1" d="M558,3747l6,13s1.333,1.75,3,1,3.667-1.75,3-4-2-7-2-7-1.044-1.46-5,0a70.1,70.1,0,0,0-7,3" transform="translate(-534.2 -3732.17)"/>
+    <path id="Forma_15" data-name="Forma 15" class="cls-1" d="M569,3754l-11,4" transform="translate(-534.2 -3732.17)"/>
+    <circle id="Elipse_4" data-name="Elipse 4" class="cls-2" cx="14.8" cy="22.83" r="4"/>
+  </symbol>
+
+  <symbol id="football-ball" width="31" height="31" viewBox="0 0 31 31">
+    <title>Football Ball</title>
+    <path id="Elipse_1_copia_2" data-name="Elipse 1 copia 2" class="cls-1" d="M828.728,3735.27c4.3,4.29-.654,16.21-4.95,20.51s-16.21,9.24-20.506,4.95,0.654-16.21,4.95-20.51S824.433,3730.97,828.728,3735.27Z" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_10" data-name="Forma 10" class="cls-1" d="M818.828,3735.27a13.236,13.236,0,0,1,9.9,9.9" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_11" data-name="Forma 11" class="cls-1" d="M820.95,3743.05l-9.193,9.19" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_12" data-name="Forma 12" class="cls-1" d="M811.05,3747.29l4.243,4.24" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_12-2" data-name="Forma 12" class="cls-1" d="M813.879,3744.46l4.242,4.24" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_12-3" data-name="Forma 12" class="cls-1" d="M816.707,3741.63l4.243,4.25" transform="translate(-800.794 -3732.82)"/>
+    <path id="Forma_10_copia" data-name="Forma 10 copia" class="cls-1" d="M804.686,3749.41a13.406,13.406,0,0,0,9.9,9.9" transform="translate(-800.794 -3732.82)"/>
+  </symbol>
+
+  <symbol id="bag" width="22" height="24" viewBox="0 0 22 24">
+    <title>Bag Icon</title>
+    <path id="bag-path" d="M1195.25,961.988h13.5a2.238,2.238,0,0,1,2.25,2.223l1,17.565a2.239,2.239,0,0,1-2.25,2.223h-15.5a2.239,2.239,0,0,1-2.25-2.223l1-17.565A2.238,2.238,0,0,1,1195.25,961.988Z" transform="translate(-1191.2 -961.2)"/>
+  </symbol>
+
+  <symbol id="bag-handle" width="12" height="11" viewBox="0 0 12 11">
+    <title>Bag Handle Icon</title>
+    <path id="bag-handle-path" d="M1197.01,966v-4.7c0-2.377,2.24-4.3,4.99-4.3s4.99,1.927,4.99,4.3V966" transform="translate(-1196.2 -956.2)"/>
+  </symbol>
+
+</svg>

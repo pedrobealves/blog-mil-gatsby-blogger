@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="whistle" width="30" height="32" viewBox="0 0 30 34">
+    <title>Whistle Icon</title>
+    <path id="Elipse_2" data-name="Elipse 2" class="cls-1" d="M812.558,1845.18a10,10,0,1,1,3.661,13.66A10,10,0,0,1,812.558,1845.18Z" transform="translate(-802.431 -1834.98)"/>
+    <path id="Elipse_2_copia" data-name="Elipse 2 copia" class="cls-1" d="M816.023,1847.18a6,6,0,1,1,2.2,8.2A5.995,5.995,0,0,1,816.023,1847.18Z" transform="translate(-802.431 -1834.98)"/>
+    <path id="Elipse_3" data-name="Elipse 3" class="cls-1" d="M817.058,1837.39a3,3,0,1,1,1.1,4.1A3,3,0,0,1,817.058,1837.39Z" transform="translate(-802.431 -1834.98)"/>
+    <path id="Forma_9" data-name="Forma 9" class="cls-1" d="M813.558,1843.45l-12,20.78s-0.29,1.65,2.1,2.37,3.964,1.13,3.964,1.13l9.964-9.25" transform="translate(-802.431 -1834.98)"/>
+  </symbol>
+
+  <symbol id="soccer-ball" width="28" height="28" viewBox="0 0 28 28">
+    <title>Soccer Ball Icon</title>
+    <circle id="Elipse_1_copia" data-name="Elipse 1 copia" class="cls-1" cx="13.8" cy="13.8" r="13"/>
+    <path id="Polígono_2" data-name="Polígono 2" class="cls-2" d="M1020,2728l4.01,3.06-1.53,4.95h-4.96l-1.53-4.95Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Polígono_2_copia" data-name="Polígono 2 copia" class="cls-2" d="M1020,2725l4.01-2.3-1.53-3.71h-4.96l-1.53,3.71Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Polígono_2_copia_2" data-name="Polígono 2 copia 2" class="cls-2" d="M1025.55,2729.48l3.83,2.6,2.66-3.01-2.18-4.46-4.01.26Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Polígono_2_copia_3" data-name="Polígono 2 copia 3" class="cls-2" d="M1014.01,2729.55l-3.55,2.44-2.47-2.83,2.03-4.17,3.71,0.24Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Polígono_2_copia_5" data-name="Polígono 2 copia 5" class="cls-2" d="M1015.63,2737.61l-4.03-1.25-1.67,3.21,3,3.23,3.52-1.21Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Polígono_2_copia_6" data-name="Polígono 2 copia 6" class="cls-2" d="M1024.75,2737.15l3.71-1.16,1.55,2.99-2.77,3.01-3.25-1.13Z" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Forma_5" data-name="Forma 5" class="cls-2" d="M1022,2735l4,3" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Forma_6" data-name="Forma 6" class="cls-2" d="M1018,2735l-4,3" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Forma_7" data-name="Forma 7" class="cls-2" d="M1023,2731l4-2" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Forma_7_copia" data-name="Forma 7 copia" class="cls-2" d="M1017,2731l-4-2" transform="translate(-1006.2 -2718.2)"/>
+    <path id="Forma_8" data-name="Forma 8" class="cls-2" d="M1020,2729v-5" transform="translate(-1006.2 -2718.2)"/>
+  </symbol>
+</svg>

@@ -1,0 +1,40 @@
+/* Widget: Tabbed */
+.widget-tabbed {
+
+	.widget__content {
+
+	}
+
+	.nav.widget-tabbed__nav {
+		margin: -24px -24px 26px -24px;
+		border-bottom: 1px solid $card-border-color;
+		width: auto;
+
+		.nav-link {
+			border: none;
+			border-radius: 0;
+			font-size: $widget-tabbed-nav-font-size;
+			font-style: $widget-tabbed-nav-font-style;
+			line-height: 1.5em;
+			font-family: $font-family-accent;
+			text-transform: uppercase;
+			padding: 12px 6px;
+			color: $widget-tabbed-nav-font-color;
+			font-weight: bold;
+			letter-spacing: -0.02em;
+			transition: color 0.2s ease-in-out;
+
+			&:hover {
+				color: $widget-tabbed-nav-font-color-hover;
+				background-color: transparent;
+				border: none;
+			}
+
+			&.active {
+				color: $widget-tabbed-nav-font-color-active;
+				background-color: transparent;
+				border: none;
+			}
+		}
+	}
+}

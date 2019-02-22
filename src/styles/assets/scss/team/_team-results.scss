@@ -1,0 +1,248 @@
+/* Team Results */
+.team-result {
+
+	> thead > tr > th {
+		vertical-align: middle;
+		text-align: center;
+
+		&:first-child {
+			text-align: left;
+			padding-left: 24px;
+		}
+		&:last-child {
+			padding-right: 24px;
+		}
+	}
+
+	> tbody > tr > td {
+		vertical-align: middle;
+		color: $table-highlight;
+		color: $body-font-color;
+		text-align: center;
+
+		&:first-child {
+			padding-left: 24px;
+		}
+		&:last-child {
+			padding-right: 24px;
+		}
+	}
+
+	.team-result__date,
+	.team-result__vs {
+		text-align: left;
+	}
+}
+	.team-result__game {
+		color: $headings-color;
+	}
+
+
+/* Team Result Filter */
+.team-result-filter {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+
+	@media (min-width: 1200px) {
+		float: right;
+	}
+}
+	.team-result-filter__item {
+		padding-left: 22px;
+		float: left;
+
+		@media (max-width: 479px) {
+			padding: 5px 0 5px 0;
+		}
+
+		select.form-control {
+			border: none;
+			@include font-accent(9px);
+			height: 24px !important;
+			padding: 4px 18px 4px 10px;
+			display: inline-block;
+			vertical-align: top;
+			background-color: $card-header-bg;
+			background-image: $team-select-arrow;
+			background-position: 100% 50%;
+			background-size: 6px 4px;
+			color: $team-select-color;
+		}
+
+		@media (max-width: 479px) {
+
+			&:last-child {
+				float: none;
+				clear: both;
+			}
+		}
+	}
+
+
+@if $template == 'soccer' {
+	.team-result {
+
+		/* Team Results - Soccer */
+		.team-result__game-overview {
+
+			@media (min-width: 1200px) {
+				padding-right: 23px;
+			}
+		}
+
+		.team-result__ball-posession,
+		.team-result__shots,
+		.team-result__fouls,
+		.team-result__game-overview {
+			text-align: center;
+			vertical-align: middle;
+		}
+	}
+}
+
+@if $template == 'football' {
+	.team-result {
+
+		/* Team Results - Football */
+		.team-result__game-overview {
+
+			@media (min-width: 1200px) {
+				padding-right: 23px;
+			}
+		}
+
+		.team-result__pass,
+		.team-result__rush,
+		.team-result__receiving {
+			text-align: center;
+			vertical-align: middle;
+		}
+
+		td.team-result__score {
+			color: #fff;
+		}
+	}
+	.team-result__game {
+		color: #fff;
+	}
+	.team-result__game--win {
+		color: $color-success;
+	}
+	.team-result__game--lose {
+		color: $color-danger;
+	}
+}
+
+
+@if $template == 'esports' {
+	.team-result {
+
+		.team-result__score {
+			color: $headings-color;
+		}
+
+		.team-result__game--win {
+			color: $color-success;
+		}
+
+		.team-result__game--lose {
+			color: $body-font-color;
+		}
+	}
+}
+
+.team-result__teams-wrapper {
+	display: flex;
+	align-items: center;
+
+	@media (min-width: 1199px) {
+		padding-right: 30px;
+	}
+
+	.team-result__teams-score {
+		padding: 0 14px;
+		margin: 0 25px;
+		color: $headings-color;
+		font-weight: 700;
+
+		.team-result__score {
+			display: inline-block;
+			color: $body-font-color;
+			position: relative;
+
+			&::before {
+				content:"";
+				display: none;
+				position: absolute;
+				top: 50%;
+				width: 0;
+				height: 0;
+				border-top: 4px solid transparent;
+				border-bottom: 4px solid transparent;
+				transform: translateY(-50%);
+			}
+
+			&.team-result__score--win {
+				color: $headings-color;
+
+				&::before {
+					display: block;
+				}
+
+				&:first-of-type::before {
+					border-left: 4px solid $color-primary;
+					left: -10px;
+
+					@media (min-width: 992px) {
+						left: -10px;
+					}
+
+					@media (min-width: 1199px) {
+						left: -14px;
+					}
+				}
+
+				&:last-of-type::before {
+					border-right: 4px solid $color-primary;
+					right: -10px;
+
+					@media (min-width: 992px) {
+						right: -10px;
+					}
+
+					@media (min-width: 1199px) {
+						right: -14px;
+					}
+				}
+			}
+		}
+	}
+
+	.team-meta {
+		display: flex;
+		align-items: center;
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+	.team-meta--second {
+
+		.team-meta__logo {
+			order: 2;
+		}
+		.team-meta__info {
+			order: 1;
+			text-align: right;
+		}
+		.team-meta__logo {
+			margin-right: 0;
+			margin-left: 5px;
+		}
+	}
+		.team-meta__info {
+			flex: 1;
+		}
+		.team-meta__logo {
+			margin-right: 5px;
+		}
+}
