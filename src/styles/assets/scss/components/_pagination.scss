@@ -1,13 +1,7 @@
 /* Pagination
 /* ------------------------- */
 .pagination {
-	flex-wrap: wrap;
-
-	@if $template == 'esports' {
-		margin: 30px 0 20px 0;
-	} @else {
-		margin: 20px 0;
-	}
+	margin: 20px 0;
 }
 	.page-item {
 
@@ -33,7 +27,7 @@
 			border-radius: 3px;
 			border-color: $pagination-border;
 			color: $pagination-color;
-			font-size: $pagination-font-size;
+			font-size: 11px;
 			text-transform: uppercase;
 			font-family: $font-family-accent;
 			font-weight: bold;
@@ -51,7 +45,6 @@
 		}
 
 
-// Condensed
 .pagination--condensed {
 
 	.page-item {
@@ -71,42 +64,11 @@
 		}
 }
 
-// Large
 .pagination--lg {
 
 	.page-link {
 		width: 50px;
 		height: 50px;
 		line-height: 50px;
-	}
-}
-
-// Circle
-.pagination--circle {
-
-	.page-item {
-
-		&:first-child,
-		&:last-child {
-
-			.page-link {
-				border-radius: 50%;
-			}
-		}
-	}
-
-	.page-link {
-		width: 32px;
-		height: 32px;
-		line-height: 30px;
-		border-radius: 50%;
-		margin: 0 2px;
-
-		@media (min-width: 992px) {
-			width: 46px;
-			height: 46px;
-			line-height: 44px;
-			margin: 0 5px;
-		}
 	}
 }

@@ -3,23 +3,10 @@
 // --------------------------------------------------
 */
 
-.site-content,
-.section {
-	padding: $content-padding-vertical-sm 0;
+.site-content {
+  padding: 30px 0;
 
-	@media (min-width: 992px) {
-		padding: $content-padding-vertical 0;
-	}
-}
-
-.section--bg1 {
-	background-color: $color-dark-lighten;
-}
-
-.section--no-paddings {
-	padding: 0;
-
-	@media (min-width: 992px) {
-		padding: 0;
-	}
+  @media (min-width: 992px) {
+    padding: 60px 0;
+  }
 }

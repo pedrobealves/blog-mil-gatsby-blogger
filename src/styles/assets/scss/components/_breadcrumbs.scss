@@ -34,11 +34,4 @@
 // Breadcrumb in the Page Heading
 .page-heading__breadcrumb {
 	justify-content: center;
-
-	.align-self-end & {
-
-		@media (min-width: 768px) {
-			justify-content: flex-end;
-		}
-	}
 }

@@ -8,7 +8,7 @@ h1, h2, h3, h4, h5, h6 {
 	color: $headings-color;
 	margin: 0 0 .75em 0;
 	font-weight: 700;
-	line-height: $headings-line-height;
+	line-height: 1.1em;
 	text-transform: uppercase;
 	font-family: $headings-font-family;
 	letter-spacing: -0.02em;
@@ -52,28 +52,6 @@ h6 {
 	font-size: $font-style-h6;
 }
 
-// Type display classes
-.display-1 {
-	font-size: $display1-size;
-	font-weight: $display1-weight;
-	line-height: $display-line-height;
-}
-.display-2 {
-	font-size: $display2-size;
-	font-weight: $display2-weight;
-	line-height: $display-line-height;
-}
-.display-3 {
-	font-size: $display3-size;
-	font-weight: $display3-weight;
-	line-height: $display-line-height;
-}
-.display-4 {
-	font-size: $display4-size;
-	font-weight: $display4-weight;
-	line-height: $display-line-height;
-}
-
 
 /* Paragraphs */
 p {
@@ -81,11 +59,10 @@ p {
 }
 
 .lead {
-	font-size: $lead-font-size;
-	font-weight: $lead-font-weight;
-	line-height: 1.75em;
+	font-size: 16px;
+	line-height: 2em;
 
-	@if $template == 'football' {
+	@if $template == football {
 		color: #fff;
 	}
 }
@@ -153,25 +130,6 @@ ul.list {
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
 			font-family: "FontAwesome";
-		}
-	}
-
-	&.list--circle {
-
-		li {
-
-			&::before {
-				top: 2px;
-				width: 20px;
-				height: 20px;
-				border-radius: 50%;
-				border: 2px solid $color-primary;
-				text-align: center;
-				font-size: 10px;
-				line-height: 16px;
-				vertical-align: middle;
-				color: $headings-color;
-			}
 		}
 	}
 }

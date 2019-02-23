@@ -22,24 +22,20 @@
 		display: block;
 	}
 }
-	.header__top-bar-inner {
-		display: flex;
-		align-items: center;
-	}
-
 	.nav-account {
 		display: none;
 
 		// styles for desktops only
 		@media (min-width: 992px) {
-			display: flex;
+			display: block;
 			list-style: none;
 			padding: 0;
 			margin: 0;
-			margin-left: auto;
-			width: auto;
+			float: right;
 
 			.nav-account__item {
+				display: inline-block;
+				float: right;
 				font-size: 9px;
 				line-height: 1.5em;
 				text-transform: uppercase;
@@ -73,7 +69,7 @@
 					}
 				}
 
-				&:first-child {
+				&:last-child {
 
 					&::before {
 						display: none;
@@ -164,33 +160,19 @@
 	background-color: $header-secondary-bg;
 	position: relative;
 
-	.header--layout-1 &,
-	.header--layout-2 &,
-	.header--layout-3 &,
-	.header--layout-4 & {
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: $header-primary-bg;
 
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			background-color: $header-primary-bg;
-		}
-	}
-
-	.header--layout-1 & {
-		&::after {
-			width: 50%;
-		}
-	}
-
-	.header--layout-2 &,
-	.header--layout-3 &,
-	.header--layout-4 & {
-		&::after {
+		@if $template == football {
 			width: 100%;
+		} @else {
+			width: 50%;
 		}
 	}
 }
@@ -199,7 +181,7 @@
 		z-index: 1;
 		background-color: $header-primary-bg;
 
-		.header--layout-1 & {
+		@if $template != football {
 
 			&::before {
 				content:"";
@@ -220,6 +202,7 @@
 					width: 80px;
 				}
 			}
+
 		}
 	}
 	.social-links--main-nav {
@@ -235,8 +218,7 @@
 /* Header Logo */
 .header-logo {
 	position: absolute;
-	// z-index: 3;
-	z-index: 1001; // should be bigger than menu (1000)
+	z-index: 3;
 	bottom: 21px;
 	left: 0;
 	display: block;
@@ -245,7 +227,7 @@
 		display: none;
 	}
 
-	@if $template == 'football' {
+	@if $template == football {
 		bottom: 100%;
 		margin-left: 0;
 		margin-bottom: 7px;
@@ -268,11 +250,8 @@
 	transition: all 0.4s ease-in-out;
 	position: relative;
 	z-index: 1;
+	background-color: $header-mobile-bg;
 	vertical-align: top;
-
-	@media (max-width: 991px) {
-		background-color: $header-mobile-bg;
-	}
 
 	@media (min-width: 992px) {
 		display: inline-block;
@@ -293,13 +272,6 @@
 
 		&.header-search-form--right {
 			float: right;
-		}
-	}
-
-	.header__secondary & {
-
-		&.header-search-form--left {
-			float: left;
 		}
 	}
 }
@@ -346,7 +318,6 @@
 		border-radius: 0 20px 20px 0;
 
 		&:hover {
-			cursor: pointer;
 			background-color: rgba(255,255,255,.1);
 		}
 	}
@@ -379,14 +350,10 @@
 			left: 50%;
 			transform: translate(-50%, 0);
 
-			@if $template == 'football' {
+			@if $template == football {
 				top: 2px;
 			} @else {
 				top: 5px;
-			}
-
-			.main-nav & {
-				top: 0;
 			}
 		}
 			.header-mobile__logo-img {
@@ -540,186 +507,4 @@
 	@media (min-width: 1200px) {
 		margin-left: 38px;
 	}
-}
-
-
-/**
- *
- * Header Layouts
- *
- */
-
-/* Header Layout 3 */
-.header--layout-3 {
-
-	.header__primary {
-
-	}
-
-	.header__primary-inner {
-
-		@media (min-width:992px) {
-			display: flex;
-			align-items: center;
-		}
-	}
-
-		.header__primary-spacer {
-			margin-left: auto;
-		}
-
-		.header-logo {
-
-			@media (min-width:992px) {
-				left: 50%;
-				transform: translateX(-50%);
-				bottom: -10px;
-			}
-		}
-
-		.main-nav {
-
-			@media (min-width:992px) {
-				// margin-right: auto;
-			}
-		}
-
-		.header-search-form {
-			@media (min-width:992px) {
-				padding-top: 16px;
-				padding-bottom: 16px;
-			}
-		}
-
-		.info-block--header {
-			@media (min-width:992px) {
-
-				.info-block__item {
-					padding-top: 10px;
-					padding-bottom: 22px;
-
-					.df-icon {
-						top: 14px;
-					}
-
-					.info-block__menu-icon {
-						top: 11px !important;
-					}
-				}
-			}
-		}
-}
-
-
-
-
-/* Header Layout 4 */
-.header--layout-4 {
-
-	.header__primary {
-
-		&::after {
-			background-color: $header-primary-alt-bg;
-		}
-	}
-
-	// Align navigation to center
-	.header__primary--center {
-
-		.header__primary-inner {
-
-			@media (min-width:992px) {
-				justify-content: center;
-			}
-		}
-
-		.main-nav {
-
-			@media (min-width:992px) {
-				margin-right: 0;
-				flex-basis: 100%;
-			}
-		}
-			.main-nav__list {
-
-				@media (min-width:992px) {
-					display: flex;
-					justify-content: space-evenly;
-
-					> li {
-
-						&:nth-of-type(1) {
-
-							@media (min-width: 992px) {
-
-								> a {
-									padding: $nav-item-padding !important;
-								}
-							}
-						}
-					}
-				}
-			}
-	}
-
-	.header__primary-inner {
-		background-color: $header-primary-alt-bg;
-
-		@media (min-width:992px) {
-			display: flex;
-			align-items: center;
-			justify-content: flex-end;
-		}
-	}
-
-		.header-logo {
-
-			@media (min-width:992px) {
-				left: 50%;
-				transform: translateX(-50%);
-				bottom: -10px;
-			}
-		}
-
-		.main-nav {
-
-			@media (min-width:992px) {
-				margin-right: auto;
-			}
-		}
-
-		.header-search-form {
-			@media (min-width:992px) {
-				padding-top: 16px;
-				padding-bottom: 16px;
-			}
-		}
-
-		.info-block--header {
-			@media (min-width:992px) {
-
-				.info-block__item {
-					padding-top: 10px;
-					padding-bottom: 22px;
-
-					.df-icon {
-						top: 14px;
-					}
-
-					.info-block__menu-icon {
-						top: 11px !important;
-					}
-				}
-			}
-		}
-
-	.header__secondary {
-		position: relative;
-		z-index: 3;
-	}
-
-		.header__secondary-inner {
-			position: relative;
-			z-index: 1;
-		}
 }

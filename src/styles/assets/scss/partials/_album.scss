@@ -33,14 +33,12 @@
 			overflow: hidden;
 			position: relative;
 
-			@if $template == 'football' {
+			@if $template == football {
 				background-color: $color-dark-2;
 				border-radius: $card-border-radius;
 				transform: translate3d(0,0,0);
-			} @else if $template == 'esports' {
-				background-color: $color-dark-2;
 			} @else {
-				background-color: $color-dark;
+				background-color: #171d21;
 			}
 
 			&:hover {
@@ -208,24 +206,3 @@
 		}
 	}
 }
-
-/* Album Title */
-.album-heading {
-	text-align: center;
-	padding-bottom: 36px;
-}
-	.album-heading__icon {
-		margin: 0 auto 16px auto;
-	}
-	.album-heading__title {
-		font-size: 16px;
-		line-height: 1.2em;
-		font-style: normal;
-		margin-bottom: .2em;
-	}
-	.album-heading__subtitle {
-		font-size: 10px;
-		line-height: 1.2em;
-		color: $body-font-color;
-		text-transform: uppercase;
-	}

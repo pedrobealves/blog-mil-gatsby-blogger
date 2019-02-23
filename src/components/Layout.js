@@ -5,10 +5,11 @@ import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
 import config from '../utils/siteConfig'
-import Menu from '../components/Menu'
-import Footer from '../components/Footer'
+import Header from '../components/Header'
+import Footer from './Footer'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../styles/assets/scss/style-basketball.scss'
+import '../styles/assets/fonts/font-awesome/css/font-awesome.min.css'
 
 const Template = ({ children }) => {
   return (
@@ -31,11 +32,14 @@ const Template = ({ children }) => {
 
       <ThemeProvider theme={theme}>
         <>
-          <div className="siteContent">
-            <Menu />
-            {children}
+          <div className="template-basketball d-block">
+            <div className="site-wrapper clearfix">
+              <div className="site-overlay" />
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
-          <Footer />
         </>
       </ThemeProvider>
     </div>

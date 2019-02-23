@@ -11,9 +11,7 @@
 @import 'content/misc';
 
 // Components
-@import 'components/accordion';
 @import 'components/alerts';
-@import 'components/badge';
 @import 'components/buttons';
 @import 'components/card';
 @import 'components/labels';
@@ -32,16 +30,11 @@
 @import 'components/modals';
 @import 'components/nouislider';
 @import 'components/icobox';
-@import 'components/icon';
-@import 'components/jumbotron';
 @import 'components/ratings';
 @import 'components/timeline';
 @import 'components/gmap';
 @import 'components/marquee';
 @import 'components/sprites';
-@import 'components/filter-isotope';
-@import 'components/video-playlist';
-@import 'components/img-object';
 
 // Main
 @import 'common/base';
@@ -95,8 +88,6 @@
 @import 'widgets/widget-filter-price';
 @import 'widgets/widget-products';
 @import 'widgets/widget-calendar';
-@import 'widgets/widget-team-info';
-@import 'widgets/widget-event-calendar';
 
 // Team
 @import 'team/team-filter';
@@ -110,11 +101,6 @@
 @import 'player/player-heading';
 @import 'player/player-game-log';
 @import 'player/player-season-avg';
-@import 'player/player-general-stats';
-
-// Event
-@import 'event/event-table-results';
-@import 'event/event-tournament-brackets';
 
 // Player
 @import 'staff/staff';
@@ -142,9 +128,6 @@
 @import 'partials/gallery';
 @import 'partials/album';
 @import 'partials/modal-login';
-
-// Sponsors
-@import 'sponsors/sponsors';
 
 // Helpers
 @import 'common/helpers';

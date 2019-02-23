@@ -49,10 +49,10 @@
 
 	// Date
 	.meta__item--date {
+		font-size: 10px;
 
-		@if $template == 'esports' {
-			font-weight: bold;
-			font-style: italic;
+		@media (min-width: 992px) {
+			font-size: 11px;
 		}
 
 		&::before {
@@ -90,15 +90,6 @@
 		&::before {
 			content: "\e07d";
 			font-size: 12px;
-		}
-	}
-
-	// Author
-	.meta__item--author {
-
-		img {
-			border-radius: 50%;
-			margin-right: 6px;
 		}
 	}
 
@@ -197,7 +188,7 @@
 	.post__meta-block--top {
 		padding-bottom: 65px;
 
-		@if $template == 'football' or $template == 'esports' {
+		@if $template == football {
 
 			@media (min-width: 992px) {
 				padding: 156px 0 215px 0;
@@ -226,7 +217,7 @@
 				color: #fff;
 			}
 
-			@if $template == 'football' or $template == 'esports' {
+			@if $template == football {
 				font-style: italic;
 			}
 		}
@@ -244,7 +235,7 @@
 
 			.posts__date {
 
-				@if $template == 'football' or $template == 'esports' {
+				@if $template == football {
 					color: #fff;
 					font-size: 11px;
 					margin-bottom: 30px;
@@ -260,7 +251,7 @@
 				height: 40px;
 				margin: 0 auto 10px auto;
 
-				@if $template == 'football' or $template == 'esports' {
+				@if $template == football {
 					width: 24px;
 					height: 24px;
 					margin: 0 5px 0 0;
@@ -271,7 +262,7 @@
 			}
 		.post-author__info {
 
-			@if $template == 'football' or $template == 'esports' {
+			@if $template == football {
 				display: inline-block;
 				vertical-align: middle;
 			}
@@ -280,23 +271,10 @@
 				font-size: 13px;
 				color: #fff;
 
-				@if $template == 'football' {
+				@if $template == football {
 					font-size: 11px;
 					margin-bottom: 0;
 					font-style: normal;
-				}
-
-				@if $template == 'esports' {
-					font-size: 12px;
-					margin-bottom: 0;
-				}
-			}
-			.meta__item--date {
-				@if $template == 'esports' {
-					font-size: 12px;
-					margin-bottom: 0;
-					font-weight: 700;
-					font-style: italic;
 				}
 			}
 			.post-author__slogan {
@@ -305,30 +283,6 @@
 			}
 	}
 
-	.post__meta-block-wrapper {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-
-		@media (min-width: 992px) {
-			height: 450px;
-		}
-
-		@media (min-width: 1200px) {
-			height: 545px;
-		}
-
-		.post__meta-block--top {
-			padding-bottom: 0;
-
-			@if $template == 'football' or $template == 'esports' {
-
-				@media (min-width: 992px) {
-					padding: 0;
-				}
-			}
-		}
-	}
 
 
 /* Side Meta Block - Wide */

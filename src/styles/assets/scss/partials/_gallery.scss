@@ -6,214 +6,153 @@
 .gallery {
 
 }
-	.gallery__item {
+  .gallery__item {
 
-	}
-		.gallery__item-inner {
-			display: block;
-			overflow: hidden;
-			transition: background-color 0.3s ease;
+  }
+    .gallery__item-inner {
+      display: block;
+      overflow: hidden;
+      transition: background-color 0.3s ease;
 
-			&:hover {
+      &:hover {
 
-				.gallery__icon {
-					color: #fff;
-				}
-				.gallery__name {
-					color: #fff;
-				}
-				.gallery__date {
-					color: #fff;
-				}
-				.gallery__btn-fab {
-					opacity: 1;
-					transform: translate(-50%, -50%) scale(1);
-				}
-				.gallery__thumb {
+        @if $template != football {
+          background-color: $color-primary-darken;
+          color: #fff;
+        }
 
-					img {
-						opacity: 0.2;
-					}
-				}
+        .gallery__icon {
+          color: #fff;
+        }
+        .gallery__name {
+          color: #fff;
+        }
+        .gallery__date {
+          color: #fff;
+        }
+        .gallery__btn-fab {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1);
+        }
+        .gallery__thumb {
 
-				@if $template != 'football' {
-					background-color: $color-primary-darken;
-					color: #fff;
-				}
+          img {
+            opacity: 0.2;
+          }
+        }
+      }
+    }
+      .gallery__thumb {
+        position: relative;
 
-				@if $template == 'esports' {
-					background-color: $card-bg;
-					color: $body-font-color;
+        @if $template == football {
+          background-color: $color-dark-2;
+        } @else {
+          background-color: #171d21;
+        }
 
-					.gallery__date {
-						color: $body-font-color;
-					}
-				}
-			}
-		}
-			.gallery__thumb {
-				position: relative;
+        img {
+          transition: opacity 0.3s ease;
+        }
+      }
+      .gallery__btn-fab {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.1);
+        opacity: 0;
+        transition: all 0.3s ease;
+      }
+      .gallery__content {
+        overflow: hidden;
 
-				@if $template == 'basketball' or $template == 'soccer' {
-					background-color: $color-dark;
-				} @else {
-					background-color: $color-dark-2;
-				}
+        @media (max-width: 479px) {
+          padding: $card-vertical-padding/2 $card-horizontal-padding/2;
+        }
+      }
+        .gallery__icon {
+          float: left;
+          margin-right: 15px;
+          font-size: 30px;
+          line-height: 1em;
+          color: $color-primary;
+          transition: color 0.3s ease;
 
-				img {
-					transition: opacity 0.3s ease;
-				}
-			}
-			.gallery__btn-fab {
-				top: 50%;
-				left: 50%;
-				transform: translate(-50%, -50%) scale(0.1);
-				opacity: 0;
-				transition: all 0.3s ease;
-			}
-			.gallery__content {
-				overflow: hidden;
+          @media (max-width: 479px) {
+            font-size: 20px;
+            margin-right: 8px;
+          }
+        }
+        .gallery__details {
+          overflow: hidden;
+        }
+          .gallery__name {
+            text-transform: uppercase;
+            line-height: 1.2em;
+            margin: 0;
+            font-size: 12px;
+            padding: .25em 0;
+            transition: color 0.2s ease;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-style: normal;
 
-				@media (max-width: 767px) {
-					padding: $card-vertical-padding / 2 $card-horizontal-padding / 2;
-				}
-			}
-				.gallery__icon {
-					float: left;
-					margin-right: 15px;
-					font-size: 30px;
-					line-height: 1em;
-					color: $color-primary;
-					transition: color 0.3s ease;
+            @media (min-width: 992px) {
+              font-size: 14px;
+            }
+            @media (min-width: 1200px) {
+              font-size: 16px;
+            }
+          }
+          .gallery__date {
+            display: block;
+            @include font-accent(8px);
+            color: $body-font-color;
+            line-height: 1.2em;
+            transition: color 0.3s ease;
 
-					@media (max-width: 479px) {
-						font-size: 20px;
-						margin-right: 8px;
-					}
-				}
-				.gallery__icon--circle {
-					width: 40px;
-					height: 40px;
-					border-radius: 50%;
-					border: 4px solid $color-primary;
-					color: $color-white;
-					font-size: 16px;
-					text-align: center;
-					line-height: 32px;
-				}
-				.gallery__details {
-					overflow: hidden;
-				}
-					.gallery__name {
-						text-transform: uppercase;
-						line-height: 1.2em;
-						margin: 0;
-						font-size: 12px;
-						padding: .25em 0;
-						transition: color 0.2s ease;
-						overflow: hidden;
-						text-overflow: ellipsis;
-						white-space: nowrap;
-						font-style: normal;
+            @media (min-width: 992px) {
+              font-size: 10px;
+            }
+          }
 
-						@media (min-width: 992px) {
-							font-size: 14px;
-						}
-						@media (min-width: 1200px) {
-							font-size: 16px;
-						}
-					}
-					.gallery__date {
-						display: block;
-						@include font-accent(8px);
-						color: $body-font-color;
-						line-height: 1.2em;
-						transition: color 0.3s ease;
+      // Header (before thumb)
+      .gallery__header {
+        display: flex;
+        align-items: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
 
-						@media (min-width: 992px) {
-							font-size: 10px;
-						}
-					}
+        .gallery__details {
+          flex-grow: 1;
+        }
 
-			// Header (before thumb)
-			.gallery__header {
-				display: flex;
-				align-items: center;
-				padding-top: 20px;
-				padding-bottom: 20px;
+          .gallery__name {
 
-				.gallery__details {
-					flex-grow: 1;
-				}
+            @if $template == football {
+              font-size: 14px;
+            }
+          }
+          .gallery__date {
 
-					.gallery__name {
+            @if $template == football {
+              font-style: italic;
+            }
+          }
 
-						@if $template == football {
-							font-size: 14px;
-						}
-					}
-					.gallery__date {
+        .gallery__like {
+          font-size: 10px;
+          line-height: 1.2em;
+          color: $body-font-color;
+          padding-left: 10px;
+          white-space: nowrap;
 
-						@if $template == football {
-							font-style: italic;
-						}
-					}
-
-				.gallery__like {
-					font-size: 10px;
-					line-height: 1.2em;
-					color: $body-font-color;
-					padding-left: 10px;
-					white-space: nowrap;
-
-					i {
-						font-size: 12px;
-						line-height: 1em;
-						margin-left: 0.3em;
-						display: inline-block;
-						vertical-align: middle;
-					}
-				}
-			}
-
-			.gallery__thumb-list {
-				margin: 0;
-				padding: 6px 0 0 0;
-				display: flex;
-				justify-content: space-between;
-				border-bottom: 1px solid $card-border-color;
-			}
-				.gallery__thumb-item {
-					position: relative;
-
-					&:last-child {
-
-						&::before {
-							content: "";
-							display: block;
-							position: absolute;
-							left: 0;
-							top: 0;
-							bottom: 0;
-							right: 0;
-							background-color: $color-2;
-							opacity: .9;
-						}
-					}
-				}
-					.gallery__thumb-item-number {
-						display: block;
-						position: absolute;
-						left: 50%;
-						top: 50%;
-						transform: translate(-50%, -50%);
-						font-size: 18px;
-						line-height: 1.2em;
-						font-family: $font-family-accent;
-						font-weight: 700;
-						color: $color-white;
-
-						@media (min-width: 992px) {
-							font-size: 36px;
-						}
-					}
+          i {
+            font-size: 12px;
+            line-height: 1em;
+            margin-left: 0.3em;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }

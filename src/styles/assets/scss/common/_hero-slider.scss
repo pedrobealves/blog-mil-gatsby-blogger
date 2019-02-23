@@ -4,119 +4,119 @@
 */
 
 .hero-slider-wrapper {
-	position: relative;
+  position: relative;
 }
 .hero-slider {
-	overflow: hidden;
-	background-color: #27313b;
+  overflow: hidden;
+  background-color: #27313b;
 }
 
 .hero-slider,
 .hero-slider__item {
-	height: 320px;
+  height: 320px;
 
-	@media (min-width: 767px) {
-		height: 480px;
-	}
-	@media (min-width: 992px) {
-		height: 640px;
-	}
-	@media (min-width: 1200px) {
-		height: 720px;
-	}
+  @media (min-width: 767px) {
+    height: 480px;
+  }
+  @media (min-width: 992px) {
+    height: 640px;
+  }
+  @media (min-width: 1200px) {
+    height: 720px;
+  }
 }
 
-	.hero-slider__item {
-		position: relative;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: cover;
+  .hero-slider__item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
 
-		&::before {
-			content: "";
-			display: block;
-			position: absolute;
-			left: 0;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			background-color: #000;
-			opacity: 0.6;
-			z-index: 2;
-		}
-	}
-		.hero-slider__item--img1 {
-			background-image: url("../images/soccer/samples/hero-slide-1.jpg");
-		}
-		.hero-slider__item--img2 {
-			background-image: url("../images/soccer/samples/hero-slide-2.jpg");
-		}
-		.hero-slider__item--img3 {
-			background-image: url("../images/soccer/samples/hero-slide-3.jpg");
-		}
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #000;
+      opacity: 0.6;
+      z-index: 2;
+    }
+  }
+    .hero-slider__item--img1 {
+      background-image: url("../images/soccer/samples/hero-slide-1.jpg");
+    }
+    .hero-slider__item--img2 {
+      background-image: url("../images/soccer/samples/hero-slide-2.jpg");
+    }
+    .hero-slider__item--img3 {
+      background-image: url("../images/soccer/samples/hero-slide-3.jpg");
+    }
 
-		.hero-slider__item-container {
-			display: block;
-			position: absolute;
-			z-index: 3;
-			left: 0;
-			right: 0;
-			top: 50%;
-			transform: translateY(-50%);
-			text-align: center;
+    .hero-slider__item-container {
+      display: block;
+      position: absolute;
+      z-index: 3;
+      left: 0;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
 
-			.post__meta-block--top {
-				padding-bottom: 0;
-			}
+      .post__meta-block--top {
+        padding-bottom: 0;
+      }
 
-				.page-heading__title {
+        .page-heading__title {
 
-					.highlight {
-						color: $color-4;
-					}
-				}
-		}
+          .highlight {
+            color: $color-4;
+          }
+        }
+    }
 
 
 
 // Hero Slider - Thumbs
 .hero-slider-thumbs-wrapper {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	z-index: 3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
 
-	@media (max-width: 991px) {
-		display: none;
-	}
+  @media (max-width: 991px) {
+    display: none;
+  }
 }
-	.hero-slider-thumbs {
+  .hero-slider-thumbs {
 
-		.posts__title {
-			color: #fff;
-			font-size: 15px;
-		}
-		.posts__cat {
-			margin-bottom: 18px;
-		}
-			.posts__cat-label {
-				font-size: 10px;
-			}
-		.posts__inner {
-			padding: 0 30% 37px 0;
-		}
-	}
+    .posts__title {
+      color: #fff;
+      font-size: 15px;
+    }
+    .posts__cat {
+      margin-bottom: 18px;
+    }
+      .posts__cat-label {
+        font-size: 10px;
+      }
+    .posts__inner {
+      padding: 0 30% 37px 0;
+    }
+  }
 
-		.hero-slider-thumbs__item {
-			opacity: .3;
-			transition: opacity 0.3s ease;
+    .hero-slider-thumbs__item {
+      opacity: .3;
+      transition: opacity 0.3s ease;
 
-			&.slick-current {
-				opacity: 1;
-			}
+      &.slick-current {
+        opacity: 1;
+      }
 
-			&:hover {
-				cursor: pointer;
-			}
-		}
+      &:hover {
+        cursor: pointer;
+      }
+    }

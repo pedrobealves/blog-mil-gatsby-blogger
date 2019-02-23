@@ -26,22 +26,16 @@
 			display: block;
 			overflow: hidden;
 			margin-bottom: 8px;
-			padding-right: 5px;
 			z-index: 1;
 		}
 		.posts__cat-label {
 			background-color: $color-primary-darken;
 			display: block;
 			float: left;
-			font-style: $post-category-font-style;
 
 			& + .posts__title {
 				margin-top: 0.55em;
 			}
-		}
-
-		.posts__cat-label + .posts__cat-label {
-			margin-left: .5em;
 		}
 
 			// Label colors and CTA circle links changes depends on category class (.posts__item--XX)
@@ -52,13 +46,9 @@
 					background-color: $post-category-1;
 				}
 
-				.posts__title--color-hover > a:hover {
-					color: $post-category-1;
-				}
-
-				.posts__thumb--hover {
-					&::before {
-						background-color: $post-category-1;
+				@if $template == football {
+					.posts__title > a:hover {
+						color: $post-category-1;
 					}
 				}
 			}
@@ -69,13 +59,9 @@
 					background-color: $post-category-2;
 				}
 
-				.posts__title--color-hover > a:hover {
-					color: $post-category-2;
-				}
-
-				.posts__thumb--hover {
-					&::before {
-						background-color: $post-category-2;
+				@if $template == football {
+					.posts__title > a:hover {
+						color: $post-category-2;
 					}
 				}
 			}
@@ -86,52 +72,10 @@
 					background-color: $post-category-3;
 				}
 
-				.posts__title--color-hover > a:hover {
-					color: $post-category-3;
-				}
-
-				.posts__thumb--hover {
-					&::before {
-						background-color: $post-category-3;
+				@if $template == football {
+					.posts__title > a:hover {
+						color: $post-category-3;
 					}
-				}
-			}
-			.posts__item--category-4 {
-
-				.posts__cat-label,
-				.posts__cta {
-					background-color: $post-category-4;
-				}
-
-				.posts__title--color-hover > a:hover {
-					color: $post-category-4;
-				}
-
-				.posts__thumb--hover {
-					&::before {
-						background-color: $post-category-4;
-					}
-				}
-			}
-
-			// Specify color for each label separately
-			// needed when post has multiple labels
-			.posts__item {
-
-				.posts__cat-label--category-1 {
-					background-color: $post-category-1;
-				}
-
-				.posts__cat-label--category-2 {
-					background-color: $post-category-2;
-				}
-
-				.posts__cat-label--category-3 {
-					background-color: $post-category-3;
-				}
-
-				.posts__cat-label--category-4 {
-					background-color: $post-category-4;
 				}
 			}
 
@@ -203,55 +147,6 @@
 					}
 				}
 
-			}
-		}
-
-		// Post Thumb: Video
-		.posts__thumb--video {
-			position: relative;
-
-			&::before {
-				content: "\f04b";
-				display: block;
-				position: absolute;
-				z-index: 1;
-				left: 50%;
-				top: 50%;
-				margin: -30px 0 0 -30px;
-				width: 60px;
-				height: 60px;
-				line-height: 60px;
-				text-align: center;
-				border-radius: 50% !important;
-				color: #fff;
-				font-size: 28px;
-				text-indent: 4px;
-				background-color: rgba(0,0,0,.8);
-				text-rendering: auto;
-				font-family: 'FontAwesome';
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				pointer-events: none;
-				transition: transform 0.3s ease;
-			}
-
-			&:hover {
-
-				&::before {
-					transform: scale(1.1);
-				}
-			}
-		}
-
-		.posts__thumb--video-sm {
-
-			&::before {
-				width: 32px;
-				height: 32px;
-				margin: -16px 0 0 -16px;
-				line-height: 32px;
-				font-size: 14px;
-				text-indent: 2px;
 			}
 		}
 
@@ -333,17 +228,11 @@
 
 			.posts__inner {
 				overflow: hidden;
-
-				.widget--sidebar & {
-
-					@if $template == 'esports' {
-						padding-top: 4px;
-					}
-				}
 			}
 
 			// Post Category label
 			.posts__cat-label {
+				margin: 0;
 
 				& + .posts__title {
 					margin-top: 0.55em;
@@ -355,13 +244,8 @@
 				margin-bottom: 0;
 				line-height: 1em;
 
-				@if $template == 'football' {
+				@if $template == football {
 					font-size: 14px;
-				}
-
-				@if $template == 'esports' {
-					font-size: 14px;
-					line-height: 1.2em;
 				}
 
 				// Post Title in the Footer Widgets Area
@@ -371,20 +255,11 @@
 					font-style: $footer-widget-post-title-font-style;
 
 					> a {
+						color: #fff;
 						transition: color 0.2s ease;
 
-						&:not(:hover) {
-							color: $color-white;
-						}
-					}
-
-					&:not(.posts__title--color-hover) {
-
-						> a {
-
-							&:hover {
-								color: $link-color-hover;
-							}
+						&:hover {
+							color: $color-primary;
 						}
 					}
 
@@ -396,7 +271,7 @@
 				// Post Title smaller in the Megamenu
 				.main-nav__megamenu & {
 
-					@if $template == 'football' or $template == 'esports' {
+					@if $template == football {
 						font-size: 14px;
 
 						@media (max-width: 991px) {
@@ -420,7 +295,7 @@
 
 					@media (min-width: 992px) {
 
-						> a:not(:hover) {
+						> a {
 							color: $nav-sub-megamenu-post-title-color;
 						}
 					}
@@ -493,15 +368,9 @@
 				line-height: 22px;
 				margin-top: 6px;
 
-				@if $template == 'football' {
+				@if $template == football {
 					font-size: 13px;
 					margin-top: 10px;
-				}
-
-				@if $template == 'esports' {
-					font-size: $font-size-sm;
-					line-height: 1.8333em;
-					margin-top: 14px;
 				}
 
 				.main-nav__megamenu & {
@@ -770,67 +639,6 @@
 	}
 
 
-	/* Posts List - Horizontal */
-	.posts-layout-horizontal {
-		display: flex;
-
-		@media (max-width: 991px) {
-			flex-wrap: wrap;
-		}
-
-		@media (min-width: 992px) {
-
-			.main-nav__megamenu & {
-				padding-bottom: 22px;
-				margin-bottom: 30px !important;
-				margin-left: -$nav-sub-megamenu-padding-horizontal !important;
-				margin-right: -$nav-sub-megamenu-padding-horizontal !important;
-				padding-left: $nav-sub-megamenu-padding-horizontal - 8px;
-				padding-right: $nav-sub-megamenu-padding-horizontal - 8px;
-				border-bottom: 1px solid $nav-sub-border-color;
-			}
-		}
-
-		.posts__item {
-			padding-right: 8px;
-			padding-left: 8px;
-
-			// Make thumbs smaller on mobile devices
-			@media (max-width: 991px) {
-				padding-left: 0;
-				padding-right: 0;
-
-				.main-nav__megamenu & {
-
-					.posts__thumb {
-						max-width: 35%;
-					}
-				}
-			}
-
-			@media (min-width: 992px) {
-				padding-right: 20px;
-			}
-
-			@media (min-width: 1199px) {
-				padding-right: 30px;
-			}
-		}
-	}
-
-	.posts-layout-horizontal--3cols {
-
-		.posts__item {
-			flex-basis: 100%;
-
-			@media (min-width: 992px) {
-				flex-basis: 33.3%;
-			}
-		}
-	}
-
-
-
 /* Post: Cards */
 .posts--cards {
 
@@ -945,12 +753,6 @@
 			font-size: 10px;
 			line-height: 1.2em;
 
-			@if $template == 'esports' {
-				font-style: italic;
-				font-size: 12px;
-				font-weight: 700;
-			}
-
 			& + .posts__title {
 				margin-top: 5px;
 
@@ -969,20 +771,7 @@
 			margin-bottom: 0.2em;
 
 			@media (min-width: 992px) {
-				@if $template == 'esports' {
-					font-size: 24px;
-					margin-bottom: 0;
-				} @else {
-					font-size: 20px;
-				}
-			}
-
-			@media (min-width: 1200px) {
-				@if $template == 'esports' {
-					font-size: 30px;
-				} @else {
-					font-size: 24px;
-				}
+				font-size: 24px;
 			}
 		}
 			.posts__title--sm {
@@ -1059,80 +848,6 @@
 				text-align: right;
 			}
 	}
-
-
-/* Posts: Cards Compact (video) */
-.posts--card-compact {
-
-	.posts__item {
-
-		&,
-		&:last-child {
-			margin-bottom: 15px;
-		}
-
-		.posts__thumb {
-			float: none;
-			margin: 0;
-			backface-visibility: hidden;
-			transform: translate3d(0, 0, 0);
-
-			&:first-child {
-				overflow: hidden;
-				border-radius: $card-border-radius $card-border-radius 0 0;
-			}
-
-			&:last-child {
-				overflow: hidden;
-				border-radius: 0 0 $card-border-radius $card-border-radius;
-			}
-
-			img {
-				width: 100%;
-				height: auto;
-				transition: transform 0.5s ease;
-				backface-visibility: hidden;
-			}
-
-			&:hover {
-
-				img {
-					// transform: scale(1.1);
-				}
-			}
-
-		}
-
-		.posts__cat {
-			margin-bottom: 12px;
-		}
-
-		.posts__title {
-			font-size: 18px;
-			line-height: 1.11em;
-			margin-bottom: 0.4em;
-		}
-	}
-
-	// Large Item
-	.posts__item--lg {
-
-		.posts__cat {
-
-		}
-			.posts__cat-label {
-				font-size: 10px;
-			}
-
-		.posts__title {
-
-			@media (min-width: 992px) {
-				font-size: 26px;
-				line-height: 1em;
-			}
-		}
-	}
-}
 
 
 /* Post: Tile */
@@ -1314,288 +1029,27 @@
 				}
 	}
 
-// Post Tile Alt
-.posts--tile-alt {
+	// Post Tile (small)
+	.posts__item--tile-sm {
 
-	.posts__thumb {
-
-		img {
-			border-bottom-right-radius: 0;
-			border-bottom-left-radius: 0;
-		}
-
-		&::after {
-			content: "";
-			display: block;
-			position: absolute;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			top: 20%;
-			opacity: .6;
-			background-image: linear-gradient(to bottom, transparent 0%, #000 100%);
-		}
-	}
-
-	.posts__inner {
-		text-align: left;
-		padding: $card-vertical-padding / 2 $card-horizontal-padding;
-	}
-		.posts__cat {
-			margin-bottom: 10px;
-		}
 		.posts__title {
-			padding-left: 0;
-			padding-right: 0;
-			line-height: 1em;
-			margin-bottom: .15em;
-			font-size: 20px;
 
 			@media (min-width: 992px) {
-				font-size: 24px;
-			}
-
-			@media (min-width: 1200px) {
-				font-size: 30px;
-			}
-		}
-		.posts__date {
-			margin-bottom: 0;
-			font-weight: bold;
-
-			@if $template == 'esports' {
-				font-style: italic;
-			}
-		}
-	.posts__footer {
-		text-align: left;
-		display: flex;
-		padding-left: $card-horizontal-padding;
-		padding-right: $card-horizontal-padding;
-
-		@media (max-width: 991px) {
-			flex-wrap: wrap;
-		}
-	}
-		.post-author {
-
-		}
-		.post__meta {
-			margin-left: auto;
-		}
-}
-
-// Post Tile (small)
-.posts__item--tile-sm {
-
-	.posts__title {
-
-		@media (min-width: 992px) {
-
-			@if $template == 'esports' {
-				font-size: 26px;
-			} @else {
 				font-size: 22px;
 			}
 		}
 	}
-}
 
-// Post Tile (no paddings)
-.posts--tile-alt-nopaddings {
-	margin-left: 0;
-	margin-right: 0;
+	// Post Tile (large)
+	.posts__item--tile-lg {
 
-	.post-grid__item {
-		padding-left: 0;
-		padding-right: 0;
-	}
-		.posts__item {
-			margin-bottom: 0 !important;
-		}
-
-		.posts__thumb {
-
-			img {
-				border-top-right-radius: 0;
-				border-top-left-radius: 0;
-			}
-		}
-}
-
-// Post Tile - Meta info alternative position
-.posts--tile-meta-position {
-
-	.posts__title + .posts__date {
-		margin-top: 0;
-		margin-right: 10px;
-	}
-
-	.meta__item + .meta__item {
-
-		@media (min-width: 992px) {
-			margin-left: 8px;
-		}
-	}
-}
-
-// Post Tile - Thumb bordered
-.posts--tile-thumb-bordered {
-
-	.posts__thumb {
-		border-bottom-right-radius: $card-border-radius;
-		border-bottom-left-radius: $card-border-radius;
-		overflow: hidden;
-
-		img {
-
-		}
-	}
-		.posts__inner {
-
-		}
-}
-
-// Post Tile - Hero Posts Hrid
-.posts--tile-hero-post-grid {
-	padding-top: 20px;
-
-	@media (min-width: 992px) {
-		padding-top: 30px;
-	}
-
-	@media (min-width: 1200px) {
-		padding-top: 40px;
-	}
-
-	.posts__title {
-
-		@media (min-width: 992px) {
-			font-size: 20px;
-		}
-
-		@media (min-width: 1200px) {
-			font-size: 22px;
-		}
-	}
-
-	.posts__title--lg {
-
-		@media (min-width: 992px) {
-			font-size: 36px;
-		}
-	}
-}
-
-// Post Tile (large)
-.posts__item--tile-lg {
-
-	.posts__title {
-
-		@media (min-width: 992px) {
-			font-size: 34px;
-		}
-	}
-}
-
-// Posts Related
-.posts--tile-alt-noborder {
-
-	.posts__item--tile {
-		border: 0;
-		border-radius: 0;
-		margin-bottom: 0 !important;
-	}
-
-	.posts__thumb {
-		border-radius: 0;
-
-		img {
-			border-radius: 0;
-		}
-	}
-
-	.posts__title {
-
-		@media (min-width: 1200px) {
-			font-size: 36px;
-		}
-	}
-
-	.posts__inner {
-
-		@media (min-width: 1200px) {
-			padding: 40px;
-		}
-	}
-}
-
-/* Post Tile - Event */
-.posts__item--tile-event {
-
-	.posts__inner {
-		text-align: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		top: 0;
-		padding-top: 30px;
-		padding-bottom: 20px;
-		font-size: $font-size-sm;
-		line-height: 1.833em;
-		color: $headings-color;
-
-		@media (min-width: 992px) {
-			padding-top: 45px;
-			padding-bottom: 30px;
-		}
-
-		@media (min-width: 1200px) {
-			padding-top: 60px;
-			padding-bottom: 40px;
-		}
-	}
-		.posts__thumb {
-
-			> img {
-
-				@if $template == 'esports' {
-					filter: url("#duotone-filter-base");
-				}
-			}
-
-			&::after {
-				top: 0;
-				background-image: linear-gradient( 120deg, $color-2 0%, $color-3 100%);
-				opacity: .4;
-			}
-		}
-		.posts__excerpt {
-			padding: 10px 0;
+		.posts__title {
 
 			@media (min-width: 992px) {
-				padding: 10px 20px;
+				font-size: 34px;
 			}
 		}
-
-		.posts__countdown {
-			margin-top: auto;
-			margin-bottom: auto;
-		}
-
-		.posts__logo {
-
-			img {
-				width: auto;
-				height: auto;
-				margin: 0 auto;
-			}
-		}
-
-		.countdown-counter__label {
-			color: $headings-color;
-		}
-}
+	}
 
 
 /* Post Grid */
@@ -2277,13 +1731,8 @@
 .posts--inline {
 	margin: 0;
 
-	.posts__item {
-
-	}
-
 	.posts__item,
 	.posts__title,
-	.posts__cat,
 	.posts__excerpt {
 		display: inline-block;
 		margin: 0;
@@ -2292,27 +1741,14 @@
 		.posts__title {
 			margin-right: .5em;
 
-			@if $template != 'esports' {
-				&::before {
-					content: "//";
-					margin-right: 1em;
-					color: $color-4;
-				}
+			&::before {
+				content: "//";
+				margin-right: 1em;
+				color: $color-4;
 			}
 		}
-		.posts__cat {
-			position: relative;
-			top: 3px;
-		}
-			.posts__cat-label {
-				margin-bottom: 0;
-			}
 		.posts__excerpt {
 			margin-right: 1em;
-
-			@if $template == 'esports' {
-				font-size: 11px;
-			}
 		}
 }
 
