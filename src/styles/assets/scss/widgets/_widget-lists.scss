@@ -1,6 +1,7 @@
 /* Widget: Lists */
 .widget_archive,
 .widget_nav_menu,
+.widget_nav_menu,
 .widget_meta,
 .widget_pages,
 .widget_recent_comments,
@@ -13,62 +14,62 @@
 
 
 }
-	.widget__list {
-		list-style: none;
-		padding: 0;
-		margin-left: -$card-horizontal-padding;
-		margin-right: -$card-horizontal-padding;
-		margin-top: -$card-vertical-padding;
-		margin-bottom: -$card-vertical-padding;
-		@include font-accent(11px);
-		line-height: 1.2em;
+  .widget__list {
+    list-style: none;
+    padding: 0;
+    margin-left: -$card-horizontal-padding;
+    margin-right: -$card-horizontal-padding;
+    margin-top: -$card-vertical-padding;
+    margin-bottom: -$card-vertical-padding;
+    @include font-accent(11px);
+    line-height: 1.2em;
 
-		> li {
+    > li {
 
-			& + li {
-				border-top: 1px solid $card-border-color;
-			}
+      & + li {
+        border-top: 1px solid $card-border-color;
+      }
 
-			> a {
-				display: block;
-				padding: 22px $card-horizontal-padding;
-				color: $headings-color;
-				transition: color 0.3s ease;
+      > a {
+        display: block;
+        padding: 22px $card-horizontal-padding;
+        color: $headings-color;
+        transition: color 0.3s ease;
 
-				&:hover {
-					color: $color-primary-darken;
-				}
-			}
+        &:hover {
+          color: $color-primary-darken;
+        }
+      }
 
-			&.has-children {
-				background-image: $select-caret;
-				background-position: right $card-horizontal-padding top $card-vertical-padding;
-				background-repeat: no-repeat;
-				background-size: 6px 4px;
-			}
-		}
+      &.has-children {
+        background-image: $select-caret;
+        background-position: right $card-horizontal-padding top $card-vertical-padding;
+        background-repeat: no-repeat;
+        background-size: 6px 4px;
+      }
+    }
 
-		ul {
-			border-top: 1px solid $card-border-color;
-			list-style: none;
-			padding: ($card-vertical-padding - 6) $card-horizontal-padding;
+    ul {
+      border-top: 1px solid $card-border-color;
+      list-style: none;
+      padding: ($card-vertical-padding - 6) $card-horizontal-padding;
 
-			@if $template == football {
-				background-color: $color-dark-2;
-				font-size: 10px;
-			}
+      @if $template == football {
+        background-color: $color-dark-2;
+        font-size: 10px;
+      }
 
-			li {
-				padding: 10px 0;
+      li {
+        padding: 10px 0;
 
-				a {
-					color: $body-font-color;
-					transition: color 0.3s ease;
+        a {
+          color: $body-font-color;
+          transition: color 0.3s ease;
 
-					&:hover {
-						color: $color-2;
-					}
-				}
-			}
-		}
-	}
+          &:hover {
+            color: $color-2;
+          }
+        }
+      }
+    }
+  }

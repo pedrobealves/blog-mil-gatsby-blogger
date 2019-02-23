@@ -5,6 +5,21 @@
 // Slick icon entity codes outputs the following
 // "\2022" outputs ascii character "•"
 
+$slick-font-family: "FontAwesome" !default;
+$slick-loader-path: "./" !default;
+$slick-arrow-bg-color: #999ea6;
+$slick-arrow-color: white !default;
+$slick-arrow-bg-color-hover: $color-primary-darken;
+$slick-dot-color: #d7d8da !default;
+$slick-dot-color-on-hover: $color-2 !default;
+$slick-dot-color-active: $color-primary !default;
+$slick-prev-character: "\f104" !default;
+$slick-next-character: "\f105" !default;
+$slick-dot-size: 6px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.25 !default;
+
 /* Slick */
 .slick-slide {
 	outline: none;
@@ -37,14 +52,9 @@
 	padding: 0;
 	border: none;
 	outline: none;
+	border-radius: 2px;
 	background-color: $slick-arrow-bg-color;
 	transition: background-color 0.2s ease;
-
-	@if $template == 'esports' {
-		border-radius: 50%;
-	} @else {
-		border-radius: 2px;
-	}
 
 	&:hover, &:focus {
 		outline: none;
@@ -96,34 +106,8 @@
 	}
 }
 
-/* Arrows */
-.slick-arrows--rounded {
-
-	.slick-prev,
-	.slick-next {
-		border-radius: 50%;
-	}
-}
-
-.slick-vertical {
-
-	// Arrows
-	.slick-prev {
-
-		&::before {
-			content: "\f106";
-		}
-	}
-
-	.slick-next {
-
-		&::before {
-			content: "\f107";
-		}
-	}
-}
-
 /* Dots */
+
 .slick-dotted.slick-slider {
 	margin-bottom: 30px;
 }
@@ -355,7 +339,6 @@
 	&.slick-vertical {
 		margin-bottom: 0;
 
-		// Dots
 		.slick-dots {
 			width: 10px;
 			height: auto;
@@ -441,56 +424,6 @@
 	}
 }
 
-
-/* Team Roster - with select Players */
-.team-roster--slider-with-nav {
-
-	.slick-prev,
-	.slick-next {
-		top: auto;
-		bottom: 6px;
-		border-radius: 0;
-		width: 50px;
-		height: 50px;
-		background-color: transparent;
-
-		&::before {
-			color: $headings-color;
-		}
-
-		&:hover:not(.slick-disabled) {
-			background-color: transparent;
-
-			&::before {
-				color: $color-primary;
-			}
-		}
-
-		&.slick-disabled {
-			cursor: default;
-		}
-	}
-
-	.slick-prev {
-		right: 55px;
-		left: auto;
-		margin: 0;
-
-		&::before {
-			content: "\f053";
-		}
-	}
-
-	.slick-next {
-		right: 6px;
-		left: auto;
-		margin: 0;
-
-		&::before {
-			content: "\f054";
-		}
-	}
-}
 
 
 /* Team Roster - case Slider */
@@ -655,16 +588,5 @@
 				}
 			}
 		}
-	}
-}
-
-
-/* Carousel Wrapper */
-.slick-carousel-wrapper {
-	overflow: hidden;
-
-	.slick-slider {
-		margin: 0 -8px;
-		width: calc(100% + 16px);
 	}
 }

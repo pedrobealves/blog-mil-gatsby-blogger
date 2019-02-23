@@ -6,7 +6,7 @@
 /* Navigation - Desktop */
 
 .main-nav {
-	// position: relative; // not needed for full width megamenu
+	position: relative;
 	text-align: $nav-align;
 
 	.header-mobile__logo {
@@ -14,7 +14,7 @@
 	}
 }
 
-.main-nav__list {
+.main-nav__list{
 	display: inline-block;
 	text-align: left;
 	padding: 0;
@@ -44,14 +44,13 @@
 			display:block;
 			position: relative;
 			color: $nav-font-color;
-			padding: $nav-item-padding;
+			padding: 0 34px;
 			line-height: $nav-height;
 			text-decoration: none;
 			position: relative;
 			font-family: $nav-font-family;
 			font-size: $nav-font-size;
 			font-weight: $nav-font-weight;
-			font-style: $nav-font-style;
 			text-transform: $nav-text-transform;
 			transition: color 0.3s ease;
 
@@ -127,20 +126,6 @@
 				}
 			}
 		}
-
-		// Remove left padding from first element
-		// used if no border for nav items set
-		@if $nav-active-border-height == 0 {
-
-			&:nth-of-type(1) {
-
-				@media (min-width: 992px) {
-					> a {
-						padding-left: 0 !important;
-					}
-				}
-			}
-		}
 	}
 }
 
@@ -155,7 +140,7 @@
 	z-index: 1000;
 	margin: 0;
 	text-align: left;
-	padding: $nav-sub-megamenu-padding-vertical $nav-sub-megamenu-padding-horizontal;
+	padding: 43px 55px;
 	font-size: 15px;
 	border: solid 1px $nav-sub-border-color;
 	background-color: $nav-sub-bg;
@@ -174,18 +159,10 @@
 		font-family: $font-family-accent;
 		font-weight: 700;
 	}
-
-	.row {
-		width: 100%;
-	}
 }
 
 /* Lists inside Megamenu */
 .main-nav__ul {
-
-	&:not([class*="col-"]) {
-		padding-left: 0;
-	}
 
 	li {
 		display: block;
@@ -195,12 +172,10 @@
 
 		a {
 			display: block;
-			font-size: $nav-sub-megamenu-link-font-size;
+			font-size: 11px;
 			line-height: 18px;
 			font-family: $font-family-accent;
-			font-weight: $nav-sub-megamenu-link-font-weight;
-			font-style: $nav-sub-megamenu-link-font-style;
-			text-transform: $nav-sub-megamenu-link-text-transform;
+			font-weight: 700;
 			text-align: left;
 			padding: 5px 0;
 			color: $nav-sub-megamenu-link-color;
@@ -213,58 +188,6 @@
 		}
 	}
 }
-
-	// Megamenu List - Columns
-	.main-nav__ul-2cols,
-	.main-nav__ul-3cols {
-
-		@media (min-width: 992px) {
-			display: flex;
-			flex-wrap: wrap;
-			align-items: flex-start;
-			align-content: flex-start;
-
-			li {
-				padding-right: 10px;
-				overflow: hidden;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-
-				&.main-nav__title {
-					flex-basis: 100%;
-					align-items: center;
-				}
-
-				a {
-					overflow: hidden;
-					white-space: nowrap;
-					text-overflow: ellipsis;
-				}
-			}
-		}
-	}
-
-	// 2 Cols
-	.main-nav__ul-2cols {
-
-		@media (min-width: 992px) {
-
-			li {
-				flex-basis: 50%;
-			}
-		}
-	}
-
-	// 3 Cols
-	.main-nav__ul-3cols {
-
-		@media (min-width: 992px) {
-
-			li {
-				flex-basis: 33.3%;
-			}
-		}
-	}
 
 
 /* Animation for Navigation */
@@ -296,112 +219,6 @@
 		}
 	}
 }
-
-/* Megamenu Banner */
-.main-nav__megamenu {
-
-	.main-nav-banner {
-		border: 1px solid $nav-sub-border-color;
-		background-color: $color-dark;
-		padding: 0;
-		margin-bottom: 28px;
-		border-radius: 4px;
-		display: flex;
-		min-height: 86px;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 0 0;
-
-		.main-nav-banner__link {
-			display: flex;
-			width: 100%;
-			height: 100%;
-			align-content: center;
-			flex-wrap: wrap;
-			padding: 0 0 0 66px;
-		}
-
-			.main-nav-banner__title {
-				width: 100%;
-				font-size: 20px;
-				line-height: 1.1em;
-				color: $headings-color;
-				font-family: $headings-font-family;
-				font-weight: 700;
-
-				// used h5 styling to be consistent with heading styles
-				font-style: $font-style-h5;
-				text-transform: $text-transform-h5;
-				white-space: nowrap;
-				overflow: hidden;
-				text-overflow: ellipsis;
-			}
-			.main-nav-banner__subtitle {
-				font-size: 12px;
-				color: $body-font-color;
-				line-height: 1.2em;
-
-				// used h5 styling to be consistent with heading styles
-				font-style: $font-style-h5;
-				text-transform: $text-transform-h5;
-			}
-	}
-
-	// Banner 1
-	.main-nav-banner--img-1 {
-		background-image: url("../images/esports/samples/megamenu-banner-1.jpg");
-	}
-
-	// Banner 2
-	.main-nav-banner--img-2 {
-		background-image: url("../images/esports/samples/megamenu-banner-2.jpg");
-	}
-
-	// Banner 3
-	.main-nav-banner--img-3 {
-		background-image: url("../images/esports/samples/megamenu-banner-3.jpg");
-	}
-}
-
-	// No megamenu paddings
-	.main-nav__megamenu--no-paddings {
-
-		@media (min-width: 992px) {
-			padding: 0;
-
-			.row {
-				margin: 0;
-
-				[class*="col-"] {
-					padding: 32px 35px;
-
-					&:not(:first-child) {
-						border-left: 1px solid $nav-sub-border-color;
-					}
-				}
-			}
-
-			// Top Banner
-			.main-nav-banner--top {
-				margin-top: -33px;
-				margin-left: -36px;
-				margin-right: -36px;
-				flex-basis: calc(100% + 72px) !important;
-				border-radius: 0;
-			}
-		}
-	}
-
-	// MegaMenu with side background image
-	.main-nav__megamenu--has-bg {
-
-		@media (min-width: 992px) {
-			background-image: url("../images/esports/samples/megamenu-bg.png");
-			background-repeat: no-repeat;
-			background-position: 100% 100%;
-			padding-right: 142px;
-		}
-	}
 
 
 /* Submenu */
@@ -457,7 +274,6 @@
 			font-family: $nav-sub-font-family;
 			text-transform: $nav-sub-text-transform;
 			font-weight: $nav-sub-font-weight;
-			font-style: $nav-sub-font-style;
 			font-size: $nav-sub-font-size;
 			color: $nav-sub-link-color;
 			text-align:left;
@@ -647,8 +463,7 @@
 				padding-right: 20px;
 			}
 
-			.df-icon-stack--bag,
-			.df-icon--shopping-cart {
+			.df-icon-stack--bag {
 				display: none;
 			}
 			.info-block__heading {
@@ -740,7 +555,7 @@
 					> a {
 						display: inline-block;
 						border-bottom: none;
-						padding: 13px;
+						padding: 15px;
 
 						&::before {
 							display: none;
@@ -1021,7 +836,7 @@
 		}
 
 		// Megamenu
-		.main-nav__megamenu {
+		.main-nav__megamenu{
 			background-color: $nav-mobile-sub-bg;
 			color: $nav-mobile-sub-color;
 			display: none;
@@ -1035,19 +850,11 @@
 
 			[class^="col-"] {
 				padding-bottom: 15px;
-
-				&:first-child .main-nav-banner {
-					margin-top: 0;
-				}
 			}
 
 			div[class^="col-"] {
 				padding-left: 30px;
 				padding-right: 30px;
-			}
-
-			.row {
-				margin: 0;
 			}
 
 			.main-nav__title {
@@ -1057,26 +864,7 @@
 				margin: 0;
 			}
 
-			.main-nav-banner {
-				margin: 15px;
-				padding: 0;
-				min-height: 56px;
-
-				.main-nav-banner__link {
-					padding: 15px 20px 15px 56px;
-				}
-
-				.main-nav-banner__subtitle {
-					font-size: 11px;
-				}
-
-				.main-nav-banner__title {
-					font-size: 18px;
-				}
-			}
-
-			> ul,
-			.main-nav__ul {
+			> ul {
 				width: 100%;
 				margin: 0;
 				padding: 0;

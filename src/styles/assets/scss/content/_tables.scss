@@ -47,7 +47,6 @@ th {
 		border-bottom: 1px solid $table-border-color;
 		font-weight: 700;
 		color: $table-thead-color;
-		font-style: $table-thead-font-style;
 		text-transform: uppercase;
 	}
 	> tbody > tr > th {
@@ -93,22 +92,6 @@ th {
 	> thead > tr > th {
 		background-color: $table-thead-bg-color;
 	}
-}
-
-.table-top-border {
-	> thead:first-child > tr:first-child > th {
-		border-top: 1px solid $table-border-color;
-	}
-}
-
-.table {
-	> tbody > tr.highlighted {
-		background-color: $table-bg-active;
-	}
-}
-
-td.highlight {
-	color: $headings-color;
 }
 
 // Hover effect
@@ -180,63 +163,4 @@ td.highlight {
 			text-align: left;
 		}
 	}
-}
-
-
-// Table Stats
-.table-stats {
-	> thead,
-	> tbody,
-	> tfoot {
-		> tr {
-			> th,
-			> td {
-				text-align: center;
-				vertical-align: middle;
-
-				&.text-left {
-					text-align: left;
-				}
-
-				&.text-right {
-					text-align: right;
-				}
-			}
-		}
-	}
-
-
-	> thead > tr > th,
-	> tbody > tr > td {
-
-		&:first-child {
-
-			@media (min-width: 992px) {
-				padding-left: $card-horizontal-padding;
-			}
-		}
-
-		&:last-child {
-
-			@media (min-width: 992px) {
-				padding-right: $card-horizontal-padding;
-			}
-		}
-
-	}
-
-	th.table-stats__subheading {
-		text-align: left;
-		font-weight: bold;
-		font-style: $table-thead-font-style;
-		padding-left: $card-horizontal-padding;
-	}
-
-	th.table-stats__subheading--highlight {
-		box-shadow: inset 6px 0 0 $color-primary;
-	}
-	th.table-stats__subheading--highlight-info {
-		box-shadow: inset 6px 0 0 $color-info;
-	}
-
 }

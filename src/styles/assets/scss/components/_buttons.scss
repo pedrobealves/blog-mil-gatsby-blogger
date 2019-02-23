@@ -1,275 +1,270 @@
 /* Buttons */
 .btn {
-	font-weight: $btn-font-weight;
-	font-style: $btn-font-style;
-	font-family: $btn-font-family;
-	text-transform: $btn-text-transform;
-	transition: all 0.3s ease;
-	@include button-size($btn-padding-vertical, $btn-padding-horizontal, $btn-border-font-size, $btn-line-height, $btn-border-radius);
+  font-weight: $btn-font-weight;
+  font-family: $btn-font-family;
+  text-transform: $btn-text-transform;
+  transition: all 0.3s ease;
+  @include button-size(13px, 42px, $btn-border-font-size, 1.5em, $btn-border-radius);
 
-	&:hover,
-	&:focus,
-	&.focus {
-		color: $btn-default-color;
-	}
+  &:hover,
+  &:focus,
+  &.focus {
+    color: $btn-default-color;
+  }
 
-	&:active,
-	&.active {
-		box-shadow: none;
-	}
+  &:active,
+  &.active {
+    box-shadow: none;
+  }
 }
 
 // Alternate buttons
 // --------------------------------------------------
 
 .btn-default {
-	@include button-variant($btn-default-color, $btn-default-bg, $btn-default-hover, $btn-default-border);
+  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-hover, $btn-default-border);
 }
 
-@if $template == 'football' {
-	.btn-default-alt {
-		@include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
-	}
-} @else if $template == 'esports' {
-	.btn-default-alt {
-		@include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
-
-		&.disabled {
-			background-color: #2b2236;
-			color: $color-gray-3;
-		}
-	}
+@if $template == football {
+  .btn-default-alt {
+    @include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
+  }
 }
 
 .btn-primary {
-	@include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-hover, $btn-primary-border);
+  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-hover, $btn-primary-border);
 }
 .btn-primary-inverse {
-	@include button-variant($btn-primary-inverse-color, $btn-primary-inverse-bg, $btn-primary-inverse-hover, $btn-primary-inverse-border);
+  @include button-variant($btn-primary-inverse-color, $btn-primary-inverse-bg, $btn-primary-inverse-hover, $btn-primary-inverse-border);
 }
 .btn-success {
-	@include button-variant($btn-success-color, $btn-success-bg, $btn-success-hover, $btn-success-border);
+  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-hover, $btn-success-border);
 }
 .btn-info {
-	@include button-variant($btn-info-color, $btn-info-bg, $btn-info-hover, $btn-info-border);
+  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-hover, $btn-info-border);
 }
 .btn-warning {
-	@include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-hover, $btn-warning-border);
+  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-hover, $btn-warning-border);
 }
 .btn-danger {
-	@include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-hover, $btn-danger-border);
+  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-hover, $btn-danger-border);
 }
 .btn-instagram {
-	background-color: #1e78dd;
-	color: #fff;
+  background-color: #1e78dd;
+  color: #fff;
 
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: lighten(#1e78dd, 5%);
-	}
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: lighten(#1e78dd, 5%);
+  }
 
-	i {
-		font-size: 6px;
-		position: relative;
-		top: -1px;
-	}
+  i {
+    font-size: 6px;
+    position: relative;
+    top: -1px;
+  }
 
-	&.btn-sm {
-		padding-left: 24px;
-		padding-right: 24px;
-	}
+  &.btn-sm {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 .btn-facebook {
-	@include button-variant(#fff, $social-facebook, lighten($social-facebook, 5%), $btn-default-border);
+  @include button-variant(#fff, #4d6baa, lighten(#4d6baa, 5%), $btn-default-border);
 }
 .btn-twitter {
-	@include button-variant(#fff, $social-twitter, lighten($social-twitter, 5%), $btn-default-border);
+  @include button-variant(#fff, #3fcef2, lighten(#3fcef2, 5%), $btn-default-border);
 }
 .btn-gplus {
-	@include button-variant(#fff, $social-gplus, lighten($social-gplus, 5%), $btn-default-border);
+  @include button-variant(#fff, #e34d39, lighten(#e34d39, 5%), $btn-default-border);
 }
 .btn-linkedin {
-	@include button-variant(#fff, $social-linkedin, lighten($social-linkedin, 5%), $btn-default-border);
+  @include button-variant(#fff, #0077B5, lighten(#0077B5, 5%), $btn-default-border);
 }
 .btn-vk {
-	@include button-variant(#fff, $social-vk, lighten($social-vk, 5%), $btn-default-border);
+  @include button-variant(#fff, #6383A8, lighten(#6383A8, 5%), $btn-default-border);
 }
 .btn-odnoklassniki {
-	@include button-variant(#fff, $social-odnoklassniki, lighten($social-odnoklassniki, 5%), $btn-default-border);
+  @include button-variant(#fff, #F4731C, lighten(#F4731C, 5%), $btn-default-border);
 }
 .btn-link {
-	color: rgba($headings-color, 0.4);
+  color: rgba($headings-color, 0.4);
 
-	&:hover {
-		text-decoration: none;
-		color: $headings-color;
-	}
+  &:hover {
+    text-decoration: none;
+    color: $headings-color;
+  }
 
-	@if $template == football {
-		color: $color-gray-3;
+  @if $template == football {
+    color: $color-gray-3;
 
-		&:hover {
-			color: #fff;
-		}
-	}
+    &:hover {
+      color: #fff;
+    }
+  }
 }
 
 
 // Button Sizes
 // --------------------------------------------------
 .btn-lg {
-	@include button-size($btn-padding-vertical-lg, $btn-padding-horizontal-lg, $btn-border-font-size-lg, $btn-line-height-lg, $btn-border-radius-lg);
+
+  @if $template == football {
+    @include button-size(16px, 80px, $btn-border-font-size-lg, 1.33em, $btn-border-radius-lg);
+  } @else {
+    @include button-size(16px, 80px, $btn-border-font-size-lg, 1.45em, $btn-border-radius-lg);
+  }
 }
 .btn-sm {
-	@include button-size($btn-padding-vertical-sm, $btn-padding-horizontal-sm, $btn-border-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
+  @include button-size(10px, 38px, $btn-border-font-size-sm, 1.5em, $btn-border-radius-sm);
 }
 .btn-xs {
-	@include button-size($btn-padding-vertical-xs, $btn-padding-horizontal-xs, $btn-border-font-size-xs, $btn-line-height-xs, $btn-border-radius-xs);
+  @include button-size(5px, 13px, $btn-border-font-size-xs, 1.5em, $btn-border-radius-xs);
 }
 
 
 // Outline buttons
 // --------------------------------------------------
 .btn-outline {
-	background-color: transparent;
+  background-color: transparent;
 
-	// Default
-	&.btn-default {
-		border-color: $btn-o-default-border;
-		color: $btn-o-default-color;
+  // Default
+  &.btn-default {
+    border-color: $btn-o-default-border;
+    color: $btn-o-default-color;
 
-		&:hover {
-			background-color: $btn-o-default-bg-hover;
-			border-color: $btn-o-default-border-hover;
-			color: $btn-o-default-color-hover;
+    &:hover {
+      background-color: $btn-o-default-bg-hover;
+      border-color: $btn-o-default-border-hover;
+      color: $btn-o-default-color-hover;
 
-			&.btn-circle {
-				background-color: $btn-o-default-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-default-border-hover;
+      }
+    }
+  }
 
-	// Primary
-	&.btn-primary {
-		border-color: $btn-o-primary-border;
-		color: $btn-o-primary-color;
+  // Primary
+  &.btn-primary {
+    border-color: $btn-o-primary-border;
+    color: $btn-o-primary-color;
 
-		&:hover {
-			background-color: $btn-o-primary-bg-hover;
-			border-color: $btn-o-primary-border-hover;
-			color: $btn-o-primary-color-hover;
+    &:hover {
+      background-color: $btn-o-primary-bg-hover;
+      border-color: $btn-o-primary-border-hover;
+      color: $btn-o-primary-color-hover;
 
-			&.btn-circle {
-				background-color: $btn-o-primary-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-primary-border-hover;
+      }
+    }
+  }
 
-	// Inverse
-	&.btn-inverse {
-		border-color: $btn-o-inverse-border;
-		color: $btn-o-inverse-color;
-		border-width: 2px;
+  // Inverse
+  &.btn-inverse {
+    border-color: $btn-o-inverse-border;
+    color: $btn-o-inverse-color;
+    border-width: 2px;
 
-		&:hover {
-			background-color: $btn-o-inverse-bg-hover;
-			border-color: $btn-o-inverse-border-hover;
-			color: $btn-o-inverse-color-hover;
+    &:hover {
+      background-color: $btn-o-inverse-bg-hover;
+      border-color: $btn-o-inverse-border-hover;
+      color: $btn-o-inverse-color-hover;
 
-			i {
-				color: $btn-o-inverse-color-hover;
-			}
+      i {
+        color: $btn-o-inverse-color-hover;
+      }
 
-			&.btn-circle {
-				background-color: $btn-o-inverse-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-inverse-border-hover;
+      }
+    }
+  }
 
-	// Success
-	&.btn-success {
-		border-color: $btn-o-success-border;
-		color: $btn-o-success-color;
-		border-width: 2px;
+  // Success
+  &.btn-success {
+    border-color: $btn-o-success-border;
+    color: $btn-o-success-color;
+    border-width: 2px;
 
-		&:hover {
-			background-color: $btn-o-success-bg-hover;
-			border-color: $btn-o-success-border-hover;
-			color: $btn-o-success-color-hover;
+    &:hover {
+      background-color: $btn-o-success-bg-hover;
+      border-color: $btn-o-success-border-hover;
+      color: $btn-o-success-color-hover;
 
-			i {
-				color: $btn-o-success-color-hover;
-			}
+      i {
+        color: $btn-o-success-color-hover;
+      }
 
-			&.btn-circle {
-				background-color: $btn-o-success-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-success-border-hover;
+      }
+    }
+  }
 
-	// Info
-	&.btn-info {
-		border-color: $btn-o-info-border;
-		color: $btn-o-info-color;
-		border-width: 2px;
+  // Info
+  &.btn-info {
+    border-color: $btn-o-info-border;
+    color: $btn-o-info-color;
+    border-width: 2px;
 
-		&:hover {
-			background-color: $btn-o-info-bg-hover;
-			border-color: $btn-o-info-border-hover;
-			color: $btn-o-info-color-hover;
+    &:hover {
+      background-color: $btn-o-info-bg-hover;
+      border-color: $btn-o-info-border-hover;
+      color: $btn-o-info-color-hover;
 
-			i {
-				color: $btn-o-info-color-hover;
-			}
+      i {
+        color: $btn-o-info-color-hover;
+      }
 
-			&.btn-circle {
-				background-color: $btn-o-info-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-info-border-hover;
+      }
+    }
+  }
 
-	// Warning
-	&.btn-warning {
-		border-color: $btn-o-warning-border;
-		color: $btn-o-warning-color;
-		border-width: 2px;
+  // Warning
+  &.btn-warning {
+    border-color: $btn-o-warning-border;
+    color: $btn-o-warning-color;
+    border-width: 2px;
 
-		&:hover {
-			background-color: $btn-o-warning-bg-hover;
-			border-color: $btn-o-warning-border-hover;
-			color: $btn-o-warning-color-hover;
+    &:hover {
+      background-color: $btn-o-warning-bg-hover;
+      border-color: $btn-o-warning-border-hover;
+      color: $btn-o-warning-color-hover;
 
-			i {
-				color: $btn-o-warning-color-hover;
-			}
+      i {
+        color: $btn-o-warning-color-hover;
+      }
 
-			&.btn-circle {
-				background-color: $btn-o-warning-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-warning-border-hover;
+      }
+    }
+  }
 
-	// Danger
-	&.btn-danger {
-		border-color: $btn-o-danger-border;
-		color: $btn-o-danger-color;
-		border-width: 2px;
+  // Danger
+  &.btn-danger {
+    border-color: $btn-o-danger-border;
+    color: $btn-o-danger-color;
+    border-width: 2px;
 
-		&:hover {
-			background-color: $btn-o-danger-bg-hover;
-			border-color: $btn-o-danger-border-hover;
-			color: $btn-o-danger-color-hover;
+    &:hover {
+      background-color: $btn-o-danger-bg-hover;
+      border-color: $btn-o-danger-border-hover;
+      color: $btn-o-danger-color-hover;
 
-			i {
-				color: $btn-o-danger-color-hover;
-			}
+      i {
+        color: $btn-o-danger-color-hover;
+      }
 
-			&.btn-circle {
-				background-color: $btn-o-danger-border-hover;
-			}
-		}
-	}
+      &.btn-circle {
+        background-color: $btn-o-danger-border-hover;
+      }
+    }
+  }
 }
 
 
@@ -278,60 +273,50 @@
 
 .btn-icon {
 
-	i {
-		font-size: 1em;
-		margin-right: .5em;
-	}
+  i {
+    font-size: 14px;
+    margin-right: 10px;
+  }
 }
 
 .btn-icon-right {
 
-	i {
-		margin-right: 0;
-		margin-left: 10px;
-	}
+  i {
+    margin-right: 0;
+    margin-left: 10px;
+  }
 }
 
 .btn-single-icon {
-	padding-left: 0;
-	padding-right: 0;
-	width: 47px;
-	text-align: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 47px;
+  text-align: center;
 
-	i {
-		margin: 0;
-		font-size: 13px;
-		line-height: 1.2em;
-	}
+  i {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.2em;
+  }
 }
 
 
 // Circle Buttons
 .btn-circle {
-	border-radius: 50%;
-	width: 38px;
-	height: 38px;
-	line-height: 38px;
-	padding: 0;
-	text-align: center;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  padding: 0;
+  text-align: center;
 
-	i {
-		font-size: 15px;
-	}
+  i {
+    font-size: 15px;
+  }
 
-	&.btn-outline {
-		border-width: 2px;
-	}
-
-	&.btn-xs {
-		width: 24px;
-		height: 24px;
-		line-height: 22px;
-
-		i {
-			font-size: 9px;
-		}
-	}
+  &.btn-outline {
+    border-width: 2px;
+  }
 }
 
 
@@ -339,19 +324,19 @@
 // --------------------------------------------------
 
 .btn-block {
-	padding-left: 0;
-	padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .btn-condensed {
 
-	&.btn-sm {
-		padding: 13px 28px;
+  &.btn-sm {
+    padding: 13px 28px;
 
-		&.btn-icon-right {
-			padding-right: 22px;
-		}
-	}
+    &.btn-icon-right {
+      padding-right: 22px;
+    }
+  }
 }
 
 
@@ -359,70 +344,70 @@
 // FAB (Floating Action Button)
 // --------------------------------------------------
 .btn-fab {
-	display: block;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 50px;
-	height: 50px;
-	overflow: hidden;
-	background-color: $color-primary-darken;
-	border-radius: 50%;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: $color-primary-darken;
+  border-radius: 50%;
 
-	&::before,
-	&::after {
-		content:"";
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		background-color: #fff;
-		transition: transform 0.25s ease;
-	}
+  &::before,
+  &::after {
+    content:"";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    transition: transform 0.25s ease;
+  }
 
-	&::before {
-		width: 17px;
-		height: 3px;
-	}
+  &::before {
+    width: 17px;
+    height: 3px;
+  }
 
-	&::after {
-		width: 3px;
-		height: 17px;
-	}
+  &::after {
+    width: 3px;
+    height: 17px;
+  }
 
-	&:hover {
+  &:hover {
 
-		&::before,
-		&::after {
-			transform: translate(-50%, -50%) rotate(90deg);
-		}
-	}
+    &::before,
+    &::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
 }
 .btn-fab--clean {
-	background-color: transparent;
+  background-color: transparent;
 
-	&::before,
-	&::after {
+  &::before,
+  &::after {
 
-		@if $template == football {
-			background-color: $color-4;
-		} @else {
-			background-color: $color-primary;
-		}
-	}
+    @if $template == football {
+      background-color: $color-4;
+    } @else {
+      background-color: $color-primary;
+    }
+  }
 }
 .btn-fab--sm {
-	width: 30px;
-	height: 30px;
+  width: 30px;
+  height: 30px;
 
-	&::before {
-		width: 10px;
-		height: 2px;
-	}
+  &::before {
+    width: 10px;
+    height: 2px;
+  }
 
-	&::after {
-		width: 2px;
-		height: 10px;
-	}
+  &::after {
+    width: 2px;
+    height: 10px;
+  }
 }

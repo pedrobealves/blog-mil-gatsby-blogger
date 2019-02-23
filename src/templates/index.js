@@ -1,13 +1,12 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import CardList from '../components/CardList'
-import Card from '../components/Card'
 import Helmet from 'react-helmet'
 import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
+import Card from '../components/Card'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allBloggerPost.edges
@@ -23,22 +22,11 @@ const Index = ({ data, pageContext }) => {
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
         </Helmet>
       )}
-      <Container>
-        {isFirstPage ? (
-          <CardList>
-            <Card {...featuredPost} featured />
-            {posts.slice(1).map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
-        ) : (
-          <CardList>
-            {posts.map(({ node: post }) => (
-              <Card key={post.id} {...post} />
-            ))}
-          </CardList>
-        )}
-      </Container>
+      <Card
+        posts={posts}
+        featuredPost={featuredPost}
+        isFirstPage={isFirstPage}
+      />
       <Pagination context={pageContext} />
     </Layout>
   )

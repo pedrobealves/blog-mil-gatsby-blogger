@@ -4,176 +4,97 @@
 */
 
 .page-heading {
-	background-color: $page-heading-bg-color;
-	background-image: $page-heading-bg-image-url;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	text-align: center;
-	padding: 50px 0;
-	position: relative;
+  background-color: $page-heading-bg-color;
+  background-image: $page-heading-bg-image-url;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
 
-	@media (min-width: 992px) {
-		padding: $page-heading-padding-lg;
-	}
+  @media (min-width: 992px) {
+    padding: $page-heading-padding-lg;
+  }
 
-	.breadcrumb {
-		@include font-accent(10px);
-		padding: 0;
+  .breadcrumb {
+    @include font-accent(10px);
+    padding: 0;
 
-		@media (min-width: 992px) {
-			font-size: 11px;
-			padding: 3px 0;
-		}
+    @media (min-width: 992px) {
+      font-size: 11px;
+      padding: 3px 0;
+    }
 
-		> li {
+    > li {
 
-			+ li::before {
-				color: $body-font-color;
-				font-weight: normal;
-			}
+      + li::before {
+        color: $body-font-color;
+        font-weight: normal;
+      }
 
-			> a {
-				color: #fff;
+      > a {
+        color: #fff;
 
-				&:hover {
-					color: $color-primary;
-				}
-			}
-		}
-	}
+        &:hover {
+          color: $color-primary;
+        }
+      }
+    }
+  }
 
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-image: $page-heading-bg-pattern-url;
-		background-size: $page-heading-bg-pattern-size;
-		background-position: 100% 0;
-		background-repeat: $page-heading-bg-pattern-repeat;
-		opacity: $page-heading-bg-pattern-opacity;
-	}
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: $page-heading-bg-pattern-url;
+    background-size: $page-heading-bg-pattern-size;
+    background-position: 100% 0;
+    background-repeat: $page-heading-bg-pattern-repeat;
+    opacity: $page-heading-bg-pattern-opacity;
+  }
 }
+  .page-heading__title {
+    text-transform: uppercase;
+    color: #fff;
+    letter-spacing: -0.02em;
+    font-size: 24px;
+    margin-bottom: 0;
+    font-style: $page-heading-font-style;
 
-// Horizontal
-.page-heading--horizontal {
-	text-align: inherit;
+    @media (min-width: 992px) {
+      font-size: $page-heading-font-size;
+    }
 
-	@media (max-width: 767px) {
-		.row {
-			display: block;
-			text-align: center;
-		}
-	}
-}
-
-// Duotone effect
-.page-heading--duotone {
-	background-image: none;
-
-	&::before {
-		z-index: 2;
-
-		// MS Edge fallback
-		@supports (position:-ms-page) {
-			background-color: $color-primary;
-			opacity: .25;
-		}
-
-		// IE11 fallback
-		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-			background-color: $color-primary;
-			opacity: .25;
-		}
-	}
-
-	&::after {
-		content: "";
-		z-index: 1;
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-image: $page-heading-bg-image-url;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		filter: url("#duotone-filter-page-heading");
-	}
-
-	.container {
-		position: relative;
-		z-index: 3;
-	}
-}
-	.page-heading__title {
-		text-transform: uppercase;
-		color: #fff;
-		letter-spacing: -0.02em;
-		font-size: 24px;
-		margin-bottom: 0;
-		font-style: $page-heading-font-style;
-
-		@media (min-width: 992px) {
-			font-size: $page-heading-font-size;
-		}
-
-		.highlight {
-			color: $page-heading-font-highlight;
-		}
-	}
+    .highlight {
+      color: $page-heading-font-highlight;
+    }
+  }
 
 // Single Post Background
 .page-heading--post-bg {
-	background-image: $single-post-3-image;
+  background-image: $single-post-3-image;
 }
 
 // Page Heading with Overlay
 .page-heading--overlay {
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-	&::before {
-		content:"";
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		top: 0;
-		background-image: none;
-		background-color: rgba(0,0,0,.6);
-		opacity: 1;
-	}
-}
-
-// Page Heading without Pattern
-.page-heading--simple {
-	height: 240px;
-
-	&::before {
-		display: none;
-	}
-
-	@media (min-width: 768px) {
-		height: 320px;
-	}
-
-	@media (min-width: 992px) {
-		height: 360px;
-	}
-
-	@media (min-width: 1200px) {
-		height: 420px;
-	}
-
-	@if $template == 'esports' {
-		background-image: url("../images/esports/samples/single-post-img9.jpg");
-	}
+  &::before {
+    content:"";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-image: none;
+    background-color: rgba(0,0,0,.6);
+    opacity: 1;
+  }
 }

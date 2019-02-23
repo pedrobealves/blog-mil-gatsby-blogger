@@ -82,7 +82,7 @@
 			letter-spacing: -0.02em;
 			margin-bottom: 0;
 			text-transform: uppercase;
-			font-style: $font-style-h4;
+			font-style: normal;
 		}
 
 		.card-header__button {
@@ -174,30 +174,11 @@
 			text-align: right;
 		}
 	}
-
-	.card__header--has-arrows {
-
-		.slick-prev,
-		.slick-next {
-			top: 25px;
-		}
-	}
-
-	.card__header--no-highlight {
-
-		&::before {
-			display: none;
-		}
-	}
-
 	.card__content {
 		padding: $card-vertical-padding $card-horizontal-padding;
 	}
 	.card__content-inner {
 		padding: 20px;
-	}
-	.card__content--header-bg {
-		background-color: $card-header-bg;
 	}
 
 	.card__subheader {
@@ -221,39 +202,17 @@
 			text-transform: uppercase;
 		}
 	}
-	.card__subheader--nomargins {
-		margin: 0;
-	}
-
-	.card__subheader--sm {
-
-		h5 {
-			font-size: 11px;
-			line-height: 1.2em;
-		}
-	}
-	.card__subheader--side {
-		text-align: left;
-		border-top: 0;
-		background-color: transparent;
-		padding: 15px $card-horizontal-padding;
-
-		h5 {
-			font-style: italic;
-		}
-	}
-	.card__subheader--flex {
-		display: flex;
-		border-top: 1px solid $card-border-color;
-
-		:last-child {
-			margin-left: auto;
+		.card__subheader--nomargins {
+			margin: 0;
 		}
 
-		h5 {
-			font-style: normal;
+		.card__subheader--sm {
+
+			h5 {
+				font-size: 11px;
+				line-height: 1.2em;
+			}
 		}
-	}
 
 
 // Sizes
@@ -305,51 +264,4 @@
 	border-radius: 0;
 	border-left: none;
 	border-right: none;
-}
-
-// Card
-.card--info {
-
-	.card__content {
-
-		p {
-			font-size: .86em;
-			line-height: 1.83em;
-		}
-	}
-
-	.contact-info {
-		display: flex;
-		flex-wrap: wrap;
-		border-top: 1px solid $card-border-color;
-	}
-		.contact-info__item {
-			flex-grow: 1;
-			max-width: 100%;
-			flex-basis: 0;
-			margin: -1px 0 0 -1px;
-			text-align: center;
-			padding: 25px 10px;
-			border-left: 1px solid $card-border-color;
-			border-top: 1px solid $card-border-color;
-		}
-			.contact-info__icon {
-				color: $color-primary;
-				font-size: 18px;
-				margin-bottom: 20px;
-			}
-			.contact-info__label {
-				font-size: .86em;
-				font-family: $font-family-accent;
-				font-weight: 700;
-				color: $headings-color;
-
-				a {
-					color: $headings-color;
-
-					&:hover {
-						color: $link-color-hover;
-					}
-				}
-			}
 }

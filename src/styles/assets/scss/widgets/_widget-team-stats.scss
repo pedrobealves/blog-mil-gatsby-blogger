@@ -55,56 +55,6 @@
 					font-size: 30px;
 				}
 			}
-
-			.team-stats__icon--circle-outline {
-				position: relative;
-				border-radius: 50%;
-				margin: 0 auto;
-				border: 4px solid $color-primary;
-			}
-
-			.team-stats__icon--size-sm {
-				width: 40px;
-				height: 40px;
-				margin-bottom: 16px;
-			}
-
-			.team-stats__icon--centered {
-
-				.df-icon,
-				.fa {
-					position: relative;
-					top: 50%;
-					transform: translateY(-50%);
-					text-align: center;
-				}
-
-				.fa {
-					display: block;
-					font-size: 18px;
-					color: $headings-color;
-				}
-			}
-
-
-			.team-stats__indicator {
-				display: block;
-				position: absolute;
-				right: -6px;
-				top: -6px;
-				border: 2px solid $color-primary;
-				width: 16px;
-				height: 16px;
-				border-radius: 50%;
-				font-size: 12px;
-				line-height: 12px;
-				font-family: $font-family-accent;
-				font-weight: bold;
-				color: $color-white;
-				background-color: $card-bg;
-			}
-
-
 			.team-stats__icon--shots-ot {
 				background-color: #a4ec32;
 
@@ -188,31 +138,13 @@
 				font-weight: 400;
 				line-height: 1.2em;
 
-				@if $template == 'esports' {
-					font-size: 9px;
-					text-transform: none;
-					color: $headings-color;
-					font-weight: 700;
-					margin-bottom: .2em;
-				}
-
 				@media (min-width: 768px) {
-
-					@if $template == 'esports' {
-						font-size: 12px;
-					} @else {
-						font-size: 10px;
-					}
+					font-size: 10px;
 				}
 			}
 
 			.team-stats__label + .team-stats__circular {
 				margin-top: 20px;
-			}
-
-			.team-stats__sublabel {
-				font-size: 9px;
-				line-height: 1.2em;
 			}
 
 			.team-stats__circular {

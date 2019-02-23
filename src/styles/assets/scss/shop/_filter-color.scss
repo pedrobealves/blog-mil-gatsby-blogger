@@ -245,12 +245,8 @@
 			&.color-black {
 				$color-filter-black: #383838;
 
-				@if $template == 'football' {
+				@if $template == football {
 					$color-filter-black: #1e202f;
-				}
-
-				@if $template == 'esports' {
-					$color-filter-black: #1e1826;
 				}
 
 				+ [class*="indicator"] {

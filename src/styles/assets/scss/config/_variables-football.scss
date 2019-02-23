@@ -15,8 +15,6 @@ $font-size-mobile: 13px;
 $line-height-mobile: 22px;
 $body-font-weight: 400;
 
-$font-size-sm:         ($base-font-size * .857) !default;
-
 
 //- Colors
 //- ----------------------------------------------
@@ -51,17 +49,6 @@ $link-decoration: none;
 $link-color-hover: $color-4-darken;
 $link-decoration-hover: none;
 
-// Social
-$social-facebook:      #3B5998 !default;
-$social-twitter:       #1DA1F2 !default;
-$social-gplus:         #DC4E41 !default;
-$social-instagram:     #E4405F !default;
-$social-twitch:        #6441A4 !default;
-$social-youtube:       #FF0000 !default;
-$social-linkedin:      #0077B5 !default;
-$social-vk:            #6383A8 !default;
-$social-odnoklassniki: #F4731C !default;
-
 
 //- Components
 //- ----------------------------------------------
@@ -85,7 +72,6 @@ $table-bg-active:               $table-bg-hover;
 $table-border-color:            $color-2;
 $table-thead-color:             #fff;
 $table-thead-bg-color:          $color-dark-lighten-2;
-$table-thead-font-style:        normal !default;
 $table-highlight:               #fff;
 
 
@@ -93,25 +79,8 @@ $table-highlight:               #fff;
 //- ----------------------------------------------
 
 $btn-font-weight:                700;
-$btn-font-style:                 normal !default;
 $btn-font-family:                $font-family-accent;
 $btn-text-transform:             uppercase;
-
-// Line-Height
-$btn-line-height:                1.5em !default;
-$btn-line-height-lg:             1.33em !default;
-$btn-line-height-sm:             1.5em !default;
-$btn-line-height-xs:             1.5em !default;
-
-// Paddings
-$btn-padding-vertical:           13px !default;
-$btn-padding-horizontal:         42px !default;
-$btn-padding-vertical-lg:        16px !default;
-$btn-padding-horizontal-lg:      80px !default;
-$btn-padding-vertical-sm:        10px !default;
-$btn-padding-horizontal-sm:      38px !default;
-$btn-padding-vertical-xs:        5px !default;
-$btn-padding-horizontal-xs:      13px !default;
 
 // Border Radius
 $btn-border-radius:              4px;
@@ -236,7 +205,6 @@ $font-size-h6: 16px;
 $headings-font-family:   $font-family-accent;
 $headings-color:         #fff;
 $headings-color-inverse: $color-dark;
-$headings-line-height:   1.2 !default;
 
 $font-style-h1: italic;
 $font-style-h2: normal;
@@ -252,21 +220,7 @@ $text-transform-h4: uppercase;
 $text-transform-h5: none;
 $text-transform-h6: uppercase;
 
-$display1-size:               6rem !default;
-$display2-size:               5.5rem !default;
-$display3-size:               4.5rem !default;
-$display4-size:               3.5rem !default;
-
-$display1-weight:             300 !default;
-$display2-weight:             300 !default;
-$display3-weight:             300 !default;
-$display4-weight:             300 !default;
-$display-line-height:         $headings-line-height !default;
-
 $line-height-base:        1.733333; // 26/15
-
-$lead-font-size:   16px !default;
-$lead-font-weight: 400 !default;
 
 // OL
 $ol-number-color: #fff;
@@ -419,7 +373,6 @@ $alert-danger-border:         $state-danger-border;
 $progress-bg:                 #4e4d73;
 $progress-bar-color:          #fff;
 $progress-border-radius:      3px;
-$progress-height:             6px !default;
 
 $progress-bar-bg:             $color-primary;
 $progress-bar-secondary-bg:   $color-4;
@@ -429,7 +382,6 @@ $progress-bar-danger-bg:      $color-danger;
 $progress-bar-info-bg:        $color-info;
 
 $progress-label-color:        #fff;
-$progress-label-style:        normal !default;
 
 
 //- Circular Bar
@@ -454,14 +406,6 @@ $card-horizontal-padding-xlg: 70px;
 $card-vertical-padding-xlg:   70px;
 
 
-//- Jumbotron
-//- ----------------------------------------------
-
-$jumbotron-padding:                 2rem !default;
-$jumbotron-bg:                      $card-bg !default;
-$jumbotron-border-color:            $card-border-color !default;
-
-
 
 //- Header
 //- ----------------------------------------------
@@ -470,7 +414,6 @@ $header-bg: $color-dark-2;
 $header-top-bg: $color-dark;
 $header-secondary-bg: $color-dark-2;
 $header-primary-bg: $color-dark;
-$header-primary-alt-bg: $header-primary-bg !default; // used for Header Layout 4
 
 // Top Bar
 $top-bar-highlight:                 $color-4;
@@ -481,9 +424,6 @@ $top-bar-dropdown-border:           rgba(255,255,255,.03);
 $top-bar-dropdown-shadow:           0 0 12px rgba(0,0,0,.3);
 $top-bar-dropdown-link-color:       $color-gray;
 $top-bar-dropdown-link-color-hover: $color-4;
-
-$top-bar-social-icon-color:         $color-gray;
-$top-bar-social-icon-color-hover:   $color-4;
 
 // Info Block
 $header-info-block-color:             $color-4;
@@ -518,7 +458,6 @@ $nav-height:               62px;
 $nav-font-family:          $font-family-accent;
 $nav-text-transform:       uppercase;
 $nav-font-weight:          700;
-$nav-font-style:           normal !default;
 $nav-font-size:            12px;
 $nav-font-color:           #fff;
 $nav-font-color-hover:     #fff;
@@ -527,14 +466,12 @@ $nav-active-border-color:  $color-primary;
 $nav-active-border-pos:    top;
 $nav-active-bg:            $color-dark-2;
 $nav-item-divider:         1px solid $color-2;
-$nav-item-padding:         0 34px !default;
 
 // Submenu
 $nav-sub-bg:               $color-dark-lighten;
 $nav-sub-font-family:      $font-family-accent;
 $nav-sub-text-transform:   uppercase;
 $nav-sub-font-weight:      700;
-$nav-sub-font-style:       normal !default;
 $nav-sub-font-size:        11px;
 $nav-sub-arrow:            str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-white}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
 $nav-sub-border-color:     $color-2;
@@ -543,14 +480,8 @@ $nav-sub-hover-bg-color:   $color-dark;
 $nav-sub-hover-link-color: $color-4;
 
 // Megamenu
-$nav-sub-megamenu-padding-vertical:   43px !default;
-$nav-sub-megamenu-padding-horizontal: 55px !default;
 $nav-sub-megamenu-link-color:       $color-gray;
 $nav-sub-megamenu-link-color-hover: $color-4;
-$nav-sub-megamenu-link-font-size:   11px !default;
-$nav-sub-megamenu-link-font-weight: 700 !default;
-$nav-sub-megamenu-link-font-style:  normal !default;
-$nav-sub-megamenu-link-text-transform: uppercase !default;
 $nav-sub-megamenu-title-color:      #fff;
 $nav-sub-megamenu-post-title-color: #fff;
 
@@ -577,7 +508,6 @@ $header-cart-subtotal-label:           #fff;
 $header-cart-subtotal-sum:             $color-4;
 $header-cart-product-close:            $color-gray-2;
 $header-cart-thumb-border-radius:      4px;
-$header-cart-thumb-bg-color:           $color-dark !default;
 
 // Pushy Panel
 $pushy-toggle-icon-color: #fff;
@@ -623,28 +553,13 @@ $breadcrumb-link-active-color: $color-gray-3;
 //- ----------------------------------------------
 $filter-bg:          $color-dark;
 $filter-border:      $color-2;
-$filter-active:                 $filter-bg !default;
-$filter-label-color:            $body-font-color;
-$filter-label-font-size:        8px !default;
-$filter-color:                  #fff;
-$filter-placeholder-font-style: normal !default;
-$filter-padding-top:            32px !default;
-$filter-padding-bottom:         24px !default;
-$filter-padding-top-sm:         26px !default;
-$filter-padding-bottom-sm:      12px !default;
+$filter-label-color: $body-font-color;
+$filter-color:       #fff;
 $filter-caret:       str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-white}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
 $filter-dropdown-bg: $color-dark-lighten;
 $filter-dropdown-border: $filter-border;
 $filter-dropdown-color: $color-gray-3;
 $filter-dropdown-color-hover: #fff;
-$filter-dropdown-font-size:       11px !default;
-$filter-dropdown-font-style:      normal !default;
-
-
-//- Content
-//- ----------------------------------------------
-$content-padding-vertical:    60px;
-$content-padding-vertical-sm: 30px;
 
 
 //- Blog
@@ -652,9 +567,6 @@ $content-padding-vertical-sm: 30px;
 $post-category-1: $color-primary;
 $post-category-2: $color-3;
 $post-category-3: $color-4-darken;
-$post-category-4: $color-gray-3 !default;
-
-$post-category-font-style: normal !default;
 
 $post-title-color: #fff;
 $post-title-color-hover: $color-4;
@@ -671,47 +583,6 @@ $post-quote-footer-font-style: italic;
 $sidebar-content-font-size:   13px;
 $sidebar-content-line-height: 22px;
 
-// Widget Tabbed
-$widget-tabbed-nav-font-size:         11px !default;
-$widget-tabbed-nav-font-style:        normal !default;
-$widget-tabbed-nav-font-color:        $color-gray-3 !default;
-$widget-tabbed-nav-font-color-hover:  $color-white !default;
-$widget-tabbed-nav-font-color-active: $headings-color !default;
-
-// Widget Twitter
-$widget-twitter-icon-color:              $body-font-color !default;
-$widget-twitter-thumb-size:              40px !default;
-$widget-twitter-thumb-border-radius:     2px !default;
-$widget-twitter-name-font-size:          15px !default;
-$widget-twitter-name-font-size-sm:       12px !default;
-$widget-twitter-name-font-weight:        400 !default;
-$widget-twitter-name-font-style:         normal !default;
-$widget-twitter-name-text-transform:     none !default;
-$widget-twitter-username-font-size:      11px !default;
-$widget-twitter-username-font-weight:    400 !default;
-$widget-twitter-username-font-style:     normal !default;
-$widget-twitter-username-text-transform: none !default;
-$widget-twitter-username-color:          $body-font-color !default;
-$widget-twitter-username-color-hover:    $color-2 !default;
-$widget-twitter-txt-font-size:           14px !default;
-$widget-twitter-txt-line-height:         22px !default;
-$widget-twitter-txt-color:               #2bd0ff !default;
-$widget-twitter-txt-color-hover:         darken(#2bd0ff, 15%) !default;
-$widget-twitter-timestamp-font-size:     11px !default;
-$widget-twitter-timestamp-color:         $body-font-color !default;
-$widget-twitter-timestamp-color-hover:   $color-2 !default;
-
-// Widget Results
-$widget-results-title-font-size:         9px !default;
-$widget-results-title-text-transform:    uppercase !default;
-$widget-results-title-vertical-padding:  10px !default;
-
-// Widget Featured Player
-$widget-player-stats-value-size:           28px !default;
-$widget-player-stats-value-color:          $color-4 !default;
-$widget-player-stats-value-margin:        .25em !default;
-$widget-player-stats-label-text-transform: uppercase !default;
-
 
 //- Single Post
 //- ----------------------------------------------
@@ -725,7 +596,6 @@ $single-post-3-image:                     url("../images/football/samples/single
 //- ----------------------------------------------
 $pagination-bg:               $color-dark;
 $pagination-color:            #fff;
-$pagination-font-size:        11px !default;
 $pagination-border:           $color-2;
 $pagination-bg-hover:         $color-primary;
 $pagination-color-hover:      #fff;
@@ -737,37 +607,16 @@ $pagination-border-active:    $color-primary;
 
 //- Content Filter
 //- ----------------------------------------------
-$content-filter-bg:               $filter-bg;
-$content-filter-border:           $filter-border;
-$content-filter-padding-top:            28px !default;
-$content-filter-padding-bottom:         28px !default;
-$content-filter-padding-left:           20px !default;
-$content-filter-padding-right:          20px !default;
-$content-filter-padding-top-sm:         18px !default;
-$content-filter-padding-bottom-sm:      18px !default;
-$content-filter-color:            $color-gray-3;
-$content-filter-color-hover:      #fff;
-$content-filter-bg-active:         transparent !default;
-$content-filter-active-highlight: $color-primary !default;
-$content-filter-label-font-size: 13px !default;
-$content-filter-label-font-style: normal !default;
-$content-filter-label-font-weight: 700 !default;
-$content-filter-sublabel-font-size: 8px !default;
-$content-filter-sublabel-font-style: normal !default;
-$content-filter-sublabel-font-weight: 400 !default;
+$content-filter-bg:              $filter-bg;
+$content-filter-border:          $filter-border;
+$content-filter-color:           $color-gray-3;
+$content-filter-color-hover:     #fff;
 
 
 //- Team
 //- ----------------------------------------------
 $team-select-color: #fff;
 $team-select-arrow: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 6 4'%3E%3Cpath transform='translate(-586.156 -1047.28)' fill='#{$color-white}' d='M586.171,1048l0.708-.71,2.828,2.83-0.707.71Zm4.95-.71,0.707,0.71L589,1050.83l-0.707-.71Z'/%3E%3C/svg%3E"), "#", "%23");
-
-
-
-//- Tournament
-//- ----------------------------------------------
-$tournament-team-bg-winner: $card-bg;
-$tournament-divider: $card-bg;
 
 
 //- Shop
@@ -877,24 +726,6 @@ $range-bg-color: #dbdfe6;
 $widget-decor-color-1: rgba(236, 240, 246, .6);
 $widget-decor-color-2: rgba(0,0,0,.1);
 $widget-decor-color-3: rgba(0,0,0,.11);
-
-
-//- Slick Carousel
-//- ----------------------------------------------
-$slick-font-family: "FontAwesome" !default;
-$slick-loader-path: "./" !default;
-$slick-arrow-bg-color: #999ea6;
-$slick-arrow-color: white !default;
-$slick-arrow-bg-color-hover: $color-primary-darken;
-$slick-dot-color: #d7d8da !default;
-$slick-dot-color-on-hover: $color-2 !default;
-$slick-dot-color-active: $color-primary !default;
-$slick-prev-character: "\f104" !default;
-$slick-next-character: "\f105" !default;
-$slick-dot-size: 6px !default;
-$slick-opacity-default: 0.75 !default;
-$slick-opacity-on-hover: 1 !default;
-$slick-opacity-not-active: 0.25 !default;
 
 
 //- Preloader

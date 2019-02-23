@@ -12,4 +12,3 @@
 //=include '../vendor/nouislider/nouislider.min.js'
 //=include '../vendor/instafeed/instafeed.js'
 //=include '../vendor/social-counters/social-counters-api.js'
-//=include '../vendor/easyembed/jquery.easyembed.js'

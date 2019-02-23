@@ -1,184 +1,65 @@
 /* Post Filter
 /* ------------------------- */
 .post-filter {
-	background-color: $filter-bg;
-	border-bottom: 1px solid $filter-border;
-	position: relative;
-	z-index: 2;
+  background-color: $filter-bg;
+  border-bottom: 1px solid $filter-border;
+  position: relative;
+  z-index: 2;
 
-	.container {
+  .container {
 
-		@media (max-width: 767px) {
-			padding-left: 0;
-			padding-right: 0;
-		}
-	}
+    @media (max-width: 767px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
 }
+  .post-filter__select {
+    position: relative;
 
-	// Form
-	.post-filter__form {
-		display: flex;
-		flex-wrap: wrap;
+    @media (min-width: 992px) {
+      float: left;
+      width: 20%;
 
-		@media (min-width: 992px) {
-			flex-wrap: nowrap;
-		}
-	}
-		// Select
-		.post-filter__select {
-			position: relative;
-			width: 100%;
+      & + & {
 
-			@media (min-width: 992px) {
-				width: 100%;
-				max-width: 100%;
-				flex-grow: 1;
-				flex-basis: 0;
+        div.cs-skin-border > span {
+          margin-left: -1px;
+        }
+      }
+    }
 
-				& + & {
+    .cs-select {
+      margin-bottom: -1px;
+    }
 
-					div.cs-skin-border > span {
-						margin-left: -1px;
-					}
-				}
-			}
+    .post-filter__label {
+      display: block;
+      position: absolute;
+      left: 24px;
+      top: 20px;
+      @include font-accent(8px);
+      line-height: 1.2em;
+      color: $filter-label-color;
 
-			.cs-select {
+      @media (min-width: 992px) {
+        top: 28px;
+      }
+    }
+  }
+  .post-filter__submit {
 
-			}
+    @media (min-width: 992px) {
+      float: left;
+      width: 20%;
+    }
 
-			.post-filter__label {
-				display: block;
-				position: absolute;
-				z-index: 2;
-				left: 24px;
-				top: 20px;
-				line-height: 1.2em;
-				color: $filter-label-color;
-				@include font-accent($filter-label-font-size);
+    .btn {
+      border-radius: 0;
 
-				@media (min-width: 992px) {
-					@if $template == 'esports' {
-						top: 20px;
-					} @else {
-						top: 28px;
-					}
-				}
-			}
-		}
-
-		// Submit
-		.post-filter__submit {
-			display: flex;
-			width: 100%;
-
-			@media (min-width: 992px) {
-				width: 100%;
-				max-width: 100%;
-				flex-grow: 1;
-				flex-basis: 0;
-			}
-
-			.btn {
-				border-radius: 0;
-				border: none;
-				width: 100%;
-				max-width: 100%;
-				flex-grow: 1;
-				flex-basis: 0;
-			}
-		}
-
-
-// Boxed
-.post-filter--boxed {
-	background-color: transparent;
-	border-bottom: 0;
-	padding-top: $content-padding-vertical-sm;
-
-	@media (min-width: 992px) {
-		padding-top: $content-padding-vertical;
-		margin-bottom: -20px;
-	}
-
-	.post-filter__form {
-		background-color: $filter-bg;
-		border: 1px solid $filter-border;
-		border-radius: $card-border-radius;
-
-		.post-filter__select:first-child {
-			border-top-left-radius: $card-border-radius;
-			border-bottom-left-radius: $card-border-radius;
-
-			div.cs-skin-border > span {
-				border-left: 0;
-			}
-		}
-	}
-
-	.cs-select {
-
-		.cs-options {
-			left: -1px;
-			width: calc(100% + 1px);
-			border-top: 1px solid $filter-border;
-			transition: all .2s ease;
-			overflow: visible;
-
-			// top arrow with border
-			&::before,
-			&::after {
-				content: "";
-				display: block;
-				position: absolute;
-				width: 0;
-				height: 0;
-				font-size: 0;
-				line-height: 0;
-			}
-
-			// top arrow border
-			&::before {
-				right: 18px;
-				top: -8px;
-				border-left: 8px solid transparent;
-				border-right: 8px solid transparent;
-				border-bottom: 8px solid $filter-border;
-			}
-
-			// top arrow bg
-			&::after {
-				right: 20px;
-				top: -7px;
-				border-left: 6px solid transparent;
-				border-right: 6px solid transparent;
-				border-bottom: 7px solid $filter-bg;
-			}
-		}
-
-		&.cs-active .cs-options {
-			transition: all .2s ease;
-			transform: translateY(-2px);
-			box-shadow: 0 0 12px 0 rgba(0,0,0,0.3);
-
-			@media (min-width: 992px) {
-				transform: translateY(16px);
-			}
-		}
-	}
-
-	// Submit
-	.post-filter__submit {
-
-		.btn {
-			border-radius: 0;
-			border-bottom-left-radius: $card-border-radius;
-			border-bottom-right-radius: $card-border-radius;
-
-			@media (min-width: 992px) {
-				border-bottom-left-radius: 0;
-				border-top-right-radius: $card-border-radius;
-			}
-		}
-	}
-}
+      @media (min-width: 992px) {
+        padding-top: 30px;
+        padding-bottom: 31px;
+      }
+    }
+  }

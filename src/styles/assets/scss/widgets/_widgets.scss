@@ -7,63 +7,63 @@
 .widget {
 
 }
-	.widget__title {
-		text-transform: uppercase;
-	}
+  .widget__title {
+    text-transform: uppercase;
+  }
 
-	.widget__content-inner {
-		padding: $card-vertical-padding $card-horizontal-padding;
-	}
+  .widget__content-inner {
+    padding: $card-vertical-padding $card-horizontal-padding;
+  }
 
-	.widget__content--bottom-decor {
-		padding-bottom: 30px;
-		background-image: linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-2 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-3 8px, transparent 8px),;
-		background-repeat: repeat-x;
-		background-size: 72px 24px, 72px 30px, 72px 34px, 72px 40px, 72px 37px, 72px 29px, 144px 30px, 216px 37px;
-		background-position: 0 100%, 12px 100%, 24px 100%, 36px 100%, 48px 100%, 60px 100%, 12px 100%, 48px 100%;
-	}
+  .widget__content--bottom-decor {
+    padding-bottom: 30px;
+    background-image: linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-1 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-2 8px, transparent 8px), linear-gradient(to right, $widget-decor-color-3 8px, transparent 8px),;
+    background-repeat: repeat-x;
+    background-size: 72px 24px, 72px 30px, 72px 34px, 72px 40px, 72px 37px, 72px 29px, 144px 30px, 216px 37px;
+    background-position: 0 100%, 12px 100%, 24px 100%, 36px 100%, 48px 100%, 60px 100%, 12px 100%, 48px 100%;
+  }
 
-	/* Pushy Panel Widget */
-	.widget--side-panel {
-		margin-bottom: 62px;
+  /* Pushy Panel Widget */
+  .widget--side-panel {
+    margin-bottom: 62px;
 
-		.widget__title {
-			margin-bottom: 30px;
+    .widget__title {
+      margin-bottom: 30px;
 
-			> h4 {
-				font-size: 16px;
-				margin-bottom: 0;
-				text-transform: uppercase;
-			}
-		}
-	}
+      > h4 {
+        font-size: 16px;
+        margin-bottom: 0;
+        text-transform: uppercase;
+      }
+    }
+  }
 
-	/* Sidebar Widget */
-	.widget--sidebar {
-		margin-bottom: 15px;
+  /* Sidebar Widget */
+  .widget--sidebar {
+    margin-bottom: 15px;
 
-		.widget__content {
-			font-size: $sidebar-content-font-size;
-			line-height: $sidebar-content-line-height;
-		}
-	}
+    .widget__content {
+      font-size: $sidebar-content-font-size;
+      line-height: $sidebar-content-line-height;
+    }
+  }
 
-	/* Footer Widget */
-	.widget--footer {
-		margin-bottom: 60px;
+  /* Footer Widget */
+  .widget--footer {
+    margin-bottom: 60px;
 
-		@media (min-width: 992px) {
-			margin-bottom: 0;
-		}
+    @media (min-width: 992px) {
+      margin-bottom: 0;
+    }
 
-		.widget__title {
-			color: #fff;
-			font-size: $footer-widget-title-font-size;
-			font-style: $footer-widget-title-font-style;
-			margin-bottom: $footer-widget-title-margin;
-		}
+    .widget__title {
+      color: #fff;
+      font-size: $footer-widget-title-font-size;
+      font-style: $footer-widget-title-font-style;
+      margin-bottom: $footer-widget-title-margin;
+    }
 
-		& + & {
-			margin-top: 30px;
-		}
-	}
+    & + & {
+      margin-top: 30px;
+    }
+  }

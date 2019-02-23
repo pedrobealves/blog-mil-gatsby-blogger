@@ -3,25 +3,26 @@
 
 }
 
-	.poll-form__question {
-		margin-bottom: 1.5em;
-	}
+  .poll-form__question {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-bottom: 1em;
+  }
 
-	.poll-form__options {
-		line-height: $base-line-height;
+  .poll-form__options {
+    line-height: $base-line-height;
 
-		.radio-inline {
-			margin-bottom: 9px;
-			font-weight: 700;
-			font-style: $progress-label-style;
-		}
+    .radio-inline {
+      margin-bottom: 9px;
+      font-weight: 700;
+    }
 
-		.radio-wrapper {
-			overflow: hidden;
-		}
-		.radio-progress-value {
-			float: right;
-			@include font-accent(11px);
-			color: $headings-color;
-		}
-	}
+    .radio-wrapper {
+      overflow: hidden;
+    }
+    .radio-progress-value {
+      float: right;
+      @include font-accent(11px);
+      color: $headings-color;
+    }
+  }

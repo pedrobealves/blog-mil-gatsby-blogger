@@ -13,25 +13,32 @@
 		.nav-link {
 			border: none;
 			border-radius: 0;
-			font-size: $widget-tabbed-nav-font-size;
-			font-style: $widget-tabbed-nav-font-style;
+			font-size: 11px;
 			line-height: 1.5em;
 			font-family: $font-family-accent;
 			text-transform: uppercase;
 			padding: 12px 6px;
-			color: $widget-tabbed-nav-font-color;
+			color: rgba($headings-color, .4);
 			font-weight: bold;
 			letter-spacing: -0.02em;
 			transition: color 0.2s ease-in-out;
 
+			@if $template == 'football' {
+				color: $color-gray-3;
+			}
+
 			&:hover {
-				color: $widget-tabbed-nav-font-color-hover;
+				color: $headings-color;
 				background-color: transparent;
 				border: none;
+
+				@if $template == 'football' {
+					color: #fff;
+				}
 			}
 
 			&.active {
-				color: $widget-tabbed-nav-font-color-active;
+				color: $headings-color;
 				background-color: transparent;
 				border: none;
 			}

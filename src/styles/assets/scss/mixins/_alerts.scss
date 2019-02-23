@@ -1,17 +1,17 @@
 // Alerts
 
 @mixin alert-variant($background, $border, $icon-bg) {
-	background-color: $background;
-	border-color: $border;
+  background-color: $background;
+  border-color: $border;
 
-	hr {
-		border-top-color: darken($border, 5%);
-	}
-	.alert-link {
-		// color: darken($text-color, 10%);
-	}
+  hr {
+    border-top-color: darken($border, 5%);
+  }
+  .alert-link {
+    // color: darken($text-color, 10%);
+  }
 
-	&::before {
-		background-color: $icon-bg;
-	}
+  &::before {
+    background-color: $icon-bg;
+  }
 }

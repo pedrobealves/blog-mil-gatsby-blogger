@@ -19,7 +19,7 @@
 // Outer container
 .progress {
 	overflow: hidden;
-	height: $progress-height;
+	height: 6px;
 	margin-bottom: 10px;
 	background-color: $progress-bg;
 	border-radius: $progress-border-radius;
@@ -33,7 +33,7 @@
 		float: left;
 		width: 0%;
 		height: 100%;
-		line-height: $progress-height;
+		line-height: 6px;
 		color: $progress-bar-color;
 		background-color: $progress-bar-bg;
 		box-shadow: none;
@@ -94,15 +94,12 @@
 	@include progress-bar-variant($progress-bar-danger-bg);
 }
 
-.progress__bar--aqua-gradient {
-	@include progress-bar-variant-gradient(#0683d3, #3ffeca);
-}
-.progress__bar--blue-pink {
-	@include progress-bar-variant-gradient(#189aff, #f21956);
+.progress__bar--danger {
+	@include progress-bar-variant($progress-bar-danger-bg);
 }
 
-.progress__bar--custom-color-1 {
-	@include progress-bar-variant(#fff7ca);
+.progress__bar--aqua-gradient {
+	@include progress-bar-variant-gradient(#0683d3, #3ffeca);
 }
 
 
@@ -296,7 +293,7 @@
 }
 
 
-/* Progress - Battery */
+/* Progress - */
 .progress--battery {
 	height: 20px;
 	margin-bottom: 18px;
@@ -343,247 +340,7 @@
 	}
 }
 
-/* Progress - Dashed */
-.progress--dashed {
-	height: 4px;
-	border-radius: 0;
 
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		left: 0;
-		right: 0;
-		height: 4px;
-		transform: scaleY(-1);
-		background-image: linear-gradient(
-			45deg,
-			$card-bg 0%,
-			$card-bg 3px,
-			transparent 3px,
-			transparent 12%,
-			$card-bg 12%,
-			$card-bg calc(12% + 3px),
-			transparent calc(12% + 3px),
-			transparent 25%,
-			$card-bg 25%,
-			$card-bg calc(25% + 3px),
-			transparent calc(25% + 3px),
-			transparent 41%,
-			$card-bg 41%,
-			$card-bg calc(41% + 3px),
-			transparent calc(41% + 3px),
-			transparent 57%,
-			$card-bg 57%,
-			$card-bg calc(57% + 3px),
-			transparent calc(57% + 3px),
-			transparent 77%,
-			$card-bg 77%,
-			$card-bg calc(77% + 3px),
-			transparent calc(77% + 3px),
-			transparent calc(100% - 3px),
-			$card-bg calc(100% - 3px),
-			$card-bg 100%
-		);
-
-		// MS Edge fallback
-		@supports (position:-ms-page) {
-			background-image: linear-gradient(
-				45deg,
-				$card-bg 0%,
-				$card-bg 3px,
-				transparent 3px,
-				transparent 12%,
-				$card-bg 12%,
-				$card-bg 13%,
-				transparent 13%,
-				transparent 25%,
-				$card-bg 25%,
-				$card-bg 26%,
-				transparent 26%,
-				transparent 41%,
-				$card-bg 41%,
-				$card-bg 42%,
-				transparent 42%,
-				transparent 57%,
-				$card-bg 57%,
-				$card-bg 58%,
-				transparent 58%,
-				transparent 77%,
-				$card-bg 77%,
-				$card-bg 78%,
-				transparent 78%,
-				transparent 99%,
-				$card-bg 99%,
-				$card-bg 100%
-			);
-		}
-
-		// IE 11 fallback
-		@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-			background-image: linear-gradient(
-				45deg,
-				$card-bg 0%,
-				$card-bg 3px,
-				transparent 3px,
-				transparent 12%,
-				$card-bg 12%,
-				$card-bg 13%,
-				transparent 13%,
-				transparent 25%,
-				$card-bg 25%,
-				$card-bg 26%,
-				transparent 26%,
-				transparent 41%,
-				$card-bg 41%,
-				$card-bg 42%,
-				transparent 42%,
-				transparent 57%,
-				$card-bg 57%,
-				$card-bg 58%,
-				transparent 58%,
-				transparent 77%,
-				$card-bg 77%,
-				$card-bg 78%,
-				transparent 78%,
-				transparent 99%,
-				$card-bg 99%,
-				$card-bg 100%
-			);
-		}
-	}
-
-
-	.progress__bar {
-		border-radius: 0;
-	}
-}
-
-
-/* Progress - Lines */
-.progress--lines {
-	height: 20px;
-	border-radius: 0;
-	padding-left: 1px;
-	padding-right: 1px;
-	position: relative;
-	transform: skewX(-10deg);
-
-	&::before {
-		content: "";
-		display: block;
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 3;
-		@include progress-bar-lines-holder($card-bg);
-	}
-
-	// Primary
-	.progress__bar {
-		line-height: 20px;
-		border-radius: 0;
-		position: relative;
-		z-index: 1;
-	}
-}
-
-
-/* Progress Table */
-.progress-table {
-	width: 100%;
-	max-width: 100%;
-	border-collapse: collapse;
-	padding: 0;
-	border-spacing: 0;
-	font-size: 12px;
-	line-height: 1.2em;
-	color: $headings-color;
-	font-family: $font-family-accent;
-	font-weight: bold;
-
-	tr + tr {
-		border-top: 36px solid transparent;
-	}
-
-	td {
-		vertical-align: middle;
-	}
-}
-.progress-table--sm-space {
-
-	tr + tr {
-		border-top-width: 28px;
-	}
-}
-	.progress-table__progress-bar {
-		width: 27%;
-
-		.progress {
-			margin-bottom: 0;
-			top: 0;
-		}
-	}
-	.progress-table__progress-bar--first {
-
-		.progress__bar {
-			margin-left: auto;
-		}
-	}
-	.progress-table__progress-label {
-		width: 34px;
-		text-align: center;
-		font-size: 11px;
-		padding: 0 10px;
-		color: $body-font-color;
-	}
-	.progress-table__progress-label--highlight {
-		color: $headings-color;
-	}
-	.progress-table__title {
-		width: 1px;
-		padding: 0 10px;
-		text-align: center;
-		white-space: nowrap;
-	}
-
-/* Progress Table: one progress bar */
-.progress-table--simple {
-
-	tr + tr {
-		border-top-width: 12px;
-
-		@media (min-width: 992px) {
-			border-top-width: 18px;
-		}
-	}
-
-	.progress-table__progress-bar {
-		width: 100%;
-	}
-	.progress-table__title {
-		text-align: left;
-		padding: 0 14px 0 0;
-	}
-}
-
-/* Progress Table: Full Width */
-.progress-table--fullwidth {
-
-	.progress-table__progress-label:first-child {
-		text-align: left;
-		padding-left: 0;
-	}
-	.progress-table__progress-label:last-child {
-		text-align: right;
-		padding-right: 0;
-	}
-	.progress-table__progress-bar {
-		width: 43%;
-	}
-}
 
 // For Demo
 .progress__bar-width-100 {

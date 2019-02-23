@@ -100,11 +100,6 @@ select.form-control {
 		height: 45px;
 		padding-top: 7px;
 		padding-bottom: 7px;
-
-		@if $template == 'esports' {
-			padding-top: 5px;
-			padding-bottom: 5px;
-		}
 	}
 
 	&:not([size]):not([multiple]) {
@@ -198,76 +193,6 @@ select.form-control--clean {
 			}
 		}
 	}
-
-	.form-group__avatar-wrapper {
-		font-style: normal;
-
-		&:hover {
-			cursor: pointer;
-		}
-
-		.form-group__avatar-img {
-			position: relative;
-			display: inline-block;
-
-			&::before {
-				content: "\f067";
-				display: block;
-				position: absolute;
-				right: 0;
-				top: 0;
-				width: 24px;
-				height: 24px;
-				border-radius: 12px;
-				background-color: $color-2;
-				color: $headings-color;
-				font-family: 'FontAwesome';
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				text-align: center;
-				font-size: 12px;
-				font-weight: 400;
-			}
-		}
-	}
-
-	.form-group__avatar--center {
-		text-align: center;
-
-		@media (min-width: 768px) {
-			float: none;
-			width: 50%;
-			margin: 0 auto;
-		}
-
-		img {
-			margin: 0 0 13px 0;
-			border: 1px solid $card-border-color;
-		}
-
-		.form-group__label {
-			display: block;
-			text-align: center;
-
-			h6 {
-				text-transform: uppercase;
-				font-size: 12px;
-				line-height: 1.2em;
-				margin-bottom: .35em;
-			}
-
-			span {
-				display: block;
-				font-size: 10px;
-				line-height: 1.2em;
-				text-transform: uppercase;
-				font-weight: 700;
-				font-family: $font-family-accent;
-				color: $body-font-color;
-			}
-		}
-	}
-
 		.form-group__label {
 			display: inline-block;
 			vertical-align: middle;
@@ -287,7 +212,7 @@ select.form-control--clean {
 
 	.form-group__upload {
 
-		@if $template == 'football' {
+		@if $template == football {
 			padding-top: 10px;
 
 			@media (min-width: 768px) {
@@ -371,7 +296,6 @@ select.form-control--clean {
 	input[type="checkbox"] {
 
 		&:checked + .checkbox-indicator {
-			background-image: none !important;
 			background-color: $color-primary-darken;
 			background-image: none;
 			border-color: $checkbox-border;
@@ -410,9 +334,9 @@ select.form-control--clean {
 
 		&:checked + .radio-indicator {
 
-			@if $template == 'soccer' {
+			@if $template == soccer {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%2338a9ff'/%3E%3C/svg%3E");
-			} @else if $template == 'football' {
+			} @else if $template == football {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23f92552'/%3E%3C/svg%3E");
 			} @else {
 				background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='%23ffcc00'/%3E%3C/svg%3E");

@@ -20,63 +20,48 @@
 	/* ----------------------------------------------------------- */
 	/*  Predefined Variables
 	/* ----------------------------------------------------------- */
-	var $template_var = $('body').attr('class');
-	var $color_primary = '#ffdc11';
-	var $main_nav     = $('.main-nav');
-	var $circular_bar = $('.circular__bar');
-	var $gmap         = $('.gm-map');
-	var $mp_single    = $('.mp_single-img');
-	var $mp_gallery   = $('.mp_gallery');
-	var $mp_iframe    = $('.mp_iframe');
-	var $post_fitRows = $('.post-grid--fitRows');
-	var $post_masonry = $('.post-grid--masonry');
-	var $hero_posts_grid_masonry = $('.js-hero-post-grid-masonry');
-	var $post_masonry_filter = $('.post-grid--masonry-filter');
-	var $team_album   = $('.js-album-masonry');
-	var $slick_featured_slider   = $('.posts--slider-featured');
-	var $slick_featured_carousel = $('.featured-carousel');
-	var $slick_video_carousel = $('.video-carousel');
-	var $slick_team_roster = $('.team-roster--slider');
-	var $slick_awards = $('.awards--slider');
-	var $slick_player_info = $('.player-info');
-	var $slick_product = $('.product__slider');
-	var $slick_product_soccer = $('.product__slider-soccer');
-	var $slick_team_roster_card = $('.team-roster--card-slider');
-	var $slick_team_roster_with_nav = $('.js-team-roster--slider-with-nav');
-	var $slick_team_roster_case = $('.team-roster--case-slider');
-	var $slick_team_roster_grid_slider = $('.js-team-roster--grid-sm');
-	var $slick_team_roster_card_compact = $('.js-team-roster--card-compact');
-	var $slick_team_tournaments_carousel = $('.js-team-tournaments-carousel');
-	var $slick_player_news_carousel = $('.js-posts-carousel');
-	var $slick_player_achievements_carousel = $('.js-alc-achievements-carousel');
-	var $slick_hero_slider = $('.hero-slider');
-	var $slick_hero_slider_football = $('.posts--slider-top-news');
-	var $slick_slider_var_width = $('.posts--slider-var-width');
-	var $slick_team_video_player = $('.js-alc-video-player');
-	var $chart_games_history = $('#games-history');
-	var $chart_games_history_soccer = $('#games-history-soccer');
-	var $chart_games_history_esports = $('#games-history-esports');
-	var $chart_points_history = $('#points-history');
-	var $chart_points_history_soccer = $('#points-history-soccer');
-	var $chart_points_history_football = $('#points-history-football');
-	var $chart_yearly_history_esports = $('#yearly-history-esports');
-	var $chart_horizontal_bars_esports = $('#chart-horizontal-bars-esports');
-	var $chart_doughnut_esports = $('#chart-doughnut-esports');
-	var $chart_player_stats = $('#player-stats');
-	var $content_filter = $('.content-filter');
-	var $marquee = $('.marquee');
-	var $range_slider = $('#slider-range');
-	var $insta_feed = $('#instagram-feed');
-	var $insta_feed_alt = $('#instagram-feed-alt');
-	var $insta_feed_section = $('#instagram-feed-section');
-	var $social_counters = $('.widget-social');
-	var $twitch_streams = $('.twitch-streams');
-	var posts_filterable = $('.js-posts--filterable');
+	var $template_var = $('body').attr('class'),
+			$color_primary = '#ffdc11',
+			$main_nav     = $('.main-nav'),
+			$circular_bar = $('.circular__bar'),
+			$gmap         = $('.gm-map'),
+			$mp_single    = $('.mp_single-img'),
+			$mp_gallery   = $('.mp_gallery'),
+			$mp_iframe    = $('.mp_iframe'),
+			$post_fitRows = $('.post-grid--fitRows'),
+			$post_masonry = $('.post-grid--masonry'),
+			$post_masonry_filter = $('.post-grid--masonry-filter'),
+			$team_album   = $('.album'),
+			$slick_featured_slider   = $('.posts--slider-featured'),
+			$slick_featured_carousel = $('.featured-carousel'),
+			$slick_video_carousel = $('.video-carousel'),
+			$slick_team_roster = $('.team-roster--slider'),
+			$slick_awards = $('.awards--slider'),
+			$slick_player_info = $('.player-info'),
+			$slick_product = $('.product__slider'),
+			$slick_product_soccer = $('.product__slider-soccer'),
+			$slick_team_roster_card = $('.team-roster--card-slider'),
+			$slick_team_roster_case = $('.team-roster--case-slider'),
+			$slick_team_roster_grid_slider = $('.js-team-roster--grid-sm'),
+			$slick_team_roster_card_compact = $('.js-team-roster--card-compact'),
+			$slick_hero_slider = $('.hero-slider'),
+			$slick_hero_slider_football = $('.posts--slider-top-news'),
+			$slick_slider_var_width = $('.posts--slider-var-width'),
+			$chart_games_history = $('#games-history'),
+			$chart_games_history_soccer = $('#games-history-soccer'),
+			$chart_points_history = $('#points-history'),
+			$chart_points_history_soccer = $('#points-history-soccer'),
+			$chart_points_history_football = $('#points-history-football'),
+			$chart_player_stats = $('#player-stats'),
+			$content_filter = $('.content-filter'),
+			$marquee = $('.marquee'),
+			$range_slider = $('#slider-range'),
+			$insta_feed = $('#instagram-feed'),
+			$insta_feed_alt = $('#instagram-feed-alt'),
+			$social_counters = $('.widget-social');
 
 	if ( $template_var == 'template-soccer' ) {
 		$color_primary = '#1892ed';
-	} else if ( $template_var == 'template-esports') {
-		$color_primary = '#00ff5b';
 	} else if ( $template_var == 'template-football' ) {
 		$color_primary = '#f92552';
 	}
@@ -123,16 +108,15 @@
 
 			if ( $main_nav.exists() ) {
 
-				var $top_nav     = $('.nav-account');
-				var $top_nav_li  = $('.nav-account > li');
-				var $social      = $('.social-links--main-nav');
-				var $info_nav_li = $('.info-block--header > li');
-				var $info_nav_li_onclick = $('.js-info-block__item--onclick');
-				var $wrapper     = $('.site-wrapper');
-				var $nav_list    = $('.main-nav__list');
-				var $nav_list_li = $('.main-nav__list > li');
-				var $toggle_btn  = $('#header-mobile__toggle');
-				var $pushy_btn   = $('.pushy-panel__toggle');
+				var $top_nav     = $('.nav-account'),
+						$top_nav_li  = $('.nav-account > li'),
+						$social      = $('.social-links--main-nav'),
+						$info_nav_li = $('.info-block--header > li'),
+						$wrapper     = $('.site-wrapper'),
+						$nav_list    = $('.main-nav__list'),
+						$nav_list_li = $('.main-nav__list > li'),
+						$toggle_btn  = $('#header-mobile__toggle'),
+						$pushy_btn   = $('.pushy-panel__toggle');
 
 				// Clone Search Form
 				var $header_search_form = $('.header-search-form').clone();
@@ -170,13 +154,6 @@
 
 				// Add arrow and class if Info Header Nav has submenu
 				$info_nav_li.has('ul').addClass('has-children');
-
-				if ( $info_nav_li_onclick.exists() ){
-					$info_nav_li_onclick.prepend('<span class="info-block__menu-icon"></span>');
-					$info_nav_li_onclick.on('click', '.info-block__menu-icon', function() {
-						$(this).toggleClass('active');
-					});
-				}
 
 				// Mobile Menu Toggle
 				$toggle_btn.on('click', function(){
@@ -244,23 +221,16 @@
 		circularBar: function() {
 
 			var $track_color = '#ecf0f6';
-			var $track_line_cap = 'square';
-
-			if ( $template_var == 'template-esports' ) {
-				$track_line_cap = 'round';
-			}
 
 			if ( $template_var == 'template-football' ) {
 				$track_color = '#4e4d73';
-			} else if ( $template_var == 'template-esports' ) {
-				$track_color = '#4b3b60';
 			}
 
 			if ( $circular_bar.exists() ) {
 				$circular_bar.easyPieChart({
 					barColor: $color_primary,
 					trackColor: $track_color,
-					lineCap: $track_line_cap,
+					lineCap: 'square',
 					lineWidth: 8,
 					size: 90,
 					scaleLength: 0
@@ -324,11 +294,6 @@
 							index: 'vimeo.com/',
 							id: '/',
 							src: '//player.vimeo.com/video/%id%?autoplay=1'
-						},
-						twitch: {
-							index: 'twitch.tv/',
-							id: 'videos/',
-							src: '//player.twitch.tv/?autoplay=false&video=v%id%'
 						},
 						gmaps: {
 							index: '//maps.google.',
@@ -410,48 +375,6 @@
 						masonry_grid.isotope({
 							filter: filterValue
 						});
-					});
-				});
-			}
-
-			if (posts_filterable.exists() ) {
-				var isotopeGrid = posts_filterable.imagesLoaded(function () {
-
-					var filter = $('.js-isotope-filter');
-
-					// init Isotope after all images have loaded
-					isotopeGrid.isotope({
-						filter: '*',
-						itemSelector: '.post-grid__item',
-						layoutMode: 'fitRows',
-						masonry: {
-							columnWidth: '.post-grid__item'
-						}
-					});
-
-					// filter items on button click
-					filter.on('click', '.isotope-filter__link', function () {
-						var filterValue = $(this).attr('data-filter');
-						filter.find('.isotope-filter__link').removeClass('isotope-filter__link--active');
-						$(this).addClass('isotope-filter__link--active');
-						isotopeGrid.isotope({
-							filter: filterValue
-						});
-					});
-				});
-			}
-
-
-			if ( $hero_posts_grid_masonry.exists() ) {
-				var masonryHeroPostsGrid = $hero_posts_grid_masonry.imagesLoaded( function() {
-					// init Isotope after all images have loaded
-					masonryHeroPostsGrid.isotope({
-						itemSelector: '.post-grid__item',
-						layoutMode: 'masonry',
-						percentPosition: true,
-						masonry: {
-							columnWidth: '.post-grid__sizer'
-						}
 					});
 				});
 			}
@@ -729,28 +652,11 @@
 			// Products Slider
 			if ( $slick_product.exists() ) {
 
-				if ( $template_var == 'template-esports' ) {
-
-					var $status = $('.product__slider-paging');
-					$slick_product.on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
-						//currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-						var i = (currentSlide ? currentSlide : 0) + 1;
-						$status.text(i + ' / ' + slick.slideCount);
-					});
-
-					$slick_product.slick({
-						slidesToShow: 1,
-						dots: false,
-						appendArrows: $('.js-product__slider-arrows')
-					});
-
-				} else {
-					$slick_product.slick({
-						slidesToShow: 1,
-						arrows: false,
-						dots: true,
-					});
-				}
+				$slick_product.slick({
+					slidesToShow: 1,
+					arrows: false,
+					dots: true,
+				});
 			}
 
 
@@ -792,68 +698,6 @@
 			}
 
 
-			// Team Roster - with Nav
-			if ( $slick_team_roster_with_nav.exists() ) {
-
-				$slick_team_roster_with_nav.slick({
-					slidesToShow: 1,
-					arrows: true,
-					dots: false,
-					speed: 600,
-					cssEase: 'cubic-bezier(0.23, 1, 0.32, 1)',
-					asNavFor: '.js-team-roster-nav',
-					responsive: [
-						{
-							breakpoint: 992,
-							settings: {
-								arrows: false,
-							}
-						}
-					]
-				});
-
-				$('.js-team-roster-nav').slick({
-					slidesToShow: 6,
-					slidesToScroll: 1,
-					asNavFor: $slick_team_roster_with_nav,
-					focusOnSelect: true,
-					arrows: false,
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								slidesToShow: 5,
-							}
-						},
-						{
-							breakpoint: 992,
-							settings: {
-								slidesToShow: 4,
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								slidesToShow: 3,
-							}
-						},
-						{
-							breakpoint: 540,
-							settings: {
-								slidesToShow: 2,
-							}
-						},
-						{
-							breakpoint: 480,
-							settings: {
-								slidesToShow: 1,
-							}
-						}
-					]
-				});
-			}
-
-
 			// Team Roster - Case Slider
 			if ( $slick_team_roster_case.exists() ) {
 
@@ -879,102 +723,6 @@
 							}
 						}
 					]
-				});
-			}
-
-
-			// Team - Tournaments Carousel
-			if ( $slick_team_tournaments_carousel.exists() ) {
-
-				$slick_team_tournaments_carousel.slick({
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					infinite: true,
-					autoplay: false,
-					autoplaySpeed: 5000,
-					appendArrows: $('.js-team-tournaments-carousel-header'),
-
-					responsive: [
-						{
-							breakpoint: 992,
-							settings: {
-								arrows: false,
-								slidesToShow: 2,
-								infinite: true
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								arrows: false,
-								slidesToShow: 2,
-								infinite: false
-							}
-						},
-						{
-							breakpoint: 576,
-							settings: {
-								arrows: false,
-								slidesToShow: 1,
-								infinite: false
-							}
-						}
-					]
-				});
-			}
-
-
-			// Player - Related News
-			if ( $slick_player_news_carousel.exists() ) {
-
-				$slick_player_news_carousel.slick({
-					slidesToShow: 2,
-					slidesToScroll: 1,
-					infinite: true,
-					autoplay: false,
-					autoplaySpeed: 5000,
-					appendArrows: $('.js-posts-carousel-header'),
-
-					responsive: [
-						{
-							breakpoint: 992,
-							settings: {
-								arrows: false,
-								slidesToShow: 2,
-								infinite: true
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								arrows: false,
-								slidesToShow: 2,
-								infinite: false
-							}
-						},
-						{
-							breakpoint: 576,
-							settings: {
-								arrows: false,
-								slidesToShow: 1,
-								infinite: false
-							}
-						}
-					]
-				});
-			}
-
-
-			// Achievement Carousel
-			if ( $slick_player_achievements_carousel.exists() ) {
-
-				$slick_player_achievements_carousel.slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					infinite: true,
-					autoplay: true,
-					autoplaySpeed: 5000,
-					appendArrows: $('.js-alc-achievements-carousel-header')
 				});
 			}
 
@@ -1116,50 +864,6 @@
 						}
 					]
 				});
-			}
-
-
-
-			// Team - Video Player
-			if ( $slick_team_video_player.exists() ) {
-
-				$slick_team_video_player.slick({
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					arrows: false,
-					fade: true,
-					asNavFor: '.alc-video-player__video-list'
-				});
-
-				$('.alc-video-player__video-list').slick({
-					slidesToShow: 3,
-					slidesToScroll: 1,
-					autoplay: true,
-					autoplaySpeed: 8000,
-					asNavFor: $slick_team_video_player,
-					dots: false,
-					appendArrows: $('.js-alc-video-player__header'),
-					focusOnSelect: true,
-					centerMode: false,
-					vertical: true,
-					verticalSwiping: true,
-					responsive: [
-						{
-							breakpoint: 1200,
-							settings: {
-								slidesToShow: 2
-							}
-						},
-						{
-							breakpoint: 992,
-							settings: {
-								arrows: false,
-								slidesToShow: 3
-							}
-						}
-					]
-				});
-
 			}
 
 		},
@@ -1327,81 +1031,6 @@
 				var ctx2 = $chart_games_history_soccer;
 				var gamesHistory2 = new Chart(ctx2, data2);
 				document.getElementById('gamesHistoryLegendSoccer').innerHTML = gamesHistory2.generateLegend();
-			}
-
-
-
-			if ( $chart_games_history_esports.exists() ) {
-				var dataEsports = {
-					type: 'bar',
-					data: {
-						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-						datasets: [{
-							label: 'WON',
-							data: [680, 528, 592, 616, 720, 496, 640, 568, 600, 598, 607, 558],
-							backgroundColor: "#00ff5b",
-						}, {
-							label: 'LOST',
-							data: [610, 487, 569, 671, 622, 554, 610, 514, 674, 487, 657, 511],
-							backgroundColor: "#6a3bc0"
-						}]
-					},
-					options: {
-						legend: {
-							display: false,
-							labels: {
-								boxWidth: 8,
-								fontSize: 9,
-								fontColor: '#a59cae',
-								fontFamily: 'Open Sans, sans-serif',
-								padding: 20,
-							}
-						},
-						tooltips: {
-							backgroundColor: "#6a3bc0",
-							titleFontSize: 0,
-							titleSpacing: 0,
-							titleMarginBottom: 0,
-							bodyFontFamily: 'Open Sans, sans-serif',
-							bodyFontSize: 9,
-							bodySpacing: 0,
-							cornerRadius: 2,
-							xPadding: 10,
-							displayColors: false,
-						},
-						scales: {
-							xAxes: [{
-								barThickness: 14,
-								gridLines: {
-									display:false,
-									color: "rgba(255,255,255,0)",
-								},
-								ticks: {
-									fontColor: '#9a9da2',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-								},
-							}],
-							yAxes: [{
-								gridLines: {
-									display: false,
-									color: "rgba(255,255,255,0)",
-								},
-								ticks: {
-									beginAtZero: true,
-									fontColor: '#9a9da2',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-									padding: 20
-								}
-							}]
-						}
-					},
-				};
-
-				var ctxEsports = $chart_games_history_esports;
-				var gamesHistoryEsports = new Chart(ctxEsports, dataEsports);
-				document.getElementById('gamesHistoryLegendEsports').innerHTML = gamesHistoryEsports.generateLegend();
 			}
 
 
@@ -1665,7 +1294,6 @@
 							xAxes: [{
 								gridLines: {
 									color: "#3c3b5b",
-									zeroLineColor: '#3c3b5b'
 								},
 								ticks: {
 									fontColor: '#9e9caa',
@@ -1676,7 +1304,6 @@
 							yAxes: [{
 								gridLines: {
 									color: "#3c3b5b",
-									zeroLineColor: '#3c3b5b'
 								},
 								ticks: {
 									beginAtZero: true,
@@ -1694,301 +1321,6 @@
 				var gamesHistory5 = new Chart(ctx5, data5);
 
 				document.getElementById('gamesPoinstsLegendFootball').innerHTML = gamesHistory5.generateLegend();
-			}
-
-
-			if ( $chart_yearly_history_esports.exists() ) {
-				var data6 = {
-					type: 'line',
-					data: {
-						labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-						datasets: [{
-							label: 'Kills',
-							fill: false,
-							lineTension: 0,
-							borderWidth: 4,
-							backgroundColor: "#00fe5b",
-							borderColor: "#00fe5b",
-							borderCapStyle: 'butt',
-							borderDashOffset: 0.0,
-							borderJoinStyle: 'bevel',
-							pointRadius: 5,
-							pointBorderWidth: 5,
-							pointBackgroundColor: "#fff",
-							pointHoverRadius: 5,
-							pointHoverBackgroundColor: "#fff",
-							pointHoverBorderColor: "#00fe5b",
-							pointHoverBorderWidth: 5,
-							pointHitRadius: 10,
-							data: [311, 447, 290, 367, 562, 420, 468, 290, 444, 343, 420, 592],
-							spanGaps: false,
-						},
-						{
-							label: 'Deaths',
-							fill: false,
-							lineTension: 0,
-							borderWidth: 4,
-							backgroundColor: "#6a3bc0",
-							borderColor: "#6a3bc0",
-							borderCapStyle: 'butt',
-							borderDashOffset: 0.0,
-							borderJoinStyle: 'bevel',
-							pointRadius: 5,
-							pointBorderWidth: 5,
-							pointBackgroundColor: "#fff",
-							pointHoverRadius: 5,
-							pointHoverBackgroundColor: "#fff",
-							pointHoverBorderColor: "#6a3bc0",
-							pointHoverBorderWidth: 5,
-							pointHitRadius: 10,
-							data: [287, 145, 388, 189, 373, 231, 320, 225, 311, 109, 62, 346],
-							spanGaps: false,
-						},
-						{
-							label: 'Assists',
-							fill: false,
-							lineTension: 0,
-							borderWidth: 4,
-							backgroundColor: "#fff600",
-							borderColor: "#fff600",
-							borderCapStyle: 'butt',
-							borderDashOffset: 0.0,
-							borderJoinStyle: 'bevel',
-							pointRadius: 5,
-							pointBorderWidth: 5,
-							pointBackgroundColor: "#fff",
-							pointHoverRadius: 5,
-							pointHoverBackgroundColor: "#fff",
-							pointHoverBorderColor: "#fff600",
-							pointHoverBorderWidth: 5,
-							pointHitRadius: 10,
-							data: [613, 503, 527, 693, 636, 619, 539, 542, 364, 497, 693, 675],
-							spanGaps: false,
-						}]
-					},
-					options: {
-						legend: {
-							display: false,
-							labels: {
-								boxWidth: 8,
-								fontSize: 9,
-								fontColor: '#31404b',
-								fontFamily: 'Open Sans, sans-serif',
-								padding: 20,
-							}
-						},
-						tooltips: {
-							backgroundColor: "rgba(0,0,0,0.8)",
-							titleFontSize: 0,
-							titleSpacing: 0,
-							titleMarginBottom: 0,
-							bodyFontFamily: 'Open Sans, sans-serif',
-							bodyFontSize: 9,
-							bodySpacing: 0,
-							cornerRadius: 2,
-							xPadding: 10,
-							displayColors: false,
-						},
-						scales: {
-							xAxes: [{
-								gridLines: {
-									color: "#3f3251",
-									zeroLineColor: '#3f3251'
-								},
-								ticks: {
-									fontColor: '#8c8297',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-								},
-							}],
-							yAxes: [{
-								gridLines: {
-									color: "#3f3251",
-									zeroLineColor: '#3f3251'
-								},
-								ticks: {
-									beginAtZero: true,
-									fontColor: '#8c8297',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-									padding: 20
-								}
-							}]
-						}
-					},
-				};
-
-				var ctx6 = $chart_yearly_history_esports;
-				var gamesHistory6 = new Chart(ctx6, data6);
-
-				document.getElementById('gamesYearlyLegendEsports').innerHTML = gamesHistory6.generateLegend();
-			}
-
-
-			if ( $chart_horizontal_bars_esports.exists() ) {
-				var data7 = {
-					type: 'horizontalBar',
-					data: {
-						labels: ["2018", "2017", "2016", "2015", "2014"],
-						datasets: [{
-							label: 'Assists',
-							data: [85, 32, 63, 76, 45],
-							backgroundColor: "#fff600",
-							hoverBackgroundColor: "#fff600",
-							fill: true,
-						}]
-					},
-					options: {
-						legend: {
-							display: false,
-							labels: {
-								boxWidth: 8,
-								fontSize: 9,
-								fontColor: '#31404b',
-								fontFamily: 'Open Sans, sans-serif',
-								padding: 20,
-							}
-						},
-						tooltips: {
-							backgroundColor: "rgba(0,0,0,0.8)",
-							titleFontSize: 0,
-							titleSpacing: 0,
-							titleMarginBottom: 0,
-							bodyFontFamily: 'Open Sans, sans-serif',
-							bodyFontSize: 9,
-							bodySpacing: 0,
-							cornerRadius: 2,
-							xPadding: 10,
-							displayColors: false,
-						},
-						scales: {
-							xAxes: [{
-								gridLines: {
-									display: false,
-									color: "rgba(255,255,255,0)",
-								},
-								ticks: {
-									fontColor: '#8c8297',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-								},
-							}],
-							yAxes: [{
-								barThickness: 24,
-								gridLines: {
-									display: false,
-									color: "rgba(255,255,255,0)",
-								},
-								ticks: {
-									fontColor: '#8c8297',
-									fontFamily: 'Open Sans, sans-serif',
-									fontSize: 10,
-									padding: 20,
-								}
-							}]
-						}
-					},
-				};
-
-				var ctx7 = $chart_horizontal_bars_esports;
-				var gamesHistory7 = new Chart(ctx7, data7);
-			}
-
-
-			if ( $chart_doughnut_esports.exists() ) {
-
-				Chart.pluginService.register({
-					beforeDraw: function (chart) {
-						if (chart.config.options.elements.center) {
-							//Get ctx from string
-							var ctx = chart.chart.ctx;
-
-							//Get options from the center object in options
-							var centerConfig = chart.config.options.elements.center;
-							var fontStyle = centerConfig.fontStyle || 'Roboto Condensed, sans-serif';
-							var txt = centerConfig.text;
-							var color = centerConfig.color || '#fff';
-							var fontWeight = centerConfig.fontWeight || 'bold';
-							var sidePadding = centerConfig.sidePadding || 20;
-							var sidePaddingCalculated = (sidePadding/100) * (chart.innerRadius * 2);
-							//Start with a base font of 56px
-							ctx.font = "56px " + fontStyle;
-
-							//Get the width of the string and also the width of the element minus 10 to give it 5px side padding
-							var stringWidth = ctx.measureText(txt).width;
-							var elementWidth = (chart.innerRadius * 2) - sidePaddingCalculated;
-
-							// Find out how much the font can grow in width.
-							var widthRatio = elementWidth / stringWidth;
-							var newFontSize = Math.floor(30 * widthRatio);
-							var elementHeight = (chart.innerRadius * 2);
-
-							// Pick a new font size so it will not be larger than the height of label.
-							var fontSizeToUse = Math.min(newFontSize, elementHeight);
-
-							//Set font settings to draw it correctly.
-							ctx.textAlign = 'center';
-							ctx.textBaseline = 'middle';
-							var centerX = ((chart.chartArea.left + chart.chartArea.right) / 2);
-							var centerY = ((chart.chartArea.top + chart.chartArea.bottom) / 2);
-							ctx.font = fontWeight + " " + fontSizeToUse + "px " + fontStyle;
-							ctx.fillStyle = color;
-
-							//Draw text in center
-							ctx.fillText(txt, centerX, centerY);
-						}
-					}
-				});
-
-				var data8 = {
-					type: 'doughnut',
-					data: {
-						labels: ["Statistic 01", "Statistic 02", "Statistic 03"],
-						datasets: [{
-							label: 'Assists',
-							data: [118, 120, 55],
-							backgroundColor: ["#6a3bc0", "#00ff5b", "#fff600"],
-							hoverBackgroundColor: ["#6a3bc0", "#00ff5b", "#fff600"],
-							borderWidth: 0
-						}]
-					},
-					options: {
-						legend: {
-							display: false,
-							labels: {
-								boxWidth: 8,
-								fontSize: 12,
-								fontColor: '#fff',
-								fontStyle: 'bold',
-								fontFamily: 'Roboto Condensed, sans-serif',
-								padding: 20,
-							}
-						},
-						tooltips: {
-							backgroundColor: "rgba(0,0,0,0.8)",
-							bodyFontFamily: 'Roboto Condensed, sans-serif',
-							bodyFontSize: 10,
-							bodySpacing: 0,
-							cornerRadius: 2,
-							xPadding: 10,
-							displayColors: false,
-						},
-						cutoutPercentage: 90,
-						elements: {
-							center: {
-								text: '293K',
-								fontStyle: 'Roboto Condensed, sans-serif', // Default is Arial
-								sidePadding: 20,
-								fontWeight: 'bold',
-							}
-						}
-					}
-				};
-
-				var ctx8 = $chart_doughnut_esports;
-				var gamesHistory8 = new Chart(ctx8, data8);
-
-				document.getElementById('chartDoughnutLegendEsports').innerHTML = gamesHistory8.generateLegend();
 			}
 
 
@@ -2159,21 +1491,6 @@
 				insta_feed_alt.run();
 			}
 
-			// Instagram Page Section (fullwidth - eSports)
-			if ( $insta_feed_section.exists() ) {
-
-				var insta_feed_section = new Instafeed({
-					get: 'user',
-					target: 'instagram-feed-section',
-					userId: '2251271172',
-					accessToken: '',
-					limit: 10,
-					template: '<li class="widget-instagram__item"><a href="{{link}}" id="{{id}}" class="widget-instagram__link-wrapper" target="_blank"><span class="widget-instagram__plus-sign"><img src="{{image}}" alt="" class="widget-instagram__img" /></span></a></li>',
-					resolution: 'low_resolution'
-				});
-				insta_feed_section.run();
-			}
-
 		},
 
 
@@ -2196,14 +1513,6 @@
 
 					// Twitter
 					twitter_user: '',
-
-					// Twitch
-					twitch_username: '',
-					twitch_client_id: '',
-
-					// YouTube
-					youtube_user: '',
-					youtube_key: '',
 				});
 
 			}
@@ -2278,3 +1587,29 @@
 	});
 
 })(jQuery);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

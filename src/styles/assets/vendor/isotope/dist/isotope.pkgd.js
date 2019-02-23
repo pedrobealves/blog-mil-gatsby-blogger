@@ -1,28 +1,29 @@
 /*!
- * Isotope PACKAGED v3.0.6
+ * Isotope PACKAGED v3.0.1
  *
  * Licensed GPLv3 for open source use
  * or Isotope Commercial License for commercial use
  *
- * https://isotope.metafizzy.co
- * Copyright 2010-2018 Metafizzy
+ * http://isotope.metafizzy.co
+ * Copyright 2016 Metafizzy
  */
 
 /**
  * Bridget makes jQuery widgets
- * v2.0.1
+ * v2.0.0
  * MIT license
  */
 
 /* jshint browser: true, strict: true, undef: true, unused: true */
 
 ( function( window, factory ) {
-  // universal module definition
-  /*jshint strict: false */ /* globals define, module, require */
+  'use strict';
+  /* globals define: false, module: false, require: false */
+
   if ( typeof define == 'function' && define.amd ) {
     // AMD
     define( 'jquery-bridget/jquery-bridget',[ 'jquery' ], function( jQuery ) {
-      return factory( window, jQuery );
+      factory( window, jQuery );
     });
   } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
@@ -153,7 +154,7 @@ return jQueryBridget;
 }));
 
 /**
- * EvEmitter v1.1.0
+ * EvEmitter v1.0.3
  * Lil' event emitter
  * MIT License
  */
@@ -233,14 +234,13 @@ proto.emitEvent = function( eventName, args ) {
   if ( !listeners || !listeners.length ) {
     return;
   }
-  // copy over to avoid interference if .off() in listener
-  listeners = listeners.slice(0);
+  var i = 0;
+  var listener = listeners[i];
   args = args || [];
   // once stuff
   var onceListeners = this._onceEvents && this._onceEvents[ eventName ];
 
-  for ( var i=0; i < listeners.length; i++ ) {
-    var listener = listeners[i]
+  while ( listener ) {
     var isOnce = onceListeners && onceListeners[ listener ];
     if ( isOnce ) {
       // remove listener
@@ -251,14 +251,12 @@ proto.emitEvent = function( eventName, args ) {
     }
     // trigger listener
     listener.apply( this, args );
+    // get next listener
+    i += isOnce ? 0 : 1;
+    listener = listeners[i];
   }
 
   return this;
-};
-
-proto.allOff = function() {
-  delete this._events;
-  delete this._onceEvents;
 };
 
 return EvEmitter;
@@ -266,19 +264,22 @@ return EvEmitter;
 }));
 
 /*!
- * getSize v2.0.3
+ * getSize v2.0.2
  * measure size of elements
  * MIT license
  */
 
-/* jshint browser: true, strict: true, undef: true, unused: true */
-/* globals console: false */
+/*jshint browser: true, strict: true, undef: true, unused: true */
+/*global define: false, module: false, console: false */
 
 ( function( window, factory ) {
-  /* jshint strict: false */ /* globals define, module */
+  'use strict';
+
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'get-size/get-size',factory );
+    define( 'get-size/get-size',[],function() {
+      return factory();
+    });
   } else if ( typeof module == 'object' && module.exports ) {
     // CommonJS
     module.exports = factory();
@@ -353,7 +354,7 @@ function getStyle( elem ) {
   if ( !style ) {
     logError( 'Style returned ' + style +
       '. Are you running this code in a hidden iframe on Firefox? ' +
-      'See https://bit.ly/getsizebug1' );
+      'See http://bit.ly/getsizebug1' );
   }
   return style;
 }
@@ -379,8 +380,8 @@ function setup() {
   // -------------------------- box sizing -------------------------- //
 
   /**
-   * Chrome & Safari measure the outer-width on style.width on border-box elems
-   * IE11 & Firefox<29 measures the inner-width
+   * WebKit measures the outer-width on style.width on border-box elems
+   * IE & Firefox<29 measures the inner-width
    */
   var div = document.createElement('div');
   div.style.width = '200px';
@@ -392,11 +393,10 @@ function setup() {
   var body = document.body || document.documentElement;
   body.appendChild( div );
   var style = getStyle( div );
-  // round value for browser zoom. desandro/masonry#928
-  isBoxSizeOuter = Math.round( getStyleSize( style.width ) ) == 200;
-  getSize.isBoxSizeOuter = isBoxSizeOuter;
 
+  getSize.isBoxSizeOuter = isBoxSizeOuter = getStyleSize( style.width ) == 200;
   body.removeChild( div );
+
 }
 
 // -------------------------- getSize -------------------------- //
@@ -474,7 +474,7 @@ return getSize;
 });
 
 /**
- * matchesSelector v2.0.2
+ * matchesSelector v2.0.1
  * matchesSelector( element, '.selector' )
  * MIT license
  */
@@ -500,7 +500,7 @@ return getSize;
   'use strict';
 
   var matchesMethod = ( function() {
-    var ElemProto = window.Element.prototype;
+    var ElemProto = Element.prototype;
     // check for the standard method name first
     if ( ElemProto.matches ) {
       return 'matches';
@@ -528,7 +528,7 @@ return getSize;
 }));
 
 /**
- * Fizzy UI utils v2.0.7
+ * Fizzy UI utils v2.0.2
  * MIT license
  */
 
@@ -583,27 +583,22 @@ utils.modulo = function( num, div ) {
 
 // ----- makeArray ----- //
 
-var arraySlice = Array.prototype.slice;
-
 // turn element or nodeList into an array
 utils.makeArray = function( obj ) {
+  var ary = [];
   if ( Array.isArray( obj ) ) {
     // use object if already an array
-    return obj;
-  }
-  // return empty array if undefined or null. #6
-  if ( obj === null || obj === undefined ) {
-    return [];
-  }
-
-  var isArrayLike = typeof obj == 'object' && typeof obj.length == 'number';
-  if ( isArrayLike ) {
+    ary = obj;
+  } else if ( obj && typeof obj.length == 'number' ) {
     // convert nodeList to array
-    return arraySlice.call( obj );
+    for ( var i=0; i < obj.length; i++ ) {
+      ary.push( obj[i] );
+    }
+  } else {
+    // array of single index
+    ary.push( obj );
   }
-
-  // array of single index
-  return [ obj ];
+  return ary;
 };
 
 // ----- removeFrom ----- //
@@ -618,7 +613,7 @@ utils.removeFrom = function( ary, obj ) {
 // ----- getParent ----- //
 
 utils.getParent = function( elem, selector ) {
-  while ( elem.parentNode && elem != document.body ) {
+  while ( elem != document.body ) {
     elem = elem.parentNode;
     if ( matchesSelector( elem, selector ) ) {
       return elem;
@@ -682,21 +677,22 @@ utils.filterFindElements = function( elems, selector ) {
 // ----- debounceMethod ----- //
 
 utils.debounceMethod = function( _class, methodName, threshold ) {
-  threshold = threshold || 100;
   // original method
   var method = _class.prototype[ methodName ];
   var timeoutName = methodName + 'Timeout';
 
   _class.prototype[ methodName ] = function() {
     var timeout = this[ timeoutName ];
-    clearTimeout( timeout );
-
+    if ( timeout ) {
+      clearTimeout( timeout );
+    }
     var args = arguments;
+
     var _this = this;
     this[ timeoutName ] = setTimeout( function() {
       method.apply( _this, args );
       delete _this[ timeoutName ];
-    }, threshold );
+    }, threshold || 100 );
   };
 };
 
@@ -705,8 +701,7 @@ utils.debounceMethod = function( _class, methodName, threshold ) {
 utils.docReady = function( callback ) {
   var readyState = document.readyState;
   if ( readyState == 'complete' || readyState == 'interactive' ) {
-    // do async to allow for other scripts to run. metafizzy/flickity#441
-    setTimeout( callback );
+    callback();
   } else {
     document.addEventListener( 'DOMContentLoaded', callback );
   }
@@ -754,7 +749,7 @@ utils.htmlInit = function( WidgetClass, namespace ) {
       }
       // initialize
       var instance = new WidgetClass( elem, options );
-      // make available via $().data('namespace')
+      // make available via $().data('layoutname')
       if ( jQuery ) {
         jQuery.data( elem, namespace, instance );
       }
@@ -904,16 +899,13 @@ proto.getPosition = function() {
   var isOriginTop = this.layout._getOption('originTop');
   var xValue = style[ isOriginLeft ? 'left' : 'right' ];
   var yValue = style[ isOriginTop ? 'top' : 'bottom' ];
-  var x = parseFloat( xValue );
-  var y = parseFloat( yValue );
   // convert percent to pixels
   var layoutSize = this.layout.size;
-  if ( xValue.indexOf('%') != -1 ) {
-    x = ( x / 100 ) * layoutSize.width;
-  }
-  if ( yValue.indexOf('%') != -1 ) {
-    y = ( y / 100 ) * layoutSize.height;
-  }
+  var x = xValue.indexOf('%') != -1 ?
+    ( parseFloat( xValue ) / 100 ) * layoutSize.width : parseInt( xValue, 10 );
+  var y = yValue.indexOf('%') != -1 ?
+    ( parseFloat( yValue ) / 100 ) * layoutSize.height : parseInt( yValue, 10 );
+
   // clean up 'auto' or other non-integer values
   x = isNaN( x ) ? 0 : x;
   y = isNaN( y ) ? 0 : y;
@@ -976,7 +968,9 @@ proto._transitionTo = function( x, y ) {
   var curX = this.position.x;
   var curY = this.position.y;
 
-  var didNotMove = x == this.position.x && y == this.position.y;
+  var compareX = parseInt( x, 10 );
+  var compareY = parseInt( y, 10 );
+  var didNotMove = compareX === this.position.x && compareY === this.position.y;
 
   // save end position
   this.setPosition( x, y );
@@ -1019,8 +1013,8 @@ proto.goTo = function( x, y ) {
 proto.moveTo = proto._transitionTo;
 
 proto.setPosition = function( x, y ) {
-  this.position.x = parseFloat( x );
-  this.position.y = parseFloat( y );
+  this.position.x = parseInt( x, 10 );
+  this.position.y = parseInt( y, 10 );
 };
 
 // ----- transition ----- //
@@ -1325,7 +1319,7 @@ return Item;
 }));
 
 /*!
- * Outlayer v2.1.1
+ * Outlayer v2.1.0
  * the brains and guts of a layout library
  * MIT license
  */
@@ -2273,7 +2267,7 @@ return Outlayer;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/item',[
+    define( 'isotope/js/item',[
         'outlayer/outlayer'
       ],
       factory );
@@ -2351,7 +2345,7 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-mode',[
+    define( 'isotope/js/layout-mode',[
         'get-size/get-size',
         'outlayer/outlayer'
       ],
@@ -2501,9 +2495,9 @@ return Item;
 }));
 
 /*!
- * Masonry v4.2.1
+ * Masonry v4.1.0
  * Cascading grid layout library
- * https://masonry.desandro.com
+ * http://masonry.desandro.com
  * MIT License
  * by David DeSandro
  */
@@ -2513,7 +2507,7 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'masonry-layout/masonry',[
+    define( 'masonry/masonry',[
         'outlayer/outlayer',
         'get-size/get-size'
       ],
@@ -2543,9 +2537,7 @@ return Item;
   // isFitWidth -> fitWidth
   Masonry.compatOptions.fitWidth = 'isFitWidth';
 
-  var proto = Masonry.prototype;
-
-  proto._resetLayout = function() {
+  Masonry.prototype._resetLayout = function() {
     this.getSize();
     this._getMeasurement( 'columnWidth', 'outerWidth' );
     this._getMeasurement( 'gutter', 'outerWidth' );
@@ -2558,10 +2550,9 @@ return Item;
     }
 
     this.maxY = 0;
-    this.horizontalColIndex = 0;
   };
 
-  proto.measureColumns = function() {
+  Masonry.prototype.measureColumns = function() {
     this.getContainerWidth();
     // if columnWidth is 0, default to outerWidth of first item
     if ( !this.columnWidth ) {
@@ -2586,7 +2577,7 @@ return Item;
     this.cols = Math.max( cols, 1 );
   };
 
-  proto.getContainerWidth = function() {
+  Masonry.prototype.getContainerWidth = function() {
     // container is parent if fit width
     var isFitWidth = this._getOption('fitWidth');
     var container = isFitWidth ? this.element.parentNode : this.element;
@@ -2596,7 +2587,7 @@ return Item;
     this.containerWidth = size && size.innerWidth;
   };
 
-  proto._getItemLayoutPosition = function( item ) {
+  Masonry.prototype._getItemLayoutPosition = function( item ) {
     item.getSize();
     // how many columns does this brick span
     var remainder = item.size.outerWidth % this.columnWidth;
@@ -2604,41 +2595,33 @@ return Item;
     // round if off by 1 pixel, otherwise use ceil
     var colSpan = Math[ mathMethod ]( item.size.outerWidth / this.columnWidth );
     colSpan = Math.min( colSpan, this.cols );
-    // use horizontal or top column position
-    var colPosMethod = this.options.horizontalOrder ?
-      '_getHorizontalColPosition' : '_getTopColPosition';
-    var colPosition = this[ colPosMethod ]( colSpan, item );
+
+    var colGroup = this._getColGroup( colSpan );
+    // get the minimum Y value from the columns
+    var minimumY = Math.min.apply( Math, colGroup );
+    var shortColIndex = colGroup.indexOf( minimumY );
+
     // position the brick
     var position = {
-      x: this.columnWidth * colPosition.col,
-      y: colPosition.y
+      x: this.columnWidth * shortColIndex,
+      y: minimumY
     };
+
     // apply setHeight to necessary columns
-    var setHeight = colPosition.y + item.size.outerHeight;
-    var setMax = colSpan + colPosition.col;
-    for ( var i = colPosition.col; i < setMax; i++ ) {
-      this.colYs[i] = setHeight;
+    var setHeight = minimumY + item.size.outerHeight;
+    var setSpan = this.cols + 1 - colGroup.length;
+    for ( var i = 0; i < setSpan; i++ ) {
+      this.colYs[ shortColIndex + i ] = setHeight;
     }
 
     return position;
-  };
-
-  proto._getTopColPosition = function( colSpan ) {
-    var colGroup = this._getTopColGroup( colSpan );
-    // get the minimum Y value from the columns
-    var minimumY = Math.min.apply( Math, colGroup );
-
-    return {
-      col: colGroup.indexOf( minimumY ),
-      y: minimumY,
-    };
   };
 
   /**
    * @param {Number} colSpan - number of columns the element spans
    * @returns {Array} colGroup
    */
-  proto._getTopColGroup = function( colSpan ) {
+  Masonry.prototype._getColGroup = function( colSpan ) {
     if ( colSpan < 2 ) {
       // if brick spans only one column, use all the column Ys
       return this.colYs;
@@ -2649,38 +2632,15 @@ return Item;
     var groupCount = this.cols + 1 - colSpan;
     // for each group potential horizontal position
     for ( var i = 0; i < groupCount; i++ ) {
-      colGroup[i] = this._getColGroupY( i, colSpan );
+      // make an array of colY values for that one group
+      var groupColYs = this.colYs.slice( i, i + colSpan );
+      // and get the max value of the array
+      colGroup[i] = Math.max.apply( Math, groupColYs );
     }
     return colGroup;
   };
 
-  proto._getColGroupY = function( col, colSpan ) {
-    if ( colSpan < 2 ) {
-      return this.colYs[ col ];
-    }
-    // make an array of colY values for that one group
-    var groupColYs = this.colYs.slice( col, col + colSpan );
-    // and get the max value of the array
-    return Math.max.apply( Math, groupColYs );
-  };
-
-  // get column position based on horizontal index. #873
-  proto._getHorizontalColPosition = function( colSpan, item ) {
-    var col = this.horizontalColIndex % this.cols;
-    var isOver = colSpan > 1 && col + colSpan > this.cols;
-    // shift to next row if item can't fit on current row
-    col = isOver ? 0 : col;
-    // don't let zero-size items take up space
-    var hasSize = item.size.outerWidth && item.size.outerHeight;
-    this.horizontalColIndex = hasSize ? col + colSpan : this.horizontalColIndex;
-
-    return {
-      col: col,
-      y: this._getColGroupY( col, colSpan ),
-    };
-  };
-
-  proto._manageStamp = function( stamp ) {
+  Masonry.prototype._manageStamp = function( stamp ) {
     var stampSize = getSize( stamp );
     var offset = this._getElementOffset( stamp );
     // get the columns that this stamp affects
@@ -2703,7 +2663,7 @@ return Item;
     }
   };
 
-  proto._getContainerSize = function() {
+  Masonry.prototype._getContainerSize = function() {
     this.maxY = Math.max.apply( Math, this.colYs );
     var size = {
       height: this.maxY
@@ -2716,7 +2676,7 @@ return Item;
     return size;
   };
 
-  proto._getContainerFitWidth = function() {
+  Masonry.prototype._getContainerFitWidth = function() {
     var unusedCols = 0;
     // count unused columns
     var i = this.cols;
@@ -2730,7 +2690,7 @@ return Item;
     return ( this.cols - unusedCols ) * this.columnWidth - this.gutter;
   };
 
-  proto.needsResizeLayout = function() {
+  Masonry.prototype.needsResizeLayout = function() {
     var previousWidth = this.containerWidth;
     this.getContainerWidth();
     return previousWidth != this.containerWidth;
@@ -2743,7 +2703,7 @@ return Item;
 /*!
  * Masonry layout mode
  * sub-classes Masonry
- * https://masonry.desandro.com
+ * http://masonry.desandro.com
  */
 
 ( function( window, factory ) {
@@ -2751,9 +2711,9 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/masonry',[
+    define( 'isotope/js/layout-modes/masonry',[
         '../layout-mode',
-        'masonry-layout/masonry'
+        'masonry/masonry'
       ],
       factory );
   } else if ( typeof module == 'object' && module.exports ) {
@@ -2824,7 +2784,7 @@ return Item;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/fit-rows',[
+    define( 'isotope/js/layout-modes/fit-rows',[
         '../layout-mode'
       ],
       factory );
@@ -2893,7 +2853,7 @@ return FitRows;
   /* jshint strict: false */ /*globals define, module, require */
   if ( typeof define == 'function' && define.amd ) {
     // AMD
-    define( 'isotope-layout/js/layout-modes/vertical',[
+    define( 'isotope/js/layout-modes/vertical',[
         '../layout-mode'
       ],
       factory );
@@ -2940,13 +2900,13 @@ return Vertical;
 }));
 
 /*!
- * Isotope v3.0.6
+ * Isotope v3.0.1
  *
  * Licensed GPLv3 for open source use
  * or Isotope Commercial License for commercial use
  *
- * https://isotope.metafizzy.co
- * Copyright 2010-2018 Metafizzy
+ * http://isotope.metafizzy.co
+ * Copyright 2016 Metafizzy
  */
 
 ( function( window, factory ) {
@@ -2959,12 +2919,12 @@ return Vertical;
         'get-size/get-size',
         'desandro-matches-selector/matches-selector',
         'fizzy-ui-utils/utils',
-        'isotope-layout/js/item',
-        'isotope-layout/js/layout-mode',
+        'isotope/js/item',
+        'isotope/js/layout-mode',
         // include default layout modes
-        'isotope-layout/js/layout-modes/masonry',
-        'isotope-layout/js/layout-modes/fit-rows',
-        'isotope-layout/js/layout-modes/vertical'
+        'isotope/js/layout-modes/masonry',
+        'isotope/js/layout-modes/fit-rows',
+        'isotope/js/layout-modes/vertical'
       ],
       function( Outlayer, getSize, matchesSelector, utils, Item, LayoutMode ) {
         return factory( window, Outlayer, getSize, matchesSelector, utils, Item, LayoutMode );
@@ -2977,12 +2937,12 @@ return Vertical;
       require('get-size'),
       require('desandro-matches-selector'),
       require('fizzy-ui-utils'),
-      require('isotope-layout/js/item'),
-      require('isotope-layout/js/layout-mode'),
+      require('isotope/js/item'),
+      require('isotope/js/layout-mode'),
       // include default layout modes
-      require('isotope-layout/js/layout-modes/masonry'),
-      require('isotope-layout/js/layout-modes/fit-rows'),
-      require('isotope-layout/js/layout-modes/vertical')
+      require('isotope/js/layout-modes/masonry'),
+      require('isotope/js/layout-modes/fit-rows'),
+      require('isotope/js/layout-modes/vertical')
     );
   } else {
     // browser global
@@ -3343,28 +3303,20 @@ var trim = String.prototype.trim ?
 
   // sort filteredItem order
   proto._sort = function() {
-    if ( !this.options.sortBy ) {
+    var sortByOpt = this.options.sortBy;
+    if ( !sortByOpt ) {
       return;
     }
-    // keep track of sortBy History
-    var sortBys = utils.makeArray( this.options.sortBy );
-    if ( !this._getIsSameSortBy( sortBys ) ) {
-      // concat all sortBy and sortHistory, add to front, oldest goes in last
-      this.sortHistory = sortBys.concat( this.sortHistory );
-    }
+    // concat all sortBy and sortHistory
+    var sortBys = [].concat.apply( sortByOpt, this.sortHistory );
     // sort magic
-    var itemSorter = getItemSorter( this.sortHistory, this.options.sortAscending );
+    var itemSorter = getItemSorter( sortBys, this.options.sortAscending );
     this.filteredItems.sort( itemSorter );
-  };
-
-  // check if sortBys is same as start of sortHistory
-  proto._getIsSameSortBy = function( sortBys ) {
-    for ( var i=0; i < sortBys.length; i++ ) {
-      if ( sortBys[i] != this.sortHistory[i] ) {
-        return false;
-      }
+    // keep track of sortBy History
+    if ( sortByOpt != this.sortHistory[0] ) {
+      // add to front, oldest goes in last
+      this.sortHistory.unshift( sortByOpt );
     }
-    return true;
   };
 
   // returns a function used for sorting
