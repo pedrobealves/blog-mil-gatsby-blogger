@@ -162,6 +162,14 @@ module.exports = {
         color: config.themeColor,
       },
     },
+{
+      resolve:'gatsby-plugin-purgecss', 
+      options: {
+        develop: true,   
+printRejected: true
+     
+      },
+    },
     'gatsby-plugin-netlify',
   ],
 }

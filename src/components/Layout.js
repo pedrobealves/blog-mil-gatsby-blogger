@@ -7,8 +7,7 @@ import theme from '../styles/theme'
 import config from '../utils/siteConfig'
 import Header from '../components/Header'
 import Footer from './Footer'
-import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/assets/scss/style-basketball.scss'
+
 import '../styles/assets/fonts/font-awesome/css/font-awesome.min.css'
 
 const Template = ({ children }) => {

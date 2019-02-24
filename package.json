@@ -18,6 +18,7 @@
     "gatsby-plugin-netlify": "^2.0.6",
     "gatsby-plugin-nprogress": "^2.0.7",
     "gatsby-plugin-offline": "^2.0.20",
+    "gatsby-plugin-purgecss": "^3.1.0",
     "gatsby-plugin-react-helmet": "^3.0.4",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.20",
@@ -29,6 +30,7 @@
     "gatsby-source-blogger": "^1.0.0",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.1.17",
+    "git": "^0.1.5",
     "inquirer": "^6.2.1",
     "lodash": "^4.17.11",
     "moment": "^2.23.0",
@@ -38,6 +40,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "status": "^0.0.13",
     "styled-components": "^4.1.3"
   },
   "keywords": [
