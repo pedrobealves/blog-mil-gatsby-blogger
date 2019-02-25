@@ -7,9 +7,6 @@ import theme from '../styles/theme'
 import config from '../utils/siteConfig'
 import Header from '../components/Header'
 import Footer from './Footer'
-import 'bootstrap/dist/css/bootstrap.css'
-import '../styles/assets/scss/style-basketball.scss'
-import '../styles/assets/fonts/font-awesome/css/font-awesome.min.css'
 
 const Template = ({ children }) => {
   return (
@@ -19,15 +16,6 @@ const Template = ({ children }) => {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href={favicon} />
-
-        <link
-          href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CSource+Sans+Pro:400,700"
-          rel="stylesheet"
-        />
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css"
-        />
       </Helmet>
 
       <ThemeProvider theme={theme}>
