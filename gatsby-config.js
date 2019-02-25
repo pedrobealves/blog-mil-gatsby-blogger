@@ -162,6 +162,15 @@ module.exports = {
         color: config.themeColor,
       },
     },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        develop: true,
+        whitelist: ['header-logo'],
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
     'gatsby-plugin-netlify',
   ],
 }
