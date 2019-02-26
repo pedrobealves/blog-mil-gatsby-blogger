@@ -19,7 +19,20 @@ const Menu = ({ header }) => {
           {
             id: 0,
             title: 'HOME',
-            link: 'tengen-toppa-gurren-lagann-o-cliche-na/',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
+          },
+          {
+            id: 1,
+            title: 'HOME',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
+          },
+          {
+            id: 2,
+            title: 'HOME',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
           },
         ],
       },
@@ -64,8 +77,8 @@ const Menu = ({ header }) => {
           <Link to={`/${link}/`}>{title}</Link>
           {sub && header && (
             <ul className="main-nav__sub">
-              {sub.map(({ id, title, link }) => (
-                <li key={id} className="active">
+              {sub.map(({ id, title, link, selected }) => (
+                <li key={id} className={selected && 'active'}>
                   <Link to={`/${link}/`}>{title}</Link>
                 </li>
               ))}
