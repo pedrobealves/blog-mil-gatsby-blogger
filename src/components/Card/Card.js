@@ -32,7 +32,7 @@ const Card = ({
               <span className="label posts__cat-label">The Team</span>
             </div>
             <h6 className="posts__title">
-              <a href="#">{title}</a>
+              <Link to={`/${slug}/`}>{title}</Link>
             </h6>
             <time dateTime="2016-08-17" className="posts__date">
               {published}

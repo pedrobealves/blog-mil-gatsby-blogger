@@ -7,6 +7,7 @@ import theme from '../styles/theme'
 import config from '../utils/siteConfig'
 import Header from '../components/Header'
 import Footer from './Footer'
+import Sidebar from './Sidebar'
 
 const Template = ({ children }) => {
   return (
@@ -24,7 +25,14 @@ const Template = ({ children }) => {
             <div className="site-wrapper clearfix">
               <div className="site-overlay" />
               <Header />
-              {children}
+              <div className="site-content">
+                <div className="container">
+                  <div className="row">
+                    <div className="content col-md-8">{children}</div>
+                    <Sidebar />
+                  </div>
+                </div>
+              </div>
               <Footer />
             </div>
           </div>

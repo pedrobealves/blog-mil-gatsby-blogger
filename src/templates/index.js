@@ -7,6 +7,7 @@ import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 import Card from '../components/Card'
+import Slider from '../components/Slider'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allBloggerPost.edges
