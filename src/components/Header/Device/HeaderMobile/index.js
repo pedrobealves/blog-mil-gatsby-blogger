@@ -1,17 +1,19 @@
 import React from 'react'
+import logo from '../../../../images/logo.svg'
+import { Link } from 'gatsby'
 
 const HeaderMobile = () => {
   return (
     <div className="header-mobile clearfix" id="header-mobile">
       <div className="header-mobile__logo">
-        <a href="http://alchemists.dan-fisher.com/basketball/index.html">
+        <Link to={'/'}>
           <img
-            src="./Alchemists Basketball Club &amp; Sports News HTML Template - Home_files/logo.png"
+            src={logo}
             srcSet="assets/images/logo@2x.png 2x"
             alt="Alchemists"
             className="header-mobile__logo-img"
           />
-        </a>
+        </Link>
       </div>
       <div className="header-mobile__inner">
         <a id="header-mobile__toggle" className="burger-menu-icon">

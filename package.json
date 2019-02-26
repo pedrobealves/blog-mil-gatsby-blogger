@@ -61,6 +61,7 @@
   "devDependencies": {
     "eslint": "^5.10.0",
     "eslint-config-gatsby-standard": "^2.1.1",
+    "eslint-plugin-react-hooks": "^1.3.0",
     "prettier": "^1.15.3",
     "stylelint": "9.10.1",
     "stylelint-config-prettier": "^5.0.0",
