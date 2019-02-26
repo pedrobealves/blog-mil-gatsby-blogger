@@ -1,7 +1,6 @@
 import React from 'react'
 import Logo from '../../Common/Logo'
 import WidgetContactInfo from './Widgets/WidgetElements/WidgetContactInfo'
-import WidgetPopularPosts from './Widgets/WidgetElements/WidgetPopularPosts'
 import WidgetInstagram from './Widgets/WidgetElements/WidgetInstagram'
 import Widgets from './Widgets'
 
@@ -16,9 +15,6 @@ const FooterWidgets = () => {
             </Widgets>
             <Widgets>
               <WidgetContactInfo />
-            </Widgets>
-            <Widgets>
-              <WidgetPopularPosts />
             </Widgets>
             <Widgets>
               <WidgetInstagram />

@@ -12,12 +12,9 @@ const HeaderSecondary = () => {
             <svg role="img" className="df-icon df-icon--jersey">
               <use xlinkHref="assets/images/icons-basket.svg#jersey" />
             </svg>
-            <h6 className="info-block__heading">Join Our Team!</h6>
-            <a
-              className="info-block__link"
-              href="mailto:tryouts@alchemists.com"
-            >
-              tryouts@alchemists.com
+            <h6 className="info-block__heading">Join</h6>
+            <a className="info-block__link" href="mailto:blogmil@blogmil.com">
+              blogmil@blogmil.com
             </a>
           </li>
           <li className="info-block__item info-block__item--contact-secondary">
@@ -26,7 +23,7 @@ const HeaderSecondary = () => {
             </svg>
             <h6 className="info-block__heading">Contact Us</h6>
             <a className="info-block__link" href="mailto:info@alchemists.com">
-              info@alchemists.com
+              info@blogmil.com
             </a>
           </li>
           <li className="info-block__item info-block__item--shopping-cart has-children">

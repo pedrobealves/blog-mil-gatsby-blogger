@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../../../Common/Logo'
-import Nav from './Nav'
+import Nav from '../../../../Nav'
 
 const HeaderPrimary = () => {
   return (
