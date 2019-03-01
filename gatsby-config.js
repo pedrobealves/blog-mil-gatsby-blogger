@@ -24,7 +24,7 @@ try {
 } catch (e) {
   analyticsConfig = {
     production: {
-      privateKey: process.env.PRIVATE_KEY,
+      privateKey: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
       clientEmail: process.env.CLIENT_EMAIL,
       viewId: process.env.VIEW_ID,
     },
