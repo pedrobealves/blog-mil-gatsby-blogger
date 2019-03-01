@@ -6,3 +6,4 @@ public/
 blogger-import-error-log*
 .env*
 .blogger.json
+.analytics.json

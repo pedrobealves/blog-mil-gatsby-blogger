@@ -17,6 +17,27 @@ try {
   }
 }
 
+let analyticsConfig
+
+try {
+  analyticsConfig = require('./.analytics')
+} catch (e) {
+  analyticsConfig = {
+    production: {
+      privateKey: process.env.PRIVATE_KEY,
+      clientEmail: process.env.CLIENT_EMAIL,
+      viewId: process.env.VIEW_ID,
+    },
+  }
+} finally {
+  const { privateKey, clientEmail, viewId } = analyticsConfig.production
+  if (!privateKey || !clientEmail || !viewId) {
+    throw new Error(
+      'Analytics private api key, client email and view id need to be provided.'
+    )
+  }
+}
+
 module.exports = {
   siteMetadata: {
     siteUrl: config.siteUrl,
@@ -73,6 +94,13 @@ module.exports = {
         trackingId: process.env.GOOGLE_ANALYTICS,
         head: true,
       },
+    },
+    {
+      resolve: `gatsby-source-google-analytics-reporting-api`,
+      options:
+        process.env.NODE_ENV === 'development'
+          ? analyticsConfig.development
+          : analyticsConfig.production,
     },
     'gatsby-plugin-sitemap',
     {
