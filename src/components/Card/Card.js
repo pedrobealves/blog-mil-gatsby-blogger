@@ -2,13 +2,6 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 
-const handleResponse = str => {
-  const re = /<img\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
-  const res = str.match(re)
-  const src = res[1] || res[2] || res[3]
-  return src
-}
-
 const Card = ({
   slug,
   title,
@@ -22,7 +15,7 @@ const Card = ({
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
           <Link to={`/${slug}/`}>
-            <img src={handleResponse(childMarkdownRemark.html)} alt="" />
+            <img src={childMarkdownRemark.frontmatter.cover} alt="" />
           </Link>
           <a href="#" className="posts__cta" />
         </figure>

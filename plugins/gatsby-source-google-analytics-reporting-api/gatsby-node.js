@@ -22,7 +22,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, configOptions) => {
     dimensions: 'ga:pagePath',
     metrics: 'ga:pageviews',
     sort: '-ga:pageviews',
-    'max-results': '10',
+    'max-results': '20',
   })
 
   result.data.rows.forEach(post => {
