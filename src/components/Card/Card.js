@@ -6,6 +6,7 @@ const Card = ({
   slug,
   title,
   published,
+  labels,
   childMarkdownRemark,
   author,
   ...props
@@ -14,7 +15,7 @@ const Card = ({
     <div className="post-list__item">
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
-          <Link to={`/${slug}/`}>
+          <Link to={`${slug}`}>
             <img src={childMarkdownRemark.frontmatter.cover} alt="" />
           </Link>
           <a href="#" className="posts__cta" />
@@ -22,10 +23,14 @@ const Card = ({
         <div className="posts__inner">
           <div className="card__content">
             <div className="posts__cat">
-              <span className="label posts__cat-label">The Team</span>
+              {labels.slice(0, 2).map((label, index) => (
+                <span key={index} className="label posts__cat-label mr-1 mb-1">
+                  {label}
+                </span>
+              ))}
             </div>
             <h6 className="posts__title">
-              <Link to={`/${slug}/`}>{title}</Link>
+              <Link to={`${slug}`}>{title}</Link>
             </h6>
             <time dateTime="2016-08-17" className="posts__date">
               {published}

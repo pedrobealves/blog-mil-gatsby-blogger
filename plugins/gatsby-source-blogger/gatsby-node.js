@@ -36,7 +36,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, { apiKey, blogId }) => {
   }
 
   // const rePost = /^https?:\/\/(?:[^/]+)\/\d{4}\/\d{2}\/([^/][^.]+)\.html$/
-  const rePost = /^https?:\/\/(?:[^/]+)\/(\d{4}\/\d{2}\/[^/][^.]+\.html)$/
+  const rePost = /^https?:\/\/(?:[^/]+)(\/\d{4}\/\d{2}\/[^/][^.]+\.html)$/
   const posts = postResult.data.items
 
   const handleResponse = str => {
@@ -111,7 +111,7 @@ ${md}`,
         .use(parse)
         .use(rehype2remark)
         .use(stringify)
-        .process(post.content, function(err, md) {
+        .process(page.content, function(err, md) {
           if (err) console.log(err)
           const segments = rePage.exec(page.url)
           const gatsbyPage = Object.assign(

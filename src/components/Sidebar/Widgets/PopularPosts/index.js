@@ -6,7 +6,7 @@ const PopularPosts = () => {
   return (
     <aside className="widget widget--sidebar card widget-popular-posts">
       <div className="widget__title card__header">
-        <h4>Popular News</h4>
+        <h4>Popular</h4>
       </div>
       <div className="widget__content card__content">
         <ul className="posts posts--simple-list">

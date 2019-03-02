@@ -12,14 +12,16 @@ const Card = ({ posts }) => {
     <StaticQuery
       query={graphql`
         {
-          allMarkdownRemark {
+          allBloggerPost {
             edges {
               node {
-                excerpt
-                frontmatter {
-                  title
-                  slug
-                  cover
+                labels
+                childMarkdownRemark {
+                  frontmatter {
+                    title
+                    slug
+                    cover
+                  }
                 }
               }
             }
@@ -27,9 +29,9 @@ const Card = ({ posts }) => {
         }
       `}
       render={data =>
-        data.allMarkdownRemark.edges.map(
+        data.allBloggerPost.edges.map(
           ({ node: post }) =>
-            arr.includes('/' + post.frontmatter.slug) &&
+            arr.includes(post.childMarkdownRemark.frontmatter.slug) &&
             limit++ < 5 && <PopularPost key={post.id} {...post} />
         )
       }
