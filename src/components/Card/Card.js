@@ -1,6 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
+import styled from 'styled-components'
+
+const HeaderImg = styled.img`
+  height: 368px !important;
+`
 
 const Card = ({
   slug,
@@ -16,7 +21,7 @@ const Card = ({
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
           <Link to={`${slug}`}>
-            <img src={childMarkdownRemark.frontmatter.cover} alt="" />
+            <HeaderImg src={childMarkdownRemark.frontmatter.cover} alt="" />
           </Link>
           <a href="#" className="posts__cta" />
         </figure>

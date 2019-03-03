@@ -23,6 +23,7 @@ const Index = ({ data, pageContext }) => {
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
         </Helmet>
       )}
+      <Slider posts={posts} featuredPost={featuredPost} />
       <Card
         posts={posts}
         featuredPost={featuredPost}
