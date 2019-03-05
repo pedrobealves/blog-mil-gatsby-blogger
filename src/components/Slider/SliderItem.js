@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const HeaderImg = styled.img`
   width: 773px;
@@ -18,7 +19,7 @@ const SliderItem = ({
 }) => {
   return (
     <div className="posts__item posts__item--category-1">
-      <a href="#" className="posts__link-wrapper">
+      <Link to={`${slug}`} className="posts__link-wrapper">
         <figure className="posts__thumb">
           <HeaderImg src={cover.childImageSharp.fluid.src} alt="" />
         </figure>
@@ -41,7 +42,7 @@ const SliderItem = ({
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </div>
   )
 }

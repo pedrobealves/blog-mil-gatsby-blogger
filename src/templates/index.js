@@ -49,7 +49,7 @@ export const query = graphql`
           labels
           cover {
             childImageSharp {
-              fluid(maxWidth: 1800) {
+              fluid(maxWidth: 773, maxHeight: 408) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
