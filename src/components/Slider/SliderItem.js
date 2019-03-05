@@ -12,15 +12,15 @@ const SliderItem = ({
   published,
   labels,
   childMarkdownRemark,
+  cover,
   author,
   ...props
 }) => {
-  console.log(title)
   return (
     <div className="posts__item posts__item--category-1">
       <a href="#" className="posts__link-wrapper">
         <figure className="posts__thumb">
-          <HeaderImg src={childMarkdownRemark.frontmatter.cover} alt="" />
+          <HeaderImg src={cover.childImageSharp.fluid.src} alt="" />
         </figure>
         <div className="posts__inner">
           <div className="posts__cat">

@@ -16,11 +16,17 @@ const Card = ({ posts }) => {
             edges {
               node {
                 labels
+                cover {
+                  childImageSharp {
+                    fixed(width: 80, height: 80) {
+                      ...GatsbyImageSharpFixed_withWebp_noBase64
+                    }
+                  }
+                }
                 childMarkdownRemark {
                   frontmatter {
                     title
                     slug
-                    cover
                   }
                 }
               }

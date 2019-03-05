@@ -3,8 +3,8 @@ import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-const HeaderImg = styled.img`
-  height: 368px !important;
+const CoverImg = styled(Img)`
+  height: ${props => props.height || 'auto'};
 `
 
 const Card = ({
@@ -13,6 +13,7 @@ const Card = ({
   published,
   labels,
   childMarkdownRemark,
+  cover,
   author,
   ...props
 }) => {
@@ -21,7 +22,11 @@ const Card = ({
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
           <Link to={`${slug}`}>
-            <HeaderImg src={childMarkdownRemark.frontmatter.cover} alt="" />
+            <CoverImg
+              fluid={cover.childImageSharp.fluid}
+              height={'65vh'}
+              backgroundColor={'#eeeeee'}
+            />
           </Link>
           <a href="#" className="posts__cta" />
         </figure>

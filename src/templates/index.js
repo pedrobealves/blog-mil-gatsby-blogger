@@ -47,6 +47,13 @@ export const query = graphql`
           id
           slug
           labels
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 1800) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
+          }
           author {
             displayName
             image {
@@ -59,7 +66,6 @@ export const query = graphql`
               title
               date
               slug
-              cover
             }
             html
             excerpt

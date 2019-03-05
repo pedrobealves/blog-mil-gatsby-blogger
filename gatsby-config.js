@@ -59,7 +59,7 @@ module.exports = {
       },
     },
     'gatsby-plugin-styled-components',
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     {
       resolve: `gatsby-transformer-remark`,
@@ -190,6 +190,8 @@ module.exports = {
         color: config.themeColor,
       },
     },
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
