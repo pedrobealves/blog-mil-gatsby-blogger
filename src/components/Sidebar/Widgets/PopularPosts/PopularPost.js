@@ -1,14 +1,14 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import Img from 'gatsby-image'
 
-const PopularPost = ({ childMarkdownRemark, labels }) => {
+const PopularPost = ({ childMarkdownRemark, labels, cover }) => {
   return (
     <li className="posts__item posts__item--category-1">
       <figure className="posts__thumb">
         <Link to={childMarkdownRemark.frontmatter.slug}>
           <img
-            src="./Alchemists Basketball Club &amp; Sports News HTML Template - Home_files/post-img2-xs.jpg"
-            alt=""
+            src={cover.childImageSharp.fixed.src}
           />
         </Link>
       </figure>

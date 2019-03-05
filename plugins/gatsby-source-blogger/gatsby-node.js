@@ -10,6 +10,8 @@ const rehype2remark = require('rehype-remark')
 
 const stringify = require('remark-stringify')
 
+const { createRemoteFileNode } = require(`gatsby-source-filesystem`)
+
 const crypto = require('crypto')
 
 const typePrefix = 'blogger__'
@@ -18,7 +20,21 @@ const refactoredEntityTypes = {
   page: `${typePrefix}PAGE`,
 }
 
-exports.sourceNodes = async ({ actions, createNodeId }, { apiKey, blogId }) => {
+const handleResponse = str => {
+  // const rex = /<img\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
+  // const res = str.match(re)
+  // const src = res[1] || res[2] || res[3]
+  const re = /<img[^>]+src="?([^"\s]+)"?[^>]*\/>/g
+  const results = re.exec(str)
+  let img = ''
+  if (results) img = results[1]
+  return img
+}
+
+exports.sourceNodes = async (
+  { actions, createNodeId, store, cache },
+  { apiKey, blogId }
+) => {
   const { createNode, setPluginStatus } = actions
   const blogger = google.blogger({
     version: 'v3',
@@ -39,54 +55,58 @@ exports.sourceNodes = async ({ actions, createNodeId }, { apiKey, blogId }) => {
   const rePost = /^https?:\/\/(?:[^/]+)(\/\d{4}\/\d{2}\/[^/][^.]+\.html)$/
   const posts = postResult.data.items
 
-  const handleResponse = str => {
-    // const rex = /<img\ssrc=(?:(?:'([^']*)')|(?:"([^"]*)")|([^\s]*))/i
-    // const res = str.match(re)
-    // const src = res[1] || res[2] || res[3]
-    const re = /<img[^>]+src="?([^"\s]+)"?[^>]*\/>/g
-    const results = re.exec(str)
-    let img = ''
-    if (results) img = results[1]
-    return img
-  }
-
   if (posts) {
     posts.forEach(post => {
-      unified()
-        .use(parse)
-        .use(rehype2remark)
-        .use(stringify)
-        .process(post.content, function(err, md) {
-          if (err) console.log(err)
-          const segments = rePost.exec(post.url)
-          const gatsbyPost = Object.assign(
-            {
-              slug: segments[1],
-            },
-            post,
-            {
-              id: createNodeId(post.id),
-              parent: null,
-              children: [],
-              internal: {
-                type: refactoredEntityTypes.post,
-                mediaType: `text/markdown`,
-                content: `---
+      createRemoteFileNode({
+        url: handleResponse(post.content),
+        store,
+        cache,
+        createNode,
+        createNodeId,
+      })
+        .then(fileNode => {
+          if (fileNode) {
+            post.cover___NODE = fileNode.id
+          }
+
+          unified()
+            .use(parse)
+            .use(rehype2remark)
+            .use(stringify)
+            .process(post.content, function(err, md) {
+              if (err) console.log(err)
+              const segments = rePost.exec(post.url)
+              const gatsbyPost = Object.assign(
+                {
+                  slug: segments[1],
+                },
+                post,
+                {
+                  id: createNodeId(post.id),
+                  parent: null,
+                  children: [],
+                  internal: {
+                    type: refactoredEntityTypes.post,
+                    mediaType: `text/markdown`,
+                    content: `---
 title: '${post.title.replace("'", "''")}'
 date: '${post.published}'
 slug: '${segments[1]}'
-cover: '${handleResponse(post.content)}'
 ---
 
 ${md}`,
-                contentDigest: crypto
-                  .createHash(`md5`)
-                  .update(JSON.stringify(post))
-                  .digest(`hex`),
-              },
-            }
-          )
-          createNode(gatsbyPost)
+                    contentDigest: crypto
+                      .createHash(`md5`)
+                      .update(JSON.stringify(post))
+                      .digest(`hex`),
+                  },
+                }
+              )
+              createNode(gatsbyPost)
+            })
+        })
+        .catch(e => {
+          console.error('[gatsby-transformer-image]', 'Error', e.message)
         })
     })
   }
