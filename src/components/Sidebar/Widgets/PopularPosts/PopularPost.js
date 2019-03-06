@@ -7,7 +7,7 @@ const PopularPost = ({ childMarkdownRemark, labels, cover }) => {
     <li className="posts__item posts__item--category-1">
       <figure className="posts__thumb">
         <Link to={childMarkdownRemark.frontmatter.slug}>
-          <Img fixed={cover.childImageSharp.fixed} />
+          <img src={cover.childImageSharp.fixed.srcWebp} />
         </Link>
       </figure>
       <div className="posts__inner">
