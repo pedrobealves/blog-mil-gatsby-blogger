@@ -1,14 +1,16 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRss } from '@fortawesome/free-solid-svg-icons'
 
 const RSSButton = () => {
   return (
     <a
-      href="http://alchemists.dan-fisher.com/basketball/index.html#"
+      href="#"
       className="btn-social-counter btn-social-counter--rss"
       target="_blank"
     >
       <div className="btn-social-counter__icon">
-        <i className="fa fa-rss" />
+        <FontAwesomeIcon icon={faRss} />
       </div>
       <h6 className="btn-social-counter__title">Subscribe to Our RSS</h6>
       <span className="btn-social-counter__count">
