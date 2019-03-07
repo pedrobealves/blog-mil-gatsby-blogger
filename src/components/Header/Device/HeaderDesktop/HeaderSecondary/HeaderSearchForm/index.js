@@ -1,4 +1,6 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 const HeaderSearchForm = () => {
   return (
@@ -15,7 +17,7 @@ const HeaderSearchForm = () => {
           placeholder="Enter your search here..."
         />
         <button type="submit" className="header-mobile__search-submit">
-          <i className="fa fa-search" />
+          <FontAwesomeIcon icon={faSearch}/>
         </button>
       </form>
     </div>
