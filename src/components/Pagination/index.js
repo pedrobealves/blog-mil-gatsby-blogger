@@ -46,7 +46,7 @@ class Pagination extends React.Component {
 
     return (
       <nav className="post-pagination" aria-label="Blog navigation">
-        <ul className="pagination justify-content-center">
+        <ul className="pagination pagination--lg justify-content-center">
           {!isFirst && (
             <li className="page-item">
               <Link className={'page-link'} to={prevPageLink}>
