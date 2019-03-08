@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../images/logo.svg'
+import logo from '../../../images/logo.png'
 import { Link } from 'gatsby'
 
 const Logo = ({ section }) => {
@@ -9,7 +9,7 @@ const Logo = ({ section }) => {
         <img
           src={logo}
           alt="Alchemists"
-          srcSet="assets/images/logo@2x.png 2x"
+          srcSet={logo}
           className={section + '-logo__img w-75'}
         />
       </Link>

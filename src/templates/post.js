@@ -4,15 +4,21 @@ import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
-import Container from '../components/Container'
-import PageBody from '../components/PageBody'
+import Container from '../components/Post'
+import PostBody from '../components/Post/PostBody'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
-import PostDate from '../components/PostDate'
 import SEO from '../components/SEO'
 
 const PostTemplate = ({ data, pageContext }) => {
-  const { title, slug, childMarkdownRemark, published, tags } = data.bloggerPost
+  const {
+    title,
+    slug,
+    childMarkdownRemark,
+    labels,
+    published,
+    tags,
+  } = data.bloggerPost
   const postNode = data.bloggerPost
 
   const previous = pageContext.prev
@@ -23,9 +29,9 @@ const PostTemplate = ({ data, pageContext }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
+      <SEO pagePath={slug} postNode={postNode} postSEO />
       <Container>
-        <PostDate date={published} />
-        <PageBody body={childMarkdownRemark} />
+        <PostBody body={childMarkdownRemark} labels={labels} />
       </Container>
       <PostLinks previous={previous} next={next} />
     </Layout>
@@ -36,11 +42,33 @@ export const query = graphql`
   query($slug: String!) {
     bloggerPost(slug: { eq: $slug }) {
       title
+      id
       slug
-      published(formatString: "MMMM DD, YYYY")
+      labels
+      cover {
+        childImageSharp {
+          fluid(maxWidth: 773, maxHeight: 408) {
+            ...GatsbyImageSharpFluid_withWebp_noBase64
+            presentationWidth
+            presentationHeight
+          }
+        }
+      }
+      author {
+        displayName
+        image {
+          url
+        }
+      }
       childMarkdownRemark {
+        frontmatter {
+          title
+          date(formatString: "MMMM DD, YYYY")
+          slug
+        }
         html
-        excerpt(pruneLength: 320)
+        excerpt
+        timeToRead
       }
     }
   }

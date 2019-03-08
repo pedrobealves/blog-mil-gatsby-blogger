@@ -1,6 +1,6 @@
 import React from 'react'
 import MenuItens from './MenuItens'
-import logo from '../../../images/logo.svg'
+import logo from '../../../images/logo.png'
 import { Link } from 'gatsby'
 
 const Menu = () => {

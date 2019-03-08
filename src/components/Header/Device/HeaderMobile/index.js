@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../../../images/logo.svg'
+import logo from '../../../../images/logo.png'
 import { Link } from 'gatsby'
 
 const HeaderMobile = () => {
@@ -9,7 +9,7 @@ const HeaderMobile = () => {
         <Link to={'/'}>
           <img
             src={logo}
-            srcSet="assets/images/logo@2x.png 2x"
+            srcSet={logo + ' 2x'}
             alt="Alchemists"
             className="header-mobile__logo-img"
           />
