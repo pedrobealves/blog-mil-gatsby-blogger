@@ -11,7 +11,7 @@ const componentName = props => {
   const { prev, next } = props
   return (
     <div className="col-6">
-      <div className={`card post-related__${Object.keys(props)}`}>
+      <div className={`card post-related__${prev ? 'prev' : 'next'}`}>
         <div className="card__content">
           {prev && (
             <NavButton to={prev.slug}>
