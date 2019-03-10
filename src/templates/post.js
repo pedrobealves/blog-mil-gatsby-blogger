@@ -6,6 +6,10 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Container from '../components/Post'
 import PostBody from '../components/Post/PostBody'
+import SharingButtons from '../components/Post/SharingButtons'
+import RelatedPosts from '../components/Post/RelatedPosts'
+import PostAuthor from '../components/Post/PostAuthor'
+import PostComments from '../components/Post/PostComments'
 import TagList from '../components/TagList'
 import PostLinks from '../components/PostLinks'
 import SEO from '../components/SEO'
@@ -33,7 +37,10 @@ const PostTemplate = ({ data, pageContext }) => {
       <Container>
         <PostBody body={childMarkdownRemark} labels={labels} />
       </Container>
-      <PostLinks previous={previous} next={next} />
+      <SharingButtons />
+      <PostAuthor />
+      <RelatedPosts previous={previous} next={next} />
+      <PostComments />
     </Layout>
   )
 }

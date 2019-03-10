@@ -13,8 +13,10 @@ exports.createPages = ({ graphql, actions }) => {
         ) {
           edges {
             node {
+              title
+              labels
               slug
-              published
+              published(formatString: "MMMM DD, YYYY")
             }
           }
         }
