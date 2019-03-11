@@ -40,7 +40,7 @@ const PostTemplate = ({ data, pageContext }) => {
       <SharingButtons />
       <PostAuthor />
       <RelatedPosts previous={previous} next={next} />
-      <PostComments />
+      <PostComments pagePath={slug}/>
     </Layout>
   )
 }
