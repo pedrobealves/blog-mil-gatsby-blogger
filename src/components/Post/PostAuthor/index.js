@@ -12,8 +12,8 @@ const PostAuthor = () => {
             />
           </figure>
           <div className="post-author__info">
-            <h4 className="post-author__name">James Spiegel</h4>
-            <span className="post-author__slogan">The Alchemists Ninja</span>
+            <h4 className="post-author__name">Pedrp</h4>
+            <span className="post-author__slogan">The</span>
           </div>
           <ul className="post-author__social-links social-links social-links--btn">
             <li className="social-links__item">

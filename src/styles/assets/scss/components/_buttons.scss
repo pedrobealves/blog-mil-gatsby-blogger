@@ -4,7 +4,13 @@
   font-family: $btn-font-family;
   text-transform: $btn-text-transform;
   transition: all 0.3s ease;
-  @include button-size(13px, 42px, $btn-border-font-size, 1.5em, $btn-border-radius);
+  @include button-size(
+    13px,
+    42px,
+    $btn-border-font-size,
+    1.5em,
+    $btn-border-radius
+  );
 
   &:hover,
   &:focus,
@@ -22,32 +28,72 @@
 // --------------------------------------------------
 
 .btn-default {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-hover, $btn-default-border);
+  @include button-variant(
+    $btn-default-color,
+    $btn-default-bg,
+    $btn-default-hover,
+    $btn-default-border
+  );
 }
 
 @if $template == football {
   .btn-default-alt {
-    @include button-variant($btn-default-alt-color, $btn-default-alt-bg, $btn-default-alt-hover, $btn-default-alt-border);
+    @include button-variant(
+      $btn-default-alt-color,
+      $btn-default-alt-bg,
+      $btn-default-alt-hover,
+      $btn-default-alt-border
+    );
   }
 }
 
 .btn-primary {
-  @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-hover, $btn-primary-border);
+  @include button-variant(
+    $btn-primary-color,
+    $btn-primary-bg,
+    $btn-primary-hover,
+    $btn-primary-border
+  );
 }
 .btn-primary-inverse {
-  @include button-variant($btn-primary-inverse-color, $btn-primary-inverse-bg, $btn-primary-inverse-hover, $btn-primary-inverse-border);
+  @include button-variant(
+    $btn-primary-inverse-color,
+    $btn-primary-inverse-bg,
+    $btn-primary-inverse-hover,
+    $btn-primary-inverse-border
+  );
 }
 .btn-success {
-  @include button-variant($btn-success-color, $btn-success-bg, $btn-success-hover, $btn-success-border);
+  @include button-variant(
+    $btn-success-color,
+    $btn-success-bg,
+    $btn-success-hover,
+    $btn-success-border
+  );
 }
 .btn-info {
-  @include button-variant($btn-info-color, $btn-info-bg, $btn-info-hover, $btn-info-border);
+  @include button-variant(
+    $btn-info-color,
+    $btn-info-bg,
+    $btn-info-hover,
+    $btn-info-border
+  );
 }
 .btn-warning {
-  @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-hover, $btn-warning-border);
+  @include button-variant(
+    $btn-warning-color,
+    $btn-warning-bg,
+    $btn-warning-hover,
+    $btn-warning-border
+  );
 }
 .btn-danger {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-hover, $btn-danger-border);
+  @include button-variant(
+    $btn-danger-color,
+    $btn-danger-bg,
+    $btn-danger-hover,
+    $btn-danger-border
+  );
 }
 .btn-instagram {
   background-color: #1e78dd;
@@ -71,22 +117,52 @@
   }
 }
 .btn-facebook {
-  @include button-variant(#fff, #4d6baa, lighten(#4d6baa, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #4d6baa,
+    lighten(#4d6baa, 5%),
+    $btn-default-border
+  );
 }
 .btn-twitter {
-  @include button-variant(#fff, #3fcef2, lighten(#3fcef2, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #3fcef2,
+    lighten(#3fcef2, 5%),
+    $btn-default-border
+  );
 }
 .btn-gplus {
-  @include button-variant(#fff, #e34d39, lighten(#e34d39, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #e34d39,
+    lighten(#e34d39, 5%),
+    $btn-default-border
+  );
 }
 .btn-linkedin {
-  @include button-variant(#fff, #0077B5, lighten(#0077B5, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #0077b5,
+    lighten(#0077b5, 5%),
+    $btn-default-border
+  );
 }
 .btn-vk {
-  @include button-variant(#fff, #6383A8, lighten(#6383A8, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #6383a8,
+    lighten(#6383a8, 5%),
+    $btn-default-border
+  );
 }
 .btn-odnoklassniki {
-  @include button-variant(#fff, #F4731C, lighten(#F4731C, 5%), $btn-default-border);
+  @include button-variant(
+    #fff,
+    #f4731c,
+    lighten(#f4731c, 5%),
+    $btn-default-border
+  );
 }
 .btn-link {
   color: rgba($headings-color, 0.4);
@@ -105,24 +181,45 @@
   }
 }
 
-
 // Button Sizes
 // --------------------------------------------------
 .btn-lg {
-
   @if $template == football {
-    @include button-size(16px, 80px, $btn-border-font-size-lg, 1.33em, $btn-border-radius-lg);
+    @include button-size(
+      16px,
+      80px,
+      $btn-border-font-size-lg,
+      1.33em,
+      $btn-border-radius-lg
+    );
   } @else {
-    @include button-size(16px, 80px, $btn-border-font-size-lg, 1.45em, $btn-border-radius-lg);
+    @include button-size(
+      16px,
+      80px,
+      $btn-border-font-size-lg,
+      1.45em,
+      $btn-border-radius-lg
+    );
   }
 }
 .btn-sm {
-  @include button-size(10px, 38px, $btn-border-font-size-sm, 1.5em, $btn-border-radius-sm);
+  @include button-size(
+    10px,
+    38px,
+    $btn-border-font-size-sm,
+    1.5em,
+    $btn-border-radius-sm
+  );
 }
 .btn-xs {
-  @include button-size(5px, 13px, $btn-border-font-size-xs, 1.5em, $btn-border-radius-xs);
+  @include button-size(
+    5px,
+    13px,
+    $btn-border-font-size-xs,
+    1.5em,
+    $btn-border-radius-xs
+  );
 }
-
 
 // Outline buttons
 // --------------------------------------------------
@@ -267,21 +364,18 @@
   }
 }
 
-
 // Button Icons
 // --------------------------------------------------
 
 .btn-icon {
-
-  i {
+  svg {
     font-size: 14px;
     margin-right: 10px;
   }
 }
 
 .btn-icon-right {
-
-  i {
+  svg {
     margin-right: 0;
     margin-left: 10px;
   }
@@ -299,7 +393,6 @@
     line-height: 1.2em;
   }
 }
-
 
 // Circle Buttons
 .btn-circle {
@@ -319,7 +412,6 @@
   }
 }
 
-
 // Button Type
 // --------------------------------------------------
 
@@ -329,7 +421,6 @@
 }
 
 .btn-condensed {
-
   &.btn-sm {
     padding: 13px 28px;
 
@@ -338,8 +429,6 @@
     }
   }
 }
-
-
 
 // FAB (Floating Action Button)
 // --------------------------------------------------
@@ -356,7 +445,7 @@
 
   &::before,
   &::after {
-    content:"";
+    content: '';
     display: block;
     position: absolute;
     top: 50%;
@@ -377,7 +466,6 @@
   }
 
   &:hover {
-
     &::before,
     &::after {
       transform: translate(-50%, -50%) rotate(90deg);
@@ -389,7 +477,6 @@
 
   &::before,
   &::after {
-
     @if $template == football {
       background-color: $color-4;
     } @else {
