@@ -196,7 +196,15 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         // develop: true,
-        whitelist: ['header-logo','post-related__prev','post-related__next'],
+        whitelist: [
+          'header-logo',
+          'post-related__prev',
+          'post-related__next',
+          'btn-social-counter--facebook',
+          'btn-social-counter--rss',
+          'btn-facebook',
+          'btn-twitter',
+        ],
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
       },
