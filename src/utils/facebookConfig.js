@@ -5,7 +5,7 @@ try {
 } catch (e) {
   facebookConfig = {
     production: {
-      apiId: process.env.API_ID,
+      apiId: process.env.GATSBY_API_ID,
     },
   }
 } finally {
