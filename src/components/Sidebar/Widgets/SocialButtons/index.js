@@ -1,14 +1,12 @@
 import React from 'react'
-import FacebookButton from './FacebookButton'
-import TwitterButton from './TwitterButton'
-import RSSButton from './RSSButton'
+import { SocialButton } from '../../../Common/Button'
 
 const SocialButtons = () => {
   return (
     <aside className="widget widget--sidebar widget-social">
-      <FacebookButton />
-      <TwitterButton />
-      <RSSButton />
+      <SocialButton counter type="facebook" text="Curta Nossa Página" />
+      <SocialButton counter type="twitter" text="Siga-nos no Twitter" />
+      <SocialButton counter type="rss" text="Increva-se em nosso RSS" />
     </aside>
   )
 }

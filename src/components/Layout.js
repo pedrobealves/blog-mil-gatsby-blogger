@@ -9,6 +9,8 @@ import Header from '../components/Header'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
 
+import '../styles/assets/fonts/font-awesome/icons'
+
 const Template = ({ children }) => {
   return (
     <div className="siteRoot">

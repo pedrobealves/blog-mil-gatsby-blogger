@@ -1,3 +1,4 @@
 import NavButton from './Nav'
+import { SocialButton } from './Social'
 
-export { NavButton }
+export { NavButton, SocialButton }

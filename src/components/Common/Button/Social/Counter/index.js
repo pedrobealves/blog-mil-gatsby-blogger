@@ -1,18 +1,18 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
 
-const FacebookButton = () => {
+const CounterButton = ({ url, type, text, icon }) => {
   return (
     <a
-      href="https://www.facebook.com/milblog/"
-      className="btn-social-counter btn-social-counter--fb"
+      href={url}
+      className={'btn-social-counter btn-social-counter--' + type}
       target="_blank"
+      rel="noopener noreferrer"
     >
       <div className="btn-social-counter__icon">
-        <FontAwesomeIcon icon={faFacebookF} />
+        <FontAwesomeIcon icon={icon} />
       </div>
-      <h6 className="btn-social-counter__title">Like Our Facebook Page</h6>
+      <h6 className="btn-social-counter__title">{text}</h6>
       <span className="btn-social-counter__count">
         <span className="btn-social-counter__count-num" />
         Likes
@@ -22,4 +22,4 @@ const FacebookButton = () => {
   )
 }
 
-export default FacebookButton
+export default CounterButton
