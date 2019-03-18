@@ -2,7 +2,7 @@ import React from 'react'
 import { OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Facebook = ({ url, icon, type }) => {
+const Facebook = ({ url, icon, type, socialUrl }) => {
   return (
     <OverlayTrigger
       key="bottom"
@@ -11,8 +11,10 @@ const Facebook = ({ url, icon, type }) => {
     >
       <li className="social-links__item">
         <a
-          href={url}
-          className="social-links__link"
+          href={socialUrl || url}
+          className={`social-links__link${
+            socialUrl ? ' social-links__link--' + type : ''
+          }`}
           data-toggle="tooltip"
           data-placement="bottom"
           title=""

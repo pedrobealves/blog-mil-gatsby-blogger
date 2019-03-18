@@ -20,6 +20,7 @@ const PostTemplate = ({ data, pageContext }) => {
     slug,
     childMarkdownRemark,
     labels,
+    author,
     published,
     tags,
   } = data.bloggerPost
@@ -38,9 +39,9 @@ const PostTemplate = ({ data, pageContext }) => {
         <PostBody body={childMarkdownRemark} labels={labels} />
       </Container>
       <SharingButtons />
-      <PostAuthor />
+      <PostAuthor {...author} />
       <RelatedPosts previous={previous} next={next} />
-      <PostComments pagePath={slug}/>
+      <PostComments pagePath={slug} />
     </Layout>
   )
 }
@@ -62,6 +63,7 @@ export const query = graphql`
         }
       }
       author {
+        id
         displayName
         image {
           url
