@@ -6,7 +6,7 @@ const HeaderSearchForm = () => {
   return (
     <div className="header-search-form">
       <form
-        action="http://alchemists.dan-fisher.com/basketball/index.html#"
+        action="#"
         id="mobile-search-form"
         className="search-form"
       >

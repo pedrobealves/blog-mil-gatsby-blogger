@@ -7,7 +7,7 @@ const CardList = props => {
       <header className="card__header card__header--has-btn">
         <h4>Latest News</h4>
         <a
-          href="http://alchemists.dan-fisher.com/basketball/index.html#"
+          href="#"
           className="btn btn-default btn-outline btn-xs card-header__button"
         >
           See All Posts

@@ -10,7 +10,7 @@ const HeaderMobile = () => {
           <img
             src={logo}
             srcSet={logo + ' 2x'}
-            alt="Alchemists"
+            alt="Blog MIL"
             className="header-mobile__logo-img"
           />
         </Link>
@@ -25,11 +25,7 @@ const HeaderMobile = () => {
         />
       </div>
       <div className="header-search-form">
-        <form
-          action="http://alchemists.dan-fisher.com/basketball/index.html#"
-          id="mobile-search-form"
-          className="search-form"
-        >
+        <form action="#" id="mobile-search-form" className="search-form">
           <input
             type="text"
             className="form-control header-mobile__search-control"

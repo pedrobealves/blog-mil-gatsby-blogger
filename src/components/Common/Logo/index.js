@@ -8,7 +8,7 @@ const Logo = ({ section }) => {
       <Link to={'/'}>
         <img
           src={logo}
-          alt="Alchemists"
+          alt="Blog MIL"
           srcSet={logo}
           className={section + '-logo__img w-75'}
         />

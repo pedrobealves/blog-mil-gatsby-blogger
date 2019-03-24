@@ -14,11 +14,7 @@ const Newsletter = () => {
             adquisitions and professional match results.
           </p>
         </div>
-        <form
-          action="http://alchemists.dan-fisher.com/basketball/index.html#"
-          id="newsletter"
-          className="inline-form"
-        >
+        <form action="#" id="newsletter" className="inline-form">
           <div className="input-group">
             <input
               type="email"

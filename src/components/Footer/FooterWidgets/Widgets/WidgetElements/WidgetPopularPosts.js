@@ -11,7 +11,7 @@ const WidgetPopularPosts = () => {
               <span className="label posts__cat-label">Injuries</span>
             </div>
             <h6 className="posts__title">
-              <a href="http://alchemists.dan-fisher.com/basketball/index.html#">
+              <a href="#">
                 Mark Johnson has a Tibia Fracture and is gonna be out
               </a>
             </h6>
@@ -24,7 +24,7 @@ const WidgetPopularPosts = () => {
               <span className="label posts__cat-label">The Team</span>
             </div>
             <h6 className="posts__title">
-              <a href="http://alchemists.dan-fisher.com/basketball/index.html#">
+              <a href="#">
                 Jay Rorks is only 24 points away from breaking the record
               </a>
             </h6>
@@ -37,7 +37,7 @@ const WidgetPopularPosts = () => {
               <span className="label posts__cat-label">The Team</span>
             </div>
             <h6 className="posts__title">
-              <a href="http://alchemists.dan-fisher.com/basketball/index.html#">
+              <a href="#">
                 The new eco friendly stadium won a Leafy Award in 2016
               </a>
             </h6>
