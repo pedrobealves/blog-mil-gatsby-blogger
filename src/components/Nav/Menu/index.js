@@ -12,7 +12,7 @@ const Menu = () => {
           <img
             src={logo}
             srcSet="assets/images/logo@2x.png 2x"
-            alt="Alchemists"
+            alt="Blog MIL"
             className="header-mobile__logo-img"
           />
         </Link>

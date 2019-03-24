@@ -13,15 +13,13 @@ const PostThumbnail = ({ header }) => {
         </li>
         <li className="meta__item meta__item--views">2369</li>
         <li className="meta__item meta__item--likes">
-          <a href="http://alchemists.dan-fisher.com/basketball/blog-post-1.html#">
+          <a href="#">
             <i className="meta-like icon-heart" />
             530
           </a>
         </li>
         <li className="meta__item meta__item--comments">
-          <a href="http://alchemists.dan-fisher.com/basketball/blog-post-1.html#">
-            18
-          </a>
+          <a href="#">18</a>
         </li>
       </ul>
     </header>

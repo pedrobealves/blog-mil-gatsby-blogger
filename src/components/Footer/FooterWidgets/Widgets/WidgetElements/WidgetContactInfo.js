@@ -16,46 +16,34 @@ const WidgetContactInfo = () => {
             <svg role="img" className="df-icon df-icon--basketball">
               <use xlinkHref="assets/images/icons-basket.svg#basketball" />
             </svg>
-            <h6 className="info-block__heading">Contact Us</h6>
-            <a
-              className="info-block__link"
-              href="mailto:tryouts@alchemists.com"
-            >
-              blogmil@blogmil.com
+            <h6 className="info-block__heading">Contate-nos</h6>
+            <a className="info-block__link" href="blogmil@outlook.com">
+              blogmil@outlook.com
             </a>
           </div>
           <div className="info-block__item">
             <svg role="img" className="df-icon df-icon--jersey">
               <use xlinkHref="assets/images/icons-basket.svg#jersey" />
             </svg>
-            <h6 className="info-block__heading">Join</h6>
-            <a className="info-block__link" href="mailto:info@alchemists.com">
+            <h6 className="info-block__heading">Increva-se</h6>
+            <a className="info-block__link" href="blogmil@outlook.com">
               info@blogmil.com
             </a>
           </div>
           <div className="info-block__item info-block__item--nopadding">
             <ul className="social-links">
               <li className="social-links__item">
-                <a
-                  href="http://alchemists.dan-fisher.com/basketball/index.html#"
-                  className="social-links__link"
-                >
+                <a href="#" className="social-links__link">
                   <i className="fa fa-facebook" /> Facebook
                 </a>
               </li>
               <li className="social-links__item">
-                <a
-                  href="http://alchemists.dan-fisher.com/basketball/index.html#"
-                  className="social-links__link"
-                >
+                <a href="#" className="social-links__link">
                   <i className="fa fa-twitter" /> Twitter
                 </a>
               </li>
               <li className="social-links__item">
-                <a
-                  href="http://alchemists.dan-fisher.com/basketball/index.html#"
-                  className="social-links__link"
-                >
+                <a href="#" className="social-links__link">
                   <i className="fa fa-google-plus" /> Google+
                 </a>
               </li>
