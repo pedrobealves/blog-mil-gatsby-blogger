@@ -10,8 +10,7 @@ const Newsletter = () => {
         <h5 className="widget-newsletter__subtitle">Subscribe Now!</h5>
         <div className="widget-newsletter__desc">
           <p>
-            Receive the latest news from the team: game reminders, new
-            adquisitions and professional match results.
+            Receba os últimos artigos artigos postados.
           </p>
         </div>
         <form action="#" id="newsletter" className="inline-form">
