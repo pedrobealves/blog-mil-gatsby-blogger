@@ -7,7 +7,7 @@ const WidgetInstagram = () => {
       <div className="widget__content">
         <ul id="instagram-feed" className="widget-instagram__list" />
         <a
-          href="https://www.instagram.com/dan.fisher.dev"
+          href="https://www.instagram.com/"
           className="btn btn-sm btn-instagram btn-icon-right"
         >
           Follow Our Instagram <i className="icon-arrow-right" />
