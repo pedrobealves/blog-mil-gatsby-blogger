@@ -2,3 +2,53 @@
 File Name: 		custom.css
 Description:  You can add your custom CSS here and it will overwrite template styles
 */
+
+/* Post: Cards Thumb Left
+              height={'65vh'}
+*/
+.posts--cards-thumb-left {
+  .posts__thumb {
+    @media (min-width: 768px) {
+      max-width: 175px;
+    }
+
+    @media (min-width: 992px) {
+      max-width: 70px;
+    }
+
+    @media (min-width: 1199px) {
+      max-width: 230px;
+    }
+  }
+}
+
+.card--clean {
+  .card__header {
+    border: 0px solid;
+  }
+}
+
+.card {
+  border: 0px solid;
+}
+
+.btn-social-counter {
+  border: 0px solid;
+}
+
+.card__pd {
+  padding: 11px 24px;
+}
+.posts__item--card {
+  .posts__excerpt_pd {
+    padding: 10px 0 8px 0;
+
+    @media (min-width: 992px) {
+      padding: 20px 0 8px 0;
+    }
+  }
+}
+
+.posts__item--card .posts__footer {
+  padding: 14px 24px;
+}

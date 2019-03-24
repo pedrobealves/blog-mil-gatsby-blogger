@@ -24,14 +24,14 @@ const Card = ({
           <Link to={`${slug}`}>
             <CoverImg
               fluid={cover.childImageSharp.fluid}
-              height={'65vh'}
+              height={'50vh'}
               backgroundColor={'#eeeeee'}
             />
           </Link>
           <a href="#" className="posts__cta" />
         </figure>
         <div className="posts__inner">
-          <div className="card__content">
+          <div className="card__content card__pd">
             <div className="posts__cat">
               {labels.slice(0, 2).map((label, index) => (
                 <span key={index} className="label posts__cat-label mr-1 mb-1">
@@ -45,7 +45,9 @@ const Card = ({
             <time dateTime="2016-08-17" className="posts__date">
               {published}
             </time>
-            <div className="posts__excerpt">{childMarkdownRemark.excerpt}</div>
+            <div className="posts__excerpt posts__excerpt_pd">
+              {childMarkdownRemark.excerpt}
+            </div>
           </div>
           <footer className="posts__footer card__footer">
             <div className="post-author">
