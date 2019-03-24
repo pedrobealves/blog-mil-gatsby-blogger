@@ -5,7 +5,7 @@ import configFacebook from '../../../utils/facebookConfig'
 const componentName = ({ pagePath }) => {
   return (
     <FacebookProvider wait appId={configFacebook.apiId}>
-      <Comments href={'https://www.blogmil.net/' + pagePath} />
+      <Comments href={'https://www.blogmil.net/' + pagePath} width={'100%'} />
     </FacebookProvider>
   )
 }
