@@ -9,9 +9,7 @@ const Newsletter = () => {
       <div className="widget__content card__content">
         <h5 className="widget-newsletter__subtitle">Subscribe Now!</h5>
         <div className="widget-newsletter__desc">
-          <p>
-            Receba os últimos artigos artigos postados.
-          </p>
+          <p>Receba os últimos artigos artigos postados.</p>
         </div>
         <form action="#" id="newsletter" className="inline-form">
           <div className="input-group">
