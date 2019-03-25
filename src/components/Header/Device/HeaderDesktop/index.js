@@ -6,6 +6,7 @@ import HeaderPrimary from './HeaderPrimary'
 const HeaderMobile = () => {
   return (
     <header className="header">
+      <div className="bg-header" />
       <HeaderTopBar />
       <HeaderSecondary />
       <HeaderPrimary />
