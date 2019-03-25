@@ -75,3 +75,12 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .info-block__link {
   color: #8a8c90;
 }
+
+.tr-caption {
+  display: block;
+  padding-top: 10px;
+  font-size: 13px;
+  color: rgba(49, 64, 75, 0.767);
+  text-align: center;
+  line-height: 1.5em;
+}
