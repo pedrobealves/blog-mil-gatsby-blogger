@@ -22,6 +22,7 @@ const PostTemplate = ({ data, pageContext }) => {
     labels,
     author,
     published,
+    content,
     tags,
   } = data.bloggerPost
   const postNode = data.bloggerPost
@@ -36,7 +37,11 @@ const PostTemplate = ({ data, pageContext }) => {
       </Helmet>
       <SEO pagePath={slug} postNode={postNode} postSEO />
       <Container>
-        <PostBody body={childMarkdownRemark} labels={labels} />
+        <PostBody
+          body={childMarkdownRemark}
+          content={content}
+          labels={labels}
+        />
       </Container>
       <SharingButtons />
       <PostAuthor {...author} />
@@ -53,6 +58,7 @@ export const query = graphql`
       id
       slug
       labels
+      content
       cover {
         childImageSharp {
           fluid(maxWidth: 773, maxHeight: 408) {
