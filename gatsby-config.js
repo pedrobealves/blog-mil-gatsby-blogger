@@ -207,6 +207,7 @@ module.exports = {
           'social-links__link--instagram',
           'btn-facebook',
           'btn-twitter',
+          'tr-caption',
         ],
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
