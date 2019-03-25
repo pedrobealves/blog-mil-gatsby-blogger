@@ -1,13 +1,14 @@
 import React from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import FacebookShare from './Facebook'
+import Other from './Other'
 
-const componentName = ({ url, icon, text, type }) => {
-  return (
-    <a href={url} className={`btn btn-default btn-${type} btn-icon btn-block`}>
-      <FontAwesomeIcon icon={icon} />
-      <span className="post-sharing__label hidden-xs">{text}</span>
-    </a>
-  )
+const componentName = props => {
+  const shareButtons = props => ({
+    facebook: <FacebookShare {...props} />,
+    twitter: <Other {...props} />,
+  })
+
+  return shareButtons(props)[props.type]
 }
 
 export default componentName
