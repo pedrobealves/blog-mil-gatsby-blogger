@@ -6,6 +6,8 @@ import Container from '../components/Container'
 import PageTitle from '../components/PageTitle'
 import ContactForm from '../components/ContactForm'
 import SEO from '../components/SEO'
+import { FacebookProvider, MessageUs } from 'react-facebook'
+import configFacebook from '../utils/facebookConfig'
 
 const Contact = ({ data }) => {
   const postNode = {
@@ -21,7 +23,14 @@ const Contact = ({ data }) => {
 
       <Container>
         <PageTitle>Contact</PageTitle>
-        <ContactForm />
+
+        <FacebookProvider appId={configFacebook.apiId}>
+          <MessageUs
+            messengerAppId={configFacebook.apiId}
+            pageId="314219968779578"
+          />
+          <ContactForm />
+        </FacebookProvider>
       </Container>
     </Layout>
   )

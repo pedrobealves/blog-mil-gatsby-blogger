@@ -15,47 +15,44 @@ const Menu = ({ header }) => {
         title: 'SOBRE',
         selected: false,
         link: 'sandman-o-tempo-e-morte-sob-perspectiva/',
-        sub: [
-          {
-            id: 0,
-            title: 'HOME',
-            selected: false,
-            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
-          },
-          {
-            id: 1,
-            title: 'HOME',
-            selected: false,
-            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
-          },
-          {
-            id: 2,
-            title: 'HOME',
-            selected: false,
-            link: 'tengen-toppa-gurren-lagann-o-cliche-na/'
-          },
-        ],
       },
       {
         id: 2,
-        title: 'JOGOS',
+        title: 'CONTATO',
         selected: false,
-        link: 'sandman-o-tempo-e-morte-sob-perspectiva/',
-        sub: [],
+        link: '/contact/',
       },
       {
         id: 3,
         title: 'ARQUIVO',
         selected: false,
         link: 'sandman-o-tempo-e-morte-sob-perspectiva/',
-        sub: [],
       },
       {
         id: 4,
         title: 'GALERIA',
         selected: false,
         link: 'sandman-o-tempo-e-morte-sob-perspectiva/',
-        sub: [],
+        sub: [
+          {
+            id: 0,
+            title: 'HOME',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/',
+          },
+          {
+            id: 1,
+            title: 'HOME',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/',
+          },
+          {
+            id: 2,
+            title: 'HOME',
+            selected: false,
+            link: 'tengen-toppa-gurren-lagann-o-cliche-na/',
+          },
+        ],
       },
     ],
   }
@@ -68,8 +65,8 @@ const Menu = ({ header }) => {
           className={
             header
               ? selected
-                ? 'active has-children'
-                : 'has-children'
+                ? `active ${sub && `has-children`}`
+                : sub && 'has-children'
               : 'footer-nav__item'
           }
         >
