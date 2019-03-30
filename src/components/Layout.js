@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeProvider } from 'styled-components'
+import ThemeContext from '../context/ThemeContext'
 import Helmet from 'react-helmet'
 import favicon from '../images/favicon.ico'
 import GlobalStyle from '../styles/global'
@@ -21,8 +22,8 @@ const Template = ({ children, fullContainer }) => {
         <link rel="icon" href={favicon} />
       </Helmet>
 
-      <ThemeProvider theme={theme}>
-        <>
+      <ThemeContext.Consumer>
+        {theme => (
           <div className="template-basketball d-block">
             <div className="site-wrapper clearfix">
               <div className="site-overlay" />
@@ -31,7 +32,13 @@ const Template = ({ children, fullContainer }) => {
                 <div className="container">
                   <div className="row">
                     <div
-                      className={`content col-md-${fullContainer ? '12' : '8'}`}
+                      className={
+                        fullContainer
+                          ? 'content col-md-12'
+                          : theme.full
+                          ? 'content col-lg-8 offset-md-2'
+                          : 'content col-md-8'
+                      }
                     >
                       {children}
                     </div>
@@ -39,7 +46,7 @@ const Template = ({ children, fullContainer }) => {
                       id="sidebar"
                       className={`sidebar col-md-${fullContainer ? '12' : '4'}`}
                     >
-                      {!fullContainer && <Sidebar />}
+                      {!fullContainer && !theme.full && <Sidebar />}
                     </div>
                   </div>
                 </div>
@@ -47,8 +54,8 @@ const Template = ({ children, fullContainer }) => {
               <Footer />
             </div>
           </div>
-        </>
-      </ThemeProvider>
+        )}
+      </ThemeContext.Consumer>
     </div>
   )
 }
