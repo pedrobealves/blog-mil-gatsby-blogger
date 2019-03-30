@@ -105,7 +105,7 @@ const Modal = styled.div`
   transition: 0.2s all;
   opacity: ${props => (props.visible ? '1' : '0')};
   visibility: ${props => (props.visible ? 'visible' : 'hidden')};
-  @media screen and (min-width: 35em) {
+  @media screen and (min-width: ${props => props.theme.responsive.small}) {
     min-width: inherit;
     max-width: 400px;
   }
@@ -116,7 +116,7 @@ const Modal = styled.div`
 `
 
 const Button = styled.div`
-  background: #121212;
+  background: ${props => props.theme.colors.base};
   font-size: 1em;
   display: inline-block;
   margin: 0 auto;
@@ -133,7 +133,7 @@ const Button = styled.div`
     outline: none;
   }
   &:hover {
-    background: #5b8bf7;
+    background: ${props => props.theme.colors.highlight};
   }
 `
 
