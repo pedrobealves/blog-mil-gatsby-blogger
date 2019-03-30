@@ -6,12 +6,12 @@ import SocialButtons from './Widgets/SocialButtons'
 
 const Sidebar = () => {
   return (
-    <div id="sidebar" className="sidebar col-md-4">
+    <>
       <PopularPosts />
       <SocialButtons />
       <Banner />
       <Newsletter />
-    </div>
+    </>
   )
 }
 
