@@ -208,6 +208,7 @@ module.exports = {
           'btn-facebook',
           'btn-twitter',
           'tr-caption',
+          'col-md-8',
         ],
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
