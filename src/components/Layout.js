@@ -11,7 +11,7 @@ import Sidebar from './Sidebar'
 
 import '../styles/assets/fonts/font-awesome/icons'
 
-const Template = ({ children }) => {
+const Template = ({ children, fullContainer }) => {
   return (
     <div className="siteRoot">
       <Helmet>
@@ -30,8 +30,17 @@ const Template = ({ children }) => {
               <div className="site-content">
                 <div className="container">
                   <div className="row">
-                    <div className="content col-md-8">{children}</div>
-                    <Sidebar />
+                    <div
+                      className={`content col-md-${fullContainer ? '12' : '8'}`}
+                    >
+                      {children}
+                    </div>
+                    <div
+                      id="sidebar"
+                      className={`content col-md-${fullContainer ? '12' : '4'}`}
+                    >
+                      {!fullContainer && <Sidebar />}
+                    </div>
                   </div>
                 </div>
               </div>
