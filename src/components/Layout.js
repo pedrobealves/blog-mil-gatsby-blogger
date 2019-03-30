@@ -37,7 +37,7 @@ const Template = ({ children, fullContainer }) => {
                     </div>
                     <div
                       id="sidebar"
-                      className={`content col-md-${fullContainer ? '12' : '4'}`}
+                      className={`sidebar col-md-${fullContainer ? '12' : '4'}`}
                     >
                       {!fullContainer && <Sidebar />}
                     </div>
