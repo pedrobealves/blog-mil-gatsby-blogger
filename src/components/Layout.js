@@ -12,7 +12,7 @@ import Sidebar from './Sidebar'
 
 import '../styles/assets/fonts/font-awesome/icons'
 
-const Template = ({ children, fullContainer }) => {
+const Template = ({ children, fullContainer, pageHeading }) => {
   return (
     <div className="siteRoot">
       <Helmet>
@@ -28,6 +28,7 @@ const Template = ({ children, fullContainer }) => {
               <div className="site-wrapper clearfix">
                 <div className="site-overlay" />
                 <Header />
+                {pageHeading}
                 <div className="site-content">
                   <div className="container">
                     <div className="row">

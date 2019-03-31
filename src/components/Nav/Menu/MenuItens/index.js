@@ -20,13 +20,13 @@ const Menu = ({ header }) => {
         id: 2,
         title: 'CONTATO',
         selected: false,
-        link: '/contact/',
+        link: 'contact/',
       },
       {
         id: 3,
         title: 'ARQUIVO',
         selected: false,
-        link: 'sandman-o-tempo-e-morte-sob-perspectiva/',
+        link: 'archive/',
       },
       {
         id: 4,
