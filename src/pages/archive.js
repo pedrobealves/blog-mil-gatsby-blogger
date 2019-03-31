@@ -42,7 +42,7 @@ const Archive = ({ data }) => {
 
 export const query = graphql`
   {
-    allBloggerPost {
+    allBloggerPost(sort: { fields: [published], order: DESC }) {
       edges {
         node {
           id
