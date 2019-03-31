@@ -8,7 +8,7 @@ require('./src/styles/assets/scss/style-basketball.scss')
 
 // const lsDark = JSON.parse(localStorage.getItem('dark'))
 
-lsDark && require('./src/styles/assets/scss/style-basketball-dark.scss')
+// lsDark && require('./src/styles/assets/scss/style-basketball-dark.scss')
 
 export const wrapRootElement = ({ element }) => (
   <ThemeProvider>{element}</ThemeProvider>
