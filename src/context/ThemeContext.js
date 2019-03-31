@@ -22,6 +22,7 @@ class ThemeProvider extends React.Component {
     let dark = !this.state.dark
     localStorage.setItem('dark', JSON.stringify(dark))
     this.setState({ dark })
+    window.location.reload()
   }
 
   toggleFull = () => {
