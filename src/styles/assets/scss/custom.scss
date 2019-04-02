@@ -88,3 +88,17 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .footer {
   color: #8a8c90;
 }
+
+.main-nav__list > li > a.active {
+  color: #ff6711;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.main-nav__list > li > a.active::before {
+  background-color: #ff6711;
+}
+
+.error__background {
+  background-color: #edeff4;
+}
