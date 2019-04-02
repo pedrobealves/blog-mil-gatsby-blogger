@@ -1,13 +1,13 @@
 import React from 'react'
 
-const HeadingMenu = ({ title, results, path }) => {
+const HeadingMenu = ({ title, highlight, path }) => {
   return (
     <div className="page-heading">
       <div className="container">
         <div className="row">
           <div className="col-md-10 offset-md-1">
             <h1 className="page-heading__title">
-              {title} <span className="highlight">{results}</span>
+              {title} <span className="highlight">{highlight}</span>
             </h1>
             <ol className="page-heading__breadcrumb breadcrumb">
               <li className="breadcrumb-item">
