@@ -58,7 +58,7 @@ const Card = ({
                 <h4 className="post-author__name">{author.displayName}</h4>
               </div>
             </div>
-            <ul className="post__meta meta">
+            {/*<ul className="post__meta meta">
               <li className="meta__item meta__item--views">2369</li>
               <li className="meta__item meta__item--likes">
                 <a href="#">
@@ -69,7 +69,7 @@ const Card = ({
               <li className="meta__item meta__item--comments">
                 <a href="#">18</a>
               </li>
-            </ul>
+              </ul>*/}
           </footer>
         </div>
       </div>

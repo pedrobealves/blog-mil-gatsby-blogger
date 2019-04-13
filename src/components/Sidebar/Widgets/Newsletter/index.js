@@ -4,10 +4,10 @@ const Newsletter = () => {
   return (
     <aside className="widget widget--sidebar card widget-newsletter">
       <div className="widget__title card__header">
-        <h4>Our Newsletter</h4>
+        <h4>Nossa Newsletter</h4>
       </div>
       <div className="widget__content card__content">
-        <h5 className="widget-newsletter__subtitle">Subscribe Now!</h5>
+        <h5 className="widget-newsletter__subtitle">Inscreva-se agora!</h5>
         <div className="widget-newsletter__desc">
           <p>Receba os últimos artigos artigos postados.</p>
         </div>
@@ -20,7 +20,7 @@ const Newsletter = () => {
             />
             <span className="input-group-append">
               <button className="btn btn-lg btn-default" type="button">
-                Send
+                Enviar
               </button>
             </span>
           </div>

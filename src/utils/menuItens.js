@@ -1,7 +1,7 @@
 module.exports = {
   list: [
     {
-      title: 'HOME',
+      title: 'INÍCIO',
       link: '',
     },
     {
