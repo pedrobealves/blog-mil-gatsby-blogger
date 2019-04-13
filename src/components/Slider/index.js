@@ -21,14 +21,14 @@ const SliderFeatured = ({ posts }) => {
   return (
     <div className="card card--clean">
       <header className="card__header card__header--has-filter">
-        <h4>Featured</h4>
+        <h4>Destaque</h4>
         <ul className="category-filter category-filter--featured">
           <li className="category-filter__item">
             <a
               href="#"
               className="category-filter__link category-filter__link--reset category-filter__link--active"
             >
-              All
+              Todos
             </a>
           </li>
           <li className="category-filter__item">
@@ -37,7 +37,7 @@ const SliderFeatured = ({ posts }) => {
               className="category-filter__link"
               data-category="posts__item--category-1"
             >
-              RPG
+              Jogos
             </a>
           </li>
           <li className="category-filter__item">
@@ -46,7 +46,7 @@ const SliderFeatured = ({ posts }) => {
               className="category-filter__link"
               data-category="posts__item--category-3"
             >
-              Action
+              Animes
             </a>
           </li>
           <li className="category-filter__item">
@@ -55,7 +55,7 @@ const SliderFeatured = ({ posts }) => {
               className="category-filter__link"
               data-category="posts__item--category-2"
             >
-              Terror
+              Galeria
             </a>
           </li>
         </ul>

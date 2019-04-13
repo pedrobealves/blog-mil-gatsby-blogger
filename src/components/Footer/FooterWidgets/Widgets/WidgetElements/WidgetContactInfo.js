@@ -3,12 +3,12 @@ import React from 'react'
 const WidgetContactInfo = () => {
   return (
     <div className="widget widget--footer widget-contact-info">
-      <h4 className="widget__title">Contact Info</h4>
+      <h4 className="widget__title">Contato</h4>
       <div className="widget__content">
         <div className="widget-contact-info__desc">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisi nel elit, sed do
-            eiusmod tempor incididunt ut labore et dolore.
+            Um blog com o péssimo hábito de não ter "parte 2", xingar fanbases,
+            falar de azeitonas, bolsa de valores e às vezes... games.
           </p>
         </div>
         <div className="widget-contact-info__body info-block">

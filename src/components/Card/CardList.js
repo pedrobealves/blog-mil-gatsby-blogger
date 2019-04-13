@@ -5,12 +5,12 @@ const CardList = props => {
   return (
     <div className="card card--clean">
       <header className="card__header card__header--has-btn">
-        <h4>Latest News</h4>
+        <h4>Últimas</h4>
         <a
-          href="#"
+          href="/archive"
           className="btn btn-default btn-outline btn-xs card-header__button"
         >
-          See All Posts
+          Ver todas
         </a>
       </header>
       <div className="card__content">

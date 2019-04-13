@@ -24,7 +24,7 @@ const NavBar = () => {
         </ul>
       </li>
       <li className="nav-account__item nav-account__item--logout">
-        <a href="#">Sair</a>
+        <a href="#">Política</a>
       </li>
     </ul>
   )

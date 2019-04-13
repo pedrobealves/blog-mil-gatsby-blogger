@@ -6,7 +6,7 @@ const DropdownShopCart = () => {
     <ThemeContext.Consumer>
       {theme => (
         <ul className="header-cart">
-          <li className="header-cart__item header-cart__item--subtotal">
+          {/* <li className="header-cart__item header-cart__item--subtotal">
             <span className="header-cart__subtotal">Modo Escuro</span>
             <span className="header-cart__subtotal-sum">
               <label className="checkbox checkbox-inline mr-2">
@@ -19,7 +19,7 @@ const DropdownShopCart = () => {
                 <span className="checkbox-indicator" />
               </label>
             </span>
-          </li>
+      </li> */}
           <li className="header-cart__item header-cart__item--subtotal">
             <span className="header-cart__subtotal">Tela Cheia</span>
             <span className="header-cart__subtotal-sum">
