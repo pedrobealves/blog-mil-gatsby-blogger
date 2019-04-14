@@ -16,6 +16,7 @@ class ThemeProvider extends React.Component {
   state = {
     dark: false,
     full: false,
+    menu: false,
   }
 
   toggleDark = () => {
@@ -29,6 +30,11 @@ class ThemeProvider extends React.Component {
     let full = !this.state.full
     localStorage.setItem('full', JSON.stringify(full))
     this.setState({ full })
+  }
+
+  toogleMenu = () => {
+    this.setState({ menu: !this.state.menu })
+    console.log('test')
   }
 
   componentDidMount() {
@@ -47,14 +53,16 @@ class ThemeProvider extends React.Component {
 
   render() {
     const { children } = this.props
-    const { dark, full } = this.state
+    const { dark, full, menu } = this.state
     return (
       <ThemeContext.Provider
         value={{
           dark,
           full,
+          menu,
           toggleDark: this.toggleDark,
           toggleFull: this.toggleFull,
+          toogleMenu: this.toogleMenu,
         }}
       >
         {children}

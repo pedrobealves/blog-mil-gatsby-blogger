@@ -14,7 +14,7 @@ const HeaderSearchForm = () => {
           type="text"
           className="form-control header-mobile__search-control"
           value=""
-          placeholder="Enter your search here..."
+          placeholder="Digite sua pesquisa aqui..."
         />
         <button type="submit" className="header-mobile__search-submit">
           <FontAwesomeIcon icon={faSearch}/>

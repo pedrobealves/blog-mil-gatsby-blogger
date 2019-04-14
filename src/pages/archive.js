@@ -50,7 +50,7 @@ export const query = graphql`
           childMarkdownRemark {
             frontmatter {
               title
-              date(formatString: "MMMM DD, YYYY")
+              date(formatString: "MMMM DD, YYYY", locale: "pt-BR")
               slug
             }
             excerpt

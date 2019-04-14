@@ -1,17 +1,23 @@
 import React from 'react'
 import MenuItens from './MenuItens'
 import logo from '../../../images/logo.png'
+import ThemeContext from '../../../context/ThemeContext'
 import { Link } from 'gatsby'
 
 const Menu = () => {
   return (
     <ul className="main-nav__list">
       <div className="header-mobile__logo">
-        <span className="main-nav__back" />
+        <ThemeContext.Consumer>
+          {theme => (
+            <span className="main-nav__back" onClick={theme.toogleMenu} />
+          )}
+        </ThemeContext.Consumer>
+
         <Link to={'/'}>
           <img
             src={logo}
-            srcSet="assets/images/logo@2x.png 2x"
+            srcSet={logo + ' 2x'}
             alt="Blog MIL"
             className="header-mobile__logo-img"
           />

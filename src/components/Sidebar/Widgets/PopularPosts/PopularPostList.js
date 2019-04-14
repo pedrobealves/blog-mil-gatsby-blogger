@@ -27,6 +27,7 @@ const Card = ({ posts }) => {
                   frontmatter {
                     title
                     slug
+                    date(formatString: "MMMM DD, YYYY", locale: "pt-BR")
                   }
                 }
               }
