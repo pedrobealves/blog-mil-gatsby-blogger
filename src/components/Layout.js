@@ -1,4 +1,5 @@
 import React from 'react'
+import classnames from 'classnames'
 import { ThemeProvider } from 'styled-components'
 import ThemeContext from '../context/ThemeContext'
 import Helmet from 'react-helmet'
@@ -25,7 +26,12 @@ const Template = ({ children, fullContainer, pageHeading }) => {
         <ThemeContext.Consumer>
           {themeContext => (
             <div className="template-basketball d-block">
-              <div className="site-wrapper clearfix">
+              <div
+                className={classnames(
+                  'site-wrapper clearfix',
+                  themeContext.menu && 'site-wrapper--has-overlay'
+                )}
+              >
                 <div className="site-overlay" />
                 <Header />
                 {pageHeading}

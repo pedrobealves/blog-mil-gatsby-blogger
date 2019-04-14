@@ -24,7 +24,7 @@ const PopularPost = ({ childMarkdownRemark, labels, cover }) => {
           </Link>
         </h6>
         <time dateTime="2016-08-23" className="posts__date">
-          August 22nd, 2018
+          {childMarkdownRemark.frontmatter.date}
         </time>
       </div>
     </li>

@@ -60,7 +60,7 @@ export const query = graphql`
               url
             }
           }
-          published(formatString: "MMMM DD, YYYY")
+          published(formatString: "MMMM DD, YYYY", locale: "pt-BR")
           childMarkdownRemark {
             frontmatter {
               title
