@@ -10,7 +10,8 @@ const componentName = ({ pagePath, published }) => {
     const year = date.getFullYear()
     const month = date.getMonth()
 
-    if (year < 2015 || (year === 2015 && month >= 1)) return ssl[0] + domain[1]
+    if (year < 2015 || (year === 2015 && month >= 1 && month <= 2))
+      return ssl[0] + domain[1]
 
     if (year < 2018) return ssl[0] + domain[0]
 
@@ -19,6 +20,7 @@ const componentName = ({ pagePath, published }) => {
 
   return (
     <FacebookProvider wait appId={configFacebook.apiId}>
+      {console.log(getURL())}
       <Comments href={getURL() + pagePath} width={'100%'} />
     </FacebookProvider>
   )
