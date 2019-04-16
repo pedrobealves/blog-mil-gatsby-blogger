@@ -1,7 +1,7 @@
 import React, { Suspense, useState } from 'react'
 const FacebookComment = React.lazy(() => import('./FacebookComment'))
 
-const PostComments = ({ pagePath }) => {
+const PostComments = props => {
   const [showComments, setShowComments] = useState(false)
 
   return (
@@ -26,7 +26,7 @@ const PostComments = ({ pagePath }) => {
               </button>
             }
           >
-            <FacebookComment pagePath={pagePath} />
+            <FacebookComment {...props} />
           </Suspense>
         ) : (
           <button
