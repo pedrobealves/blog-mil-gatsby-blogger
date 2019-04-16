@@ -46,7 +46,7 @@ const PostTemplate = ({ data, pageContext }) => {
       <SharingButtons pagePath={slug} />
       <PostAuthor {...author} />
       <RelatedPosts previous={previous} next={next} />
-      <PostComments pagePath={slug} />
+      <PostComments pagePath={slug} published={published} />
     </Layout>
   )
 }
@@ -59,6 +59,7 @@ export const query = graphql`
       slug
       labels
       content
+      published
       cover {
         childImageSharp {
           fluid(maxWidth: 773, maxHeight: 408) {
