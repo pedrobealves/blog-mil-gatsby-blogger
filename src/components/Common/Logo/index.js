@@ -1,16 +1,34 @@
 import React from 'react'
 import logo from '../../../images/logo.png'
-import { Link } from 'gatsby'
+import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
 const Logo = ({ section }) => {
   return (
     <div className={section + '-logo'}>
       <Link to={'/'}>
-        <img
-          src={logo}
-          alt="Blog MIL"
-          srcSet={logo}
-          className={section + '-logo__img w-75'}
+        <StaticQuery
+          query={graphql`
+            query {
+              desktop: file(relativePath: { eq: "logo.png" }) {
+                childImageSharp {
+                  fluid(quality: 100, maxWidth: 500) {
+                    ...GatsbyImageSharpFluid_withWebp
+                  }
+                }
+              }
+            }
+          `}
+          render={data => {
+            const imageData = data.desktop.childImageSharp.fluid
+            return (
+              <img
+                src={imageData.srcWebp}
+                alt="Blog MIL"
+                className={section + '-logo__img w-75'}
+              />
+            )
+          }}
         />
       </Link>
     </div>
