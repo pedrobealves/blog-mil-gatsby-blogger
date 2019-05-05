@@ -20,7 +20,6 @@ const componentName = ({ pagePath, published }) => {
 
   return (
     <FacebookProvider wait appId={configFacebook.apiId}>
-      {console.log(getURL())}
       <Comments href={getURL() + pagePath} width={'100%'} />
     </FacebookProvider>
   )

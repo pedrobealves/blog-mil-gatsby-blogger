@@ -11,7 +11,7 @@ const PostThumbnail = ({ header }) => {
         <li className="meta__item meta__item--date">
           <time dateTime="2017-08-23">{header.date}</time>
         </li>
-        <li className="meta__item meta__item--views">2369</li>
+        {/* <li className="meta__item meta__item--views">2369</li>
         <li className="meta__item meta__item--likes">
           <a href="#">
             <i className="meta-like icon-heart" />
@@ -20,7 +20,7 @@ const PostThumbnail = ({ header }) => {
         </li>
         <li className="meta__item meta__item--comments">
           <a href="#">18</a>
-        </li>
+  </li> */}
       </ul>
     </header>
   )
