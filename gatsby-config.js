@@ -1,4 +1,5 @@
 const config = require('./src/utils/siteConfig')
+const path = require('path')
 let bloggerConfig
 
 try {
@@ -78,6 +79,13 @@ module.exports = {
             },
           },
         ],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
       },
     },
     `gatsby-plugin-catch-links`,

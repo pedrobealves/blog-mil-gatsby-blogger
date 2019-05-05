@@ -56,18 +56,6 @@ Description:  You can add your custom CSS here and it will overwrite template st
   background: transparent;
 }
 
-.bg-header {
-  position: absolute;
-  z-index: -1;
-  background-repeat: no-repeat;
-  background-size: cover;
-  filter: grayscale(100%) contrast(1.5);
-  opacity: 0.1;
-  background: url(../images/background.jpg);
-  width: 100%;
-  height: 100%;
-}
-
 .header__primary-inner::before {
   width: 233px;
 }
