@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 
 const NavBar = () => {
   return (
@@ -24,7 +25,7 @@ const NavBar = () => {
         </ul>
       </li>
       <li className="nav-account__item nav-account__item--logout">
-        <a href="#">Política</a>
+        <Link to="politica-de-privacidade">Política</Link>
       </li>
     </ul>
   )
