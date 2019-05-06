@@ -114,7 +114,7 @@ exports.createPages = ({ graphql, actions }) => {
     })
   }) */
 
-  /* const loadPages = new Promise((resolve, reject) => {
+  const loadPages = new Promise((resolve, reject) => {
     graphql(`
       {
         allBloggerPage {
@@ -138,7 +138,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
       resolve()
     })
-  }) */
+  })
 
-  return Promise.all([loadPosts])
+  return Promise.all([loadPosts, loadPages])
 }

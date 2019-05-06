@@ -6,19 +6,19 @@ module.exports = {
     },
     {
       title: 'SOBRE',
-      link: 'about/',
+      link: 'sobre/',
     },
     {
       title: 'CONTATO',
-      link: 'contact/',
+      link: 'contato/',
     },
     {
       title: 'ARQUIVO',
-      link: 'archive/',
+      link: 'arquivo/',
     },
     {
       title: 'MAIS',
-      link: 'more/',
+      link: 'mais/',
       sub: [
         {
           title: 'JOGOS',

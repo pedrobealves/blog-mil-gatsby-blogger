@@ -8,17 +8,13 @@ const Banner = () => {
         <h4>Anúncio</h4>
       </div>
       <div className="widget__content card__content">
-        <figure className="widget-banner__img">
-          <a href="#">
-            <AdSense.Google
-              client="ca-pub-3812196532836599"
-              slot="7516479165"
-              style={{ display: 'block' }}
-              format="auto"
-              responsive="true"
-            />
-          </a>
-        </figure>
+        <AdSense.Google
+          client="ca-pub-3812196532836599"
+          slot="7516479165"
+          style={{ display: 'block' }}
+          format="auto"
+          responsive="true"
+        />
       </div>
     </aside>
   )

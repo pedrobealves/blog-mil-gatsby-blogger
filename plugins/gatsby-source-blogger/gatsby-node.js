@@ -149,10 +149,7 @@ ${md}`,
                 content: `---
   title: '${page.title.replace("'", "''")}'
   date: '${page.published}'
-  slug: '${segments[1]}'
-  ---
-
-  ${md}`,
+  slug: '${segments[1]}'`,
                 contentDigest: crypto
                   .createHash(`md5`)
                   .update(JSON.stringify(page))

@@ -8,10 +8,10 @@ const PostBody = ({ body, content, labels }) => {
   const { frontmatter, html } = body
   return (
     <div className="card__content">
-      <PostCategory label={labels[0]} />
+      {labels && <PostCategory label={labels[0]} />}
       <PostHeader header={frontmatter} />
       <PostContent content={content} />
-      <PostFooter labels={labels} />
+      {labels && <PostFooter labels={labels} />}
     </div>
   )
 }
