@@ -10,7 +10,6 @@ import config from '../utils/siteConfig'
 import Header from '../components/Header'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
-import configFacebook from '../utils/facebookConfig'
 
 import '../styles/assets/fonts/font-awesome/icons'
 
@@ -26,9 +25,6 @@ const Template = ({ children, fullContainer, pageHeading }) => {
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
         />
         <link rel="icon" href={favicon} />
-        <meta content={configFacebook.apiId} property="fb:app_id" />
-        <meta content="100005017326032" property="fb:admins" />
-        <meta content="1839690008" property="fb:admins" />
       </Helmet>
       <ThemeProvider theme={theme}>
         <ThemeContext.Consumer>
