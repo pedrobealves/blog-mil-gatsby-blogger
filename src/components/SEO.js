@@ -23,7 +23,7 @@ class SEO extends Component {
 
     if (customTitle) {
       title = postNode.title
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = config.siteUrl + pagePath
     }
 
     // Replace with Page Parameters if post or page
@@ -31,7 +31,7 @@ class SEO extends Component {
       title = postNode.title
       description = postNode.childMarkdownRemark.excerpt
 
-      pageUrl = config.siteUrl + '/' + pagePath + '/'
+      pageUrl = config.siteUrl + pagePath
     }
 
     // Use Hero Image for OpenGraph
