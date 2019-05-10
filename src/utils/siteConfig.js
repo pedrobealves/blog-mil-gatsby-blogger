@@ -3,7 +3,7 @@ module.exports = {
   siteTitleAlt: 'Blog MIL', // This allows an alternative site title for SEO schema.
   publisher: 'Blog MIL', // Organization name used for SEO schema
   siteDescription: 'Onde os multiversos colidem',
-  siteUrl: 'https://www.blogmil.net/', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
+  siteUrl: 'https://www.blogmil.net', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   postsPerHomePage: 10, // Number of posts shown on the 1st page of of the index.js template (home page)
   postsPerPage: 6, // Number of posts shown on paginated pages
   author: 'Blog MIL', // Author for RSS author segment and SEO schema

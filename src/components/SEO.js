@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
+import configFacebook from '../utils/facebookConfig'
 
 class SEO extends Component {
   render() {
@@ -135,6 +136,10 @@ class SEO extends Component {
         <meta property="og:image:width" content={imgWidth} />
         <meta property="og:image:height" content={imgHeight} />
         <meta property="og:description" content={description} />
+
+        <meta content={configFacebook.apiId} property="fb:app_id" />
+        <meta content="100005017326032" property="fb:admins" />
+        <meta content="1839690008" property="fb:admins" />
 
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
