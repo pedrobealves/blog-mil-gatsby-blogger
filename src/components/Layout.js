@@ -10,7 +10,7 @@ import config from '../utils/siteConfig'
 import Header from '../components/Header'
 import Footer from './Footer'
 import Sidebar from './Sidebar'
-import configFacebook from '../../../utils/facebookConfig'
+import configFacebook from '../utils/facebookConfig'
 
 import '../styles/assets/fonts/font-awesome/icons'
 
