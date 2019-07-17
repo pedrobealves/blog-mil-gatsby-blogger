@@ -90,3 +90,620 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .error__background {
   background-color: #edeff4;
 }
+
+// posts in sidebar
+
+/* Thumb Info */
+.thumb-info {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.thumb-info .thumb-info-wrapper {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  border-radius: 4px;
+  margin: 0;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.thumb-info .thumb-info-wrapper.thumb-info-wrapper-demos {
+  max-height: 330px;
+}
+
+.thumb-info .thumb-info-wrapper:after {
+  content: '';
+  background: rgba(33, 37, 41, 0.8);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 4px;
+  bottom: -4px;
+  color: #fff;
+  left: -4px;
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  display: block;
+  opacity: 0;
+  z-index: 1;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-0:after {
+  opacity: 0;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-1:after {
+  opacity: 0.1;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-2:after {
+  opacity: 0.2;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-3:after {
+  opacity: 0.3;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-4:after {
+  opacity: 0.4;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-5:after {
+  opacity: 0.5;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-6:after {
+  opacity: 0.6;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-7:after {
+  opacity: 0.7;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-8:after {
+  opacity: 0.8;
+}
+
+.thumb-info .thumb-info-wrapper-opacity-9:after {
+  opacity: 0.9;
+}
+
+.thumb-info .thumb-info-action-icon {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: #ccc;
+  border-radius: 0 0 0 4px;
+  display: inline-block;
+  font-size: 25px;
+  height: 50px;
+  line-height: 50px;
+  position: absolute;
+  right: -100px;
+  text-align: center;
+  top: -100px;
+  width: 50px;
+  z-index: 2;
+}
+
+.thumb-info .thumb-info-action-icon i {
+  font-size: 14px;
+  right: 50%;
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  -webkit-transform: translate(50%, -50%);
+  transform: translate(50%, -50%);
+  margin: -2px -1px 0 0px;
+}
+
+.thumb-info .thumb-info-inner {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  display: block;
+}
+
+.thumb-info:hover .thumb-info-inner {
+  padding-bottom: 300px;
+}
+
+.thumb-info .thumb-info-inner em {
+  display: block;
+  font-size: 0.8em;
+  font-style: normal;
+  font-weight: normal;
+}
+
+.thumb-info .thumb-info-title {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  background: rgba(33, 37, 41, 0.8);
+  color: #fff;
+  font-weight: 600;
+  left: 0;
+  letter-spacing: -0.05em;
+  position: absolute;
+  z-index: 2;
+  max-width: 90%;
+  font-size: 17px;
+  bottom: 13%;
+}
+
+.thumb-info .thumb-info-type {
+  background-color: #ccc;
+  border-radius: 2px;
+  display: inline-block;
+  float: left;
+  font-size: 0.6em;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin: 8px -2px -15px 0px;
+  padding: 2px 12px;
+  text-transform: uppercase;
+  z-index: 2;
+  line-height: 2.3;
+}
+
+.thumb-info .owl-carousel {
+  z-index: auto;
+}
+
+.thumb-info .owl-carousel .owl-dots {
+  z-index: 2;
+}
+
+.thumb-info img {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+  position: relative;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  height: 65px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.thumb-info:hover .thumb-info-wrapper:after {
+  opacity: 0;
+}
+
+.thumb-info:hover .thumb-info-action-icon {
+  right: 0;
+  top: 0;
+}
+
+.thumb-info:hover .thumb-info-title {
+  background: rgba(33, 37, 41, 0.9);
+}
+
+.thumb-info:hover img {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+.thumb-info.thumb-info-no-zoom img {
+  -webkit-transition: none;
+  transition: none;
+}
+
+.thumb-info.thumb-info-no-zoom:hover img {
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+.thumb-info.thumb-info-lighten .thumb-info-wrapper:after {
+  background: rgba(23, 23, 23, 0.25);
+}
+
+.thumb-info.thumb-info-hide-wrapper-bg .thumb-info-wrapper:after {
+  display: none;
+}
+
+.thumb-info.thumb-info-centered-icons .thumb-info-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: auto;
+  bottom: auto;
+  width: 100%;
+  height: 45px;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out,
+    -webkit-transform 0.2s ease-out;
+  -webkit-transform: translate3d(0, -70%, 0);
+  transform: translate3d(0, -70%, 0);
+  z-index: 2;
+}
+
+.thumb-info.thumb-info-centered-icons .thumb-info-action a {
+  text-decoration: none;
+}
+
+.thumb-info.thumb-info-centered-icons .thumb-info-action-icon {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  left: auto;
+  right: auto;
+  top: auto;
+  bottom: auto;
+  width: 35px;
+  height: 35px;
+  font-size: 14px;
+  border-radius: 50%;
+  margin-right: 5px;
+  -webkit-transition: all 0.1s ease;
+  transition: all 0.1s ease;
+  z-index: 2;
+}
+
+.thumb-info.thumb-info-centered-icons .thumb-info-action-icon i {
+  margin: 0;
+}
+
+.thumb-info.thumb-info-centered-icons .thumb-info-action-icon:hover {
+  -webkit-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+
+.thumb-info:hover.thumb-info-centered-icons .thumb-info-action {
+  opacity: 1;
+  -webkit-transform: translate3d(0, -50%, 0);
+  transform: translate3d(0, -50%, 0);
+}
+
+.thumb-info:hover.thumb-info-centered-icons .thumb-info-action-icon {
+  position: relative;
+}
+
+.thumb-info.thumb-info-centered-info .thumb-info-title {
+  background: transparent;
+  left: 5%;
+  width: 90%;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out,
+    -webkit-transform 0.2s ease-out;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+  top: 50%;
+  bottom: auto;
+  opacity: 0;
+  text-align: center;
+  padding: 0;
+  position: absolute;
+}
+
+.thumb-info.thumb-info-centered-info .thumb-info-type {
+  float: none;
+}
+
+.thumb-info.thumb-info-centered-info:hover .thumb-info-title {
+  opacity: 1;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.thumb-info.thumb-info-bottom-info .thumb-info-title {
+  background: #fff;
+  left: 0;
+  width: 100%;
+  max-width: 100%;
+  -webkit-transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: opacity 0.2s ease-out, -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out,
+    -webkit-transform 0.2s ease-out;
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+  top: auto;
+  bottom: 0;
+  opacity: 0;
+  //padding: 15px;
+  text-shadow: 0;
+  color: #777;
+}
+
+.thumb-info.thumb-info-bottom-info .thumb-info-type {
+  float: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.thumb-info.thumb-info-bottom-info:hover .thumb-info-title {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.thumb-info.thumb-info-bottom-info:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.thumb-info.thumb-info-bottom-info-linear .thumb-info-title {
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgba(255, 255, 255, 0.8)),
+      to(transparent)
+    )
+    repeat scroll 0 0 rgba(255, 255, 255, 0);
+  background: linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.8) 0,
+      transparent 100%
+    )
+    repeat scroll 0 0 rgba(255, 255, 255, 0);
+}
+
+.thumb-info.thumb-info-bottom-info-dark .thumb-info-title {
+  background: #212529;
+  color: #fff;
+}
+
+.thumb-info.thumb-info-bottom-info-dark-linear .thumb-info-title {
+  background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0, rgba(33, 37, 41, 0.8)),
+      to(transparent)
+    )
+    repeat scroll 0 0 rgba(0, 0, 0, 0);
+  background: linear-gradient(to top, rgba(33, 37, 41, 0.8) 0, transparent 100%)
+    repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.thumb-info.thumb-info-bottom-info-show-more img {
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+.thumb-info.thumb-info-bottom-info-show-more .thumb-info-title {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.thumb-info.thumb-info-bottom-info-show-more .thumb-info-show-more-content {
+  -webkit-transition: ease max-height 800ms;
+  transition: ease max-height 800ms;
+  overflow: hidden;
+  max-height: 0;
+  display: block;
+}
+
+.thumb-info.thumb-info-bottom-info-show-more:hover
+  .thumb-info-show-more-content {
+  max-height: 300px;
+}
+
+.thumb-info.thumb-info-push-hor img {
+  -webkit-transform: translatex(-18px);
+  transform: translatex(-18px);
+  width: calc(100% + 19px);
+  max-width: none;
+}
+
+.thumb-info.thumb-info-push-hor:hover img {
+  -webkit-transform: translatex(0);
+  transform: translatex(0);
+}
+
+.thumb-info.thumb-info-block .thumb-info-action-icon {
+  top: 15px;
+  right: 15px;
+  opacity: 0;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.thumb-info.thumb-info-block .thumb-info-wrapper:before {
+  content: '';
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 0;
+  bottom: 16px;
+  bottom: 1rem;
+  color: #fff;
+  left: 16px;
+  left: 1rem;
+  position: absolute;
+  right: 16px;
+  right: 1rem;
+  top: 16px;
+  top: 1rem;
+  display: block;
+  opacity: 0;
+  z-index: 2;
+}
+
+.thumb-info.thumb-info-block:hover .thumb-info-wrapper:before {
+  opacity: 1;
+}
+
+.thumb-info.thumb-info-block:hover .thumb-info-action-icon {
+  opacity: 1;
+}
+
+.thumb-info.thumb-info-block.thumb-info-block-dark .thumb-info-wrapper:before {
+  background: rgba(33, 37, 41, 0.9);
+}
+
+.thumb-info.thumb-info-hide-info-hover .thumb-info-wrapper:after {
+  opacity: 0.65;
+}
+
+.thumb-info.thumb-info-hide-info-hover .thumb-info-title {
+  opacity: 1;
+  top: 50%;
+}
+
+.thumb-info.thumb-info-hide-info-hover .thumb-info-type {
+  float: none;
+}
+
+.thumb-info.thumb-info-hide-info-hover:hover .thumb-info-wrapper:after {
+  opacity: 0.1;
+}
+
+.thumb-info.thumb-info-hide-info-hover:hover .thumb-info-title {
+  opacity: 0;
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-wrapper:after {
+  opacity: 0.65;
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-wrapper-no-opacity:after {
+  opacity: 1;
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-title {
+  opacity: 1;
+  top: 0;
+  height: 100%;
+  top: 0;
+  -webkit-transform: none !important;
+  transform: none !important;
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-type {
+  float: none;
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-slide-info-hover-1,
+.thumb-info.thumb-info-slide-info-hover .thumb-info-slide-info-hover-2 {
+  -webkit-transition: cubic-bezier(0.55, 0, 0.1, 1) top 500ms;
+  transition: cubic-bezier(0.55, 0, 0.1, 1) top 500ms;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.thumb-info.thumb-info-slide-info-hover .thumb-info-slide-info-hover-2 {
+  top: 150%;
+}
+
+.thumb-info.thumb-info-slide-info-hover:hover .thumb-info-slide-info-hover-1 {
+  top: -50%;
+}
+
+.thumb-info.thumb-info-slide-info-hover:hover .thumb-info-slide-info-hover-2 {
+  top: 50%;
+}
+
+.thumb-info.thumb-info-no-borders,
+.thumb-info.thumb-info-no-borders img {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 4px;
+}
+
+.thumb-info.thumb-info-no-borders .thumb-info-wrapper {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  border-radius: 0;
+}
+
+.thumb-info.thumb-info-no-borders .thumb-info-wrapper:after {
+  border-radius: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+
+.thumb-info.thumb-info-no-borders.thumb-info-no-borders-rounded,
+.thumb-info.thumb-info-no-borders.thumb-info-no-borders-rounded img,
+.thumb-info.thumb-info-no-borders.thumb-info-no-borders-rounded
+  .thumb-info-wrapper,
+.thumb-info.thumb-info-no-borders.thumb-info-no-borders-rounded
+  .thumb-info-wrapper:after {
+  border-radius: 4px;
+}
+
+.thumb-info.thumb-info-preview .thumb-info-wrapper:after {
+  display: none;
+}
+
+.thumb-info.thumb-info-preview .thumb-info-image {
+  min-height: 232px;
+  display: block;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  position: relative;
+  -webkit-transition: background-position 0.8s linear 0s;
+  transition: background-position 0.8s linear 0s;
+}
+
+.thumb-info.thumb-info-preview:hover .thumb-info-image {
+  -webkit-transition: background-position 2.5s linear 0s;
+  transition: background-position 2.5s linear 0s;
+  background-position: center bottom;
+}
+
+.thumb-info.thumb-info-preview.thumb-info-preview-short:hover
+  .thumb-info-image {
+  -webkit-transition: background-position 1s linear 0s;
+  transition: background-position 1s linear 0s;
+}
+
+.thumb-info.thumb-info-preview.thumb-info-preview-long:hover .thumb-info-image {
+  -webkit-transition: background-position 5s linear 0s;
+  transition: background-position 5s linear 0s;
+}
+
+.thumb-info.thumb-info-no-overlay .thumb-info-wrapper:after {
+  content: none;
+}
+
+.thumb-info.thumb-info-no-bg {
+  background: transparent;
+}
