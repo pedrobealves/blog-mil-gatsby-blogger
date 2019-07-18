@@ -1,0 +1,13 @@
+{
+    "name": "Node.js Sample",
+    "dockerFile": "Dockerfile",
+    "appPort": 3000,
+    "extensions": [
+        "dbaeumer.vscode-eslint",
+    	"esbenp.prettier-vscode"
+    ],
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "yarn install"
+}
