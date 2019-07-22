@@ -21,7 +21,7 @@
       padding: 24px $card-horizontal-padding 19px $card-horizontal-padding;
 
       & + & {
-        border-top: 1px solid $card-border-color;
+        border-top: 1px solid $card-border-line;
       }
     }
       .products-list__inner {

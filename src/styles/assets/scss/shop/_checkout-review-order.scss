@@ -84,7 +84,7 @@
           padding-bottom: 10px;
 
           @if $template == football {
-            border-bottom: 1px solid $card-border-color;
+            border-bottom: 1px solid $card-border-line;
             padding-top: 17px;
             padding-bottom: 17px;
           } @else {
@@ -107,7 +107,7 @@
           td {
 
             @if $template != football {
-              border-top: 1px solid $card-border-color;
+              border-top: 1px solid $card-border-line;
               padding-top: 30px;
             }
           }
@@ -130,8 +130,8 @@
           td {
             padding-top: 20px;
             padding-bottom: 20px;
-            border-top: 1px solid $card-border-color;
-            border-bottom: 1px solid $card-border-color;
+            border-top: 1px solid $card-border-line;
+            border-bottom: 1px solid $card-border-line;
             margin-top: 20px;
           }
 

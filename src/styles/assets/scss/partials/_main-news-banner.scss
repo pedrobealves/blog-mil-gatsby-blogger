@@ -8,40 +8,36 @@
   margin-bottom: 15px;
 
   .posts__title {
-
     > a {
       color: #fff;
     }
   }
-    .main-news-banner__highlight {
-
-      @if $template == soccer {
-        color: $color-4-darken;
-      } @else {
-        color: $color-primary;
-      }
-    }
-}
-  .main-news-banner__inner {
-    padding: 20px;
-    position: relative;
-    z-index: 2;
-
-    @media (min-width: 992px) {
-      padding: 35px 30px 35px 30px;
-    }
-
-    @media (min-width: 1199px) {
-      padding: 55px 40px 55px 55px;
+  .main-news-banner__highlight {
+    @if $template == soccer {
+      color: $color-4-darken;
+    } @else {
+      color: $color-primary;
     }
   }
+}
+.main-news-banner__inner {
+  padding: 20px;
+  position: relative;
+  z-index: 2;
 
+  @media (min-width: 992px) {
+    padding: 35px 30px 35px 30px;
+  }
+
+  @media (min-width: 1199px) {
+    padding: 55px 40px 55px 55px;
+  }
+}
 
 /* With Image at the Left */
 .main-news-banner--img-left {
-
   &::before {
-    content:"";
+    content: '';
     display: block;
     position: absolute;
     z-index: 1;
@@ -49,13 +45,21 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background-image: radial-gradient(at 0% 0%, rgba(255, 255, 255, 0.8), transparent);
+    background-image: radial-gradient(
+      at 0% 0%,
+      rgba(255, 255, 255, 0.8),
+      transparent
+    );
     background-repeat: no-repeat;
     background-position: 0 0;
     mix-blend-mode: overlay;
 
     @media (min-width: 992px) {
-      background-image: radial-gradient(at 180px 0%, rgba(255, 255, 255, 0.8), transparent);
+      background-image: radial-gradient(
+        at 180px 0%,
+        rgba(255, 255, 255, 0.8),
+        transparent
+      );
     }
   }
 
@@ -66,7 +70,7 @@
     z-index: 2;
 
     &::before {
-      content:"";
+      content: '';
       display: block;
       position: absolute;
       z-index: 1;
@@ -101,13 +105,11 @@
   }
 
   .posts__more {
-
     @media (max-width: 479px) {
       padding-top: 10px;
     }
 
     .btn {
-
       @media (max-width: 479px) {
         padding-left: 20px;
         padding-right: 15px;
@@ -120,16 +122,15 @@
   }
 }
 
-
 /* With Background */
 .main-news-banner--bg {
-  background-image: url("../images/samples/main-news-banner__bg.jpg");
+  background-image: url('../images/samples/main-news-banner__bg.jpg');
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
 
   &::before {
-    content:"";
+    content: '';
     display: block;
     position: absolute;
     z-index: 1;
@@ -137,10 +138,14 @@
     top: 0;
     bottom: 0;
     right: 0;
-    background-image: linear-gradient(to left, rgba(0,0,0,.8), transparent);
+    background-image: linear-gradient(to left, rgba(0, 0, 0, 0.8), transparent);
 
     @media (min-width: 992px) {
-      background-image: linear-gradient(to left, rgba(0,0,0,.8), transparent)
+      background-image: linear-gradient(
+        to left,
+        rgba(0, 0, 0, 0.8),
+        transparent
+      );
     }
   }
 
@@ -157,23 +162,20 @@
   }
 
   .posts__date {
-    color: rgba(255,255,255,.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 }
 
-
 @if $template == soccer {
-
   /* with Soccer Ball */
   .main-news-banner--soccer-ball {
-    background-image: url("../images/soccer/samples/banner-soccer-ball.png");
+    background-image: url('../images/soccer/samples/banner-soccer-ball.png');
     background-repeat: no-repeat;
     background-position: 100% 100%;
 
     @media (max-width: 1199px) {
       background-size: 40% auto;
     }
-
 
     .main-news-banner__inner {
       padding-right: 20%;
@@ -201,16 +203,14 @@
   }
 }
 
-
 @if $template == football {
-
   .main-news-banner {
     background-color: $card-bg;
     border: 1px solid $card-border-color;
 
     /* With Background */
     &.main-news-banner--bg {
-      background-image: url("../images/football/banner-helmet.png");
+      background-image: url('../images/football/banner-helmet.png');
       background-repeat: no-repeat;
       background-position: 0 0;
       background-size: auto;
@@ -236,7 +236,7 @@
       }
 
       .posts__date {
-        color: rgba(255,255,255,.8);
+        color: rgba(255, 255, 255, 0.8);
 
         @media (max-width: 479px) {
           display: none;
@@ -246,7 +246,7 @@
       .posts__title {
         font-size: 34px;
         line-height: 1em;
-        margin-bottom: .3em;
+        margin-bottom: 0.3em;
 
         @media (max-width: 479px) {
           font-size: 16px;
@@ -254,7 +254,6 @@
       }
 
       .posts__excerpt {
-
         @media (max-width: 479px) {
           display: none;
         }

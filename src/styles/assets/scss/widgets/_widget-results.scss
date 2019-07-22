@@ -11,7 +11,7 @@
     margin: 0;
   }
     .widget-results__item {
-      border-top: 1px solid $card-border-color;
+      border-top: 1px solid $card-border-line;
 
       &:first-child {
         border-top: none;
@@ -24,7 +24,7 @@
         font-weight: 400;
         font-style: normal;
         color: $body-font-color;
-        border-bottom: 1px solid $card-border-color;
+        border-bottom: 1px solid $card-border-line;
         padding: 10px;
         margin-bottom: 0;
 

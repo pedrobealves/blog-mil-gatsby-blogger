@@ -1,0 +1,36 @@
+/* Widget: Characters Stats */
+.widget-character-stats {
+
+
+}
+	.character-stats-table {
+		border-top: 1px solid $card-border-line;
+
+		.table-responsive:first-child & {
+			border-top: none;
+		}
+
+		.character-stat__player {
+			padding-left: 15px;
+
+			@media (min-width: 1200px) {
+				padding-left: $card-horizontal-padding;
+			}
+		}
+
+		.character-stat__avg {
+			@media (min-width: 1200px) {
+				padding-right: $card-horizontal-padding;
+			}
+		}
+
+		thead > tr > th,
+		tbody > tr > td {
+			text-align: center;
+			vertical-align: middle;
+
+			&.character-stat__player {
+				text-align: left;
+			}
+		}
+	}

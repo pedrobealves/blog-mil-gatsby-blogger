@@ -31,6 +31,12 @@ $color-info: #0cb2e2 !default;
 $color-warning: #ff7e1f !default;
 $color-danger: #f34141 !default;
 
+$color-gray: #a59cae !default;
+$color-gray-2: #8c8297 !default;
+$color-gray-3: #7a7283 !default;
+$color-2-lighten: #8040f5 !default;
+$color-white: #fff !default;
+
 $body-bg-color: #edeff4 !default;
 $body-font-color: $color-gray !default;
 $body-font-color-inverse: $color-gray !default;
@@ -52,7 +58,9 @@ $padding-base-horizontal: 16px !default;
 $card-bg: #fff !default;
 $card-header-bg: transparent !default;
 $card-subheader-bg: #f5f7f9 !default;
-$card-border-color: #e4e7ed !default;
+//$card-border-color: #e4e7ed !default;
+$card-border-color: $color-2 !default;
+$card-border-line: #f5f7f9 !default;
 $card-border-radius: 4px !default;
 $card-horizontal-padding: 24px !default;
 $card-vertical-padding: 24px !default;

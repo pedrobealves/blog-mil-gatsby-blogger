@@ -52,7 +52,7 @@
 		padding: 27px 23px;
 		border-radius: 4px 4px 0 0;
 		position: relative;
-		border-bottom: 1px solid $card-border-color;
+		border-bottom: 1px solid $card-border-line;
 		overflow: hidden;
 		background-color: $card-header-bg;
 
@@ -183,8 +183,8 @@
 
 	.card__subheader {
 		background: $card-subheader-bg;
-		border-top: 1px solid $card-border-color;
-		border-bottom: 1px solid $card-border-color;
+		border-top: 1px solid $card-border-line;
+		border-bottom: 1px solid $card-border-line;
 		text-align: center;
 		padding: 8px 0;
 		margin-left: -$card-horizontal-padding;
