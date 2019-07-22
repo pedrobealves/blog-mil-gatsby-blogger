@@ -27,7 +27,7 @@
     > li {
 
       & + li {
-        border-top: 1px solid $card-border-color;
+        border-top: 1px solid $card-border-line;
       }
 
       > a {
@@ -50,7 +50,7 @@
     }
 
     ul {
-      border-top: 1px solid $card-border-color;
+      border-top: 1px solid $card-border-line;
       list-style: none;
       padding: ($card-vertical-padding - 6) $card-horizontal-padding;
 

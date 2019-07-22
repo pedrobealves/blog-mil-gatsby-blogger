@@ -206,7 +206,7 @@
           }
 
         .match-preview__match-info--header {
-          border-bottom: 1px solid $card-border-color;
+          border-bottom: 1px solid $card-border-line;
           margin-left: -$card-horizontal-padding;
           margin-right: -$card-horizontal-padding;
           margin-top: -$card-vertical-padding;
@@ -286,8 +286,8 @@
         text-align: center;
         text-transform: uppercase;
         padding: 12px;
-        border-top: 1px solid $card-border-color;
-        border-bottom: 1px solid $card-border-color;
+        border-top: 1px solid $card-border-line;
+        border-bottom: 1px solid $card-border-line;
         margin: 0;
       }
       .countdown__content {

@@ -16,7 +16,7 @@
   }
     .comments__inner {
       position: relative;
-      border-bottom: 1px solid $card-border-color;
+      border-bottom: 1px solid $card-border-line;
       padding-top: 36px;
       padding-bottom: 36px;
 
@@ -139,7 +139,7 @@
             width: 14px;
             height: 20px;
             border-left: 1px solid $card-border-color;
-            border-bottom: 1px solid $card-border-color;
+            border-bottom: 1px solid $card-border-line;
           }
         }
       }
@@ -208,7 +208,7 @@
             width: 14px;
             height: 20px;
             border-left: 1px solid $card-border-color;
-            border-bottom: 1px solid $card-border-color;
+            border-bottom: 1px solid $card-border-line;
           }
         }
       }

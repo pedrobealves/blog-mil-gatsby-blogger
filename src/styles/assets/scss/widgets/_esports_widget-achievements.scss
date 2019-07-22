@@ -1,0 +1,57 @@
+/* Widget: Achievements */
+.alc-achievements {
+
+}
+
+	// Item
+	.alc-achievements__item {
+
+	}
+
+		// Content
+		.alc-achievements__content {
+			text-align: center;
+			padding: 32px 0 36px 0;
+		}
+			.alc-achievements__icon {
+				margin: 0 auto 13px auto;
+			}
+			.alc-achievements__event-title {
+				font-style: normal;
+				margin-bottom: .15em;
+			}
+			.alc-achievements__event-date {
+				font-family: $font-family-accent;
+				font-size: 10px;
+				line-height: 1.2em;
+				text-transform: uppercase;
+				font-weight: 700;
+			}
+
+		// Meta
+		.alc-achievements__meta {
+			display: flex;
+			flex-wrap: wrap;
+			border-top: 1px solid $card-border-line;
+		}
+			.alc-achievements__meta-item {
+				border-right: 1px solid $card-border-color;
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+				text-align: center;
+				padding: $card-vertical-padding $card-horizontal-padding / 2;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+				.alc-achievements__meta-value {
+					font-size: 16px;
+					line-height: 1.2em;
+					margin-bottom: 0.4em;
+				}
+				.alc-achievements__meta-name {
+					font-size: 9px;
+					line-height: 1.2em;
+				}

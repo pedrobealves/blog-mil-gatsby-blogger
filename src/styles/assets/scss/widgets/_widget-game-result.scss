@@ -60,7 +60,7 @@
     margin-right: -$card-horizontal-padding;
     margin-top: -$card-vertical-padding;
     margin-bottom: 0;
-    border-bottom: 1px solid $card-border-color;
+    border-bottom: 1px solid $card-border-line;
     padding: 10px $card-horizontal-padding;
 
     .widget-game-result__title {
@@ -233,7 +233,7 @@
       margin-right: -$card-horizontal-padding;
 
       & + .widget-game-result__team {
-        border-top: 1px solid $card-border-color;
+        border-top: 1px solid $card-border-line;
       }
 
       &:last-child {

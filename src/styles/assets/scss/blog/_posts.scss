@@ -177,7 +177,7 @@ ul.posts {
     margin-bottom: 18px;
 
     .card & {
-      border-bottom: 1px solid $card-border-color;
+      border-bottom: 1px solid $card-border-line;
       margin-left: -$card-horizontal-padding;
       margin-right: -$card-horizontal-padding;
       padding-left: $card-horizontal-padding;
@@ -376,7 +376,7 @@ ul.posts {
 
     .card & {
       padding: 17px $card-horizontal-padding;
-      border-top: 1px solid $card-border-color;
+      border-top: 1px solid $card-border-line;
       overflow: hidden;
       margin-left: -$card-horizontal-padding;
       margin-right: -$card-horizontal-padding;
@@ -764,7 +764,7 @@ ul.posts {
 
   .posts__footer {
     padding: 17px $card-horizontal-padding;
-    border-top: 1px solid $card-border-color;
+    border-top: 1px solid $card-border-line;
     display: table;
     width: 100%;
     height: 100%;
@@ -946,7 +946,7 @@ ul.posts {
   }
 
   .posts__footer {
-    border-top: 1px solid $card-border-color;
+    border-top: 1px solid $card-border-line;
     padding-top: 16px;
     padding-bottom: 16px;
     text-align: center;
