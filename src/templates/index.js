@@ -6,7 +6,7 @@ import Container from '../components/Container'
 import Pagination from '../components/Pagination'
 import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
-import Card from '../components/Card'
+import Card from '../components/Card/Complete'
 import Slider from '../components/Slider'
 
 const Index = ({ data, pageContext }) => {

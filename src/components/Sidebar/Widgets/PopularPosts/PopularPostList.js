@@ -1,6 +1,6 @@
 import React from 'react'
-import PopularPost from './PopularPost'
 import { StaticQuery, graphql } from 'gatsby'
+import SimpleCard from '../../../Card/Simple'
 
 const Card = ({ posts }) => {
   let arr = []
@@ -39,7 +39,7 @@ const Card = ({ posts }) => {
         data.allBloggerPost.edges.map(
           ({ node: post }) =>
             arr.includes(post.childMarkdownRemark.frontmatter.slug) &&
-            limit++ < 5 && <PopularPost key={post.id} {...post} />
+            limit++ < 5 && <SimpleCard key={post.id} {...post} />
         )
       }
     />
