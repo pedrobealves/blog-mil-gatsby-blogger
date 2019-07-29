@@ -1,14 +1,10 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Link } from 'gatsby'
+import { List } from './styles'
 
-const List = styled.div`
-  transform: rotateX(0deg) !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  top: 42px !important;
-`
 const SearchList = ({ results, isActive }) => {
+  const size = results.length
+
   const item = post => (
     <li>
       <Link to={post.slug}>{post.title}</Link>
@@ -16,7 +12,7 @@ const SearchList = ({ results, isActive }) => {
   )
   return (
     <>
-      {isActive && (
+      {isActive && size > 0 && (
         <List className="main-nav__sub">{results.map(post => item(post))}</List>
       )}
     </>
