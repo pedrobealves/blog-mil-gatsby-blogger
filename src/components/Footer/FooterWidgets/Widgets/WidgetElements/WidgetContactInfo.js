@@ -17,7 +17,7 @@ const WidgetContactInfo = () => {
               <use xlinkHref="assets/images/icons-basket.svg#basketball" />
             </svg>
             <h6 className="info-block__heading">Contate-nos</h6>
-            <a className="info-block__link" href="blogmil@outlook.com">
+            <a className="info-block__link" href="mailto:blogmil@outlook.com">
               blogmil@outlook.com
             </a>
           </div>
@@ -25,9 +25,12 @@ const WidgetContactInfo = () => {
             <svg role="img" className="df-icon df-icon--jersey">
               <use xlinkHref="assets/images/icons-basket.svg#jersey" />
             </svg>
-            <h6 className="info-block__heading">Increva-se</h6>
-            <a className="info-block__link" href="blogmil@outlook.com">
-              info@blogmil.com
+            <h6 className="info-block__heading">Siga-nos</h6>
+            <a
+              className="info-block__link"
+              href="https://www.facebook.com/milblog/"
+            >
+              facebook
             </a>
           </div>
           <div className="info-block__item info-block__item--nopadding">
