@@ -1,13 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import PostCategory from './PostCategory'
 import PostHeader from './PostHeader'
 import PostContent from './PostContent'
 import PostFooter from './PostFooter'
+import Modal from './Modal'
+import useModal from './useModal'
 
 const PostBody = ({ body, content, labels }) => {
   const { frontmatter, html } = body
+
+  const { isShowing, toggle } = useModal()
+
+  let lastArticle
+  let scroll
+
+  if (typeof window !== 'undefined') {
+    lastArticle = localStorage.getItem('lastArticle')
+    scroll = localStorage.getItem('scroll')
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.onscroll = function() {
+        localStorage.setItem('lastArticle', frontmatter.slug)
+        localStorage.setItem('scroll', window.scrollY)
+      }
+    }
+    lastArticle === frontmatter.slug && toggle()
+  }, [])
+
   return (
     <div className="card__content">
+      <Modal isShowing={isShowing} hide={toggle} scroll={scroll} />
       {labels && <PostCategory label={labels[0]} />}
       <PostHeader header={frontmatter} />
       <PostContent content={content} />
