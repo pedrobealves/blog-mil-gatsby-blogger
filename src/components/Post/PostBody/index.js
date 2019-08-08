@@ -11,8 +11,13 @@ const PostBody = ({ body, content, labels }) => {
 
   const { isShowing, toggle } = useModal()
 
-  const lastArticle = localStorage.getItem('lastArticle')
-  const scroll = localStorage.getItem('scroll')
+  let lastArticle
+  let scroll
+
+  if (typeof window !== 'undefined') {
+    lastArticle = localStorage.getItem('lastArticle')
+    scroll = localStorage.getItem('scroll')
+  }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
