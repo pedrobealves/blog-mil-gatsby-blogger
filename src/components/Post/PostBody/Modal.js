@@ -2,11 +2,15 @@ import React from 'react'
 
 const Modal = ({ isShowing, hide, scroll }) =>
   isShowing && (
-    <div className="modal d-block" tabIndex="-1" role="dialog">
-      <div className="modal-dialog" role="document">
+    <div
+      className="modal show d-block"
+      id="modal-login-register"
+      tabIndex="-1"
+      role="dialog"
+    >
+      <div className="modal-dialog modal--login-simple" role="document">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Modal title</h5>
             <button
               type="button"
               className="close"
@@ -17,13 +21,18 @@ const Modal = ({ isShowing, hide, scroll }) =>
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body">Deseja retornar a leitura?</div>
+          <div className="modal-body">
+            <div className="pt-3 px-4">
+              <h4>Deseja retornar a leitura?</h4>
+            </div>
+          </div>
           <div className="modal-footer">
             <button
               type="button"
               className="btn btn-primary"
               onClick={() => {
-                if (typeof window !== 'undefined') window.scrollTo(0, scroll)
+                if (typeof window !== 'undefined')
+                  window.scrollTo({ top: scroll, behavior: 'smooth' })
                 hide()
               }}
             >

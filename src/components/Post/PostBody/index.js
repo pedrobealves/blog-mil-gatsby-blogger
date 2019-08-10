@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PostCategory from './PostCategory'
 import PostHeader from './PostHeader'
 import PostContent from './PostContent'
@@ -6,27 +6,30 @@ import PostFooter from './PostFooter'
 import Modal from './Modal'
 import useModal from './useModal'
 
-const PostBody = ({ body, content, labels }) => {
-  const { frontmatter, html } = body
-
+const PostBody = ({ body: { frontmatter, html }, content, labels }) => {
   const { isShowing, toggle } = useModal()
 
-  let lastArticle
-  let scroll
+  const [lastArticle, setLastArticle] = useState()
+  const [scroll, setScroll] = useState()
 
-  if (typeof window !== 'undefined') {
-    lastArticle = localStorage.getItem('lastArticle')
-    scroll = localStorage.getItem('scroll')
-  }
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setLastArticle(localStorage.getItem('lastArticle'))
+      setScroll(localStorage.getItem('scroll'))
+    }
+
+    lastArticle === frontmatter.slug && toggle()
+  }, [lastArticle, scroll])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
       window.onscroll = function() {
-        localStorage.setItem('lastArticle', frontmatter.slug)
-        localStorage.setItem('scroll', window.scrollY)
+        if (window.scrollY > 2000) {
+          localStorage.setItem('lastArticle', frontmatter.slug)
+          localStorage.setItem('scroll', window.scrollY)
+        }
       }
     }
-    lastArticle === frontmatter.slug && toggle()
   }, [])
 
   return (

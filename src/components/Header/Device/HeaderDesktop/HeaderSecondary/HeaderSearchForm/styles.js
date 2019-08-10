@@ -10,4 +10,12 @@ export const List = styled.div`
   opacity: 1 !important;
   visibility: visible !important;
   top: 42px !important;
+
+  li {
+    a {
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
 `
