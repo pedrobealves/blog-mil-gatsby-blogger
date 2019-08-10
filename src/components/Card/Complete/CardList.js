@@ -7,7 +7,7 @@ const CardList = props => {
       <header className="card__header card__header--has-btn">
         <h4>Últimas</h4>
         <a
-          href="/archive"
+          href="/arquivo"
           className="btn btn-default btn-outline btn-xs card-header__button"
         >
           Ver todas
