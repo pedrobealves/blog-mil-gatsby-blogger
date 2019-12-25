@@ -39,7 +39,7 @@ const HeaderSecondary = () => {
                   <use xlinkHref="assets/images/icons-basket.svg#bag-handle" />
                 </svg>
               </div>
-              <h6 className="info-block__heading">Configurações</h6>
+              <h6 className="info-block__heading">Mais</h6>
               <span className="info-block__cart-sum">></span>{' '}
             </a>
             <DropdownShopCart />

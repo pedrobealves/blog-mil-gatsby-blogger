@@ -8,6 +8,7 @@ Description:  You can add your custom CSS here and it will overwrite template st
 */
 .posts--cards-thumb-left {
   .posts__thumb {
+    height: 100%;
     @media (min-width: 768px) {
       max-width: 175px;
     }
@@ -25,6 +26,7 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .card__pd {
   padding: 11px 24px;
 }
+
 .posts__item--card {
   .posts__excerpt_pd {
     padding: 10px 0 8px 0;
@@ -80,50 +82,23 @@ Description:  You can add your custom CSS here and it will overwrite template st
   background-color: #edeff4;
 }
 
-.highlight-card {
-  .card {
-    margin-bottom: 10px;
-  }
+.twitch-stream__body .twitch-stream__subtitle--sec {
+  width: 100%;
+  font-size: 15px;
+  line-height: 1.1em;
+  color: #fff;
+  font-family: Roboto Condensed, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 
-  .twitch-stream__body {
-    padding: 0px 5px;
-    justify-content: flex-end;
-
-    > h5 {
-      margin-bottom: 5px;
-      font-size: 13px;
-      color: $color-white;
-      transition: 0.5s;
-
-      &::first-line {
-        font-size: 16px;
-      }
-    }
-  }
-
-  &:hover {
-    .twitch-stream__body {
-      > h5 {
-        transition: 0.5s;
-        color: #9ea6b4;
-      }
-    }
-
-    .effect-duotone--orange {
-      .effect-duotone__layer {
-        &::after {
-          background-color: #1f242a;
-          transition: 1s;
-        }
-      }
-      .effect-duotone__layer-inner {
-        background-color: #221b2c;
-        transition: 1s;
-      }
-    }
-  }
-
-  .twitch-stream {
-    min-height: 66px;
-  }
+.twitch-stream__body .twitch-stream__title--sec {
+  font-size: 12px;
+  color: #a59cae;
+  line-height: 1.2em;
+  font-style: italic;
+  text-transform: uppercase;
 }

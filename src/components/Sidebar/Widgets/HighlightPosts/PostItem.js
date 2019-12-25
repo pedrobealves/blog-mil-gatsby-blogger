@@ -5,25 +5,36 @@ import Img from 'gatsby-image'
 
 const PostItem = ({ childMarkdownRemark, labels, cover }) => {
   return (
-    <div className="highlight-card twitch-stream-wrapper">
-      <Link to={childMarkdownRemark.frontmatter.slug} className="twitch-stream card">
+    <div className="twitch-stream-wrapper">
+      <Link
+        to={childMarkdownRemark.frontmatter.slug}
+        className="twitch-stream card"
+      >
         <StyledBackgroundSection
           url={cover.childImageSharp.fluid.srcWebp}
-          className="twitch-stream__overlay twitch-stream__overlay--bg0 effect-duotone effect-duotone--orange"
+          className="twitch-stream__overlay twitch-stream__overlay--bg0 effect-duotone effect-duotone--lead"
         >
           <div className="effect-duotone__layer">
             <div className="effect-duotone__layer-inner" />
           </div>
         </StyledBackgroundSection>
         <div className="twitch-stream__body">
-          <h5 className="twitch-stream__title">
+          <span className="twitch-stream__title--sec">{labels[0]}</span>
+          <Line />
+          <span className="twitch-stream__subtitle--sec">
             {childMarkdownRemark.frontmatter.title}
-          </h5>
+          </span>
         </div>
       </Link>
     </div>
   )
 }
+
+const Line = styled.span`
+  border: 0.1em solid #ff6711;
+  margin: 5px 0;
+  width: 10%;
+`
 
 const StyledBackgroundSection = styled.div`
   background-image: url(${props => props.url});

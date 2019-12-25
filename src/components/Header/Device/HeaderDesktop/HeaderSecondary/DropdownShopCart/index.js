@@ -21,7 +21,7 @@ const DropdownShopCart = () => {
             </span>
       </li> */}
           <li className="header-cart__item header-cart__item--subtotal">
-            <span className="header-cart__subtotal">Tela Cheia</span>
+            <span className="header-cart__subtotal">Estender</span>
             <span className="header-cart__subtotal-sum">
               <label className="checkbox checkbox-inline mr-2">
                 <input
