@@ -24,7 +24,7 @@ const Card = ({
           <Link to={`${slug}`}>
             <CoverImg
               fluid={cover.childImageSharp.fluid}
-              height={'50vh'}
+              height={'340px'}
               backgroundColor={'#eeeeee'}
             />
           </Link>
