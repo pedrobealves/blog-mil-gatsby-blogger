@@ -1,29 +1,12 @@
 import React from 'react'
+import Category from './Category/'
 
 const Filter = () => {
   return (
     <div className="post-filter">
       <div className="container">
         <form action="#" className="post-filter__form clearfix">
-          <div className="post-filter__select">
-            <label className="post-filter__label">Category</label>{' '}
-            <div className="cs-select cs-skin-border" tabIndex="0">
-              <span className="cs-placeholder">Todos Artigos</span>
-              <div className="cs-options">
-                <ul>
-                  <li data-option="" data-value="all">
-                    <span>Todos Artigos</span>
-                  </li>
-                </ul>
-              </div>
-              <select className="cs-select cs-skin-border">
-                <option value="" disabled="disabled" selected="selected">
-                  Todos Artigos{' '}
-                </option>
-                <option value="all">Todos Artigos</option>
-              </select>
-            </div>
-          </div>
+          <Category />
           <div className="post-filter__select">
             <label className="post-filter__label">Filtrar Por</label>{' '}
             <div className="cs-select cs-skin-border" tabIndex="0">

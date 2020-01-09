@@ -48,14 +48,14 @@ const Template = ({ children, fullContainer, pageHeading }) => {
                             ? 'content col-md-12'
                             : themeContext.full
                             ? 'content col-lg-8 offset-md-2'
-                            : 'content col-md-8'
+                            : 'content col-lg-8'
                         }
                       >
                         {children}
                       </div>
                       <div
                         id="sidebar"
-                        className={`sidebar col-md-${
+                        className={`sidebar col-lg-${
                           fullContainer ? '12' : '4'
                         }`}
                       >
