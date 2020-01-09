@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SearchList from './SearchList'
 import { SearchHeader } from './styles'
+import handleClick from '../../../../../Listeners/handleClick'
 
 const SearchForm = ({ searchIndex }) => {
   const ref = createRef()
@@ -24,18 +25,7 @@ const SearchForm = ({ searchIndex }) => {
     setActive(!!query)
   }
 
-  const handleClickOutside = event =>
-    !ref.current.contains(event.target) && setActive(false)
-
-  useEffect(() => {
-    ;[`mousedown`, `touchstart`].forEach(event =>
-      document.addEventListener(event, handleClickOutside)
-    )
-    return () =>
-      [`mousedown`, `touchstart`].forEach(event =>
-        document.removeEventListener(event, handleClickOutside)
-      )
-  })
+  handleClick(ref,setActive)
 
   return (
     <>
