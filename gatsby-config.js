@@ -166,8 +166,8 @@ module.exports = {
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
                   author: rssMetadata.author,
-                  url: rssMetadata.site_url + '/' + edge.node.slug,
-                  guid: rssMetadata.site_url + '/' + edge.node.slug,
+                  url: rssMetadata.site_url + '/' + edge.node.frontmatter.slug,
+                  guid: rssMetadata.site_url + '/' + edge.node.frontmatter.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 }))
             },
@@ -182,8 +182,8 @@ module.exports = {
                             excerpt(pruneLength: 400)
                             html
                             id
-                            slug
                             frontmatter {
+                              slug
                               title
                               templateKey
                               cover
