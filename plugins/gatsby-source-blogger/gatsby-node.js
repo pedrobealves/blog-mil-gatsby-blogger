@@ -92,6 +92,9 @@ exports.sourceNodes = async (
 title: '${post.title.replace("'", "''")}'
 date: '${post.published}'
 slug: '${segments[1]}'
+labels: '${post.labels}'
+cover: '${handleResponse(post.content)}'
+templateKey: 'article-page'
 ---
 
 ${md}`,
@@ -149,7 +152,11 @@ ${md}`,
                 content: `---
   title: '${page.title.replace("'", "''")}'
   date: '${page.published}'
-  slug: '${segments[1]}'`,
+  slug: '${segments[1]}'
+  labels: ''
+  cover: ''
+  templateKey: 'page'
+  `,
                 contentDigest: crypto
                   .createHash(`md5`)
                   .update(JSON.stringify(page))

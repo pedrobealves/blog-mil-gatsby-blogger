@@ -41,6 +41,7 @@ try {
 
 module.exports = {
   siteMetadata: {
+    title: config.siteTitle,
     siteUrl: config.siteUrl,
     rssMetadata: {
       site_url: config.siteUrl,
@@ -125,69 +126,77 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
+     {
       resolve: 'gatsby-plugin-feed',
       options: {
-        setup(ref) {
+        setup (ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
-          ret.generator = 'GatsbyJS GCN Starter'
+          ret.generator = config.siteTitle
           return ret
         },
         query: `
-    {
-      site {
-        siteMetadata {
-          rssMetadata {
-            site_url
-            feed_url
-            title
-            description
-            image_url
-            author
-            copyright
-          }
-        }
-      }
-    }
-  `,
+                {
+                  site {
+                    siteMetadata {
+                      rssMetadata {
+                        site_url
+                        feed_url
+                        title
+                        description
+                        image_url
+                        author
+                        copyright
+                      }
+                    }
+                  }
+                }
+              `,
         feeds: [
           {
-            serialize(ctx) {
+            serialize (ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
-              return ctx.query.allBloggerPost.edges.map(edge => ({
-                date: edge.node.publishDate,
-                title: edge.node.title,
-                description: edge.node.childMarkdownRemark.excerpt,
-
-                url: rssMetadata.site_url + '/' + edge.node.slug,
-                guid: rssMetadata.site_url + '/' + edge.node.slug,
-                custom_elements: [
-                  {
-                    'content:encoded': edge.node.childMarkdownRemark.html,
-                  },
-                ],
-              }))
+              return ctx.query.allMarkdownRemark.edges
+                .filter(
+                  edge => edge.node.frontmatter.templateKey === 'article-page'
+                )
+                .map(edge => ({
+                  categories: edge.node.frontmatter.labels,
+                  date: edge.node.frontmatter.date,
+                  title: edge.node.frontmatter.title,
+                  description: edge.node.excerpt,
+                  author: rssMetadata.author,
+                  url: rssMetadata.site_url + edge.node.fields.slug,
+                  guid: rssMetadata.site_url + edge.node.fields.slug,
+                  custom_elements: [{ 'content:encoded': edge.node.html }],
+                }))
             },
             query: `
-              {
-            allBloggerPost(limit: 1000, sort: {fields: [published], order: DESC}) {
-               edges {
-                 node {
-                   title
-                   slug
-                   published(formatString: "MMMM DD, YYYY")
-                     childMarkdownRemark {
-                       html
-                       excerpt(pruneLength: 80)
-                     
-                   }
-                 }
-               }
-             }
-           }
-      `,
-            output: '/rss.xml',
+                    {
+                      allMarkdownRemark(
+                        limit: 1000,
+                        sort: { order: DESC, fields: [frontmatter___date] },
+                      ) {
+                        edges {
+                          node {
+                            excerpt(pruneLength: 400)
+                            html
+                            id
+                            fields { slug }
+                            frontmatter {
+                              title
+                              templateKey
+                              cover
+                              date(formatString: "MMMM DD, YYYY")
+                              labels
+                            }
+                          }
+                        }
+                      }
+                    }
+                  `,
+            output: config.siteRss,
+            title: config.siteTitle,
           },
         ],
       },

@@ -6,6 +6,7 @@ module.exports = {
   siteUrl: 'https://www.blogmil.net', // Site domain. Do not include a trailing slash! If you wish to use a path prefix you can read more about that here: https://www.gatsbyjs.org/docs/path-prefix/
   postsPerHomePage: 10, // Number of posts shown on the 1st page of of the index.js template (home page)
   postsPerPage: 6, // Number of posts shown on paginated pages
+  siteRss: '/rss.xml',
   author: 'Blog MIL', // Author for RSS author segment and SEO schema
   authorUrl: 'https://www.blogmil.net/', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@twitter', // Change for Twitter Cards
@@ -16,5 +17,5 @@ module.exports = {
   siteLogo: '/logos/logolp.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#e9e9e9', // Used for Offline Manifest
   themeColor: '#121212', // Used for Offline Manifest
-  copyright: 'Copyright © 2018 Blog MIL', // Copyright string for the RSS feed
+  copyright: 'Copyright © 2020 Blog MIL', // Copyright string for the RSS feed
 }

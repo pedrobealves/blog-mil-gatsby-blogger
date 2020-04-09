@@ -34,8 +34,8 @@ const SEO = ({ title, description, image }) => {
         lang: `pt-br`,
       }}
       title={title}
-      defaultTitle={site.siteMetadata.title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      defaultTitle={site.siteMetadata.rssMetadata.title}
+      titleTemplate={`%s | ${site.siteMetadata.rssMetadata.title}`}
     >
       <meta charSet="utf-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
