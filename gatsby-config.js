@@ -161,7 +161,7 @@ module.exports = {
                   edge => edge.node.frontmatter.type === 'blogger__POST'
                 )
                 .map(edge => ({
-                  categories: edge.node.frontmatter.labels.slice(','),
+                  categories: edge.node.frontmatter.labels.split(','),
                   date: edge.node.frontmatter.date,
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
