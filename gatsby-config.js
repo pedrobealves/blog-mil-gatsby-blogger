@@ -158,10 +158,10 @@ module.exports = {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
               return ctx.query.allMarkdownRemark.edges
                 .filter(
-                  edge => edge.node.frontmatter.templateKey === 'article-page'
+                  edge => edge.node.frontmatter.type === 'blogger__POST'
                 )
                 .map(edge => ({
-                  categories: edge.node.frontmatter.labels,
+                  categories: edge.node.frontmatter.labels.slice(','),
                   date: edge.node.frontmatter.date,
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
@@ -185,9 +185,9 @@ module.exports = {
                             frontmatter {
                               slug
                               title
-                              templateKey
+                              type
                               cover
-                              date(formatString: "MMMM DD, YYYY")
+                              date(formatString: "MMMM DD, YYYY", locale: "pt-BR")
                               labels
                             }
                           }

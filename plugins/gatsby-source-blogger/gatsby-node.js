@@ -94,7 +94,7 @@ date: '${post.published}'
 slug: '${segments[1]}'
 labels: '${post.labels}'
 cover: '${handleResponse(post.content)}'
-templateKey: 'article-page'
+type: '${refactoredEntityTypes.post}'
 ---
 
 ${md}`,
