@@ -93,7 +93,6 @@ title: '${post.title.replace("'", "''")}'
 date: '${post.published}'
 slug: '${segments[1]}'
 labels: '${post.labels}'
-cover: '${handleResponse(post.content)}'
 type: '${refactoredEntityTypes.post}'
 ---
 
@@ -154,7 +153,6 @@ ${md}`,
   date: '${page.published}'
   slug: '${segments[1]}'
   labels: ''
-  cover: ''
   templateKey: 'page'
   `,
                 contentDigest: crypto

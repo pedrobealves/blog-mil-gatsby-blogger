@@ -1,6 +1,6 @@
 import React from 'react'
 import { FacebookProvider, Comments } from 'react-facebook'
-import configFacebook from '../../../utils/facebookConfig'
+import config from '../../../utils/siteConfig'
 
 const componentName = ({ pagePath, published }) => {
   const getURL = () => {
@@ -19,7 +19,7 @@ const componentName = ({ pagePath, published }) => {
   }
 
   return (
-    <FacebookProvider wait appId={configFacebook.apiId}>
+    <FacebookProvider wait appId={config.siteFBAppID}>
       <Comments href={getURL() + pagePath} width={'100%'} />
     </FacebookProvider>
   )

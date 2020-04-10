@@ -18,14 +18,11 @@ const Template = ({ children, fullContainer, pageHeading }) => {
     <div className="siteRoot">
       <Helmet>
         <title>{config.siteTitle}</title>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <script
           async
           src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />
-        <link rel="icon" href={favicon} />
-      </Helmet>
+        />      
+        </Helmet>
       <ThemeProvider theme={theme}>
         <ThemeContext.Consumer>
           {themeContext => (

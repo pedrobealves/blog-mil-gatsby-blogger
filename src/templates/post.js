@@ -22,6 +22,7 @@ const PostTemplate = ({ data, pageContext }) => {
     published,
     content,
     tags,
+    cover
   } = data.bloggerPost
 
   const postNode = data.bloggerPost
@@ -33,10 +34,14 @@ const PostTemplate = ({ data, pageContext }) => {
     <>
       <ReadingProgress target={target} slug={slug} />
       <Layout>
-        <Helmet>
-          <title>{`${title} - ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO pagePath={slug} postNode={postNode} postSEO />
+         <SEO
+          title={title}
+          meta_title={`${title} - ${config.siteTitle}`}
+          meta_desc={childMarkdownRemark.frontmatter.excerpt}
+          cover={cover}
+          slug={slug}
+          date={published}
+        />
         <Container>
           <div className={`post`} ref={target}>
             <PostBody

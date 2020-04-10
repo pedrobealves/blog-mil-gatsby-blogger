@@ -117,18 +117,19 @@ module.exports = {
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleAlt,
-        start_url: '/index.html',
+        start_url: '/',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
         display: 'standalone',
+        icon: `static${config.siteLogo}`,
         icons: [
           {
-            src: `static${config.siteIcon}`,
+            src: `${config.siteIcon}`,
             sizes: `192x192`,
             type: `image/png`,
           },
           {
-            src: `static${config.siteLogo}`,
+            src: `${config.siteLogo}`,
             sizes: `512x512`,
             type: `image/png`,
           },

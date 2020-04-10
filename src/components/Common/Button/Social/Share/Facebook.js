@@ -1,11 +1,11 @@
 import { FacebookProvider, ShareButton } from 'react-facebook'
-import configFacebook from '../../../../../utils/facebookConfig'
+import config from '../../../../../utils/siteConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 const FacebookShare = ({ pagePath, icon, text }) => {
   return (
-    <FacebookProvider appId={configFacebook.apiId}>
+    <FacebookProvider appId={config.siteFBAppID}>
       <ShareButton
         className="btn btn-default btn-facebook btn-icon btn-block"
         href={'https://www.blogmil.net/' + pagePath}

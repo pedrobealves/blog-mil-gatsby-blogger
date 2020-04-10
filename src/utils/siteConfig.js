@@ -11,6 +11,7 @@ module.exports = {
   authorUrl: 'https://www.blogmil.net/', // URL used for author and publisher schema, can be a social profile or other personal site
   userTwitter: '@twitter', // Change for Twitter Cards
   shortTitle: 'Blog MIL', // Used for App manifest e.g. Mobile Home Screen
+  siteFBAppID: '550149008454554', // FB Application ID for using app insights
   shareImage: '/icons/icon-512.png', // Open Graph Default Share Image. 1200x1200 is recommended
   shareImageWidth: 900, // Change to the width of your default share image
   shareImageHeight: 600, // Change to the height of your default share image

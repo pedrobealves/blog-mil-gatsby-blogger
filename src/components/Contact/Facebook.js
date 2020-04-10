@@ -1,12 +1,12 @@
 import React from 'react'
 import { FacebookProvider, MessageUs } from 'react-facebook'
-import configFacebook from '../../utils/facebookConfig'
+import config from '../../utils/siteConfig'
 
 const Contact = () => {
   return (
-    <FacebookProvider appId={configFacebook.apiId}>
+    <FacebookProvider appId={config.siteFBAppID}>
       <MessageUs
-        messengerAppId={configFacebook.apiId}
+        messengerAppId={config.siteFBAppID}
         pageId="314219968779578"
       />
     </FacebookProvider>
