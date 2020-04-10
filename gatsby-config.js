@@ -113,16 +113,26 @@ module.exports = {
     },
     'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
-        short_name: config.shortTitle,
-        description: config.siteDescription,
-        start_url: '/',
+        short_name: config.siteTitleAlt,
+        start_url: '/index.html',
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
-        icon: `static${config.siteLogo}`,
+        display: 'standalone',
+        icons: [
+          {
+            src: `static${config.siteIcon}`,
+            sizes: `192x192`,
+            type: `image/png`,
+          },
+          {
+            src: `static${config.siteLogo}`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     'gatsby-plugin-offline',
@@ -166,8 +176,8 @@ module.exports = {
                   title: edge.node.frontmatter.title,
                   description: edge.node.excerpt,
                   author: rssMetadata.author,
-                  url: rssMetadata.site_url + '/' + edge.node.frontmatter.slug,
-                  guid: rssMetadata.site_url + '/' + edge.node.frontmatter.slug,
+                  url: rssMetadata.site_url + edge.node.frontmatter.slug,
+                  guid: rssMetadata.site_url + edge.node.frontmatter.slug,
                   custom_elements: [{ 'content:encoded': edge.node.html }],
                 }))
             },
@@ -187,7 +197,7 @@ module.exports = {
                               title
                               type
                               cover
-                              date(formatString: "MMMM DD, YYYY", locale: "pt-BR")
+                              date(formatString: "MMMM DD, YYYY")
                               labels
                             }
                           }
