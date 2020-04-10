@@ -17,6 +17,9 @@ const Index = ({ data, pageContext }) => {
 
   return (
     <Layout>
+{
+          //<SEO />
+      }      
       {!isFirstPage && (
         <Helmet>
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>

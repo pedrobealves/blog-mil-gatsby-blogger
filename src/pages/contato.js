@@ -15,7 +15,9 @@ const Contact = ({ data }) => {
       <Helmet>
         <title>{`Contato - ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO postNode={postNode} pagePath="contact" customTitle />
+      {
+          //<SEO postNode={postNode} pagePath="contact" customTitle />
+      }
       <ContactForm />
     </Layout>
   )

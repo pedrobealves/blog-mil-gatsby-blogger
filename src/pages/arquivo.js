@@ -30,8 +30,10 @@ const Archive = ({ data }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
-      <SEO postNode={postNode} pagePath="contact" customTitle />
-      <SuccessAlert
+{
+          //<SEO postNode={postNode} pagePath="contact" customTitle />
+      }
+            <SuccessAlert
         title={Object.keys(posts).length + ' resultados em '}
         success={title}
       />

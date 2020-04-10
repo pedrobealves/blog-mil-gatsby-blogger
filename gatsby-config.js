@@ -197,7 +197,6 @@ module.exports = {
                               slug
                               title
                               type
-                              cover
                               date(formatString: "MMMM DD, YYYY")
                               labels
                             }
