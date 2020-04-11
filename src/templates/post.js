@@ -20,6 +20,7 @@ const PostTemplate = ({ data, pageContext }) => {
     labels,
     author,
     published,
+    updated,
     content,
     tags,
     cover
@@ -29,18 +30,24 @@ const PostTemplate = ({ data, pageContext }) => {
   const previous = pageContext.prev
   const next = pageContext.next
   const target = React.createRef();
+  const postData = {
+          title,
+          meta_title:`${title} - ${config.siteTitle}`,
+          meta_desc: childMarkdownRemark.excerpt,
+          cover,
+          slug,
+          author,
+          date:published,
+          updated
+        }
 
   return (
     <>
       <ReadingProgress target={target} slug={slug} />
       <Layout>
          <SEO
-          title={title}
-          meta_title={`${title} - ${config.siteTitle}`}
-          meta_desc={childMarkdownRemark.frontmatter.excerpt}
-          cover={cover}
-          slug={slug}
-          date={published}
+          postData={postData}
+          isBlogPost
         />
         <Container>
           <div className={`post`} ref={target}>
@@ -69,6 +76,7 @@ export const query = graphql`
       labels
       content
       published
+      updated
       cover {
         childImageSharp {
           fluid(maxWidth: 773, maxHeight: 408) {
@@ -88,7 +96,7 @@ export const query = graphql`
       childMarkdownRemark {
         frontmatter {
           title
-          date(formatString: "MMMM DD, YYYY", locale: "pt-BR")
+          date(formatString: "MMMM DD, YYYY")
           slug
         }
         html

@@ -12,9 +12,11 @@ module.exports = {
   userTwitter: '@twitter', // Change for Twitter Cards
   shortTitle: 'Blog MIL', // Used for App manifest e.g. Mobile Home Screen
   siteFBAppID: '550149008454554', // FB Application ID for using app insights
+  siteFBAppIDAdmins: ['100005017326032','1839690008'],
+  fbPage: 'https://www.facebook.com/milblog',
   shareImage: '/icons/icon-512.png', // Open Graph Default Share Image. 1200x1200 is recommended
-  shareImageWidth: 900, // Change to the width of your default share image
-  shareImageHeight: 600, // Change to the height of your default share image
+  shareImageWidth: 512, // Change to the width of your default share image
+  shareImageHeight: 512, // Change to the height of your default share image
   siteLogo: '/icons/icon-512.png', // Logo used for SEO, RSS, and App manifest
   siteIcon: '/icons/icon-192.png', // Logo used for SEO, RSS, and App manifest
   backgroundColor: '#e9e9e9', // Used for Offline Manifest

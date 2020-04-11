@@ -45,12 +45,18 @@ module.exports = {
     siteUrl: config.siteUrl,
     rssMetadata: {
       site_url: config.siteUrl,
-      feed_url: `${config.siteUrl}/rss.xml`,
+      feed_url: config.siteUrl + config.siteRss,
       title: config.siteTitle,
       description: config.siteDescription,
-      image_url: `${config.siteUrl}${config.siteLogo}`,
+      image_url: `${config.siteUrl}${config.shareImage}`,
       author: config.author,
       copyright: config.copyright,
+    },
+    social: {
+      twitter: config.userTwitter,
+      fbAppID: config.siteFBAppID,
+      siteFBAppIDAdmins: config.siteFBAppIDAdmins,
+      fbPage: config.fbPage
     },
   },
   plugins: [

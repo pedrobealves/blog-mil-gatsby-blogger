@@ -17,9 +17,7 @@ const Index = ({ data, pageContext }) => {
 
   return (
     <Layout>
-{
-          //<SEO />
-      }      
+       <SEO />
       {!isFirstPage && (
         <Helmet>
           <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
@@ -66,11 +64,11 @@ export const query = graphql`
           childMarkdownRemark {
             frontmatter {
               title
-              date
+              date(formatString: "MMMM DD, YYYY")
               slug
             }
             html
-            excerpt
+            excerpt(pruneLength: 100)
             timeToRead
           }
         }

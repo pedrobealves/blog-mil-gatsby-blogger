@@ -67,7 +67,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop -H 0.0.0.0 -p 3000",
     "test": "npm run lint:css && npm run lint:js && npm run check-pretty",
-    "dev": "gatsby develop -H 0.0.0.0 -p 3000",
+    "dev": "gatsby develop -p 3000",
     "lint:js": "eslint --ext .js,.jsx .",
     "lint:css": "stylelint 'src/**/*.js'",
     "check-pretty": "prettier -l {,src/**/}*.{js,jsx,json,css,scss}",
