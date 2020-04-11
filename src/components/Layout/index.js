@@ -1,17 +1,17 @@
 import React from 'react'
 import classnames from 'classnames'
 import { ThemeProvider } from 'styled-components'
-import ThemeContext from '../context/ThemeContext'
+import ThemeContext from '../../context/ThemeContext'
 import Helmet from 'react-helmet'
-import favicon from '../images/favicon.ico'
-import GlobalStyle from '../styles/global'
-import theme from '../styles/theme'
-import config from '../utils/siteConfig'
-import Header from '../components/Header'
-import Footer from './Footer'
-import Sidebar from './Sidebar'
+import favicon from '../../images/favicon.ico'
+import GlobalStyle from '../../styles/global'
+import theme from '../../styles/theme'
+import config from '../../utils/siteConfig'
+import Header from '../../components/Header'
+import Footer from '../Footer'
+import Sidebar from '../Sidebar'
 
-import '../styles/assets/fonts/font-awesome/icons'
+import '../../styles/assets/fonts/font-awesome/icons'
 
 const Template = ({ children, fullContainer, pageHeading }) => {
   return (
