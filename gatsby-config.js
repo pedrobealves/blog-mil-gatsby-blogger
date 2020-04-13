@@ -58,6 +58,7 @@ module.exports = {
       siteFBAppIDAdmins: config.siteFBAppIDAdmins,
       fbPage: config.fbPage
     },
+    basePath: '/',
   },
   plugins: [
     {

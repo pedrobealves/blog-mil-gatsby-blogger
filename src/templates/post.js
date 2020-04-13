@@ -32,7 +32,7 @@ const PostTemplate = ({ data, pageContext }) => {
   const target = React.createRef();
   const postData = {
           title,
-          meta_title:`${title} - ${config.siteTitle}`,
+          meta_title:`${title} | ${config.siteTitle}`,
           meta_desc: childMarkdownRemark.excerpt,
           cover,
           slug,

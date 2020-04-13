@@ -138,7 +138,7 @@ ${md}`,
           const segments = rePage.exec(page.url)
           const gatsbyPage = Object.assign(
             {
-              slug: segments[1],
+              slug: '/' + segments[1],
             },
             page,
             {
@@ -151,7 +151,7 @@ ${md}`,
                 content: `---
   title: '${page.title.replace("'", "''")}'
   date: '${page.published}'
-  slug: '${segments[1]}'
+  slug: '/${segments[1]}'
   labels: ''
   templateKey: 'page'
   `,

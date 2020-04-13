@@ -9,7 +9,7 @@ module.exports = {
   siteRss: '/rss.xml',
   author: 'Blog MIL', // Author for RSS author segment and SEO schema
   authorUrl: 'https://www.blogmil.net/', // URL used for author and publisher schema, can be a social profile or other personal site
-  userTwitter: '@twitter', // Change for Twitter Cards
+  userTwitter: '@blog_mil', // Change for Twitter Cards
   shortTitle: 'Blog MIL', // Used for App manifest e.g. Mobile Home Screen
   siteFBAppID: '550149008454554', // FB Application ID for using app insights
   siteFBAppIDAdmins: ['100005017326032','1839690008'],

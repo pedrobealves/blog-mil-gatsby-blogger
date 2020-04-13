@@ -8,24 +8,36 @@ import SEO from '../components/SEO'
 import config from '../utils/siteConfig'
 import Card from '../components/Card/Complete'
 import Slider from '../components/Slider'
+import { startCase } from 'lodash'
 
 const Index = ({ data, pageContext }) => {
   const posts = data.allBloggerPost.edges
-  const featuredPost = posts[0].node
-  const { currentPage } = pageContext
-  const isFirstPage = currentPage === 1
+  const { humanPageNumber, basePath } = pageContext
+  const isFirstPage = humanPageNumber === 1
+  let featuredPost
+
+  try {
+    featuredPost = posts[0].node
+  } catch (error) {
+    featuredPost = null
+  }
+
+  const postData = {
+          title:startCase(basePath)
+  }
 
   return (
     <Layout>
-       <SEO />
+        <SEO postData={postData} />
       {!isFirstPage && (
         <Helmet>
-          <title>{`${config.siteTitle} - Page ${currentPage}`}</title>
+          <title>{`${config.siteTitle} | Página ${humanPageNumber}`}</title>
         </Helmet>
       )}
       <Slider posts={posts} featuredPost={featuredPost} />
       <Card
         posts={posts}
+        basePath={basePath}
         featuredPost={featuredPost}
         isFirstPage={isFirstPage}
       />

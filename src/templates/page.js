@@ -18,6 +18,7 @@ const PostTemplate = ({ data, pageContext }) => {
     childMarkdownRemark,
     author,
     published,
+    updated,
     content,
     tags,
   } = data.bloggerPage
@@ -26,12 +27,19 @@ const PostTemplate = ({ data, pageContext }) => {
   const previous = pageContext.prev
   const next = pageContext.next
 
+  const postData = {
+          title,
+          meta_title:`${title} | ${config.siteTitle}`,
+          meta_desc: childMarkdownRemark.excerpt,
+          slug,
+          author,
+          date:published,
+          updated
+        }
+
   return (
     <Layout>
-      <Helmet>
-        <title>{`${title} - ${config.siteTitle}`}</title>
-      </Helmet>
-      {/* <SEO pagePath={slug} postNode={postNode} postSEO /> */}{' '}
+      <SEO postData={postData} />
       <Container>
         <PostBody body={childMarkdownRemark} content={content} />
       </Container>
@@ -49,6 +57,8 @@ export const query = graphql`
       id
       slug
       content
+      published
+      updated
       author {
         id
         displayName

@@ -30,19 +30,19 @@ class Pagination extends React.Component {
       return rangeWithDots
     }
 
-    const { numPages, currentPage, slug } = this.props.context
-    const isFirst = currentPage === 1
-    const isLast = currentPage === numPages
+    const { numberOfPages, humanPageNumber, basePath } = this.props.context
+    const isFirst = humanPageNumber === 1
+    const isLast = humanPageNumber === numberOfPages
     const isNotPaginated = isFirst & isLast
 
-    const prevPageNum = currentPage - 1 === 1 ? `` : currentPage - 1
-    const nextPageNum = currentPage + 1
+    const prevPageNum = humanPageNumber - 1 === 1 ? `` : humanPageNumber - 1
+    const nextPageNum = humanPageNumber + 1
 
-    const pathPrefix = typeof slug === 'string' ? `/tag/${slug}` : ''
+    const pathPrefix = typeof basePath === 'string' ? `/${basePath}` : ''
     const prevPageLink = isFirst ? null : `${pathPrefix}/${prevPageNum}/`
     const nextPageLink = isLast ? null : `${pathPrefix}/${nextPageNum}/`
 
-    const pagesWithDots = pagination(currentPage, numPages)
+    const pagesWithDots = pagination(humanPageNumber, numberOfPages)
 
     return (
       <nav className="post-pagination" aria-label="Blog navigation">
@@ -57,7 +57,7 @@ class Pagination extends React.Component {
           {pagesWithDots.map(index => (
             <li
               key={index}
-              className={`page-item ${currentPage === index && `active`}`}
+              className={`page-item ${humanPageNumber === index && `active`}`}
             >
               {index === '...' ? (
                 <li className="page-item">

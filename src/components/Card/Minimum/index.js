@@ -2,11 +2,11 @@ import React from 'react'
 import SimpleCardList from './SimpleCardList'
 import SimpleCard from './SimpleCard'
 
-const CardPosts = ({ posts }) => {
+const CardPosts = ({ posts, basePath }) => {
   return (
     <SimpleCardList>
       {posts.map(({ node: post }) => (
-        <SimpleCard key={post.id} {...post} />
+        <SimpleCard key={post.id} {...post} basePath={basePath} />
       ))}
     </SimpleCardList>
   )

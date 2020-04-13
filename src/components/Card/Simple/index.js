@@ -4,10 +4,12 @@ import { Link } from 'gatsby'
 const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
   const { title, date, slug } = childMarkdownRemark.frontmatter
 
+  const path = props.basePath ? props.basePath : ''
+
   return (
     <li className="posts__item posts__item--category-1">
       <figure className="posts__thumb">
-        <Link to={slug}>
+        <Link to={`${path}/${slug}`}>
           <img src={cover.childImageSharp.fixed.srcWebp} />
         </Link>
       </figure>
@@ -20,7 +22,7 @@ const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
           ))}
         </div>
         <h6 className="posts__title">
-          <Link to={slug}>{title}</Link>
+          <Link to={`${path}/${slug}`}>{title}</Link>
         </h6>
         <time dateTime="2016-08-23" className="posts__date">
           {date}

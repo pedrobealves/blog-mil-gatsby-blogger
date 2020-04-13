@@ -1,5 +1,4 @@
 import React from 'react'
-import config from '../../utils/siteConfig'
 import Helmet from 'react-helmet'
 import { useStaticQuery, graphql } from 'gatsby'
 import SchemaOrg from './SchemaOrg';
@@ -34,11 +33,10 @@ const SEO = ({ postData={}, isBlogPost }) => {
     `
   )
 
-
-  const title = site.title || postData.title ;
-  const metaURL = postData ? site.siteMetadata.siteUrl + postData.slug : site.siteMetadata.siteUrl
+  const title = postData.title || site.siteMetadata.title ;
+  const metaURL = postData.slug ? site.siteMetadata.siteUrl + postData.slug : site.siteMetadata.siteUrl
   const image = postData.cover ? site.siteMetadata.siteUrl + postData.cover.childImageSharp.fluid.src : ''
-  const metaDescription = site.siteMetadata.rssMetadata.description || postData.meta_desc
+  const metaDescription = postData.meta_desc || site.siteMetadata.rssMetadata.description
   const metaImage = image || site.siteMetadata.rssMetadata.image_url
 
   return (
@@ -48,53 +46,46 @@ const SEO = ({ postData={}, isBlogPost }) => {
       htmlAttributes={{
         lang: `pt-br`,
       }}
-      title={title}
+      title={postData.title}
       defaultTitle={site.siteMetadata.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
     >
       {/* General tags */}
       <meta name='description' content={metaDescription} />
-      <meta name='image' content={image} />
-      {/* Schema.org tags */}
-      {/*<script type='application/ld+json'>
-        {JSON.stringify(breadcrumbSchemaOrgJSONLD)}
-      </script>
-      <script type='application/ld+json'>
-        {JSON.stringify(blogPostingSchemaOrgJSONLD)}
-      </script>
-       <script type='application/ld+json'>
-        {JSON.stringify(websiteSchemaOrgJSONLD)}
-      </script>
-       <script type='application/ld+json'>
-        {JSON.stringify(organizationSchemaOrgJSONLD)}
-    </script>*/
-    }
+      <meta name='image' content={metaImage} />
+      
+     
+    
       {/* OpenGraph tags */}
       <meta property='og:url' content={metaURL} />
-      <meta property='og:type' content='article' />
+      {isBlogPost && <meta property="og:type" content="article" />}
       <meta property='og:title' content={title} />
       <meta property='og:description' content={metaDescription} />
-      <meta property='og:image' content={image} />
+      <meta property='og:image' content={metaImage} />
 
 
       {/* Facebook tags*/}
       <meta
         property='fb:app_id'
-        content={config.siteFBAppID ? config.siteFBAppID : ''}
+        content={site.siteMetadata.social.fbAppID ? site.siteMetadata.social.fbAppID : ''}
       />
-      <meta content="100005017326032" property="fb:admins" />
-      <meta content="1839690008" property="fb:admins" />
 
+      {
+          site.siteMetadata.social.siteFBAppIDAdmins
+          && site.siteMetadata.social.siteFBAppIDAdmins.map(element => 
+            <meta content={element} property="fb:admins" />
+          )
+      }
 
       {/* Twitter Card tags */}
       <meta name='twitter:card' content='summary_large_image' />
       <meta
         name='twitter:creator'
-        content={config.userTwitter ? config.userTwitter : ''}
+        content={site.siteMetadata.social.twitter ? site.siteMetadata.social.twitter : ''}
       />
       <meta name='twitter:title' content={title} />
       <meta name='twitter:description' content={metaDescription} />
-      <meta name='twitter:image' content={image} />
+      <meta name='twitter:image' content={metaImage} />
     </Helmet>
     <SchemaOrg
             isBlogPost={isBlogPost}
@@ -106,7 +97,7 @@ const SEO = ({ postData={}, isBlogPost }) => {
             updated={postData.updated}
             author={postData.author}
             cover={postData.cover}
-            site={site}
+            site={site.siteMetadata}
           />
     </React.Fragment>
   )

@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import SimpleCard from '../../../Card/Simple'
 
-const Card = ({ posts }) => {
+const Card = ({ posts, basePath }) => {
   let arr = []
   let limit = 0
 
@@ -39,7 +39,7 @@ const Card = ({ posts }) => {
         data.allBloggerPost.edges.map(
           ({ node: post }) =>
             arr.includes(post.childMarkdownRemark.frontmatter.slug) &&
-            limit++ < 5 && <SimpleCard key={post.id} {...post} />
+            limit++ < 5 && <SimpleCard key={post.id} {...post} basePath={basePath} />
         )
       }
     />

@@ -17,11 +17,13 @@ const Card = ({
   author,
   ...props
 }) => {
+  const path = props.basePath ? props.basePath : ''
+
   return (
     <div className="post-list__item">
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
-          <Link to={`${slug}`}>
+          <Link to={`${path}/${slug}`}>
             <CoverImg
               fluid={cover.childImageSharp.fluid}
               height={'340px'}
@@ -40,7 +42,7 @@ const Card = ({
               ))}
             </div>
             <h6 className="posts__title">
-              <Link to={`${slug}`}>{title}</Link>
+            <Link to={`${path}/${slug}`}>{title}</Link>
             </h6>
             <time dateTime="2016-08-17" className="posts__date">
               {published}
