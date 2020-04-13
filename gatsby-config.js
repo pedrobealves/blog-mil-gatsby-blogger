@@ -105,10 +105,10 @@ module.exports = {
           : bloggerConfig.production,
     },
     {
-      resolve: 'gatsby-plugin-google-analytics',
+      resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS,
-        head: true,
+        id: 'GTM-P9SKB3N',
+        includeInDevelopment: true,
       },
     },
     {

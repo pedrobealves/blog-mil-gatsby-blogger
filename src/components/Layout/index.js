@@ -17,11 +17,7 @@ const Template = ({ children, fullContainer, pageHeading }) => {
   return (
     <div className="siteRoot">
       <Helmet>
-        <title>{config.siteTitle}</title>
-        <script
-          async
-          src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        />      
+        <title>{config.siteTitle}</title>   
         </Helmet>
       <ThemeProvider theme={theme}>
         <ThemeContext.Consumer>
