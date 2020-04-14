@@ -1,6 +1,5 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import config from '../../utils/siteConfig'
 
 export default React.memo(
   ({
@@ -12,7 +11,8 @@ export default React.memo(
     date,
     updated,
     author,
-    cover
+    cover,
+    site
   }) => {
 
     function baseSchema()  {
@@ -21,20 +21,20 @@ export default React.memo(
         {
         "@context": "http://schema.org",
         "@type": "Organization",
-        url: config.siteUrl,
-        name: config.siteTitle,
-        sameAs: config.fbPage,
-        logo: config.shareImage
+        url: site.rssMetadata.site_url,
+        name: site.rssMetadata.title,
+        sameAs: site.social.fbPage,
+        logo: site.rssMetadata.image_url
         }
 
     const websiteSchemaOrgJSONLD = 
         {
         "@context": "http://schema.org",
         "@type": "WebSite",
-        url: config.siteUrl,
-        name: config.siteTitle,
-        description: config.siteDescription,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+        url: site.rssMetadata.site_url,
+        name: site.rssMetadata.title,
+        description: site.rssMetadata.description,
+        alternateName: site.rssMetadata.title_alt
         }
 
     return {
@@ -54,9 +54,9 @@ export default React.memo(
         '@type': 'ListItem',
         position: 1,
         item: {
-          '@id': config.siteUrl,
+          '@id': site.rssMetadata.site_url,
           name: 'Home',
-          image: config.shareImage,
+          image:site.rssMetadata.image_url,
         },
       },
       {
@@ -76,7 +76,7 @@ export default React.memo(
     '@type': 'BlogPosting',
     url: metaURL,
     name: title,
-    alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
+    alternateName: site.rssMetadata.title_alt,
     headline: title,
     mainEntityOfPage: {
       '@type': 'WebPage',
@@ -98,13 +98,13 @@ export default React.memo(
     inLanguage: 'pt-br',
     publisher: {
       '@type': 'Organization',
-      name: config.siteTitle,
-      url: config.siteUrl,
+      name: site.rssMetadata.title,
+      url: site.rssMetadata.site_url,
       logo: {
         '@type': 'ImageObject',
-        url: config.shareImage,
-        width: config.shareImageWidth,
-        height: config.shareImageHeight
+        url: site.rssMetadata.image_url,
+        width: site.rssMetadata.image_url_width,
+        height: site.rssMetadata.image_url_height
       },
     },
     description: description,

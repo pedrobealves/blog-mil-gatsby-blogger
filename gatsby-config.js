@@ -46,9 +46,12 @@ module.exports = {
     rssMetadata: {
       site_url: config.siteUrl,
       feed_url: config.siteUrl + config.siteRss,
-      title: config.siteTitle,
+      title_alt: config.siteTitleAlt,
+      title: config.siteTitleAlt,
       description: config.siteDescription,
       image_url: `${config.siteUrl}${config.shareImage}`,
+      image_url_width: config.shareImageWidth,
+      image_url_height: config.shareImageHeight,
       author: config.author,
       copyright: config.copyright,
     },
@@ -107,8 +110,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-tagmanager`,
       options: {
-        id: 'GTM-P9SKB3N',
-        includeInDevelopment: true,
+        id: config.siteGTMID,
+        includeInDevelopment: false,
       },
     },
     {

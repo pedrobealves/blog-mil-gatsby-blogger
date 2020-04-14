@@ -13,6 +13,7 @@ module.exports = {
   shortTitle: 'Blog MIL', // Used for App manifest e.g. Mobile Home Screen
   siteFBAppID: '550149008454554', // FB Application ID for using app insights
   siteFBAppIDAdmins: ['100005017326032','1839690008'],
+  siteGTMID:'GTM-P9SKB3N',
   fbPage: 'https://www.facebook.com/milblog',
   shareImage: '/icons/icon-512.png', // Open Graph Default Share Image. 1200x1200 is recommended
   shareImageWidth: 512, // Change to the width of your default share image

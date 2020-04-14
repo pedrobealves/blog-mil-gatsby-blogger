@@ -1,12 +1,8 @@
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
-import SimpleCard from '../../../Card/Simple'
+import SelectPosts from './SelectPosts'
 
-const Card = ({ posts, basePath }) => {
-  let arr = []
-  let limit = 0
-
-  posts.map(({ node: post }) => arr.push(post.path))
+const Card = (props) => {
 
   return (
     <StaticQuery
@@ -16,6 +12,7 @@ const Card = ({ posts, basePath }) => {
             edges {
               node {
                 labels
+                id
                 cover {
                   childImageSharp {
                     fixed(width: 80, height: 80) {
@@ -35,13 +32,7 @@ const Card = ({ posts, basePath }) => {
           }
         }
       `}
-      render={data =>
-        data.allBloggerPost.edges.map(
-          ({ node: post }) =>
-            arr.includes(post.childMarkdownRemark.frontmatter.slug) &&
-            limit++ < 5 && <SimpleCard key={post.id} {...post} basePath={basePath} />
-        )
-      }
+      render={data => <SelectPosts data={data} {...props} />}
     />
   )
 }
