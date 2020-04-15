@@ -1,4 +1,7 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
 
 const WidgetContactInfo = () => {
   return (
@@ -13,8 +16,8 @@ const WidgetContactInfo = () => {
         </div>
         <div className="widget-contact-info__body info-block">
           <div className="info-block__item">
-            <svg role="img" className="df-icon df-icon--basketball">
-              <use xlinkHref="assets/images/icons-basket.svg#basketball" />
+            <svg role="img" className="df-icon">
+                <FontAwesomeIcon icon={faEnvelope} color="#ff6711"/>
             </svg>
             <h6 className="info-block__heading">Contate-nos</h6>
             <a className="info-block__link" href="mailto:blogmil@outlook.com">
@@ -22,8 +25,8 @@ const WidgetContactInfo = () => {
             </a>
           </div>
           <div className="info-block__item">
-            <svg role="img" className="df-icon df-icon--jersey">
-              <use xlinkHref="assets/images/icons-basket.svg#jersey" />
+            <svg role="img" className="df-icon">
+                <FontAwesomeIcon icon={faFacebookF} color="#ff6711"/>
             </svg>
             <h6 className="info-block__heading">Siga-nos</h6>
             <a

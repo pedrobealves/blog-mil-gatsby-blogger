@@ -1,8 +1,9 @@
 import React from 'react'
-import Logo from '../../Common/Logo'
+import Symbol from '../../Common/Symbol'
 import WidgetContactInfo from './Widgets/WidgetElements/WidgetContactInfo'
 import WidgetInstagram from './Widgets/WidgetElements/WidgetInstagram'
 import Widgets from './Widgets'
+
 
 const FooterWidgets = () => {
   return (
@@ -10,8 +11,8 @@ const FooterWidgets = () => {
       <div className="footer-widgets__inner">
         <div className="container">
           <div className="row">
-            <Widgets>
-              <Logo section="footer" />
+            <Widgets> 
+              <Symbol section="footer" />
             </Widgets>
             <Widgets>
               <WidgetContactInfo />
