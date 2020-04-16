@@ -103,79 +103,67 @@ Description:  You can add your custom CSS here and it will overwrite template st
   text-transform: uppercase;
 }
 
+// Tweak these to change the style of the toggle
+$toggle-background-color-on: #ff6711;
+$toggle-background-color-off: darkgray;
+$toggle-control-color: white;
+$toggle-width: 50px;
+$toggle-height: 25px;
+$toggle-gutter: 3px;
+$toggle-radius: 50%;
+$toggle-control-speed: .3s;
+$toggle-control-ease: ease-in;
 
+// These are our computed variables
+// change at your own risk.
+$toggle-radius: $toggle-height / 2;
+$toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 
-/* The switch - the box around the slider */
-.switch {
+.toggle-control {
+  display: block;
   position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-  float:right;
-}
-
-/* Hide default HTML checkbox */
-.switch input {display:none;}
-
-/* The slider */
-.slider {
-  position: absolute;
+  padding-left: $toggle-width;
+  margin-bottom: 12px;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  font-size: 22px;
+  user-select: none;
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
 
-input.default:checked + .slider {
-  background-color: #444;
-}
-input.primary:checked + .slider {
-  background-color: #2196F3;
-}
-input.success:checked + .slider {
-  background-color: #8bc34a;
-}
-input.info:checked + .slider {
-  background-color: #3de0f5;
-}
-input.warning:checked + .slider {
-  background-color: #FFC107;
-}
-input.danger:checked + .slider {
-  background-color: #f44336;
-}
+  input:checked ~ .control {
+    background-color: $toggle-background-color-on;
+    
+    &:after {
+      left: $toggle-width - $toggle-control-size - $toggle-gutter;
+    }
+  }
 
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
-}
+  .control {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: $toggle-height;
+    width: $toggle-width;
+    border-radius: $toggle-radius;
+    background-color: $toggle-background-color-off;
+    transition: background-color $toggle-control-speed $toggle-control-ease;
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
+    &:after {
+      content: "";
+      position: absolute;
+      left: $toggle-gutter;
+      top: $toggle-gutter;
+      width: $toggle-control-size;
+      height: $toggle-control-size;
+      border-radius: $toggle-radius;
+      background: $toggle-control-color;
+      transition: left $toggle-control-speed $toggle-control-ease;
+    }
+  }
 }

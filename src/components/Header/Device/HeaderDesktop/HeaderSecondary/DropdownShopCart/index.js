@@ -23,15 +23,14 @@ const DropdownShopCart = () => {
           <li className="header-cart__item header-cart__item--subtotal">
             <span className="header-cart__subtotal">Estender</span>
             <span className="header-cart__subtotal-sum">
-              <label className="checkbox-inline mr-2 switch">
+              <label className="toggle-control">
                 <input
                   type="checkbox"
                   id="inlineCheckbox1"
                   checked={theme.full}
                   onClick={theme.toggleFull}
-                   className="default"
                 />
-                <span className="checkbox-indicator slider round" />
+                <span class="control"></span>
               </label>
             </span>
           </li>
