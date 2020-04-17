@@ -12,7 +12,7 @@ module.exports = {
     icon: ['fab', 'instagram'],
   },
   rss: {
-    url: 'https://www.rss.com/blog_mil',
+    url: 'https://www.blogmil.net/rss.xml',
     icon: 'rss',
   },
 }
