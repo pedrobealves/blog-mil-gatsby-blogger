@@ -1,28 +1,47 @@
-import React, { useState, useEffect } from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
-const IndexPage = () => {
-  // Build Time Data Fetching
-  const gatsbyRepoData = useStaticQuery(graphql`
-    {
-      allLabel {
-        edges {
-          node {
-            id
-            terms
-          }
-        }
-      }
-    }
-  `)
+import React from "react"
+import PropTypes from "prop-types"
+// Utilities
+import kebabCase from "lodash/kebabCase"
+// Components
+import { Link,StaticQuery, graphql } from "gatsby"
 
-  const labels = gatsbyRepoData.allLabel.edges[0].node.terms
-
-  const label = labels.slice(0, 10).map((name, index) => (
-    <li key={index} data-option="" data-value={name}>
-      <span>{name}</span>
-    </li>
-  ))
-
-  return <ul>{label}</ul>
+const TagsPage = ({
+  data: {
+    allBloggerPost: { group }
+  }
+}) => (
+     <ul>
+        {group.map(label => (
+          <li key={label.fieldValue} data-option="" data-value={label.fieldValue}>
+              <span>{label.fieldValue} ({label.totalCount})</span>
+          </li>
+        ))}
+      </ul>
+)
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        allBloggerPost(limit: 2000) {
+            group(field: labels) {
+                fieldValue
+                totalCount
+            }
+   }
+  }
+    `}
+    render={data => <TagsPage data={data} {...props} />}
+  />
+)
+TagsPage.propTypes = {
+  data: PropTypes.shape({
+    allBloggerPost: PropTypes.shape({
+      group: PropTypes.arrayOf(
+        PropTypes.shape({
+          fieldValue: PropTypes.string.isRequired,
+          totalCount: PropTypes.number.isRequired,
+        }).isRequired
+      ),
+    }),
+  }),
 }
-export default IndexPage
