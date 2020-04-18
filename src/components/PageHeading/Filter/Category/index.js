@@ -21,7 +21,7 @@ const Category = () => {
         tabIndex="0"
       >
         <span className="cs-placeholder">Todos Artigos</span>
-        <div className="cs-options">
+        <div className="cs-options overflow-auto">
           <Labels />
         </div>
         <select className="cs-select cs-skin-border">

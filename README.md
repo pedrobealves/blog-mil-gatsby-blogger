@@ -11,10 +11,10 @@
 <a href=""><img src="https://img.shields.io/github/stars/trecky/blog-mil-gatsby-blogger.svg?style=for-the-badge&colorB=7651A9"/></a>
 <br>
 <a href=""><img src="https://img.shields.io/badge/license-MIT-353535.svg?style=for-the-badge"/></a>
-<a href="https://glacial-cove-39188.herokuapp.com/"><img src="https://img.shields.io/badge/gatsby-homolog-353535.svg?style=for-the-badge&logo=gatsby&colorA=gray&logoColor=F7F7F7&logoWidth=25"/></a>
+<a href="https://www.blogmil.net/"><img src="https://img.shields.io/badge/gatsby-homolog-353535.svg?style=for-the-badge&logo=gatsby&colorA=gray&logoColor=F7F7F7&logoWidth=25"/></a>
 <br>
 <br>
-<a href="https://www.blogmil.net/"><img src="https://api.netlify.com/api/v1/badges/e80eaed9-7558-4534-98ec-abafb5f9579e/deploy-status"/></a>
+<a href="https://app.netlify.com/sites/blogmil/deploys"><img src="https://api.netlify.com/api/v1/badges/e80eaed9-7558-4534-98ec-abafb5f9579e/deploy-status"/></a>
 </p>
 
 

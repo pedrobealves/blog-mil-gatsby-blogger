@@ -167,3 +167,9 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
     }
   }
 }
+
+//Dropdown list
+
+.cs-select .cs-options {
+    height: 50vh;
+}
