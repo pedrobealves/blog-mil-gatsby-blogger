@@ -1,13 +1,17 @@
 import React, { useState, createRef } from 'react'
 import handleClick from '../../../Listeners/handleClick'
 import Labels from './Labels'
+import PerfectScrollbar from "react-perfect-scrollbar";
+import 'react-perfect-scrollbar/dist/css/styles.css';
 
-const Category = () => {
+const Category = ({searchValue, onClickValue}) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   const ref = createRef()
 
   handleClick(ref, setModalOpen)
+
+  const text = searchValue.category || 'Todos Artigos'
 
   return (
     <div
@@ -15,20 +19,19 @@ const Category = () => {
       onClick={() => setModalOpen(!modalOpen)}
       ref={ref}
     >
-      <label className="post-filter__label">Category</label>
+      <label className="post-filter__label">Categoria</label>
       <div
         className={`cs-select cs-skin-border + ${modalOpen && 'cs-active'}`}
         tabIndex="0"
       >
-        <span className="cs-placeholder">Todos Artigos</span>
-        <div className="cs-options overflow-auto">
-          <Labels />
+        <span className="cs-placeholder">{text}</span>
+        <div className="cs-options">
+        <PerfectScrollbar>
+          <Labels onClickValue={onClickValue}/>
+        </PerfectScrollbar>
         </div>
         <select className="cs-select cs-skin-border">
-          <option value="" disabled="disabled" selected="selected">
-            Todos Artigos{' '}
-          </option>
-          <option value="all">Todos Artigos</option>
+          <option value="all">{text}</option>
         </select>
       </div>
     </div>

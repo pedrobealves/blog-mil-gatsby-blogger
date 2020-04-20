@@ -5,19 +5,19 @@ import kebabCase from "lodash/kebabCase"
 // Components
 import { Link,StaticQuery, graphql } from "gatsby"
 
-const TagsPage = ({
+const AuthorPage = ({
   data: {
     allBloggerPost: { group }
   },
   onClickValue
 }) => (
      <ul>
-        {group.map(label => (
+        {group.map(author => (
           <li  
-          onClick={() => onClickValue('category',label.fieldValue)} 
-          key={label.fieldValue}
+          onClick={() => onClickValue('author',author.fieldValue)} 
+          key={author.fieldValue}
           >
-              <span>{label.fieldValue}</span>
+              <span>{author.fieldValue}</span>
           </li>
         ))}
       </ul>
@@ -26,18 +26,18 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        allBloggerPost(limit: 2000) {
-            group(field: labels) {
+           allBloggerPost(limit: 2000) {
+            group(field: author___displayName) {
                 fieldValue
                 totalCount
             }
-   }
-  }
+           }
+     }
     `}
-    render={data => <TagsPage data={data} {...props} />}
+    render={data => <AuthorPage data={data} {...props} />}
   />
 )
-TagsPage.propTypes = {
+AuthorPage.propTypes = {
   data: PropTypes.shape({
     allBloggerPost: PropTypes.shape({
       group: PropTypes.arrayOf(
