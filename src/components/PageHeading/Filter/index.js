@@ -1,12 +1,13 @@
 import React from 'react'
 import Category from './Category/'
+import Author from './Author'
 
-const Filter = () => {
+const Filter = (props) => {
   return (
     <div className="post-filter">
       <div className="container">
         <form action="#" className="post-filter__form clearfix">
-          <Category />
+          <Category {...props}/>
           <div className="post-filter__select">
             <label className="post-filter__label">Filtrar Por</label>{' '}
             <div className="cs-select cs-skin-border" tabIndex="0">
@@ -53,28 +54,13 @@ const Filter = () => {
               </select>
             </div>
           </div>
-          <div className="post-filter__select">
-            <label className="post-filter__label">Autor</label>{' '}
-            <div className="cs-select cs-skin-border" tabIndex="0">
-              <span className="cs-placeholder">Todos Autores</span>
-              <div className="cs-options">
-                <ul>
-                  <li data-option="" data-value="all">
-                    <span>Todos Autores</span>
-                  </li>
-                </ul>
-              </div>
-              <select className="cs-select cs-skin-border">
-                <option value="" disabled="disabled" selected="selected">
-                  All Authors
-                </option>
-                <option value="all">All Authors</option>
-              </select>
-            </div>
-          </div>
+         <Author {...props}/>
           <div className="post-filter__submit">
-            <button type="submit" className="btn btn-default btn-lg btn-block">
-              Filtrar
+            <button 
+            onClick={(e) => props.clearState(e)} 
+            type="submit" 
+            className="btn btn-default btn-lg btn-block">
+              Limpar
             </button>
           </div>
         </form>

@@ -52,6 +52,7 @@
     "react-dom": "16.12.0",
     "react-facebook": "8.1.4",
     "react-helmet": "5.2.1",
+    "react-perfect-scrollbar": "^1.5.8",
     "react-slick": "0.25.2",
     "rehype-parse": "6.0.2",
     "rehype-remark": "7.0.0",
