@@ -1,8 +1,6 @@
 import React, { useState, createRef } from 'react'
 import handleClick from '../../../Listeners/handleClick'
 import Labels from './Labels'
-import PerfectScrollbar from "react-perfect-scrollbar";
-import 'react-perfect-scrollbar/dist/css/styles.css';
 
 const Category = ({searchValue, onClickValue}) => {
   const [modalOpen, setModalOpen] = useState(false)
@@ -25,10 +23,8 @@ const Category = ({searchValue, onClickValue}) => {
         tabIndex="0"
       >
         <span className="cs-placeholder">{text}</span>
-        <div className="cs-options">
-        <PerfectScrollbar>
+        <div className="cs-options overflow-auto">
           <Labels onClickValue={onClickValue}/>
-        </PerfectScrollbar>
         </div>
         <select className="cs-select cs-skin-border">
           <option value="all">{text}</option>
