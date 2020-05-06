@@ -59,7 +59,7 @@ module.exports = {
       twitter: config.userTwitter,
       fbAppID: config.siteFBAppID,
       siteFBAppIDAdmins: config.siteFBAppIDAdmins,
-      fbPage: config.fbPage
+      fbPage: config.fbPage,
     },
     basePath: '/',
   },
@@ -147,10 +147,10 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-     {
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
-        setup (ref) {
+        setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata
           ret.allMarkdownRemark = ref.query.allMarkdownRemark
           ret.generator = config.siteTitle
@@ -175,12 +175,10 @@ module.exports = {
               `,
         feeds: [
           {
-            serialize (ctx) {
+            serialize(ctx) {
               const rssMetadata = ctx.query.site.siteMetadata.rssMetadata
               return ctx.query.allMarkdownRemark.edges
-                .filter(
-                  edge => edge.node.frontmatter.type === 'blogger__POST'
-                )
+                .filter(edge => edge.node.frontmatter.type === 'blogger__POST')
                 .map(edge => ({
                   categories: edge.node.frontmatter.labels.split(','),
                   date: edge.node.frontmatter.date,
@@ -232,7 +230,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        // develop: true,
+        develop: true,
         whitelist: [
           'header-logo',
           'post-related__prev',
@@ -246,6 +244,7 @@ module.exports = {
           'btn-twitter',
           'tr-caption',
           'col-md-8',
+          'slick-slider',
         ],
         // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
         // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
