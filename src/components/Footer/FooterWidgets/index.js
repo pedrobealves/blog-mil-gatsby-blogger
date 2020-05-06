@@ -4,14 +4,13 @@ import WidgetContactInfo from './Widgets/WidgetElements/WidgetContactInfo'
 import WidgetInstagram from './Widgets/WidgetElements/WidgetInstagram'
 import Widgets from './Widgets'
 
-
 const FooterWidgets = () => {
   return (
     <div className="footer-widgets">
       <div className="footer-widgets__inner">
         <div className="container">
           <div className="row">
-            <Widgets> 
+            <Widgets>
               <Symbol section="footer" />
             </Widgets>
             <Widgets>

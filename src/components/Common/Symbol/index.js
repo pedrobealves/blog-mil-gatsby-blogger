@@ -7,11 +7,11 @@ const Symbol = ({ section }) => {
   return (
     <div className={section + '-logo'}>
       <Link to={'/'}>
-              <img
-                src={symbol}
-                alt="Blog MIL"
-                className={section + '-logo__img w-50'}
-              />
+        <img
+          src={symbol}
+          alt="Blog MIL"
+          className={section + '-logo__img w-50'}
+        />
       </Link>
     </div>
   )

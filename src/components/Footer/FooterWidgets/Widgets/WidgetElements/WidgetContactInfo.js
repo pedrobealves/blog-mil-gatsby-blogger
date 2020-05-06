@@ -17,7 +17,7 @@ const WidgetContactInfo = () => {
         <div className="widget-contact-info__body info-block">
           <div className="info-block__item">
             <svg role="img" className="df-icon">
-                <FontAwesomeIcon icon={faEnvelope} color="#ff6711"/>
+              <FontAwesomeIcon icon={faEnvelope} color="#ff6711" />
             </svg>
             <h6 className="info-block__heading">Contate-nos</h6>
             <a className="info-block__link" href="mailto:blogmil@outlook.com">
@@ -26,7 +26,7 @@ const WidgetContactInfo = () => {
           </div>
           <div className="info-block__item">
             <svg role="img" className="df-icon">
-                <FontAwesomeIcon icon={faFacebookF} color="#ff6711"/>
+              <FontAwesomeIcon icon={faFacebookF} color="#ff6711" />
             </svg>
             <h6 className="info-block__heading">Siga-nos</h6>
             <a

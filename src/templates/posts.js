@@ -23,12 +23,12 @@ const Index = ({ data, pageContext }) => {
   }
 
   const postData = {
-          title:startCase(basePath)
+    title: startCase(basePath),
   }
 
   return (
     <Layout>
-        <SEO postData={postData} />
+      <SEO postData={postData} />
       {!isFirstPage && (
         <Helmet>
           <title>{`${config.siteTitle} | Página ${humanPageNumber}`}</title>

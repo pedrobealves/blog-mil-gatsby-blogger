@@ -16,8 +16,8 @@ const Template = ({ children, fullContainer, pageHeading }) => {
   return (
     <div className="siteRoot">
       <Helmet>
-        <title>{config.siteTitle}</title>   
-        </Helmet>
+        <title>{config.siteTitle}</title>
+      </Helmet>
       <ThemeProvider theme={theme}>
         <ThemeContext.Consumer>
           {themeContext => (

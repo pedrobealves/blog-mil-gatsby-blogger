@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useReducer } from "react";
+import React, { useState, useEffect, useReducer } from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Filter from '../components/PageHeading/Filter'
@@ -11,7 +11,6 @@ import config from '../utils/siteConfig'
 import SEO from '../components/SEO'
 
 const Archive = ({ data }) => {
-
   const title = 'Arquivo'
 
   const postNode = {
@@ -21,22 +20,22 @@ const Archive = ({ data }) => {
   const [posts, setPosts] = useState(data.allBloggerPost.edges)
 
   const initialState = {
-    category: "",
-    by: "",
-    order: "",
-    author:""
-    }
+    category: '',
+    by: '',
+    order: '',
+    author: '',
+  }
 
   const [filterInput, setFilterInput] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     initialState
-  );
+  )
 
   const handleFilterPosts = (name, value) => {
     setFilterInput({ [name]: value })
   }
 
-  const clearState = (e) => {
+  const clearState = e => {
     setFilterInput({ ...initialState })
     e.preventDefault()
   }
@@ -44,23 +43,27 @@ const Archive = ({ data }) => {
   const filterPosts = list => {
     return list.filter(item => {
       return (
-        item.node.childMarkdownRemark.frontmatter.labels.toLowerCase().includes(filterInput.category.toLowerCase())
-        && item.node.author.displayName.toLowerCase().includes(filterInput.author.toLowerCase())
+        item.node.childMarkdownRemark.frontmatter.labels
+          .toLowerCase()
+          .includes(filterInput.category.toLowerCase()) &&
+        item.node.author.displayName
+          .toLowerCase()
+          .includes(filterInput.author.toLowerCase())
       )
     })
   }
 
-  const postsList = filterPosts(posts);
+  const postsList = filterPosts(posts)
 
   return (
     <Layout
       pageHeading={
         <>
           <HeadingMenu title={title} path={'arquivo'} />
-          <Filter 
-          searchValue={filterInput}
-          onClickValue={handleFilterPosts}
-          clearState={clearState}
+          <Filter
+            searchValue={filterInput}
+            onClickValue={handleFilterPosts}
+            clearState={clearState}
           />
         </>
       }
@@ -68,18 +71,17 @@ const Archive = ({ data }) => {
       <Helmet>
         <title>{`${title} - ${config.siteTitle}`}</title>
       </Helmet>
-{
-          //<SEO postNode={postNode} pagePath="contact" customTitle />
+      {
+        // <SEO postNode={postNode} pagePath="contact" customTitle />
       }
-      {Object.keys(postsList).length > 0 ?
+      {Object.keys(postsList).length > 0 ? (
         <SuccessAlert
-        title={Object.keys(postsList).length + ' resultados em '}
-        success={title}
-      /> :
-        <ErrorAlert
-        title={'NÃO FORAM ENCONTRADOS RESULTADOS'}
+          title={Object.keys(postsList).length + ' resultados em '}
+          success={title}
         />
-    }
+      ) : (
+        <ErrorAlert title={'NÃO FORAM ENCONTRADOS RESULTADOS'} />
+      )}
       <SimpleCard posts={postsList} />
     </Layout>
   )

@@ -51,7 +51,7 @@ exports.sourceNodes = async ({ actions, createNodeId, store, cache }, { apiKey, 
     console.log("Error fetching posts", err);
   }
 
-  //const rePost = /^https?:\/\/(?:[^/]+)\/\d{4}\/\d{2}\/([^/][^.]+)\.html$/;
+  // const rePost = /^https?:\/\/(?:[^/]+)\/\d{4}\/\d{2}\/([^/][^.]+)\.html$/;
   const rePost = /^https?:\/\/(?:[^/]+)(\/\d{4}\/\d{2}\/[^/][^.]+\.html)$/
 
   if (posts) {

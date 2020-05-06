@@ -2,7 +2,7 @@ import React, { useState, createRef } from 'react'
 import handleClick from '../../../Listeners/handleClick'
 import Labels from './Labels'
 
-const Category = ({searchValue, onClickValue}) => {
+const Category = ({ searchValue, onClickValue }) => {
   const [modalOpen, setModalOpen] = useState(false)
 
   const ref = createRef()
@@ -24,7 +24,7 @@ const Category = ({searchValue, onClickValue}) => {
       >
         <span className="cs-placeholder">{text}</span>
         <div className="cs-options overflow-auto">
-          <Labels onClickValue={onClickValue}/>
+          <Labels onClickValue={onClickValue} />
         </div>
         <select className="cs-select cs-skin-border">
           <option value="all">{text}</option>

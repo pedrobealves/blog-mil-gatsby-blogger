@@ -5,7 +5,6 @@ import PostContent from './PostContent'
 import PostFooter from './PostFooter'
 
 const PostBody = ({ body: { frontmatter, html }, content, labels }) => {
-
   return (
     <div className="card__content">
       {labels && <PostCategory label={labels[0]} />}
