@@ -29,7 +29,7 @@ const HeaderSecondary = () => {
             <a href="#" className="info-block__link-wrapper">
               <h6 className="info-block__heading">Mais</h6>
               <span className="info-block__cart-sum">
-                <FontAwesomeIcon icon={faClone} size="xs" color="#ff6711"/>
+                <FontAwesomeIcon icon={faClone} size="xs" color="#ff6711" />
               </span>
             </a>
             <DropdownShopCart />

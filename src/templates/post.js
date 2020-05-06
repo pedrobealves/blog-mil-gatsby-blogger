@@ -23,32 +23,29 @@ const PostTemplate = ({ data, pageContext }) => {
     updated,
     content,
     tags,
-    cover
+    cover,
   } = data.bloggerPost
 
   const postNode = data.bloggerPost
   const previous = pageContext.prev
   const next = pageContext.next
-  const target = React.createRef();
+  const target = React.createRef()
   const postData = {
-          title,
-          meta_title:`${title} | ${config.siteTitle}`,
-          meta_desc: childMarkdownRemark.excerpt,
-          cover,
-          slug,
-          author,
-          date:published,
-          updated
-        }
+    title,
+    meta_title: `${title} | ${config.siteTitle}`,
+    meta_desc: childMarkdownRemark.excerpt,
+    cover,
+    slug,
+    author,
+    date: published,
+    updated,
+  }
 
   return (
     <>
       <ReadingProgress target={target} slug={slug} />
       <Layout>
-         <SEO
-          postData={postData}
-          isBlogPost
-        />
+        <SEO postData={postData} isBlogPost />
         <Container>
           <div className={`post`} ref={target}>
             <PostBody

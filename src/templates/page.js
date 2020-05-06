@@ -28,14 +28,14 @@ const PostTemplate = ({ data, pageContext }) => {
   const next = pageContext.next
 
   const postData = {
-          title,
-          meta_title:`${title} | ${config.siteTitle}`,
-          meta_desc: childMarkdownRemark.excerpt,
-          slug,
-          author,
-          date:published,
-          updated
-        }
+    title,
+    meta_title: `${title} | ${config.siteTitle}`,
+    meta_desc: childMarkdownRemark.excerpt,
+    slug,
+    author,
+    date: published,
+    updated,
+  }
 
   return (
     <Layout>

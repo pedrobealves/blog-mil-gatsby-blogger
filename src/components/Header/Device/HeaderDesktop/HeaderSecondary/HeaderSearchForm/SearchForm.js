@@ -25,7 +25,7 @@ const SearchForm = ({ searchIndex }) => {
     setActive(!!query)
   }
 
-  handleClick(ref,setActive)
+  handleClick(ref, setActive)
 
   return (
     <>

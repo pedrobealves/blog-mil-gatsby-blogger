@@ -2,12 +2,12 @@ import React from 'react'
 import Category from './Category/'
 import Author from './Author'
 
-const Filter = (props) => {
+const Filter = props => {
   return (
     <div className="post-filter">
       <div className="container">
         <form action="#" className="post-filter__form clearfix">
-          <Category {...props}/>
+          <Category {...props} />
           <div className="post-filter__select">
             <label className="post-filter__label">Filtrar Por</label>{' '}
             <div className="cs-select cs-skin-border" tabIndex="0">
@@ -54,12 +54,13 @@ const Filter = (props) => {
               </select>
             </div>
           </div>
-         <Author {...props}/>
+          <Author {...props} />
           <div className="post-filter__submit">
-            <button 
-            onClick={(e) => props.clearState(e)} 
-            type="submit" 
-            className="btn btn-default btn-lg btn-block">
+            <button
+              onClick={e => props.clearState(e)}
+              type="submit"
+              className="btn btn-default btn-lg btn-block"
+            >
               Limpar
             </button>
           </div>

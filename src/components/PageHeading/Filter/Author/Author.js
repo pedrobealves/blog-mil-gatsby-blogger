@@ -1,38 +1,38 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from 'react'
+import PropTypes from 'prop-types'
 // Utilities
-import kebabCase from "lodash/kebabCase"
+import kebabCase from 'lodash/kebabCase'
 // Components
-import { Link,StaticQuery, graphql } from "gatsby"
+import { Link, StaticQuery, graphql } from 'gatsby'
 
 const AuthorPage = ({
   data: {
-    allBloggerPost: { group }
+    allBloggerPost: { group },
   },
-  onClickValue
+  onClickValue,
 }) => (
-     <ul>
-        {group.map(author => (
-          <li  
-          onClick={() => onClickValue('author',author.fieldValue)} 
-          key={author.fieldValue}
-          >
-              <span>{author.fieldValue}</span>
-          </li>
-        ))}
-      </ul>
+  <ul>
+    {group.map(author => (
+      <li
+        onClick={() => onClickValue('author', author.fieldValue)}
+        key={author.fieldValue}
+      >
+        <span>{author.fieldValue}</span>
+      </li>
+    ))}
+  </ul>
 )
 export default props => (
   <StaticQuery
     query={graphql`
       query {
-           allBloggerPost(limit: 2000) {
-            group(field: author___displayName) {
-                fieldValue
-                totalCount
-            }
-           }
-     }
+        allBloggerPost(limit: 2000) {
+          group(field: author___displayName) {
+            fieldValue
+            totalCount
+          }
+        }
+      }
     `}
     render={data => <AuthorPage data={data} {...props} />}
   />
