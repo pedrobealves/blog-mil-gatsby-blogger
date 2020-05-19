@@ -1,15 +1,16 @@
 import React from 'react'
-import logo from '../../../images/logo.svg'
+import logo from '../../../../images/logo.svg'
 import { Link } from 'gatsby'
 
-const Logo = ({ section }) => {
+const Logo = () => {
   return (
-    <div className={section + '-logo'}>
+    <div className="header-mobile__logo">
       <Link to={'/'}>
         <img
           src={logo}
+          srcSet={logo + ' 2x'}
           alt="Blog MIL"
-          className={section + '-logo__img w-50'}
+          className="header-mobile__logo-img pt-3"
         />
       </Link>
     </div>

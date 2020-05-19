@@ -1,5 +1,5 @@
 import React from 'react'
-import HeaderSearchForm from './HeaderSearchForm'
+import Search from '../../../../Search'
 import DropdownShopCart from './DropdownShopCart'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClone } from '@fortawesome/free-solid-svg-icons'
@@ -8,7 +8,7 @@ const HeaderSecondary = () => {
   return (
     <div className="header__secondary">
       <div className="container">
-        <HeaderSearchForm />
+        <Search />
         <ul className="info-block info-block--header">
           <li className="info-block__item info-block__item--contact-primary">
             <h6 className="info-block__heading">Contate-nos</h6>

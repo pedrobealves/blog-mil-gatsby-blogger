@@ -34,7 +34,6 @@ class ThemeProvider extends React.Component {
 
   toogleMenu = () => {
     this.setState({ menu: !this.state.menu })
-    console.log('test')
   }
 
   componentDidMount() {

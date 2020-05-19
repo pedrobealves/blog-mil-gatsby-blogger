@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import SearchList from './SearchList'
 import { SearchHeader } from './styles'
-import handleClick from '../../../../../Listeners/handleClick'
+import handleClick from '../Listeners/handleClick'
 
 const SearchForm = ({ searchIndex }) => {
   const ref = createRef()

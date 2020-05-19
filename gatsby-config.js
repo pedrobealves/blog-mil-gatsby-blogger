@@ -237,6 +237,7 @@ module.exports = {
           'post-related__next',
           'btn-social-counter--facebook',
           'btn-social-counter--rss',
+          'btn-social-counter--twitter',
           'social-links__link--facebook',
           'social-links__link--twitter',
           'social-links__link--instagram',
