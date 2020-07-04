@@ -21,7 +21,7 @@ const SliderItem = ({
   return (
     <div className="posts__item posts__item--category-1">
       <Link
-        to={`${props.basePath ? props.basePath : ''}/${slug}`}
+        to={`${props.basePath ? props.basePath : ''}${slug}`}
         className="posts__link-wrapper"
       >
         <figure className="posts__thumb">

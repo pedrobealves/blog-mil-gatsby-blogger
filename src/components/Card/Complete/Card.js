@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 const CoverImg = styled(Img)`
-  height: ${props => props.height || 'auto'};
+  height: ${(props) => props.height || 'auto'};
 `
 
 const Card = ({
@@ -23,7 +23,7 @@ const Card = ({
     <div className="post-list__item">
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
         <figure className="posts__thumb">
-          <Link to={`${path}/${slug}`}>
+          <Link to={`${path}${slug}`}>
             <CoverImg
               fluid={cover.childImageSharp.fluid}
               height={'340px'}
@@ -42,7 +42,7 @@ const Card = ({
               ))}
             </div>
             <h6 className="posts__title">
-              <Link to={`${path}/${slug}`}>{title}</Link>
+              <Link to={`${path}${slug}`}>{title}</Link>
             </h6>
             <time dateTime="2016-08-17" className="posts__date">
               {published}

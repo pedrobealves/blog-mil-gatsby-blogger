@@ -13,7 +13,7 @@ const RelatedContent = props => {
             <span className="label posts__cat-label">{labels[0]}</span>
           </div>
           <h6 className="posts__title">
-            <Link to={`${path}/${slug}`}>{title}</Link>
+            <Link to={`${path}${slug}`}>{title}</Link>
           </h6>
           <time dateTime="2016-08-23" className="posts__date">
             {published}
