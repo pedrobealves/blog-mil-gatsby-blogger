@@ -5,6 +5,7 @@ const ProgressBar = styled.div`
   background-color: #ff6711;
   width: 100%;
   height: 4px;
+  transition: 0.2s;
   z-index: 3;
 `
 

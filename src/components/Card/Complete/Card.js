@@ -47,7 +47,7 @@ const Card = ({
             <time dateTime="2016-08-17" className="posts__date">
               {published}
             </time>
-            <div className="posts__excerpt posts__excerpt_pd">
+            <div className="posts__excerpt posts__excerpt_pd text-justify">
               {childMarkdownRemark.excerpt}
             </div>
           </div>

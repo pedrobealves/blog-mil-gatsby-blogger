@@ -19,8 +19,7 @@ const PostItem = ({ childMarkdownRemark, labels, cover }) => {
           </div>
         </StyledBackgroundSection>
         <div className="twitch-stream__body">
-          <span className="twitch-stream__title--sec">{labels[0]}</span>
-          <Line />
+          <span className="twitch-stream__title--sec mb-1">{labels[0]}</span>
           <span className="twitch-stream__subtitle--sec">
             {childMarkdownRemark.frontmatter.title}
           </span>

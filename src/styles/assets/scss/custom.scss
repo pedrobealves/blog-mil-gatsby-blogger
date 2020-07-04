@@ -30,6 +30,7 @@ Description:  You can add your custom CSS here and it will overwrite template st
 .posts__item--card {
   .posts__excerpt_pd {
     padding: 10px 0 8px 0;
+    font-size: 1rem;
 
     @media (min-width: 992px) {
       padding: 20px 0 8px 0;
@@ -111,7 +112,7 @@ $toggle-width: 50px;
 $toggle-height: 25px;
 $toggle-gutter: 3px;
 $toggle-radius: 50%;
-$toggle-control-speed: .3s;
+$toggle-control-speed: 0.3s;
 $toggle-control-ease: ease-in;
 
 // These are our computed variables
@@ -138,7 +139,7 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 
   input:checked ~ .control {
     background-color: $toggle-background-color-on;
-    
+
     &:after {
       left: $toggle-width - $toggle-control-size - $toggle-gutter;
     }
@@ -155,7 +156,7 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
     transition: background-color $toggle-control-speed $toggle-control-ease;
 
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       left: $toggle-gutter;
       top: $toggle-gutter;
@@ -171,5 +172,5 @@ $toggle-control-size: $toggle-height - ($toggle-gutter * 2);
 //Dropdown list
 
 .cs-select .cs-options {
-    height: 50vh;
+  height: 50vh;
 }

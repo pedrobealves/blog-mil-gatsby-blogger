@@ -230,7 +230,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        develop: true,
+        develop: false,
         whitelist: [
           'header-logo',
           'post-related__prev',
