@@ -12,7 +12,7 @@ const TagsPage = ({
   onClickValue,
 }) => (
   <ul>
-    {group.map(label => (
+    {group.map((label) => (
       <li
         onClick={() => onClickValue('category', label.fieldValue)}
         key={label.fieldValue}
@@ -22,7 +22,7 @@ const TagsPage = ({
     ))}
   </ul>
 )
-export default props => (
+export default (props) => (
   <StaticQuery
     query={graphql`
       query {
@@ -34,7 +34,7 @@ export default props => (
         }
       }
     `}
-    render={data => <TagsPage data={data} {...props} />}
+    render={(data) => <TagsPage data={data} {...props} />}
   />
 )
 TagsPage.propTypes = {

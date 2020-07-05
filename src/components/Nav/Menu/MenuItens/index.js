@@ -7,18 +7,18 @@ const Menu = ({ header }) => {
     <>
       {itens.list.map(({ title, link, sub }, index) => (
         <li
-          key={index}
+          key={title}
           className={header ? sub && 'has-children' : 'footer-nav__item'}
         >
           {sub && header && <span className="main-nav__toggle" />}
-          <Link to={`${link}`} activeClassName="active">
+          <Link to={`/${link}`} activeClassName="active">
             {title}
           </Link>
           {sub && header && (
             <ul className="main-nav__sub">
-              {sub.map(({ title, link, selected }, index) => (
-                <li key={index} className={selected && 'active'}>
-                  <Link to={`${link}`}>{title}</Link>
+              {sub.map(({ title, link, selected }) => (
+                <li key={title} className={selected && 'active'}>
+                  <Link to={`/${link}`}>{title}</Link>
                 </li>
               ))}
             </ul>

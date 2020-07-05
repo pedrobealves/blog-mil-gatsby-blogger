@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+const slugify = require('slugify')
 
 const CoverImg = styled(Img)`
   height: ${(props) => props.height || 'auto'};
@@ -19,6 +20,12 @@ const Card = ({
 }) => {
   const path = props.basePath ? props.basePath : ''
 
+  function strToSlug(str) {
+    return slugify(str, {
+      lower: true,
+    })
+  }
+
   return (
     <div className="post-list__item">
       <div className="posts__item posts__item--card posts__item--category-1 card card--block">
@@ -35,10 +42,12 @@ const Card = ({
         <div className="posts__inner">
           <div className="card__content card__pd">
             <div className="posts__cat">
-              {labels.slice(0, 2).map((label, index) => (
-                <span key={index} className="label posts__cat-label mr-1 mb-1">
-                  {label}
-                </span>
+              {labels.slice(0, 2).map((label) => (
+                <Link key={label} to={strToSlug(label)}>
+                  <span className="label posts__cat-label mr-1 mb-1">
+                    {label}
+                  </span>
+                </Link>
               ))}
             </div>
             <h6 className="posts__title">

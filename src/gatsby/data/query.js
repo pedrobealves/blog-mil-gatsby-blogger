@@ -25,4 +25,19 @@ module.exports.data = {
         }
       }
   `,
+  tags: `
+   {
+        allBloggerPost(limit: 2000) {
+          group(field: labels) {
+            fieldValue
+            totalCount
+            edges {
+              node {
+                id
+              }
+            }
+          }
+        }
+      }
+  `,
 }

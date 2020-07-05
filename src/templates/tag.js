@@ -1,97 +1,100 @@
-/* import React from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
-import orderBy from 'lodash/orderBy'
+import { startCase } from 'lodash'
+import SEO from '../components/SEO'
 import Helmet from 'react-helmet'
-import moment from 'moment'
 import config from '../utils/siteConfig'
 import Layout from '../components/Layout'
-import Card from '../components/Card'
-import CardList from '../components/CardList'
-import PageTitle from '../components/PageTitle'
+import Card from '../components/Card/Complete'
 import Pagination from '../components/Pagination'
-import Container from '../components/Container'
 
 const TagTemplate = ({ data, pageContext }) => {
-  const posts = orderBy(
+  /*const posts = orderBy(
     data.contentfulTag.post,
     // eslint-disable-next-line
-    [object => new moment(object.publishDateISO)],
+    [(object) => new moment(object.publishDateISO)],
     ['desc']
   )
 
-  const { title, slug } = data.contentfulTag
+  const { title } = data.contentfulTag
   const numberOfPosts = posts.length
   const skip = pageContext.skip
-  const limit = pageContext.limit
-  const currentPage = pageContext.currentPage
-  const isFirstPage = currentPage === 1
+  const limit = pageContext.limit*/
+
+  const { humanPageNumber, basePath } = pageContext
+
+  const posts = data.allBloggerPost.edges
+
+  const isFirstPage = humanPageNumber === 1
+  let featuredPost
+
+  try {
+    featuredPost = posts[0].node
+  } catch (error) {
+    featuredPost = null
+  }
+
+  const postData = {
+    title: startCase(basePath),
+  }
 
   return (
-    <Layout>
-      {isFirstPage ? (
-        <Helmet>
-          <title>{`Tag: ${title} - ${config.siteTitle}`}</title>
-          <meta
-            property="og:title"
-            content={`Tag: ${title} - ${config.siteTitle}`}
-          />
-          <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
-        </Helmet>
-      ) : (
-        <Helmet>
-          <title>{`Tag: ${title} - Page ${currentPage} - ${
-            config.siteTitle
-          }`}</title>
-          <meta
-            property="og:title"
-            content={`Tag: ${title} - Page ${currentPage} - ${
-              config.siteTitle
-            }`}
-          />
-          <meta property="og:url" content={`${config.siteUrl}/tag/${slug}/`} />
-        </Helmet>
-      )}
-
-      <Container>
-        <PageTitle small>
-          {numberOfPosts} Posts Tagged: &ldquo;
-          {title}
-          &rdquo;
-        </PageTitle>
-
-        <CardList>
-          {posts.slice(skip, limit * currentPage).map(post => (
-            <Card {...post} key={post.id} />
-          ))}
-        </CardList>
-      </Container>
-      <Pagination context={pageContext} />
-    </Layout>
+    <>
+      <Layout>
+        <SEO postData={postData} />
+        {!isFirstPage && (
+          <Helmet>
+            <title>{`${config.siteTitle} | Página ${humanPageNumber}`}</title>
+          </Helmet>
+        )}
+        <Card
+          posts={posts}
+          basePath={basePath}
+          featuredPost={featuredPost}
+          isFirstPage={isFirstPage}
+        />
+        <Pagination context={pageContext} />
+      </Layout>
+    </>
   )
 }
 
 export const query = graphql`
-  query($slug: String!) {
-    contentfulTag(slug: { eq: $slug }) {
-      title
-      id
-      slug
-      post {
-        id
-        title
-        slug
-        publishDate(formatString: "MMMM DD, YYYY")
-        publishDateISO: publishDate(formatString: "YYYY-MM-DD")
-        heroImage {
+  query($tag: String!) {
+    allBloggerPost(
+      limit: 2000
+      sort: { fields: [published], order: DESC }
+      filter: { labels: { in: [$tag] } }
+    ) {
+      edges {
+        node {
           title
-          fluid(maxWidth: 1800) {
-            ...GatsbyContentfulFluid_withWebp_noBase64
+          id
+          slug
+          labels
+          cover {
+            childImageSharp {
+              fluid(maxWidth: 773, maxHeight: 408) {
+                ...GatsbyImageSharpFluid_withWebp_noBase64
+              }
+            }
           }
-        }
-        body {
+          author {
+            displayName
+            image {
+              url
+            }
+          }
+          published(formatString: "MMMM DD, YYYY", locale: "pt-BR")
           childMarkdownRemark {
+            frontmatter {
+              title
+              date(formatString: "MMMM DD, YYYY")
+              slug
+            }
             html
-            excerpt(pruneLength: 80)
+            excerpt(pruneLength: 190)
+            timeToRead
           }
         }
       }
@@ -99,4 +102,4 @@ export const query = graphql`
   }
 `
 
-export default TagTemplate */
+export default TagTemplate

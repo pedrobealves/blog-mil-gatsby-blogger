@@ -1,6 +1,7 @@
 const config = require('../../../gatsby-config')
 const query = require('../data/query')
 const path = require(`path`)
+const slugify = require('slugify')
 const { paginate } = require(`gatsby-awesome-pagination`)
 
 module.exports = async ({ graphql, actions }) => {
@@ -54,31 +55,30 @@ module.exports = async ({ graphql, actions }) => {
     })
   })
 
-  {
-    /* // Create "tag" page and paginate
+  // Create "tag" page and paginate
   const tagsQuery = await graphql(query.data.tags)
-  const tags = tagsQuery.data.allContentfulTag.edges
+  const tags = tagsQuery.data.allBloggerPost.group.filter(
+    (tag) => tag.totalCount > 1
+  )
 
   tags.forEach((tag, i) => {
-    const tagPagination =
-      basePath === '/'
-        ? `/tag/${tag.node.slug}`
-        : `/${basePath}/tag/${tag.node.slug}`
+    const slug = slugify(tag.fieldValue, {
+      lower: true,
+    })
+
+    const tagPagination = basePath === '/' ? `/${slug}` : `/${basePath}/${slug}`
 
     paginate({
       createPage,
       component: path.resolve(`./src/templates/tag.js`),
-      items: tag.node.post || [],
+      items: tag.edges.node || [],
       itemsPerPage: config.siteMetadata.postsPerPage || 6,
       pathPrefix: tagPagination,
       context: {
-        slug: tag.node.slug,
+        tag: tag.fieldValue,
         basePath: basePath === '/' ? '' : basePath,
         paginationPath: tagPagination,
       },
     })
   })
-
-  */
-  }
 }

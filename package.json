@@ -56,10 +56,10 @@
     "rehype-parse": "7.0.1",
     "rehype-remark": "8.0.0",
     "remark-stringify": "8.1.0",
+    "slugify": "^1.4.4",
     "styled-components": "5.1.1",
     "typeface-montserrat": "0.0.75",
-    "unified": "9.0.0",
-    "uuid": "^8.2.0"
+    "unified": "9.0.0"
   },
   "keywords": [
     "gatsby"

@@ -1,10 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
+const slugify = require('slugify')
 
 const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
   const { title, date, slug } = childMarkdownRemark.frontmatter
 
   const path = props.basePath ? props.basePath : ''
+
+  function strToSlug(str) {
+    return slugify(str, {
+      lower: true,
+    })
+  }
 
   return (
     <li className="posts__item posts__item--category-1">
@@ -15,10 +22,10 @@ const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
       </figure>
       <div className="posts__inner">
         <div className="posts__cat">
-          {labels.slice(0, 2).map((label, index) => (
-            <span key={index} className="label posts__cat-label mr-1 mb-1">
-              {label}
-            </span>
+          {labels.slice(0, 2).map((label) => (
+            <Link key={label} to={strToSlug(label)}>
+              <span className="label posts__cat-label mr-1 mb-1">{label}</span>
+            </Link>
           ))}
         </div>
         <h6 className="posts__title">

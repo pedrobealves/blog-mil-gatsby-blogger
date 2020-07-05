@@ -39,8 +39,8 @@ class Pagination extends React.Component {
     const nextPageNum = humanPageNumber + 1
 
     const pathPrefix = typeof basePath === 'string' ? `/${basePath}` : ''
-    const prevPageLink = isFirst ? null : `${pathPrefix}/${prevPageNum}/`
-    const nextPageLink = isLast ? null : `${pathPrefix}/${nextPageNum}/`
+    const prevPageLink = isFirst ? null : `${pathPrefix}${prevPageNum}`
+    const nextPageLink = isLast ? null : `${pathPrefix}${nextPageNum}`
 
     const pagesWithDots = pagination(humanPageNumber, numberOfPages)
 
@@ -54,7 +54,7 @@ class Pagination extends React.Component {
               </Link>
             </li>
           )}
-          {pagesWithDots.map(index => (
+          {pagesWithDots.map((index) => (
             <li
               key={index}
               className={`page-item ${humanPageNumber === index && `active`}`}
