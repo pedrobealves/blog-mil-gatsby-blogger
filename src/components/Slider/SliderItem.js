@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 import { Link } from 'gatsby'
+const slugify = require('slugify')
 
 const HeaderImg = styled(Img)`
   width: 773px;
@@ -29,7 +30,13 @@ const SliderItem = ({
         </figure>
         <div className="posts__inner">
           <div className="posts__cat">
-            <span className="label posts__cat-label">{labels[0]}</span>
+            <Link
+              to={'/' + slugify(labels[0], {
+                lower: true,
+              })}
+            >
+              <span className="label posts__cat-label">{labels[0]}</span>
+            </Link>
           </div>
           <h3 className="posts__title">
             {title} <span className="posts__title-higlight" />{' '}

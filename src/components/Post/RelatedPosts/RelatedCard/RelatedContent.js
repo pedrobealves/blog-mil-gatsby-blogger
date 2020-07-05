@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
+const slugify = require('slugify')
 
-const RelatedContent = props => {
+const RelatedContent = (props) => {
   const { title, published, slug, labels } = props.content
   const path = props.basePath ? props.basePath : ''
 
@@ -10,7 +11,13 @@ const RelatedContent = props => {
       <li className="posts__item posts__item--category-1">
         <div className="posts__inner">
           <div className="posts__cat">
-            <span className="label posts__cat-label">{labels[0]}</span>
+            <Link
+              to={'/' + slugify(labels[0], {
+                lower: true,
+              })}
+            >
+              <span className="label posts__cat-label">{labels[0]}</span>
+            </Link>
           </div>
           <h6 className="posts__title">
             <Link to={`${path}${slug}`}>{title}</Link>

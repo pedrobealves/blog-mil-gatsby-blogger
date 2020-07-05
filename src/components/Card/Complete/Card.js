@@ -43,7 +43,7 @@ const Card = ({
           <div className="card__content card__pd">
             <div className="posts__cat">
               {labels.slice(0, 2).map((label) => (
-                <Link key={label} to={strToSlug(label)}>
+                <Link key={label} to={'/' + strToSlug(label)}>
                   <span className="label posts__cat-label mr-1 mb-1">
                     {label}
                   </span>

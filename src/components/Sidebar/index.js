@@ -4,6 +4,7 @@ import Banner from './Widgets/Banner'
 import Newsletter from './Widgets/Newsletter'
 import SocialButtons from './Widgets/SocialButtons'
 import HighlightPosts from './Widgets/HighlightPosts'
+import TagCloud from './Widgets/TagCloud'
 
 const Sidebar = () => {
   return (
@@ -13,6 +14,7 @@ const Sidebar = () => {
       <HighlightPosts />
       <Banner />
       <Newsletter />
+      <TagCloud />
     </>
   )
 }

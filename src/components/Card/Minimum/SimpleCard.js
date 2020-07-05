@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'gatsby'
+const slugify = require('slugify')
 
 const SimpleCard = ({ labels, childMarkdownRemark, ...props }) => {
   const { title, date, slug } = childMarkdownRemark.frontmatter
@@ -9,7 +10,16 @@ const SimpleCard = ({ labels, childMarkdownRemark, ...props }) => {
     <li className="posts__item card posts__item--category-2">
       <div className="posts__inner card__content">
         <div className="posts__cat">
-          <span className="label posts__cat-label">{labels[0]}</span>
+          <Link
+            to={
+              '/' +
+              slugify(labels[0], {
+                lower: true,
+              })
+            }
+          >
+            <span className="label posts__cat-label">{labels[0]}</span>
+          </Link>
         </div>
         <h6 className="posts__title">
           <Link to={`${path}${slug}`}>{title}</Link>

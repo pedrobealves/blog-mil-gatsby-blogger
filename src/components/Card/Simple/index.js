@@ -23,7 +23,7 @@ const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
       <div className="posts__inner">
         <div className="posts__cat">
           {labels.slice(0, 2).map((label) => (
-            <Link key={label} to={strToSlug(label)}>
+            <Link key={label} to={'/' + strToSlug(label)}>
               <span className="label posts__cat-label mr-1 mb-1">{label}</span>
             </Link>
           ))}
