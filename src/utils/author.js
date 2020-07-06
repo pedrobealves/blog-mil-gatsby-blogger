@@ -1,7 +1,7 @@
 module.exports = {
   '09430826996457641326': {
     bio:
-      'Fundador do Blog MIL, fascinado por jogos de lutinha e o planeta Solaris . Dá uma de pseudo-escritor nas horas vagas e acha ridículo falar de si mesmo na terceira pessoa, além de possuir um twiter que nunca mexe, mas pretende, um dia.@Dan_Madra',
+      'Fundador do @Blog_Mil, entusiasta irremediável de JRPGs, jogos de lutinha e trilhas sonoras do Yasunori Mitsuda. @Dan_Madra',
     slog: 'Fundador',
     social: [
       {
@@ -43,4 +43,9 @@ module.exports = {
       'Curioso sobre fenômenos extraordinários como a água cair do céu e o sucesso de Watch Dogs. Conhecido por ser aspirante a Phoenix Wright, ex-youtuber com uma famosa análise de Dark Souls, ja contribuiu pra deixar a Desciclopedia ainda mais intragável e pretende fazer uma descrição mais interessante sobre si do que essa.',
     social: [],
   },
+  '01106117758700805137': {
+       bio:
+      '',
+    social: [],
+  }
 }

@@ -80,7 +80,7 @@ export const query = graphql`
               slug
             }
             html
-            excerpt(pruneLength: 190)
+            excerpt(pruneLength: 150)
             timeToRead
           }
         }
