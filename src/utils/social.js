@@ -8,7 +8,7 @@ module.exports = {
     icon: ['fab', 'twitter'],
   },
   instagram: {
-    url: 'https://www.instagram.com/blog_mil',
+    url: 'https://www.instagram.com/blogmil',
     icon: ['fab', 'instagram'],
   },
   rss: {
