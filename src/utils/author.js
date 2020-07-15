@@ -6,7 +6,7 @@ module.exports = {
     social: [
       {
         title: 'facebook',
-        url: 'https://www.facebook.com/infreimis',
+        url: 'https://www.facebook.com/dan.madra.56',
       },
       {
         title: 'twitter',
@@ -44,8 +44,7 @@ module.exports = {
     social: [],
   },
   '01106117758700805137': {
-       bio:
-      '',
+    bio: '',
     social: [],
-  }
+  },
 }
