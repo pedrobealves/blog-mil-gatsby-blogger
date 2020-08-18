@@ -41,7 +41,7 @@
     "gatsby-transformer-sharp": "2.5.10",
     "googleapis": "52.1.0",
     "inquirer": "7.3.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "moment": "2.27.0",
     "node-sass": "4.14.1",
     "path": "0.12.7",
