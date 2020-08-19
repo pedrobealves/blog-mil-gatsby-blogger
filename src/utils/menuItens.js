@@ -22,19 +22,27 @@ module.exports = {
       sub: [
         {
           title: 'JOGOS',
-          link: '/',
+          link: 'games',
         },
         {
           title: 'ANIMES',
-          link: '/',
+          link: 'anime',
         },
         {
-          title: 'HQS',
-          link: '/',
+          title: 'MANGAS',
+          link: 'mangas',
         },
         {
           title: 'GALERIA',
-          link: '/',
+          link: 'galeria-das-arte',
+        },
+        {
+          title: 'RPG',
+          link: 'rpg',
+        },
+        {
+          title: 'HQS',
+          link: 'hqs',
         },
       ],
     },

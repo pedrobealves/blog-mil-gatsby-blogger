@@ -1,6 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
-import { startCase } from 'lodash'
+import { upperFirst, lowerCase } from 'lodash'
 import SEO from '../components/SEO'
 import Helmet from 'react-helmet'
 import config from '../utils/siteConfig'
@@ -9,19 +9,7 @@ import Card from '../components/Card/Complete'
 import Pagination from '../components/Pagination'
 
 const TagTemplate = ({ data, pageContext }) => {
-  /*const posts = orderBy(
-    data.contentfulTag.post,
-    // eslint-disable-next-line
-    [(object) => new moment(object.publishDateISO)],
-    ['desc']
-  )
-
-  const { title } = data.contentfulTag
-  const numberOfPosts = posts.length
-  const skip = pageContext.skip
-  const limit = pageContext.limit*/
-
-  const { humanPageNumber, basePath } = pageContext
+  const { humanPageNumber, basePath, paginationPath } = pageContext
 
   const posts = data.allBloggerPost.edges
 
@@ -35,7 +23,7 @@ const TagTemplate = ({ data, pageContext }) => {
   }
 
   const postData = {
-    title: startCase(basePath),
+    title: upperFirst(lowerCase(paginationPath)),
   }
 
   return (
@@ -44,7 +32,7 @@ const TagTemplate = ({ data, pageContext }) => {
         <SEO postData={postData} />
         {!isFirstPage && (
           <Helmet>
-            <title>{`${config.siteTitle} | Página ${humanPageNumber}`}</title>
+            <title>{`$ Página ${humanPageNumber}`}</title>
           </Helmet>
         )}
         <Card

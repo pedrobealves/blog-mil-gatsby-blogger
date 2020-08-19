@@ -75,7 +75,7 @@ const SEO = ({ postData = {}, isBlogPost }) => {
         />
 
         {site.siteMetadata.social.siteFBAppIDAdmins &&
-          site.siteMetadata.social.siteFBAppIDAdmins.map(element => (
+          site.siteMetadata.social.siteFBAppIDAdmins.map((element) => (
             <meta content={element} property="fb:admins" />
           ))}
 

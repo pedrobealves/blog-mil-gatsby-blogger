@@ -31,7 +31,7 @@ const Index = ({ data, pageContext }) => {
       <SEO postData={postData} />
       {!isFirstPage && (
         <Helmet>
-          <title>{`${config.siteTitle} | Página ${humanPageNumber}`}</title>
+          <title>{`Página ${humanPageNumber}`}</title>
         </Helmet>
       )}
       <Slider posts={posts} featuredPost={featuredPost} />
