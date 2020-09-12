@@ -13,6 +13,6 @@
   "author": "Anton Medvedev <anton@medv.io>",
   "license": "MIT",
   "dependencies": {
-    "googleapis": "^33.0.0"
+    "googleapis": "^59.0.0"
   }
 }
