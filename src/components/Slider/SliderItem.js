@@ -15,7 +15,7 @@ const SliderItem = ({
   published,
   labels,
   childMarkdownRemark,
-  cover,
+  featuredImage,
   author,
   ...props
 }) => {
@@ -26,14 +26,17 @@ const SliderItem = ({
         className="posts__link-wrapper"
       >
         <figure className="posts__thumb">
-          <HeaderImg fluid={cover.childImageSharp.fluid} />
+          <HeaderImg fluid={featuredImage.childImageSharp.fluid} />
         </figure>
         <div className="posts__inner">
           <div className="posts__cat">
             <Link
-              to={'/' + slugify(labels[0], {
-                lower: true,
-              })}
+              to={
+                '/' +
+                slugify(labels[0], {
+                  lower: true,
+                })
+              }
             >
               <span className="label posts__cat-label">{labels[0]}</span>
             </Link>

@@ -59,12 +59,19 @@ export const query = graphql`
           id
           slug
           labels
-          cover {
+          replies {
+            totalItems
+            selfLink
+          }
+          featuredImage {
             childImageSharp {
               fluid(maxWidth: 773, maxHeight: 408) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64
               }
             }
+          }
+          images {
+            url
           }
           author {
             displayName
@@ -78,6 +85,7 @@ export const query = graphql`
               title
               date(formatString: "MMMM DD, YYYY")
               slug
+              featuredImageUrl
             }
             html
             excerpt(pruneLength: 150)

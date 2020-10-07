@@ -23,7 +23,7 @@ const PostTemplate = ({ data, pageContext }) => {
     updated,
     content,
     tags,
-    cover,
+    featuredImage,
   } = data.bloggerPost
 
   const postNode = data.bloggerPost
@@ -34,7 +34,7 @@ const PostTemplate = ({ data, pageContext }) => {
     title,
     meta_title: `${title} | ${config.siteTitle}`,
     meta_desc: childMarkdownRemark.excerpt,
-    cover,
+    featuredImage,
     slug,
     author,
     date: published,
@@ -74,7 +74,7 @@ export const query = graphql`
       content
       published
       updated
-      cover {
+      featuredImage {
         childImageSharp {
           fluid(maxWidth: 773, maxHeight: 408) {
             ...GatsbyImageSharpFluid_withWebp_noBase64

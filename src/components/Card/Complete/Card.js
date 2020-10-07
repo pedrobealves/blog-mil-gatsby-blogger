@@ -14,7 +14,7 @@ const Card = ({
   published,
   labels,
   childMarkdownRemark,
-  cover,
+  featuredImage,
   author,
   ...props
 }) => {
@@ -32,7 +32,7 @@ const Card = ({
         <figure className="posts__thumb">
           <Link to={`${path}${slug}`}>
             <CoverImg
-              fluid={cover.childImageSharp.fluid}
+              fluid={featuredImage.childImageSharp.fluid}
               height={'340px'}
               backgroundColor={'#eeeeee'}
             />

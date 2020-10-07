@@ -60,7 +60,7 @@ export const query = graphql`
           id
           slug
           labels
-          cover {
+          featuredImage {
             childImageSharp {
               fluid(maxWidth: 773, maxHeight: 408) {
                 ...GatsbyImageSharpFluid_withWebp_noBase64

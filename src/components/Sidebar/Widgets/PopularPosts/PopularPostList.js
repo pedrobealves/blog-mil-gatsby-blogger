@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import SelectPosts from './SelectPosts'
 
-const Card = props => {
+const Card = (props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -12,7 +12,7 @@ const Card = props => {
               node {
                 labels
                 id
-                cover {
+                featuredImage {
                   childImageSharp {
                     fixed(width: 80, height: 80) {
                       ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -31,7 +31,7 @@ const Card = props => {
           }
         }
       `}
-      render={data => <SelectPosts data={data} {...props} />}
+      render={(data) => <SelectPosts data={data} {...props} />}
     />
   )
 }

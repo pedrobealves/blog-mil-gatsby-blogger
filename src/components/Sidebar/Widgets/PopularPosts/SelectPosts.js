@@ -9,17 +9,17 @@ const SelectPosts = ({ data, posts, basePath }) => {
 
   let pst = []
 
-  posts.forEach(element => {
+  posts.forEach((element) => {
     data.allBloggerPost.edges.map(
       ({ node }) =>
-        node.childMarkdownRemark.frontmatter.slug == element.node.path &&
+        node.childMarkdownRemark.frontmatter.slug === element.node.path &&
         pst.push(node)
     )
   })
 
   return pst
     .slice(0, 5)
-    .map(post => <SimpleCard key={post.id} {...post} basePath={basePath} />)
+    .map((post) => <SimpleCard key={post.id} {...post} basePath={basePath} />)
 }
 
 export default SelectPosts

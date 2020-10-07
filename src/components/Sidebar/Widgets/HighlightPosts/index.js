@@ -14,7 +14,7 @@ const HighlightPost = () => {
                 node {
                   id
                   labels
-                  cover {
+                  featuredImage {
                     childImageSharp {
                       fluid(maxWidth: 773, maxHeight: 408) {
                         ...GatsbyImageSharpFluid_withWebp_noBase64
@@ -33,7 +33,7 @@ const HighlightPost = () => {
             }
           }
         `}
-        render={data =>
+        render={(data) =>
           data.allBloggerPost.edges.map(
             ({ node: post }, index) =>
               highlight.posts.includes(post.id) && (

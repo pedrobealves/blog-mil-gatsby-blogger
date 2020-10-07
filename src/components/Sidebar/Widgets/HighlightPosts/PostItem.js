@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 import Img from 'gatsby-image'
 
-const PostItem = ({ childMarkdownRemark, labels, cover }) => {
+const PostItem = ({ childMarkdownRemark, labels, featuredImage }) => {
   return (
     <div className="twitch-stream-wrapper">
       <Link
@@ -11,7 +11,7 @@ const PostItem = ({ childMarkdownRemark, labels, cover }) => {
         className="twitch-stream card"
       >
         <StyledBackgroundSection
-          url={cover.childImageSharp.fluid.srcWebp}
+          url={featuredImage.childImageSharp.fluid.srcWebp}
           className="twitch-stream__overlay twitch-stream__overlay--bg0 effect-duotone effect-duotone--lead"
         >
           <div className="effect-duotone__layer">

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 const slugify = require('slugify')
 
-const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
+const Card = ({ labels, featuredImage, childMarkdownRemark, ...props }) => {
   const { title, date, slug } = childMarkdownRemark.frontmatter
 
   const path = props.basePath ? props.basePath : ''
@@ -17,7 +17,7 @@ const Card = ({ labels, cover, childMarkdownRemark, ...props }) => {
     <li className="posts__item posts__item--category-1">
       <figure className="posts__thumb">
         <Link to={`${path}${slug}`}>
-          <img src={cover.childImageSharp.fixed.srcWebp} />
+          <img src={featuredImage.childImageSharp.fixed.srcWebp} />
         </Link>
       </figure>
       <div className="posts__inner">

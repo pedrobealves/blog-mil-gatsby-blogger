@@ -36,8 +36,9 @@ const SEO = ({ postData = {}, isBlogPost }) => {
   const metaURL = postData.slug
     ? site.siteMetadata.siteUrl + postData.slug
     : site.siteMetadata.siteUrl
-  const image = postData.cover
-    ? site.siteMetadata.siteUrl + postData.cover.childImageSharp.fluid.src
+  const image = postData.featuredImage
+    ? site.siteMetadata.siteUrl +
+      postData.featuredImage.childImageSharp.fluid.src
     : ''
   const metaDescription =
     postData.meta_desc || site.siteMetadata.rssMetadata.description
@@ -102,7 +103,7 @@ const SEO = ({ postData = {}, isBlogPost }) => {
         date={postData.date}
         updated={postData.updated}
         author={postData.author}
-        cover={postData.cover}
+        featuredImage={postData.featuredImage}
         site={site.siteMetadata}
       />
     </React.Fragment>

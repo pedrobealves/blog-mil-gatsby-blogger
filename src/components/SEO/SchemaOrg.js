@@ -11,7 +11,7 @@ export default React.memo(
     date,
     updated,
     author,
-    cover,
+    featuredImage,
     site,
   }) => {
     function baseSchema() {
@@ -84,8 +84,8 @@ export default React.memo(
         image: {
           '@type': 'ImageObject',
           url: image,
-          width: cover.childImageSharp.fluid.presentationWidth,
-          height: cover.childImageSharp.fluid.presentationHeight,
+          width: featuredImage.childImageSharp.fluid.presentationWidth,
+          height: featuredImage.childImageSharp.fluid.presentationHeight,
         },
         datePublished: date,
         dateModified: updated,
