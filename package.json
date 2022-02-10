@@ -43,7 +43,7 @@
     "inquirer": "7.3.3",
     "lodash": "4.17.20",
     "moment": "2.29.1",
-    "node-sass": "4.14.1",
+    "node-sass": "7.0.0",
     "path": "0.12.7",
     "prismjs": "1.21.0",
     "react": "16.13.1",
