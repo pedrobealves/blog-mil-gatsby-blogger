@@ -42,7 +42,7 @@
     "googleapis": "61.0.0",
     "inquirer": "7.3.3",
     "lodash": "4.17.20",
-    "moment": "2.29.1",
+    "moment": "2.29.4",
     "node-sass": "4.14.1",
     "path": "0.12.7",
     "prismjs": "1.21.0",
