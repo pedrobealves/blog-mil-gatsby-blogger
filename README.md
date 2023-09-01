@@ -17,8 +17,6 @@
 <a href="https://app.netlify.com/sites/blogmil/deploys"><img src="https://api.netlify.com/api/v1/badges/e80eaed9-7558-4534-98ec-abafb5f9579e/deploy-status"/></a>
 </p>
 
-
-
 # blogmil - Entertainment Multiverses Network
 
 ## CONTEXT
